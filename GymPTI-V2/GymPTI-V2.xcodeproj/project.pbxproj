@@ -7,17 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52C803882A0B951900417B08 /* GymPTI_V2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* GymPTI_V2App.swift */; };
-		52C8038A2A0B951900417B08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* ContentView.swift */; };
+		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
+		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
+		52C803982A0B963600417B08 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52C803972A0B963600417B08 /* ComposableArchitecture */; };
+		52C8039B2A0B964400417B08 /* LinkNavigator in Frameworks */ = {isa = PBXBuildFile; productRef = 52C8039A2A0B964400417B08 /* LinkNavigator */; };
+		52C8039E2A0B965000417B08 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52C8039D2A0B965000417B08 /* Alamofire */; };
+		52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8039F2A0B96A200417B08 /* AppRouteBuilder.swift */; };
+		52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A12A0B96CD00417B08 /* HomeRouteBuilder.swift */; };
+		52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A42A0B974E00417B08 /* AppSideEffect.swift */; };
+		52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A62A0B977900417B08 /* HomeSideEffect.swift */; };
+		52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A82A0B97CD00417B08 /* HomeCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C803872A0B951900417B08 /* GymPTI_V2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPTI_V2App.swift; sourceTree = "<group>"; };
-		52C803892A0B951900417B08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
+		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		52C8038B2A0B951A00417B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C803952A0B959F00417B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		52C8039F2A0B96A200417B08 /* AppRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouteBuilder.swift; sourceTree = "<group>"; };
+		52C803A12A0B96CD00417B08 /* HomeRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouteBuilder.swift; sourceTree = "<group>"; };
+		52C803A42A0B974E00417B08 /* AppSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSideEffect.swift; sourceTree = "<group>"; };
+		52C803A62A0B977900417B08 /* HomeSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSideEffect.swift; sourceTree = "<group>"; };
+		52C803A82A0B97CD00417B08 /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C8039E2A0B965000417B08 /* Alamofire in Frameworks */,
+				52C8039B2A0B964400417B08 /* LinkNavigator in Frameworks */,
+				52C803982A0B963600417B08 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,11 +67,24 @@
 			isa = PBXGroup;
 			children = (
 				52C803952A0B959F00417B08 /* Info.plist */,
-				52C803872A0B951900417B08 /* GymPTI_V2App.swift */,
-				52C803892A0B951900417B08 /* ContentView.swift */,
+				52C803872A0B951900417B08 /* AppMain.swift */,
+				52C803A42A0B974E00417B08 /* AppSideEffect.swift */,
+				52C8039F2A0B96A200417B08 /* AppRouteBuilder.swift */,
+				52C803A32A0B970300417B08 /* Home */,
 				52C8038B2A0B951A00417B08 /* Assets.xcassets */,
 			);
 			path = "GymPTI-V2";
+			sourceTree = "<group>";
+		};
+		52C803A32A0B970300417B08 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52C803892A0B951900417B08 /* HomeView.swift */,
+				52C803A82A0B97CD00417B08 /* HomeCore.swift */,
+				52C803A62A0B977900417B08 /* HomeSideEffect.swift */,
+				52C803A12A0B96CD00417B08 /* HomeRouteBuilder.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +103,11 @@
 			dependencies = (
 			);
 			name = "GymPTI-V2";
+			packageProductDependencies = (
+				52C803972A0B963600417B08 /* ComposableArchitecture */,
+				52C8039A2A0B964400417B08 /* LinkNavigator */,
+				52C8039D2A0B965000417B08 /* Alamofire */,
+			);
 			productName = "GymPTI-V2";
 			productReference = 52C803842A0B951900417B08 /* GymPTI-V2.app */;
 			productType = "com.apple.product-type.application";
@@ -102,6 +136,11 @@
 				Base,
 			);
 			mainGroup = 52C8037B2A0B951900417B08;
+			packageReferences = (
+				52C803962A0B963600417B08 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				52C803992A0B964400417B08 /* XCRemoteSwiftPackageReference "LinkNavigator" */,
+				52C8039C2A0B965000417B08 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 52C803852A0B951900417B08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,8 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C8038A2A0B951900417B08 /* ContentView.swift in Sources */,
-				52C803882A0B951900417B08 /* GymPTI_V2App.swift in Sources */,
+				52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */,
+				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
+				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
+				52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */,
+				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
+				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
+				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +385,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52C803962A0B963600417B08 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.52.0;
+			};
+		};
+		52C803992A0B964400417B08 /* XCRemoteSwiftPackageReference "LinkNavigator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/interactord/LinkNavigator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
+		52C8039C2A0B965000417B08 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52C803972A0B963600417B08 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52C803962A0B963600417B08 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		52C8039A2A0B964400417B08 /* LinkNavigator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52C803992A0B964400417B08 /* XCRemoteSwiftPackageReference "LinkNavigator" */;
+			productName = LinkNavigator;
+		};
+		52C8039D2A0B965000417B08 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52C8039C2A0B965000417B08 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52C8037C2A0B951900417B08 /* Project object */;
 }
