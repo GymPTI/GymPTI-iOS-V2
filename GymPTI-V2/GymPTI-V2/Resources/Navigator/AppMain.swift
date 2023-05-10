@@ -28,12 +28,10 @@ extension AppMain {
 extension AppMain: App {
     
     var body: some Scene {
+        
         WindowGroup {
             navigator
-                .launch(paths: ["home"], items: [:], prefersLargeTitles: false)
-                .onOpenURL { _ in
-                    
-                }
+                .launch(paths: ["launch"], items: [:], prefersLargeTitles: false)
                 .ignoresSafeArea()
         }
     }

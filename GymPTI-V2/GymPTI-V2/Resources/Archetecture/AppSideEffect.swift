@@ -21,12 +21,25 @@ public struct AppSideEffect: DependencyKey {
     
     let linkNavigator: LinkNavigatorType
     let home: HomeSideEffect
+    let signIn: SignInSideEffect
+    
+    let id: IdSideEffect
+    let pw: PwSideEffect
+    let name: NameSideEffect
+    let email: EmailSideEffect
     
     public static var liveValue: AppSideEffect {
         
         return .init(
             linkNavigator: navigator,
-            home: HomeSideEffectLive(navigator: navigator))
+            home: HomeSideEffectLive(navigator: navigator),
+            signIn: SignInSideEffectLive(navigator: navigator),
+            
+            id: IdSideEffectLive(navigator: navigator),
+            pw: PwSideEffectLive(navigator: navigator),
+            name: NameSideEffectLive(navigator: navigator),
+            email: EmailSideEffectLive(navigator: navigator)
+        )
     }
 }
 

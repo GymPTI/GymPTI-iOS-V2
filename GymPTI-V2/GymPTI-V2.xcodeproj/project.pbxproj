@@ -18,6 +18,35 @@
 		52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A42A0B974E00417B08 /* AppSideEffect.swift */; };
 		52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A62A0B977900417B08 /* HomeSideEffect.swift */; };
 		52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A82A0B97CD00417B08 /* HomeCore.swift */; };
+		52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803AF2A0B9AAB00417B08 /* Constants.swift */; };
+		52C803B22A0B9ABB00417B08 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B12A0B9ABB00417B08 /* Response.swift */; };
+		52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B32A0B9ACC00417B08 /* Requests.swift */; };
+		52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */; };
+		52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B82A0BAD3900417B08 /* ViewExt.swift */; };
+		52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */; };
+		52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803BD2A0BAE4100417B08 /* StringExt.swift */; };
+		52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803C02A0BAE7500417B08 /* LaunchView.swift */; };
+		52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803C62A0BB5A900417B08 /* SignInView.swift */; };
+		52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803D62A0BB73300417B08 /* SignInCore.swift */; };
+		52C803DA2A0BB74200417B08 /* SignInRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803D92A0BB74200417B08 /* SignInRouteBuilder.swift */; };
+		52C803DC2A0BB8E200417B08 /* SignInSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803DB2A0BB8E200417B08 /* SignInSideEffect.swift */; };
+		52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803DF2A0BC8F700417B08 /* LaunchRouteBuilder.swift */; };
+		52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803EC2A0BD25A00417B08 /* IdView.swift */; };
+		52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803EE2A0BD2DC00417B08 /* IdCore.swift */; };
+		52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803F02A0BD2E700417B08 /* IdSideEffect.swift */; };
+		52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803F22A0BD2F100417B08 /* IdRouteBuilder.swift */; };
+		52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803F42A0BDB3F00417B08 /* PwView.swift */; };
+		52C803F72A0BDB4700417B08 /* PwCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803F62A0BDB4700417B08 /* PwCore.swift */; };
+		52C803F92A0BDB6C00417B08 /* PwSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803F82A0BDB6C00417B08 /* PwSideEffect.swift */; };
+		52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803FA2A0BDB7400417B08 /* PwRouteBuilder.swift */; };
+		52C803FD2A0BE04200417B08 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803FC2A0BE04100417B08 /* NameView.swift */; };
+		52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803FE2A0BE09500417B08 /* NameCore.swift */; };
+		52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804002A0BE12300417B08 /* NameSideEffect.swift */; };
+		52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804022A0BE1D600417B08 /* NameRouteBuilder.swift */; };
+		52C804052A0BE2A400417B08 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804042A0BE2A400417B08 /* EmailView.swift */; };
+		52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804062A0BE2AD00417B08 /* EmailCore.swift */; };
+		52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804082A0BE2CF00417B08 /* EmailSideEffect.swift */; };
+		52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8040A2A0BE2DD00417B08 /* EmailRouteBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +60,35 @@
 		52C803A42A0B974E00417B08 /* AppSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSideEffect.swift; sourceTree = "<group>"; };
 		52C803A62A0B977900417B08 /* HomeSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSideEffect.swift; sourceTree = "<group>"; };
 		52C803A82A0B97CD00417B08 /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
+		52C803AF2A0B9AAB00417B08 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52C803B12A0B9ABB00417B08 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		52C803B32A0B9ACC00417B08 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
+		52C803B82A0BAD3900417B08 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		52C803BD2A0BAE4100417B08 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		52C803C02A0BAE7500417B08 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		52C803C62A0BB5A900417B08 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		52C803D62A0BB73300417B08 /* SignInCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCore.swift; sourceTree = "<group>"; };
+		52C803D92A0BB74200417B08 /* SignInRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouteBuilder.swift; sourceTree = "<group>"; };
+		52C803DB2A0BB8E200417B08 /* SignInSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSideEffect.swift; sourceTree = "<group>"; };
+		52C803DF2A0BC8F700417B08 /* LaunchRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouteBuilder.swift; sourceTree = "<group>"; };
+		52C803EC2A0BD25A00417B08 /* IdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdView.swift; sourceTree = "<group>"; };
+		52C803EE2A0BD2DC00417B08 /* IdCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdCore.swift; sourceTree = "<group>"; };
+		52C803F02A0BD2E700417B08 /* IdSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdSideEffect.swift; sourceTree = "<group>"; };
+		52C803F22A0BD2F100417B08 /* IdRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdRouteBuilder.swift; sourceTree = "<group>"; };
+		52C803F42A0BDB3F00417B08 /* PwView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwView.swift; sourceTree = "<group>"; };
+		52C803F62A0BDB4700417B08 /* PwCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwCore.swift; sourceTree = "<group>"; };
+		52C803F82A0BDB6C00417B08 /* PwSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwSideEffect.swift; sourceTree = "<group>"; };
+		52C803FA2A0BDB7400417B08 /* PwRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwRouteBuilder.swift; sourceTree = "<group>"; };
+		52C803FC2A0BE04100417B08 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		52C803FE2A0BE09500417B08 /* NameCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCore.swift; sourceTree = "<group>"; };
+		52C804002A0BE12300417B08 /* NameSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSideEffect.swift; sourceTree = "<group>"; };
+		52C804022A0BE1D600417B08 /* NameRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameRouteBuilder.swift; sourceTree = "<group>"; };
+		52C804042A0BE2A400417B08 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		52C804062A0BE2AD00417B08 /* EmailCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCore.swift; sourceTree = "<group>"; };
+		52C804082A0BE2CF00417B08 /* EmailSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSideEffect.swift; sourceTree = "<group>"; };
+		52C8040A2A0BE2DD00417B08 /* EmailRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRouteBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				52C803952A0B959F00417B08 /* Info.plist */,
-				52C803872A0B951900417B08 /* AppMain.swift */,
-				52C803A42A0B974E00417B08 /* AppSideEffect.swift */,
-				52C8039F2A0B96A200417B08 /* AppRouteBuilder.swift */,
-				52C803A32A0B970300417B08 /* Home */,
+				52C803AB2A0B9A3F00417B08 /* Resources */,
+				52C803AA2A0B9A2B00417B08 /* Feature */,
 				52C8038B2A0B951A00417B08 /* Assets.xcassets */,
 			);
 			path = "GymPTI-V2";
@@ -85,6 +141,157 @@
 				52C803A12A0B96CD00417B08 /* HomeRouteBuilder.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		52C803AA2A0B9A2B00417B08 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				52C803BF2A0BAE6900417B08 /* Launch */,
+				52C803C42A0BB58700417B08 /* Auth */,
+				52C803A32A0B970300417B08 /* Home */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		52C803AB2A0B9A3F00417B08 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52C803AD2A0B9A7F00417B08 /* Navigator */,
+				52C803AC2A0B9A6500417B08 /* Archetecture */,
+				52C803AE2A0B9A9A00417B08 /* Network */,
+				52C803B52A0BACE500417B08 /* Ext */,
+				52C803BA2A0BAD4500417B08 /* class */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52C803AC2A0B9A6500417B08 /* Archetecture */ = {
+			isa = PBXGroup;
+			children = (
+				52C803A42A0B974E00417B08 /* AppSideEffect.swift */,
+			);
+			path = Archetecture;
+			sourceTree = "<group>";
+		};
+		52C803AD2A0B9A7F00417B08 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				52C803872A0B951900417B08 /* AppMain.swift */,
+				52C8039F2A0B96A200417B08 /* AppRouteBuilder.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		52C803AE2A0B9A9A00417B08 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52C803AF2A0B9AAB00417B08 /* Constants.swift */,
+				52C803B12A0B9ABB00417B08 /* Response.swift */,
+				52C803B32A0B9ACC00417B08 /* Requests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		52C803B52A0BACE500417B08 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				52C803B82A0BAD3900417B08 /* ViewExt.swift */,
+				52C803BD2A0BAE4100417B08 /* StringExt.swift */,
+				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
+			);
+			name = Ext;
+			sourceTree = "<group>";
+		};
+		52C803BA2A0BAD4500417B08 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		52C803BF2A0BAE6900417B08 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				52C803C02A0BAE7500417B08 /* LaunchView.swift */,
+				52C803DF2A0BC8F700417B08 /* LaunchRouteBuilder.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		52C803C42A0BB58700417B08 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				52C803C52A0BB59300417B08 /* SignIn */,
+				52C803E12A0BCB2000417B08 /* SignUp */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		52C803C52A0BB59300417B08 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				52C803C62A0BB5A900417B08 /* SignInView.swift */,
+				52C803D62A0BB73300417B08 /* SignInCore.swift */,
+				52C803DB2A0BB8E200417B08 /* SignInSideEffect.swift */,
+				52C803D92A0BB74200417B08 /* SignInRouteBuilder.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		52C803E12A0BCB2000417B08 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				52C803E22A0BCB3E00417B08 /* Id */,
+				52C803E32A0BCB4200417B08 /* Pw */,
+				52C803E42A0BCB4B00417B08 /* Name */,
+				52C803E52A0BCB5400417B08 /* Email */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		52C803E22A0BCB3E00417B08 /* Id */ = {
+			isa = PBXGroup;
+			children = (
+				52C803EC2A0BD25A00417B08 /* IdView.swift */,
+				52C803EE2A0BD2DC00417B08 /* IdCore.swift */,
+				52C803F02A0BD2E700417B08 /* IdSideEffect.swift */,
+				52C803F22A0BD2F100417B08 /* IdRouteBuilder.swift */,
+			);
+			path = Id;
+			sourceTree = "<group>";
+		};
+		52C803E32A0BCB4200417B08 /* Pw */ = {
+			isa = PBXGroup;
+			children = (
+				52C803F42A0BDB3F00417B08 /* PwView.swift */,
+				52C803F62A0BDB4700417B08 /* PwCore.swift */,
+				52C803F82A0BDB6C00417B08 /* PwSideEffect.swift */,
+				52C803FA2A0BDB7400417B08 /* PwRouteBuilder.swift */,
+			);
+			path = Pw;
+			sourceTree = "<group>";
+		};
+		52C803E42A0BCB4B00417B08 /* Name */ = {
+			isa = PBXGroup;
+			children = (
+				52C803FC2A0BE04100417B08 /* NameView.swift */,
+				52C803FE2A0BE09500417B08 /* NameCore.swift */,
+				52C804002A0BE12300417B08 /* NameSideEffect.swift */,
+				52C804022A0BE1D600417B08 /* NameRouteBuilder.swift */,
+			);
+			path = Name;
+			sourceTree = "<group>";
+		};
+		52C803E52A0BCB5400417B08 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				52C804042A0BE2A400417B08 /* EmailView.swift */,
+				52C804062A0BE2AD00417B08 /* EmailCore.swift */,
+				52C804082A0BE2CF00417B08 /* EmailSideEffect.swift */,
+				52C8040A2A0BE2DD00417B08 /* EmailRouteBuilder.swift */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,13 +373,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C803DA2A0BB74200417B08 /* SignInRouteBuilder.swift in Sources */,
 				52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */,
+				52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */,
+				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
+				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
+				52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */,
+				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
+				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
+				52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */,
+				52C803F92A0BDB6C00417B08 /* PwSideEffect.swift in Sources */,
+				52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */,
+				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
+				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
+				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
+				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
+				52C803F72A0BDB4700417B08 /* PwCore.swift in Sources */,
+				52C803DC2A0BB8E200417B08 /* SignInSideEffect.swift in Sources */,
 				52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */,
+				52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */,
+				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
+				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
+				52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
+				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
+				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
+				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
+				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
+				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
+				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
+				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
+				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,
+				52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

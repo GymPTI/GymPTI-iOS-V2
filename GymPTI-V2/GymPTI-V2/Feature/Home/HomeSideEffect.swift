@@ -25,8 +25,9 @@ extension HomeSideEffectLive: HomeSideEffect {
     
     public var tabButton: () -> Void {
         {
-            navigator.next(paths: [""], items: [:], isAnimated: true)
-            print("버튼을 누름")
+            Token.remove(.accessToken)
+            Token.remove(.refreshToken)
+            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
         }
     }
 }

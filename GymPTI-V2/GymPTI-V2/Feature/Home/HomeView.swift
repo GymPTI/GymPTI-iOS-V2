@@ -5,8 +5,8 @@
 //  Created by 이민규 on 2023/05/10.
 //
 
-import ComposableArchitecture
 import SwiftUI
+import ComposableArchitecture
 
 public struct HomeView {
     
@@ -22,6 +22,7 @@ public struct HomeView {
 extension HomeView: View {
     
     public var body: some View {
+        
         VStack {
             Button("dd") {
                 viewStore.send(.tabButton)

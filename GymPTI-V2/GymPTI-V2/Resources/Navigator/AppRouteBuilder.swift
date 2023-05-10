@@ -8,8 +8,17 @@
 import LinkNavigator
 
 struct AppRouterGroup {
+    
     var routers: [RouteBuilder] {
         [
+            LaunchRouteBuilder(),
+            
+            SignInRouteBuilder(),
+            IdRouteBuilder(),
+            PwRouteBuilder(),
+            NameRouteBuilder(),
+            EmailRouteBuilder(),
+            
             HomeRouteBuilder()
         ]
     }
