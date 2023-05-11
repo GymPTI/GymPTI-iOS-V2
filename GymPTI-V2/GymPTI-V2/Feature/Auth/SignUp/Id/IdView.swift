@@ -25,9 +25,9 @@ extension IdView: View {
         
         VStack(spacing: 10) {
             
-            TextField("아이디를 입력해주세요", text: viewStore.binding(\.$id))
+            AuthTextfield("아이디를 입력해주세요", text: viewStore.binding(\.$id))
             
-            Button("다음") {
+            AuthButton("다음", disabled: !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

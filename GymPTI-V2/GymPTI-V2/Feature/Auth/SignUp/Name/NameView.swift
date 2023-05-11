@@ -25,9 +25,9 @@ extension NameView: View {
         
         VStack(spacing: 10) {
             
-            TextField("이름을 입력해주세요", text: viewStore.binding(\.$name))
+            AuthTextfield("이름을 입력해주세요", text: viewStore.binding(\.$name))
             
-            Button("다음") {
+            AuthButton("다음", disabled: !viewStore.name.regex("[a-zA-Z0-9가-힣]{2,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

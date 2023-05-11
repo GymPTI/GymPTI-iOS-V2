@@ -24,7 +24,7 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        VStack(alignment: .center, spacing: 10) {
+        VStack(alignment: .center, spacing: 20) {
             
             Image("profile")
                 .resizable()
@@ -47,6 +47,12 @@ extension ProfileView: View {
                 viewStore.send(.onTapEditAccountButton)
             }) {
                 Text("계정 수정하기")
+            }
+            
+            Button(action: {
+                viewStore.send(.onTapSettingButton)
+            }) {
+                Image(systemName: "gear")
             }
         }
         .setBackground()

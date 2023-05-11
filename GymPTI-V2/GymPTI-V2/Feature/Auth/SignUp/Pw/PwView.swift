@@ -25,9 +25,9 @@ extension PwView: View {
         
         VStack(spacing: 10) {
             
-            TextField("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
+            AuthTextfield("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
             
-            Button("다음") {
+            AuthButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

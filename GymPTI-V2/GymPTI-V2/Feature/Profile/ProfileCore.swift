@@ -17,6 +17,7 @@ public struct Profile: ReducerProtocol {
         
         case onTapEditInfoButton
         case onTapEditAccountButton
+        case onTapSettingButton
     }
     
     @Dependency(\.sideEffect.profile) var sideEffect
@@ -33,6 +34,10 @@ public struct Profile: ReducerProtocol {
                 
             case .onTapEditAccountButton:
                 sideEffect.onTapEditAccountButton()
+                return .none
+                
+            case .onTapSettingButton:
+                sideEffect.onTapSettingButton()
                 return .none
             }
         }

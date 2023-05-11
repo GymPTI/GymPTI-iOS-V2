@@ -69,6 +69,10 @@
 		52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804442A0CB9F700417B08 /* EditAccountCore.swift */; };
 		52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804462A0CBA0200417B08 /* EditAccountSideEffect.swift */; };
 		52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804482A0CBA0C00417B08 /* EditAccountRouteBuilder.swift */; };
+		52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044B2A0CBEED00417B08 /* SettingVIew.swift */; };
+		52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044D2A0CBEF900417B08 /* SettingCore.swift */; };
+		52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */; };
+		52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +136,10 @@
 		52C804442A0CB9F700417B08 /* EditAccountCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountCore.swift; sourceTree = "<group>"; };
 		52C804462A0CBA0200417B08 /* EditAccountSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountSideEffect.swift; sourceTree = "<group>"; };
 		52C804482A0CBA0C00417B08 /* EditAccountRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountRouteBuilder.swift; sourceTree = "<group>"; };
+		52C8044B2A0CBEED00417B08 /* SettingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVIew.swift; sourceTree = "<group>"; };
+		52C8044D2A0CBEF900417B08 /* SettingCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCore.swift; sourceTree = "<group>"; };
+		52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSideEffect.swift; sourceTree = "<group>"; };
+		52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouteBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +370,7 @@
 				52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */,
 				52C804382A0CB21100417B08 /* EditInfo */,
 				52C804412A0CB9C800417B08 /* EditAccount */,
+				52C8044A2A0CBED600417B08 /* Setting */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -413,6 +422,17 @@
 				52C804482A0CBA0C00417B08 /* EditAccountRouteBuilder.swift */,
 			);
 			path = EditAccount;
+			sourceTree = "<group>";
+		};
+		52C8044A2A0CBED600417B08 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				52C8044B2A0CBEED00417B08 /* SettingVIew.swift */,
+				52C8044D2A0CBEF900417B08 /* SettingCore.swift */,
+				52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */,
+				52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +535,7 @@
 				52C804142A0C870700417B08 /* RoutineCore.swift in Sources */,
 				52C803F92A0BDB6C00417B08 /* PwSideEffect.swift in Sources */,
 				52C804222A0C878A00417B08 /* ProfileRouteBuilder.swift in Sources */,
+				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
@@ -522,6 +543,7 @@
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				52C804372A0CAE2C00417B08 /* AuthSecurefield.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
+				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
 				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
@@ -539,6 +561,7 @@
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
+				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
@@ -549,6 +572,7 @@
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
+				52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */,
 				52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */,
 				52C8040F2A0C804300417B08 /* TabBarRouteBuilder.swift in Sources */,
 				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,

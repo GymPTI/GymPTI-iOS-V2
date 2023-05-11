@@ -25,11 +25,25 @@ extension EmailView: View {
         
         VStack(spacing: 10) {
             
-            TextField("이메일을 입력해주세요", text: viewStore.binding(\.$email))
-            
-            Button("이메일 보내기") {
-                viewStore.send(.onTapSendEmailButton)
-                KeyboardManager.downKeyborad()
+            switch viewStore.isSendEmail {
+                
+            case true:
+                
+                AuthTextfield("인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
+                
+                AuthButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
+                    viewStore.send(.onTapVerificationButton)
+                    KeyboardManager.downKeyborad()
+                }
+                
+            case false:
+                
+                AuthTextfield("이메일을 입력해주세요", text: viewStore.binding(\.$email))
+                
+                AuthButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+                    viewStore.send(.onTapSendEmailButton)
+                    KeyboardManager.downKeyborad()
+                }
             }
         }
         .padding()

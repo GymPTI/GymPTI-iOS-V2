@@ -11,6 +11,11 @@ public protocol EmailSideEffect {
     
     var failSendEmail: () -> Void { get }
     var sucessSendEmail: (String) -> Void { get }
+    
+    var fail: () -> Void { get }
+    var fail2: () -> Void { get }
+    
+    var sucessSignUp: () -> Void { get }
 }
 
 public struct EmailSideEffectLive {
@@ -45,4 +50,33 @@ extension EmailSideEffectLive: EmailSideEffect {
             navigator.alert(target: .default, model: alertModel)
         }
     }
+    
+    public var fail: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "실패",
+                message: "인증번호가 올바르지 않습니다.",
+                buttons: [.init(title: "확인", style: .default) ],
+                flagType: .error)
+            navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var fail2: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "실패",
+                message: "회원가입을 다시 진행해주세요.",
+                buttons: [.init(title: "확인", style: .default) ],
+                flagType: .error)
+            self.navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var sucessSignUp: () -> Void {
+        {
+            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+        }
+    }
+    
 }

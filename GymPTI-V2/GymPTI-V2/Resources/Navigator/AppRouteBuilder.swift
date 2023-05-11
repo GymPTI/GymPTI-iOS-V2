@@ -30,7 +30,8 @@ struct AppRouterGroup {
             
             ProfileRouteBuilder(),
             EditInfoRouteBuilder(),
-            EditAccountRouteBuilder()
+            EditAccountRouteBuilder(),
+            SettingRouteBuilder()
         ]
     }
 }
