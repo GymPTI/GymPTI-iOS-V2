@@ -21,6 +21,7 @@ struct EmailRouteBuilder: RouteBuilder {
                         name: items.getValue(key: "email-name") ?? "",
                         email: items.getValue(key: "email-email") ?? ""),
                     reducer: Email()))
+                .navigationBarHidden(true)
             }
         }
     }

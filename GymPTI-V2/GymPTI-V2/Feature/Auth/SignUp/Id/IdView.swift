@@ -25,12 +25,25 @@ extension IdView: View {
         
         VStack(spacing: 10) {
             
-            AuthTextfield("아이디를 입력해주세요", text: viewStore.binding(\.$id))
+            Button(action: {
+                viewStore.send(.onTapBackButton)
+            }) {
+                Image("Back")
+                    .resizable()
+                    .frame(width: 10, height: 18)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            AuthTextfield("아이디", "아이디를 입력해주세요", text: viewStore.binding(\.$id))
+                .padding(.top, 10)
+            
+            Spacer()
             
             AuthButton("다음", disabled: !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }
+
         }
         .padding()
         .setBackground()

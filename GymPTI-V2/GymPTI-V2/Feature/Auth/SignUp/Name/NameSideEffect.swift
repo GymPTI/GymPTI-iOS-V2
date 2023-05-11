@@ -10,6 +10,7 @@ import LinkNavigator
 public protocol NameSideEffect {
     
     var onTapNextButton: (String, String, String) -> Void { get }
+    var onTapBackButton: () -> Void { get }
 }
 
 public struct NameSideEffectLive {
@@ -26,6 +27,12 @@ extension NameSideEffectLive: NameSideEffect {
     public var onTapNextButton: (String, String, String) -> Void {
         { id, pw, name in
             navigator.next(paths: ["email"], items: ["email-id": id, "email-pw": pw, "email-name": name], isAnimated: true)
+        }
+    }
+    
+    public var onTapBackButton: () -> Void {
+        {
+            navigator.back(isAnimated: true)
         }
     }
 }

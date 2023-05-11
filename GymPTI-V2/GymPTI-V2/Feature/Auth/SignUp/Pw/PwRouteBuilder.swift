@@ -20,6 +20,7 @@ struct PwRouteBuilder: RouteBuilder {
                         id: items.getValue(key: "pw-id") ?? "",
                         pw: items.getValue(key: "pw-pw") ?? ""),
                     reducer: Pw()))
+                .navigationBarHidden(true)
             }
         }
     }

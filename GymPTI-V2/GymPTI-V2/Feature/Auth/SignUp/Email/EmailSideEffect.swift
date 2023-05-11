@@ -9,6 +9,8 @@ import LinkNavigator
 
 public protocol EmailSideEffect {
     
+    var onTapBackButton: () -> Void { get }
+    
     var failSendEmail: () -> Void { get }
     var sucessSendEmail: (String) -> Void { get }
     
@@ -28,6 +30,12 @@ public struct EmailSideEffectLive {
 }
 
 extension EmailSideEffectLive: EmailSideEffect {
+    
+    public var onTapBackButton: () -> Void {
+        {
+            navigator.back(isAnimated: true)
+        }
+    }
     
     public var failSendEmail: () -> Void {
         {

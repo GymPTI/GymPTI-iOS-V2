@@ -29,10 +29,9 @@ struct AuthButton: View {
                 .foregroundColor(.white)
                 .frame(height: 52)
                 .frame(maxWidth: .infinity)
-                .background(disabled ? Color.clear : Color.accentColor)
+                .background(disabled ? Color.accentColor.opacity(0.3) : Color.accentColor)
                 .cornerRadius(15)
                 .autocapitalization(.none)
         }
-        .disabled(disabled)
     }
 }

@@ -19,6 +19,7 @@ struct IdRouteBuilder: RouteBuilder {
                     initialState: Id.State(
                         id: items.getValue(key: "id-id") ?? ""),
                     reducer: Id()))
+                .navigationBarHidden(true)
             }
         }
     }

@@ -25,11 +25,23 @@ extension EmailView: View {
         
         VStack(spacing: 10) {
             
+            Button(action: {
+                viewStore.send(.onTapBackButton)
+            }) {
+                Image("Back")
+                    .resizable()
+                    .frame(width: 10, height: 18)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
             switch viewStore.isSendEmail {
                 
             case true:
                 
-                AuthTextfield("인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
+                AuthTextfield("인증번호", "인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
+                    .padding(.top, 10)
+                
+                Spacer()
                 
                 AuthButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
                     viewStore.send(.onTapVerificationButton)
@@ -38,7 +50,10 @@ extension EmailView: View {
                 
             case false:
                 
-                AuthTextfield("이메일을 입력해주세요", text: viewStore.binding(\.$email))
+                AuthTextfield("이메일", "이메일을 입력해주세요", text: viewStore.binding(\.$email))
+                    .padding(.top, 10)
+                
+                Spacer()
                 
                 AuthButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
                     viewStore.send(.onTapSendEmailButton)

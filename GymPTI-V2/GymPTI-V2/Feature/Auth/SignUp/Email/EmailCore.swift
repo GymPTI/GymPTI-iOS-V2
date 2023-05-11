@@ -24,6 +24,7 @@ public struct Email: ReducerProtocol {
     public enum Action: Equatable, BindableAction {
         
         case binding(BindingAction<State>)
+        case onTapBackButton
         case onTapSendEmailButton
         case onTapVerificationButton
     }
@@ -47,6 +48,10 @@ public struct Email: ReducerProtocol {
                 
             case .onTapVerificationButton:
                 sendSignUpRequest(state: state)
+                return .none
+                
+            case .onTapBackButton:
+                sideEffect.onTapBackButton()
                 return .none
             }
         }

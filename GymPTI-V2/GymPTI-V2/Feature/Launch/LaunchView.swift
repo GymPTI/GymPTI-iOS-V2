@@ -26,7 +26,7 @@ struct LaunchView: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 
-                switch Token.get(.accessToken) == nil {
+                switch Token.get(.accessToken) != nil {
                     
                 case true:
                     navigator!.replace(paths: ["signin"], items: [:], isAnimated: true)

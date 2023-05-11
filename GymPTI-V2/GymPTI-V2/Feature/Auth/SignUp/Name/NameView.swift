@@ -25,7 +25,19 @@ extension NameView: View {
         
         VStack(spacing: 10) {
             
-            AuthTextfield("이름을 입력해주세요", text: viewStore.binding(\.$name))
+            Button(action: {
+                viewStore.send(.onTapBackButton)
+            }) {
+                Image("Back")
+                    .resizable()
+                    .frame(width: 10, height: 18)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            AuthTextfield("이름", "이름을 입력해주세요", text: viewStore.binding(\.$name))
+                .padding(.top, 10)
+            
+            Spacer()
             
             AuthButton("다음", disabled: !viewStore.name.regex("[a-zA-Z0-9가-힣]{2,20}")) {
                 viewStore.send(.onTapNextButton)

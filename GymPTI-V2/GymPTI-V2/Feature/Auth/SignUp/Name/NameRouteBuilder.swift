@@ -20,6 +20,7 @@ struct NameRouteBuilder: RouteBuilder {
                         pw: items.getValue(key: "name-pw") ?? "",
                         name: items.getValue(key: "name-name") ?? ""),
                     reducer: Name()))
+                .navigationBarHidden(true)
             }
         }
     }

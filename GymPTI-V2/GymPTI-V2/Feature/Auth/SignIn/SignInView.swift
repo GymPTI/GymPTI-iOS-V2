@@ -25,27 +25,40 @@ extension SignInView: View {
         
         VStack(spacing: 10) {
             
-            AuthTextfield("아이디를 입력해주세요", text: viewStore.binding(\.$id))
+            Text("GymPTI")
+                .setFont(48, .bold)
+                .foregroundColor(.white)
+                .padding([.top, .bottom], 40)
             
-            AuthSecurefield("비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
+            AuthTextfield("아이디", "아이디를 입력해주세요", text: viewStore.binding(\.$id))
+            
+            AuthSecurefield("비밀번호", "비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
                 .padding(.top, 20)
+            
+            Spacer()
             
             AuthButton("로그인", disabled: false) {
                 viewStore.send(.onTapSignInButton)
             }
-            .padding(.top, 20)
+            .padding(.bottom, 10)
             
             HStack {
                 Text("계정이 없으신가요?")
+                    .setFont(14, .regular)
                     .foregroundColor(.white)
                 
-                Button("계정 만들기") {
+                Button(action: {
                     viewStore.send(.onTapSignUpButton)
                     KeyboardManager.downKeyborad()
+                }) {
+                    Text("계정이 없으신가요?")
+                        .setFont(14, .regular)
+                        .foregroundColor(Color.accentColor)
                 }
             }
+            .padding(.bottom, 10)
         }
-        .padding()
+        .padding(.horizontal, 20)
         .setBackground()
     }
 }

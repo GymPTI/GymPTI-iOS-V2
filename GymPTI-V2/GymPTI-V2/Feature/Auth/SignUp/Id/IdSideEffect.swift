@@ -10,6 +10,7 @@ import LinkNavigator
 public protocol IdSideEffect {
     
     var onTapNextButton: (String) -> Void { get }
+    var onTapBackButton: () -> Void { get }
 }
 
 public struct IdSideEffectLive {
@@ -26,6 +27,12 @@ extension IdSideEffectLive: IdSideEffect {
     public var onTapNextButton: (String) -> Void {
         { id in
             navigator.next(paths: ["pw"], items: ["pw-id": id], isAnimated: true)
+        }
+    }
+    
+    public var onTapBackButton: () -> Void {
+        {
+            navigator.back(isAnimated: true)
         }
     }
 }

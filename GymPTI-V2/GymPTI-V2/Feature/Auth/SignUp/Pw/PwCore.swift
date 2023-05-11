@@ -19,6 +19,7 @@ public struct Pw: ReducerProtocol {
         
         case binding(BindingAction<State>)
         case onTapNextButton
+        case onTapBackButton
     }
     
     @Dependency(\.sideEffect.pw) var sideEffect
@@ -34,6 +35,10 @@ public struct Pw: ReducerProtocol {
                 
             case .onTapNextButton:
                 sideEffect.onTapNextButton(state.id, state.pw)
+                return .none
+                
+            case .onTapBackButton:
+                sideEffect.onTapBackButton()
                 return .none
             }
         }

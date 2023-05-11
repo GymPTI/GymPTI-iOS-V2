@@ -33,7 +33,6 @@ extension AppMain: App {
         WindowGroup {
             navigator
                 .launch(paths: ["launch"], items: [:], prefersLargeTitles: false)
-//                .launch(paths: ["email"], items: [:])
                 .ignoresSafeArea()
         }
     }

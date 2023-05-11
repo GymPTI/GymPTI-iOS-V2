@@ -15,7 +15,7 @@ public struct Profile: ReducerProtocol {
         var name: String = ""
         var email: String = ""
         var message: String = ""
-        var profileImage: String = "profile"
+        var profileImage: String = "Profile"
     }
     
     public enum Action: Equatable {

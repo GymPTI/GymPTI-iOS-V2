@@ -18,6 +18,7 @@ struct ProfileRouteBuilder: RouteBuilder {
                 ProfileView(store: .init(
                     initialState: Profile.State(),
                     reducer: Profile()))
+                .navigationBarHidden(true)
             }
         }
     }

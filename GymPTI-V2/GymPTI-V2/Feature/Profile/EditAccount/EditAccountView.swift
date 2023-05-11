@@ -25,9 +25,9 @@ extension EditAccountView: View {
         
         VStack(alignment: .center) {
             
-            AuthSecurefield("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
+            AuthSecurefield("이전 비밀번호", "이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
             
-            AuthSecurefield("바꿀 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
+            AuthSecurefield("새로운 비밀번호", "바꿀 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
             
             AuthButton("비밀번호 변경", disabled: false) {
                 viewStore.send(.onTapChangeButton)
