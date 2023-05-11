@@ -37,7 +37,8 @@ class Requests {
         AF.request("\(API)\(url)",
                    method: method,
                    parameters: params,
-                   encoding: method == .get ? URLEncoding.default : JSONEncoding.default
+                   encoding: method == .get ? URLEncoding.default : JSONEncoding.default,
+                   interceptor: Interceptor()
         )
         .validate()
         .responseData { response in

@@ -11,6 +11,7 @@ import Foundation
 public let API: String = "http://10.80.163.225:8080"
 
 enum TokenType {
+    
     case accessToken
     case refreshToken
 }

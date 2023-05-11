@@ -26,6 +26,8 @@ extension RoutineView: View {
         VStack {
             Text("루틴 화면")
                 .setFont(28, .semibold)
+                .foregroundColor(.white)
+
             Button("로그아웃") {
                 viewStore.send(.tabButton)
             }

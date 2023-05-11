@@ -26,16 +26,18 @@ extension ProfileView: View {
         
         VStack(alignment: .center, spacing: 10) {
             
-            Image("profile")
+            Image("\(viewStore.profileImage)")
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())
             
-            Text("이민규")
+            Text("\(viewStore.name)")
                 .setFont(20, .semibold)
+                .foregroundColor(.white)
             
-            Text("내 꿈은 또 누군가의 꿈이 된다.")
+            Text("\(viewStore.email)")
                 .setFont(16, .medium)
+                .foregroundColor(.white)
             
             AuthButton("정보 수정하기", disabled: false) {
                 viewStore.send(.onTapEditInfoButton)
@@ -53,5 +55,8 @@ extension ProfileView: View {
             .padding([.top, .horizontal], 20)
         }
         .setBackground()
+        .onAppear {
+            viewStore.send(.onAppearProfile)
+        }
     }
 }

@@ -49,7 +49,7 @@ struct TabBarView: View {
                 Spacer()
             }
             .frame(maxHeight: 48)
-            .background(.white)
+            .background(.black)
         }
         
     }

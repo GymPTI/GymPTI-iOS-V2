@@ -37,6 +37,7 @@ extension SignInView: View {
             
             HStack {
                 Text("계정이 없으신가요?")
+                    .foregroundColor(.white)
                 
                 Button("계정 만들기") {
                     viewStore.send(.onTapSignUpButton)

@@ -20,6 +20,7 @@ struct AppMain {
 // MARK: App
 
 extension AppMain {
+    
     var navigator: LinkNavigator {
         sideEffect.linkNavigator as! LinkNavigator
     }
