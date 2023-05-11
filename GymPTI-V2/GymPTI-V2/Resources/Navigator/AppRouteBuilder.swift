@@ -20,9 +20,17 @@ struct AppRouterGroup {
             EmailRouteBuilder(),
             
             TabBarRouteBuilder(),
+            
+            
             HomeRouteBuilder(),
+            
+            
             RoutineRouteBuilder(),
-            ProfileRouteBuilder()
+            
+            
+            ProfileRouteBuilder(),
+            EditInfoRouteBuilder(),
+            EditAccountRouteBuilder()
         ]
     }
 }

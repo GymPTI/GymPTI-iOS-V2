@@ -9,7 +9,8 @@ import LinkNavigator
 
 public protocol ProfileSideEffect {
     
-    var tabButton: () -> Void { get }
+    var onTapEditInfoButton: () -> Void { get }
+    var onTapEditAccountButton: () -> Void { get }
 }
 
 public struct ProfileSideEffectLive {
@@ -23,11 +24,15 @@ public struct ProfileSideEffectLive {
 
 extension ProfileSideEffectLive: ProfileSideEffect {
     
-    public var tabButton: () -> Void {
+    public var onTapEditInfoButton: () -> Void {
         {
-            Token.remove(.accessToken)
-            Token.remove(.refreshToken)
-            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+            navigator.next(paths: ["editinfo"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapEditAccountButton: () -> Void {
+        {
+            navigator.next(paths: ["editaccount"], items: [:], isAnimated: true)
         }
     }
 }

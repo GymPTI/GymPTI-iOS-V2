@@ -24,10 +24,13 @@ extension RoutineView: View {
     public var body: some View {
         
         VStack {
-            Button("루틴") {
+            Text("루틴 화면")
+                .setFont(28, .semibold)
+            Button("로그아웃") {
                 viewStore.send(.tabButton)
             }
         }
         .padding()
+        .setBackground()
     }
 }

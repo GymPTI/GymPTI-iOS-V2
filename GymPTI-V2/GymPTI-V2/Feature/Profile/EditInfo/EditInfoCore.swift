@@ -1,5 +1,5 @@
 //
-//  ProfileCore.swift
+//  EditInfoCore.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/05/11.
@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-public struct Profile: ReducerProtocol {
+public struct EditInfo: ReducerProtocol {
     
     public struct State: Equatable {
         
@@ -15,11 +15,10 @@ public struct Profile: ReducerProtocol {
     
     public enum Action: Equatable {
         
-        case onTapEditInfoButton
-        case onTapEditAccountButton
+        case onTapBackButton
     }
     
-    @Dependency(\.sideEffect.profile) var sideEffect
+    @Dependency(\.sideEffect.editInfo) var sideEffect
     
     public var body: some ReducerProtocol<State, Action> {
         
@@ -27,12 +26,8 @@ public struct Profile: ReducerProtocol {
             
             switch action {
                 
-            case .onTapEditInfoButton:
-                sideEffect.onTapEditInfoButton()
-                return .none
-                
-            case .onTapEditAccountButton:
-                sideEffect.onTapEditAccountButton()
+            case .onTapBackButton:
+                sideEffect.onTapBackButton()
                 return .none
             }
         }

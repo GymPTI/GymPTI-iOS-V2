@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import CachedAsyncImage
 
 public struct ProfileView {
     
@@ -23,11 +24,31 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        VStack {
-            Button("프로필") {
-                viewStore.send(.tabButton)
+        VStack(alignment: .center, spacing: 10) {
+            
+            Image("profile")
+                .resizable()
+                .frame(width: 64, height: 64)
+                .clipShape(Circle())
+            
+            Text("이민규")
+                .setFont(20, .semibold)
+            
+            Text("내 꿈은 또 누군가의 꿈이 된다.")
+                .setFont(16, .medium)
+            
+            Button(action: {
+                viewStore.send(.onTapEditInfoButton)
+            }) {
+                Text("정보 수정하기")
+            }
+            
+            Button(action: {
+                viewStore.send(.onTapEditAccountButton)
+            }) {
+                Text("계정 수정하기")
             }
         }
-        .padding()
+        .setBackground()
     }
 }

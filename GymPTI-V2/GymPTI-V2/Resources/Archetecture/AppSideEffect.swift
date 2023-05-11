@@ -29,8 +29,12 @@ public struct AppSideEffect: DependencyKey {
     let email: EmailSideEffect
     
     let home: HomeSideEffect
+    
     let routine: RoutineSideEffect
+    
     let profile: ProfileSideEffect
+    let editInfo: EditInfoSideEffect
+    let editAccount: EditAccountSideEffect
     
     public static var liveValue: AppSideEffect {
         
@@ -44,8 +48,12 @@ public struct AppSideEffect: DependencyKey {
             email: EmailSideEffectLive(navigator: navigator),
             
             home: HomeSideEffectLive(navigator: navigator),
+            
             routine: RoutineSideEffectLive(navigator: navigator),
-            profile: ProfileSideEffectLive(navigator: navigator)
+            
+            profile: ProfileSideEffectLive(navigator: navigator),
+            editInfo: EditInfoSideEffectLive(navigator: navigator),
+            editAccount: EditAccountSideEffectLive(navigator: navigator)
         )
     }
 }

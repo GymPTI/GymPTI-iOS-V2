@@ -10,26 +10,33 @@ import ComposableArchitecture
 
 struct TabBarView: View {
     
-    @State var home: Bool = true
-    @State var routine: Bool = false
-    @State var profile: Bool = false
+    @State var selected: String
     
     var body: some View {
         
         VStack {
             
-            if home {
+            switch selected {
+                
+            case "home":
                 HomeView(store: .init(
                     initialState: Home.State(),
                     reducer: Home()))
-            } else if routine {
+                
+            case "routine":
                 RoutineView(store: .init(
                     initialState: Routine.State(),
                     reducer: Routine()))
-            } else if profile {
+                
+            case "profile":
                 ProfileView(store: .init(
                     initialState: Profile.State(),
                     reducer: Profile()))
+                
+            default:
+                HomeView(store: .init(
+                    initialState: Home.State(),
+                    reducer: Home()))
             }
             
             Spacer()
@@ -38,36 +45,32 @@ struct TabBarView: View {
                 
                 Spacer()
                 
-                Button("홈") {
-                    print("홈")
-                    home = true
-                    routine = false
-                    profile = false
+                Button(action: {
+                    selected = "home"
+                }) {
+                    Image(systemName: "house")
                 }
                 
                 Spacer()
                 
-                Button("버튼") {
-                    print("루틴")
-                    routine = true
-                    home = false
-                    profile = false
+                Button(action: {
+                    selected = "routine"
+                }) {
+                   Image(systemName: "pencil")
                 }
                 
                 Spacer()
                 
-                Button("버튼") {
-                    print("프로필")
-                    profile = true
-                    home = false
-                    routine = false
+                Button(action: {
+                    selected = "profile"
+                }) {
+                    Image(systemName: "person")
                 }
                 
                 Spacer()
             }
-            .frame(height: 66)
-            .background(.pink)
-            
+            .frame(height: 48)
+            .background(.white)
         }
     }
 }

@@ -23,7 +23,6 @@ struct LaunchView: View {
             }
             .padding(40)
         }
-        .setBackground()
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 
