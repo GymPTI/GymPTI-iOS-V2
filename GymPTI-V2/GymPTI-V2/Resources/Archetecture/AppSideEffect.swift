@@ -20,7 +20,7 @@ fileprivate var navigator: LinkNavigatorType = LinkNavigator(
 public struct AppSideEffect: DependencyKey {
     
     let linkNavigator: LinkNavigatorType
-    let home: HomeSideEffect
+    
     let signIn: SignInSideEffect
     
     let id: IdSideEffect
@@ -28,17 +28,24 @@ public struct AppSideEffect: DependencyKey {
     let name: NameSideEffect
     let email: EmailSideEffect
     
+    let home: HomeSideEffect
+    let routine: RoutineSideEffect
+    let profile: ProfileSideEffect
+    
     public static var liveValue: AppSideEffect {
         
         return .init(
             linkNavigator: navigator,
-            home: HomeSideEffectLive(navigator: navigator),
             signIn: SignInSideEffectLive(navigator: navigator),
             
             id: IdSideEffectLive(navigator: navigator),
             pw: PwSideEffectLive(navigator: navigator),
             name: NameSideEffectLive(navigator: navigator),
-            email: EmailSideEffectLive(navigator: navigator)
+            email: EmailSideEffectLive(navigator: navigator),
+            
+            home: HomeSideEffectLive(navigator: navigator),
+            routine: RoutineSideEffectLive(navigator: navigator),
+            profile: ProfileSideEffectLive(navigator: navigator)
         )
     }
 }

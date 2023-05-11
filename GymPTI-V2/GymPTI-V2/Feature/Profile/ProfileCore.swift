@@ -1,14 +1,13 @@
 //
-//  HomeCore.swift
+//  ProfileCore.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/10.
+//  Created by 이민규 on 2023/05/11.
 //
 
 import ComposableArchitecture
-import Combine
 
-public struct Home: ReducerProtocol {
+public struct Profile: ReducerProtocol {
     
     public struct State: Equatable {
         
@@ -19,7 +18,7 @@ public struct Home: ReducerProtocol {
         case tabButton
     }
     
-    @Dependency(\.sideEffect.home) var sideEffect
+    @Dependency(\.sideEffect.routine) var sideEffect
     
     public var body: some ReducerProtocol<State, Action> {
         
@@ -34,4 +33,3 @@ public struct Home: ReducerProtocol {
         }
     }
 }
-

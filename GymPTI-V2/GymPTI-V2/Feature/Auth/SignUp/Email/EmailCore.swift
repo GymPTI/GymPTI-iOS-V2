@@ -35,9 +35,18 @@ public struct Email: ReducerProtocol {
                 return .none
                 
             case .onTapSendEmailButton:
-                sideEffect.sucessSendEmail(state.email)
+                sendEmailRequest(state.email)
                 return .none
             }
+        }
+    }
+    
+    private func sendEmailRequest(_ email: String) {
+        
+        Requests.simple("/auth/sendMailVerification", .post, params: ["email": email], failure: {
+            sideEffect.failSendEmail()
+        }) {
+            sideEffect.sucessSendEmail(email)
         }
     }
     

@@ -26,7 +26,7 @@ extension SignInSideEffectLive: SignInSideEffect {
     
     public var onTapSignInButton: () -> Void {
         {
-            navigator.replace(paths: ["home"], items: [:], isAnimated: true)
+            navigator.replace(paths: ["tabbar"], items: [:], isAnimated: true)
         }
     }
     

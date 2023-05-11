@@ -1,30 +1,30 @@
 //
-//  HomeView.swift
+//  RoutineView.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/10.
+//  Created by 이민규 on 2023/05/11.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-public struct HomeView {
+public struct RoutineView {
     
-    private let store: StoreOf<Home>
-    @ObservedObject var viewStore: ViewStoreOf<Home>
+    private let store: StoreOf<Routine>
+    @ObservedObject var viewStore: ViewStoreOf<Routine>
     
-    public init(store: StoreOf<Home>) {
+    public init(store: StoreOf<Routine>) {
         self.store = store
         viewStore = ViewStore(store)
     }
 }
 
-extension HomeView: View {
+extension RoutineView: View {
     
     public var body: some View {
         
         VStack {
-            Button("홈") {
+            Button("루틴") {
                 viewStore.send(.tabButton)
             }
         }
