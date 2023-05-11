@@ -25,9 +25,13 @@ extension EditInfoView: View {
         
         VStack(alignment: .center) {
             
-            Text("회원 정보 수정")
-                .setFont(20, .semibold)
+            AuthTextfield("바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            
+            AuthButton("닉네임 변경", disabled: false) {
+                viewStore.send(.onTapChangeButton)
+            }
         }
+        .padding(.horizontal, 20)
         .setBackground()
         .navigationBarItems(
             trailing:

@@ -24,7 +24,7 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        VStack(alignment: .center, spacing: 20) {
+        VStack(alignment: .center, spacing: 10) {
             
             Image("profile")
                 .resizable()
@@ -37,23 +37,20 @@ extension ProfileView: View {
             Text("내 꿈은 또 누군가의 꿈이 된다.")
                 .setFont(16, .medium)
             
-            Button(action: {
+            AuthButton("정보 수정하기", disabled: false) {
                 viewStore.send(.onTapEditInfoButton)
-            }) {
-                Text("정보 수정하기")
             }
+            .padding([.top, .horizontal], 20)
             
-            Button(action: {
+            AuthButton("계정 수정하기", disabled: false) {
                 viewStore.send(.onTapEditAccountButton)
-            }) {
-                Text("계정 수정하기")
             }
+            .padding([.top, .horizontal], 20)
             
-            Button(action: {
+            AuthButton("설정하기", disabled: false) {
                 viewStore.send(.onTapSettingButton)
-            }) {
-                Image(systemName: "gear")
             }
+            .padding([.top, .horizontal], 20)
         }
         .setBackground()
     }

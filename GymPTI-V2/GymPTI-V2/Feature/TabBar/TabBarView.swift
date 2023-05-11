@@ -14,63 +14,43 @@ struct TabBarView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(spacing: 0) {
             
             switch selected {
                 
             case "home":
-                HomeView(store: .init(
-                    initialState: Home.State(),
-                    reducer: Home()))
+                HomeView(store: .init(initialState: Home.State(), reducer: Home()))
                 
             case "routine":
-                RoutineView(store: .init(
-                    initialState: Routine.State(),
-                    reducer: Routine()))
+                RoutineView(store: .init(initialState: Routine.State(), reducer: Routine()))
                 
             case "profile":
-                ProfileView(store: .init(
-                    initialState: Profile.State(),
-                    reducer: Profile()))
+                ProfileView(store: .init(initialState: Profile.State(), reducer: Profile()))
                 
             default:
-                HomeView(store: .init(
-                    initialState: Home.State(),
-                    reducer: Home()))
+                HomeView(store: .init(initialState: Home.State(), reducer: Home()))
             }
-            
-            Spacer()
-            
-            HStack {
+            HStack(spacing: 60) {
                 
                 Spacer()
                 
-                Button(action: {
-                    selected = "home"
-                }) {
+                Button(action: { selected = "home" }) {
                     Image(systemName: "house")
                 }
                 
-                Spacer()
-                
-                Button(action: {
-                    selected = "routine"
-                }) {
-                   Image(systemName: "pencil")
+                Button(action: { selected = "routine" }) {
+                    Image(systemName: "pencil")
                 }
                 
-                Spacer()
-                
-                Button(action: {
-                    selected = "profile"
-                }) {
+                Button(action: { selected = "profile" }) {
                     Image(systemName: "person")
                 }
-                
+
                 Spacer()
             }
-            .frame(height: 48)
+            .frame(maxHeight: 48)
             .background(.white)
         }
+        
     }
 }

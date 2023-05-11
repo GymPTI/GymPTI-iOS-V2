@@ -34,6 +34,7 @@ public struct Email: ReducerProtocol {
         
         BindingReducer()
         Reduce { state, action in
+            
             switch action {
                 
             case .binding:
@@ -64,7 +65,7 @@ public struct Email: ReducerProtocol {
         
         let params = [
             "userId": state.id,
-            "userName": state.name,
+            "nickname": state.name,
             "email": state.email,
             "password": SHA512.hash(data: state.pw.data(using: .utf8)!)
                 .compactMap { String(format: "%02x", $0) }.joined()

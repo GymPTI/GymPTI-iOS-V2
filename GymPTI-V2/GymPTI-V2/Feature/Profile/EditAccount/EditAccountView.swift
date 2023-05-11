@@ -25,9 +25,15 @@ extension EditAccountView: View {
         
         VStack(alignment: .center) {
             
-            Text("계정 정보 수정")
-                .setFont(20, .semibold)
+            AuthSecurefield("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
+            
+            AuthSecurefield("바꿀 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
+            
+            AuthButton("비밀번호 변경", disabled: false) {
+                viewStore.send(.onTapChangeButton)
+            }
         }
+        .padding(.horizontal, 20)
         .setBackground()
         .navigationBarItems(
             trailing:
