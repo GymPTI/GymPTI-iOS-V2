@@ -16,7 +16,6 @@ public struct Email: ReducerProtocol {
         var pw: String = ""
         var name: String = ""
         @BindingState var email: String = ""
-        @BindingState var emailVerificationCode: String = ""
         
         var isSendEmail: Bool = false
     }
@@ -26,7 +25,6 @@ public struct Email: ReducerProtocol {
         case binding(BindingAction<State>)
         case onTapBackButton
         case onTapSendEmailButton
-        case onTapVerificationButton
     }
     
     @Dependency(\.sideEffect.email) var sideEffect
@@ -41,17 +39,12 @@ public struct Email: ReducerProtocol {
             case .binding:
                 return .none
                 
-            case .onTapSendEmailButton:
-                sendEmailRequest(state: state)
-                state.isSendEmail = true
-                return .none
-                
-            case .onTapVerificationButton:
-                sendSignUpRequest(state: state)
-                return .none
-                
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
+                return .none
+                
+            case .onTapSendEmailButton:
+                sendEmailRequest(state: state)
                 return .none
             }
         }
@@ -62,27 +55,7 @@ public struct Email: ReducerProtocol {
         Requests.simple("/auth/sendMailVerification", .post, params: ["email": state.email], failure: {
             sideEffect.failSendEmail()
         }) {
-            sideEffect.sucessSendEmail(state.email)
-        }
-    }
-    
-    private func sendSignUpRequest(state: State) {
-        
-        let params = [
-            "userId": state.id,
-            "nickname": state.name,
-            "email": state.email,
-            "password": hashedPassword(state.pw)
-        ]
-        
-        Requests.simple("/auth/validateMailVerification", .post, params: ["email": state.email, "emailVerificationCode": state.emailVerificationCode], failure: {
-            sideEffect.failVerification()
-        }) {
-            Requests.simple("/auth/register", .post, params: params, failure: {
-                sideEffect.failSignUp()
-            }) {
-                sideEffect.sucessSignUp()
-            }
+            sideEffect.sucessSendEmail(state.id, state.pw, state.name, state.email)
         }
     }
     

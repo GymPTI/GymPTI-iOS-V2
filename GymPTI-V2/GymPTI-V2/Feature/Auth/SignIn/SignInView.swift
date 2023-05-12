@@ -25,10 +25,16 @@ extension SignInView: View {
         
         VStack(spacing: 10) {
             
-            Text("GymPTI")
-                .setFont(48, .bold)
-                .foregroundColor(Colors.white.color)
-                .padding([.top, .bottom], 40)
+            VStack(spacing: 10) {
+                Text("GymPTI")
+                    .setFont(32, .bold)
+                    .foregroundColor(Colors.white.color)
+                
+                Text("나만의 인공지능 PT 선생님")
+                    .setFont(16, .regular)
+                    .foregroundColor(Colors.white.color)
+            }
+            .padding(.top, UIScreen.main.bounds.size.height / 8)
             
             AuthTextfield("아이디", "아이디를 입력해주세요", text: viewStore.binding(\.$id))
             
@@ -52,10 +58,12 @@ extension SignInView: View {
                     KeyboardManager.downKeyborad()
                 }) {
                     Text("회원가입 하러가기!")
-                        .setFont(14, .regular)
+                        .setFont(14, .semibold)
                         .foregroundColor(Colors.main.color)
                 }
             }
+            .padding(.bottom, UIScreen.main.bounds.size.height / 12)
+            
         }
         .padding(.horizontal, 20)
         .setBackground()

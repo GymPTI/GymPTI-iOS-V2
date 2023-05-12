@@ -39,11 +39,13 @@ extension IdView: View {
             
             Spacer()
             
+            AuthProgress(1)
+            
             AuthButton("다음", disabled: !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }
-
+            
         }
         .padding()
         .setBackground()

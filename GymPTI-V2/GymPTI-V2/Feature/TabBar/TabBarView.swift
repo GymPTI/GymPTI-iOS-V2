@@ -28,7 +28,7 @@ struct TabBarView: View {
                 ProfileView(store: .init(initialState: Profile.State(), reducer: Profile()))
                 
             default:
-                HomeView(store: .init(initialState: Home.State(), reducer: Home()))
+                Text("오류 발생")
             }
             HStack(spacing: 46) {
                 
@@ -65,6 +65,9 @@ struct TabBarView: View {
             }
             .frame(maxHeight: 48)
             .background(Colors.white.color)
+            .onAppear {
+                selected = "home"
+            }
         }
         
     }

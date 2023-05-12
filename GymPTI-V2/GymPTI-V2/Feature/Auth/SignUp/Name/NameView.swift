@@ -39,6 +39,8 @@ extension NameView: View {
             
             Spacer()
             
+            AuthProgress(3)
+            
             AuthButton("다음", disabled: !viewStore.name.regex("[a-zA-Z0-9가-힣]{2,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()

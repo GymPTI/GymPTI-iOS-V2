@@ -1,25 +1,25 @@
 //
-//  EmailView.swift
+//  VerificationView.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/10.
+//  Created by 이민규 on 2023/05/12.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-public struct EmailView {
+public struct VerificationView {
     
-    private let store: StoreOf<Email>
-    @ObservedObject var viewStore: ViewStoreOf<Email>
+    private let store: StoreOf<Verification>
+    @ObservedObject var viewStore: ViewStoreOf<Verification>
     
-    public init(store: StoreOf<Email>) {
+    public init(store: StoreOf<Verification>) {
         self.store = store
         viewStore = ViewStore(store)
     }
 }
 
-extension EmailView: View {
+extension VerificationView: View {
     
     public var body: some View {
         
@@ -34,15 +34,15 @@ extension EmailView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            AuthTextfield("이메일", "이메일을 입력해주세요", text: viewStore.binding(\.$email))
+            AuthTextfield("인증번호", "인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
                 .padding(.top, 10)
             
             Spacer()
             
-            AuthProgress(4)
+            AuthProgress(5)
             
-            AuthButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
-                viewStore.send(.onTapSendEmailButton)
+            AuthButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
+                viewStore.send(.onTapVerificationButton)
                 KeyboardManager.downKeyborad()
             }
             

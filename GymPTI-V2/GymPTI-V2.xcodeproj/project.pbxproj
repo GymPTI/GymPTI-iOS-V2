@@ -15,6 +15,12 @@
 		526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */; };
 		526593F62A0E42F300D9446B /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F52A0E42F300D9446B /* ColorExt.swift */; };
 		526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F72A0E520A00D9446B /* hashedPassword.swift */; };
+		526593FC2A0E586C00D9446B /* AuthProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593FB2A0E586C00D9446B /* AuthProgress.swift */; };
+		526593FF2A0E594300D9446B /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593FE2A0E594300D9446B /* VerificationView.swift */; };
+		526594012A0E594900D9446B /* VerificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594002A0E594900D9446B /* VerificationCore.swift */; };
+		526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594022A0E595900D9446B /* VerificationSideEffect.swift */; };
+		526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594042A0E596100D9446B /* VerificationRouteBuilder.swift */; };
+		526594072A0E62AE00D9446B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594062A0E62AE00D9446B /* Colors.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -91,6 +97,12 @@
 		526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdRouteBuilder.swift; sourceTree = "<group>"; };
 		526593F52A0E42F300D9446B /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		526593F72A0E520A00D9446B /* hashedPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashedPassword.swift; sourceTree = "<group>"; };
+		526593FB2A0E586C00D9446B /* AuthProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProgress.swift; sourceTree = "<group>"; };
+		526593FE2A0E594300D9446B /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		526594002A0E594900D9446B /* VerificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCore.swift; sourceTree = "<group>"; };
+		526594022A0E595900D9446B /* VerificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSideEffect.swift; sourceTree = "<group>"; };
+		526594042A0E596100D9446B /* VerificationRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationRouteBuilder.swift; sourceTree = "<group>"; };
+		526594062A0E62AE00D9446B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -189,6 +201,7 @@
 			children = (
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
+				526594062A0E62AE00D9446B /* Colors.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -202,6 +215,17 @@
 				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		526593FD2A0E592A00D9446B /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				526593FE2A0E594300D9446B /* VerificationView.swift */,
+				526594002A0E594900D9446B /* VerificationCore.swift */,
+				526594022A0E595900D9446B /* VerificationSideEffect.swift */,
+				526594042A0E596100D9446B /* VerificationRouteBuilder.swift */,
+			);
+			path = Verification;
 			sourceTree = "<group>";
 		};
 		52C8037B2A0B951900417B08 = {
@@ -257,11 +281,11 @@
 		52C803AB2A0B9A3F00417B08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				526593FA2A0E549F00D9446B /* Extension */,
 				52C8038B2A0B951A00417B08 /* Assets.xcassets */,
 				52C803AD2A0B9A7F00417B08 /* Navigator */,
 				52C803AC2A0B9A6500417B08 /* Archetecture */,
 				52C803AE2A0B9A9A00417B08 /* Network */,
+				526593FA2A0E549F00D9446B /* Extension */,
 				526593F92A0E53A400D9446B /* Utility */,
 				52C804282A0C949900417B08 /* UiComponents */,
 			);
@@ -332,6 +356,7 @@
 				52C803E32A0BCB4200417B08 /* Pw */,
 				52C803E42A0BCB4B00417B08 /* Name */,
 				52C803E52A0BCB5400417B08 /* Email */,
+				526593FD2A0E592A00D9446B /* Verification */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -429,6 +454,7 @@
 				52C804322A0CAE1500417B08 /* AuthButton.swift */,
 				52C804342A0CAE1F00417B08 /* AuthTextField.swift */,
 				52C804362A0CAE2B00417B08 /* AuthSecurefield.swift */,
+				526593FB2A0E586C00D9446B /* AuthProgress.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -571,11 +597,14 @@
 				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
 				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
+				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
+				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
 				52C804372A0CAE2C00417B08 /* AuthSecurefield.swift in Sources */,
+				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
 				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
@@ -596,6 +625,7 @@
 				52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
+				526593FC2A0E586C00D9446B /* AuthProgress.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
@@ -603,11 +633,13 @@
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
+				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
 				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
 				52C8041E2A0C877300417B08 /* ProfileCore.swift in Sources */,
 				52C8043A2A0CB2A200417B08 /* EditInfoView.swift in Sources */,
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
 				526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */,
+				526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,

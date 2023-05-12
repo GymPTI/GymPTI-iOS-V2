@@ -18,6 +18,7 @@ struct AppRouterGroup {
             PwRouteBuilder(),
             NameRouteBuilder(),
             EmailRouteBuilder(),
+            VerificationRouteBuilder(),
             
             TabBarRouteBuilder(),
             

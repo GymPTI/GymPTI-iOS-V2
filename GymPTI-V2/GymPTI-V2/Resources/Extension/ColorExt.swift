@@ -18,23 +18,3 @@ extension Color {
     
     
 }
-
-enum Colors {
-    
-    case main
-    case white
-    case black
-    
-    var color: Color {
-        
-        switch self {
-            
-        case .main:
-            return Color(hex: 0x9047ED)
-        case .white:
-            return Color(hex: 0xF8F5FF)
-        case .black:
-            return Color(hex: 0x1B1A20)
-        }
-    }
-}

@@ -27,6 +27,7 @@ public struct AppSideEffect: DependencyKey {
     let pw: PwSideEffect
     let name: NameSideEffect
     let email: EmailSideEffect
+    let verification: VerificationSideEffect
     
     let home: HomeSideEffect
     
@@ -48,6 +49,7 @@ public struct AppSideEffect: DependencyKey {
             pw: PwSideEffectLive(navigator: navigator),
             name: NameSideEffectLive(navigator: navigator),
             email: EmailSideEffectLive(navigator: navigator),
+            verification: VerificationSideEffectLive(navigator: navigator),
             
             home: HomeSideEffectLive(navigator: navigator),
             

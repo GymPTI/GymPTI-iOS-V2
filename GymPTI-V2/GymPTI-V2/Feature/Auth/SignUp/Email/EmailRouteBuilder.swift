@@ -18,8 +18,7 @@ struct EmailRouteBuilder: RouteBuilder {
                     initialState: Email.State(
                         id: items.getValue(key: "email-id") ?? "",
                         pw: items.getValue(key: "email-pw") ?? "",
-                        name: items.getValue(key: "email-name") ?? "",
-                        email: items.getValue(key: "email-email") ?? ""),
+                        name: items.getValue(key: "email-name") ?? ""),
                     reducer: Email()))
                 .navigationBarHidden(true)
             }
