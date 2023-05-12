@@ -25,16 +25,11 @@ extension EmailView: View {
         
         VStack(spacing: 10) {
             
-            Button(action: {
+            CustomNavi("이메일") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             
-            AuthTextfield("이메일", "이메일을 입력해주세요", text: viewStore.binding(\.$email))
+            AuthTextfield("이메일을 입력해주세요", text: viewStore.binding(\.$email))
                 .padding(.top, 10)
             
             Spacer()

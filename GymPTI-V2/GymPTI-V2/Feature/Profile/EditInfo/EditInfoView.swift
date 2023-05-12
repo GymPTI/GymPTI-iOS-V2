@@ -27,19 +27,9 @@ extension EditInfoView: View {
         
         VStack(alignment: .center) {
             
-            Button(action: {
+            CustomNavi("프로필 수정") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Text("프로필 수정")
-                .setFont(34, .bold)
-                .foregroundColor(Colors.white.color)
-                .frame(maxWidth: .infinity, alignment: .leading)
             
             ZStack(alignment: .bottom) {
                 
@@ -75,7 +65,7 @@ extension EditInfoView: View {
             }
             .padding(.bottom, 20)
             
-            AuthTextfield("닉네임 변경","바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            AuthTextfield("바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
         
             Spacer()
             

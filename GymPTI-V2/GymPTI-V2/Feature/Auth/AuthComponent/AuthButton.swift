@@ -25,12 +25,12 @@ struct AuthButton: View {
     var body: some View {
         Button(action: action) {
             Text(text)
-                .setFont(16, .semibold)
+                .setFont(18, .semibold)
                 .foregroundColor(Colors.white.color)
                 .frame(height: 52)
                 .frame(maxWidth: .infinity)
                 .background(disabled ? Colors.main.color.opacity(0.3) : Colors.main.color)
-                .cornerRadius(15)
+                .cornerRadius(10)
                 .autocapitalization(.none)
         }
     }

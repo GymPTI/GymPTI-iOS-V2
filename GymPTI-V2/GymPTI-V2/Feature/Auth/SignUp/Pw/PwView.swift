@@ -25,16 +25,11 @@ extension PwView: View {
         
         VStack(spacing: 10) {
             
-            Button(action: {
+            CustomNavi("비밀번호") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             
-            AuthTextfield("비밀번호", "비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
+            AuthTextfield("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
                 .padding(.top, 10)
             
             Spacer()

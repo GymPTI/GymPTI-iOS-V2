@@ -25,25 +25,15 @@ extension EditAccountView: View {
         
         VStack(alignment: .center) {
             
-            Button(action: {
+            CustomNavi("계정 정보 수정") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Text("계정 정보 수정")
-                .setFont(34, .bold)
-                .foregroundColor(Colors.white.color)
-                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             
-            AuthSecurefield("이전 비밀번호", "이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
+            AuthSecurefield("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
             
-            AuthSecurefield("새로운 비밀번호", "바꿀 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
+            AuthSecurefield("바꿀 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
             
             Spacer()
             

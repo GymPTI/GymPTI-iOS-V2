@@ -25,19 +25,9 @@ extension SettingView: View {
         
         VStack {
             
-            Button(action: {
+            CustomNavi("설정") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Text("설정")
-                .setFont(34, .bold)
-                .foregroundColor(Colors.white.color)
-                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             

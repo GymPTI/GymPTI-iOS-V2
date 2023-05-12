@@ -26,7 +26,7 @@
 		5265940F2A0E7ADA00D9446B /* FriendSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265940E2A0E7ADA00D9446B /* FriendSideEffect.swift */; };
 		526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */; };
 		526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594122A0E84EE00D9446B /* FriendCellView.swift */; };
-		526594162A0E89E000D9446B /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594152A0E89E000D9446B /* ProfileTextField.swift */; };
+		526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594182A0E8B2500D9446B /* CustomNavi.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -114,7 +114,7 @@
 		5265940E2A0E7ADA00D9446B /* FriendSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSideEffect.swift; sourceTree = "<group>"; };
 		526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRouteBuilder.swift; sourceTree = "<group>"; };
 		526594122A0E84EE00D9446B /* FriendCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellView.swift; sourceTree = "<group>"; };
-		526594152A0E89E000D9446B /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
+		526594182A0E8B2500D9446B /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -211,6 +211,7 @@
 		526593F92A0E53A400D9446B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				526594182A0E8B2500D9446B /* CustomNavi.swift */,
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
 				526594062A0E62AE00D9446B /* Colors.swift */,
@@ -252,12 +253,11 @@
 			path = Friend;
 			sourceTree = "<group>";
 		};
-		526594142A0E89CD00D9446B /* ProfileComponent */ = {
+		526594172A0E8AA400D9446B /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				526594152A0E89E000D9446B /* ProfileTextField.swift */,
 			);
-			path = ProfileComponent;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		52C8037B2A0B951900417B08 = {
@@ -452,7 +452,7 @@
 		52C804192A0C873100417B08 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				526594142A0E89CD00D9446B /* ProfileComponent */,
+				526594172A0E8AA400D9446B /* New Group */,
 				52C8041B2A0C876300417B08 /* ProfileView.swift */,
 				52C8041D2A0C877300417B08 /* ProfileCore.swift */,
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
@@ -660,7 +660,7 @@
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
-				526594162A0E89E000D9446B /* ProfileTextField.swift in Sources */,
+				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,

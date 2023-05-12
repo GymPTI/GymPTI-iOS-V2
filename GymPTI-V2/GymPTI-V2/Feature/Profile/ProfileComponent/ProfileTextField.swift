@@ -33,14 +33,14 @@ struct ProfileTextField: View {
             VStack {
                 
                 TextField(message, text: text)
-                    .setFont(18, .medium)
+                    .setFont(14, .regular)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .autocapitalization(.none)
                     .padding(.leading, 20)
+                    .autocapitalization(.none)
             }
-            .frame(height: 52)
-            .background(Colors.white.color)
-            .cornerRadius(15)
+            .frame(height: 40)
+            .background(Colors.darkGray.color)
+            .cornerRadius(10)
         }
     }
 }

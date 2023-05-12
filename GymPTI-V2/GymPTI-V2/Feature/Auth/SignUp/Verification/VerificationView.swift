@@ -25,16 +25,11 @@ extension VerificationView: View {
         
         VStack(spacing: 10) {
             
-            Button(action: {
+            CustomNavi("이메일 인증") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             
-            AuthTextfield("인증번호", "인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
+            AuthTextfield("인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
                 .padding(.top, 10)
             
             Spacer()

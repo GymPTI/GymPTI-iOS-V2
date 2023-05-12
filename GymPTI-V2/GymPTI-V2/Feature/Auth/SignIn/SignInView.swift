@@ -36,33 +36,35 @@ extension SignInView: View {
             }
             .padding(.top, UIScreen.main.bounds.size.height / 8)
             
-            AuthTextfield("아이디", "아이디를 입력해주세요", text: viewStore.binding(\.$id))
-            
-            AuthSecurefield("비밀번호", "비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
-                .padding(.top, 20)
-            
             Spacer()
             
-            AuthButton("로그인", disabled: false) {
-                viewStore.send(.onTapSignInButton)
-            }
-            .padding(.bottom, 10)
-            
-            HStack {
-                Text("계정이 없으신가요?")
-                    .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
+            VStack(spacing: 20) {
                 
-                Button(action: {
-                    viewStore.send(.onTapSignUpButton)
-                    KeyboardManager.downKeyborad()
-                }) {
-                    Text("회원가입 하러가기!")
-                        .setFont(14, .semibold)
-                        .foregroundColor(Colors.main.color)
+                AuthTextfield("아이디를 입력해주세요", text: viewStore.binding(\.$id))
+                
+                AuthSecurefield("비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
+                
+                AuthButton("로그인", disabled: false) {
+                    viewStore.send(.onTapSignInButton)
                 }
+                
+                HStack {
+                    Text("계정이 없으신가요?")
+                        .setFont(14, .regular)
+                        .foregroundColor(Colors.white.color)
+                    
+                    Button(action: {
+                        viewStore.send(.onTapSignUpButton)
+                        KeyboardManager.downKeyborad()
+                    }) {
+                        Text("회원가입 하러가기!")
+                            .setFont(15, .bold)
+                            .foregroundColor(Colors.main.color)
+                    }
+                }
+                .padding(.bottom, UIScreen.main.bounds.size.height / 12)
+                
             }
-            .padding(.bottom, UIScreen.main.bounds.size.height / 12)
             
         }
         .padding(.horizontal, 20)

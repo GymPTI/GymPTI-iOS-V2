@@ -10,17 +10,14 @@ import SwiftUI
 struct AuthSecurefield: View {
     
     let title: String
-    let message: String
     let text: Binding<String>
     
     @State var isTouchEyes: Bool = false
     
     init(_ title: String,
-         _ message: String = "",
          text: Binding<String>)
     {
         self.title = title
-        self.message = message
         self.text = text
     }
     
@@ -28,14 +25,10 @@ struct AuthSecurefield: View {
         
         VStack(alignment: .leading) {
             
-            Text(title)
-                .setFont(18, .medium)
-                .foregroundColor(Colors.white.color)
-            
             HStack {
                 
                 if !isTouchEyes {
-                    SecureField(message, text: text)
+                    SecureField(title, text: text)
                         .setFont(18, .medium)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .autocapitalization(.none)

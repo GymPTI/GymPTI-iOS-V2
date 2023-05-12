@@ -25,22 +25,11 @@ extension FindIdView: View {
         
         VStack(spacing: 10) {
             
-            Button(action: {
+            CustomNavi("아이디 찾기") {
                 viewStore.send(.onTapBackButton)
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text("아이디 찾기")
-                .setFont(32, .bold)
-                .foregroundColor(Colors.white.color)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.vertical, 20)
-            
-            AuthTextfield("아이디를 찾기 위한 이메일", "이메일을 입력해주세요.", text: viewStore.binding(\.$email))
+            AuthTextfield("이메일을 입력해주세요.", text: viewStore.binding(\.$email))
             
             Spacer()
             
