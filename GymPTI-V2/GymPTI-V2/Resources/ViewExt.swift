@@ -17,7 +17,7 @@ extension View {
     @ViewBuilder func setBackground() -> some View {
         self
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("BackgroundColor"))
+            .background(Colors.black.color)
             .onTapGesture {
                 KeyboardManager.tabBackgroundDownKeyborad()
             }

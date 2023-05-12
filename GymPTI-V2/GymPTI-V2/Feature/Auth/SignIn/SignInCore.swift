@@ -6,7 +6,6 @@
 //
 
 import ComposableArchitecture
-import CryptoKit
 
 public struct SignIn: ReducerProtocol {
     
@@ -54,12 +53,7 @@ public struct SignIn: ReducerProtocol {
         
         let params = [
             "userId": state.id,
-            "password": SHA512.hash(data: state.pw
-                .data(using: .utf8)!)
-            
-            .compactMap { String(format: "%02x", $0) }
-                .joined()
-                .uppercased()
+            "password": hashedPassword(state.pw)
         ]
         
         Requests.request("/auth/login", .post, params: params, token.self ,failure: {

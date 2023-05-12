@@ -35,6 +35,7 @@ public struct AppSideEffect: DependencyKey {
     let profile: ProfileSideEffect
     let editInfo: EditInfoSideEffect
     let editAccount: EditAccountSideEffect
+    let findId: FindIdSideEffect
     let setting: SettingSideEffect
     
     public static var liveValue: AppSideEffect {
@@ -55,6 +56,7 @@ public struct AppSideEffect: DependencyKey {
             profile: ProfileSideEffectLive(navigator: navigator),
             editInfo: EditInfoSideEffectLive(navigator: navigator),
             editAccount: EditAccountSideEffectLive(navigator: navigator),
+            findId: FindIdSideEffectLive(navigator: navigator),
             setting: SettingSideEffectLive(navigator: navigator)
         )
     }

@@ -26,10 +26,10 @@ struct AuthButton: View {
         Button(action: action) {
             Text(text)
                 .setFont(16, .semibold)
-                .foregroundColor(.white)
+                .foregroundColor(Colors.white.color)
                 .frame(height: 52)
                 .frame(maxWidth: .infinity)
-                .background(disabled ? Color.accentColor.opacity(0.3) : Color.accentColor)
+                .background(disabled ? Colors.main.color.opacity(0.3) : Colors.main.color)
                 .cornerRadius(15)
                 .autocapitalization(.none)
         }

@@ -19,6 +19,7 @@ struct EditInfoRouteBuilder: RouteBuilder {
                     initialState: EditInfo.State(
                         profileImage: items.getValue(key: "editinfo-profileImage") ?? ""),
                     reducer: EditInfo()))
+                .navigationBarHidden(true)
             }
         }
     }

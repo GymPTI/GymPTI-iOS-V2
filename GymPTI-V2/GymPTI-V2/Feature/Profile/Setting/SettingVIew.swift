@@ -23,7 +23,24 @@ extension SettingView: View {
     
     public var body: some View {
         
-        VStack(alignment: .center) {
+        VStack {
+            
+            Button(action: {
+                viewStore.send(.onTapBackButton)
+            }) {
+                Image("Back")
+                    .resizable()
+                    .frame(width: 10, height: 18)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text("설정")
+                .setFont(32, .bold)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical, 20)
+            
+            Spacer()
             
             Button(action: {
                 viewStore.send(.onTapLogoutButton)
@@ -31,15 +48,10 @@ extension SettingView: View {
                 Text("로그아웃")
                     .setFont(18, .medium)
             }
-            .setBackground()
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
-                        viewStore.send(.onTapBackButton)
-                    }) {
-                        Image(systemName: "pencil")
-                    }
-            )
+            
+            Spacer()
         }
+        .padding(.horizontal, 20)
+        .setBackground()
     }
 }

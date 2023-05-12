@@ -27,6 +27,21 @@ extension EditInfoView: View {
         
         VStack(alignment: .center) {
             
+            Button(action: {
+                viewStore.send(.onTapBackButton)
+            }) {
+                Image("Back")
+                    .resizable()
+                    .frame(width: 10, height: 18)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text("정보 수정하기")
+                .setFont(32, .bold)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical, 20)
+            
             ZStack(alignment: .bottom) {
                 
                 KFImage(URL(string: viewStore.profileImage))
@@ -51,30 +66,24 @@ extension EditInfoView: View {
                                 .frame(width: 20, height: 20)
                         }
                         .frame(width: 42, height: 42)
-                        .background(Color.accentColor)
+                        .background(Colors.main.color)
                         .cornerRadius(28)
                         .overlay(RoundedRectangle(cornerRadius: 28)
-                            .strokeBorder(Color("BackgroundColor"), lineWidth: 6))
+                            .strokeBorder(Colors.black.color, lineWidth: 6))
                         .padding(.bottom, -20)
                     }
             }
             .padding(.bottom, 20)
             
-            AuthTextfield("바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            AuthTextfield("닉네임 변경","바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
             
-            AuthButton("닉네임 변경", disabled: false) {
+            AuthButton("정보 수정하기", disabled: false) {
                 viewStore.send(.onTapChangeButton)
             }
+            
+            Spacer()
         }
         .padding(.horizontal, 20)
         .setBackground()
-        .navigationBarItems(
-            trailing:
-                Button(action: {
-                    viewStore.send(.onTapBackButton)
-                }) {
-                    Image(systemName: "pencil")
-                }
-        )
     }
 }

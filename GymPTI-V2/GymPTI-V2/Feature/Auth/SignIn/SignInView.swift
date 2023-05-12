@@ -27,7 +27,7 @@ extension SignInView: View {
             
             Text("GymPTI")
                 .setFont(48, .bold)
-                .foregroundColor(.white)
+                .foregroundColor(Colors.white.color)
                 .padding([.top, .bottom], 40)
             
             AuthTextfield("아이디", "아이디를 입력해주세요", text: viewStore.binding(\.$id))
@@ -45,18 +45,17 @@ extension SignInView: View {
             HStack {
                 Text("계정이 없으신가요?")
                     .setFont(14, .regular)
-                    .foregroundColor(.white)
+                    .foregroundColor(Colors.white.color)
                 
                 Button(action: {
                     viewStore.send(.onTapSignUpButton)
                     KeyboardManager.downKeyborad()
                 }) {
-                    Text("계정이 없으신가요?")
+                    Text("회원가입 하러가기!")
                         .setFont(14, .regular)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(Colors.main.color)
                 }
             }
-            .padding(.bottom, 10)
         }
         .padding(.horizontal, 20)
         .setBackground()

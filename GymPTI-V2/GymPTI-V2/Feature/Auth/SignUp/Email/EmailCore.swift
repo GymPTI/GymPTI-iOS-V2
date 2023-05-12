@@ -72,15 +72,14 @@ public struct Email: ReducerProtocol {
             "userId": state.id,
             "nickname": state.name,
             "email": state.email,
-            "password": SHA512.hash(data: state.pw.data(using: .utf8)!)
-                .compactMap { String(format: "%02x", $0) }.joined()
-                .uppercased()]
+            "password": hashedPassword(state.pw)
+        ]
         
         Requests.simple("/auth/validateMailVerification", .post, params: ["email": state.email, "emailVerificationCode": state.emailVerificationCode], failure: {
-            sideEffect.fail()
+            sideEffect.failVerification()
         }) {
             Requests.simple("/auth/register", .post, params: params, failure: {
-                sideEffect.fail2()
+                sideEffect.failSignUp()
             }) {
                 sideEffect.sucessSignUp()
             }

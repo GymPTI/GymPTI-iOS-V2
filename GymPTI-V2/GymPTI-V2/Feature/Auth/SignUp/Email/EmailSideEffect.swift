@@ -14,8 +14,8 @@ public protocol EmailSideEffect {
     var failSendEmail: () -> Void { get }
     var sucessSendEmail: (String) -> Void { get }
     
-    var fail: () -> Void { get }
-    var fail2: () -> Void { get }
+    var failVerification: () -> Void { get }
+    var failSignUp: () -> Void { get }
     
     var sucessSignUp: () -> Void { get }
 }
@@ -59,7 +59,7 @@ extension EmailSideEffectLive: EmailSideEffect {
         }
     }
     
-    public var fail: () -> Void {
+    public var failVerification: () -> Void {
         {
             let alertModel = Alert(
                 title: "실패",
@@ -70,19 +70,26 @@ extension EmailSideEffectLive: EmailSideEffect {
         }
     }
     
-    public var fail2: () -> Void {
+    public var failSignUp: () -> Void {
         {
             let alertModel = Alert(
                 title: "실패",
                 message: "회원가입을 다시 진행해주세요.",
                 buttons: [.init(title: "확인", style: .default) ],
                 flagType: .error)
-            self.navigator.alert(target: .default, model: alertModel)
+            navigator.alert(target: .default, model: alertModel)
         }
     }
     
     public var sucessSignUp: () -> Void {
         {
+            let alertModel = Alert(
+                title: "회원가입 성공",
+                message: "바로 로그인을 해보세요!",
+                buttons: [.init(title: "확인", style: .default) ],
+                flagType: .error)
+            
+            navigator.alert(target: .default, model: alertModel)
             navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
         }
     }

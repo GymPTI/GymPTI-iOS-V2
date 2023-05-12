@@ -11,6 +11,7 @@ public protocol ProfileSideEffect {
     
     var onTapEditInfoButton: (String) -> Void { get }
     var onTapEditAccountButton: () -> Void { get }
+    var onTapFindIdButton: () -> Void { get }
     var onTapSettingButton: () -> Void { get }
 }
 
@@ -26,14 +27,20 @@ public struct ProfileSideEffectLive {
 extension ProfileSideEffectLive: ProfileSideEffect {
     
     public var onTapEditInfoButton: (String) -> Void {
-        { profile in
-            navigator.next(paths: ["editinfo"], items: ["editinfo-profileImage": profile], isAnimated: true)
+        { profileImage in
+            navigator.next(paths: ["editinfo"], items: ["editinfo-profileimage": profileImage], isAnimated: true)
         }
     }
     
     public var onTapEditAccountButton: () -> Void {
         {
             navigator.next(paths: ["editaccount"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapFindIdButton: () -> Void {
+        {
+            navigator.next(paths: ["findid"], items: [:], isAnimated: true)
         }
     }
     

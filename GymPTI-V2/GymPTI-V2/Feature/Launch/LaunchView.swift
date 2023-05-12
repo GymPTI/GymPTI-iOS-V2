@@ -10,7 +10,7 @@ import LinkNavigator
 
 struct LaunchView: View {
     
-    let navigator: LinkNavigatorType?
+    let navigator: LinkNavigatorType
     
     public var body: some View {
         
@@ -18,10 +18,10 @@ struct LaunchView: View {
             VStack {
                 Text("나만의 인공지능 PT 선생님")
                     .setFont(18, .light)
-                    .foregroundColor(.white)
+                    .foregroundColor(Colors.white.color)
                 Text("GymPTI")
                     .setFont(28, .bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(Colors.white.color)
             }
             .padding(40)
         }
@@ -34,9 +34,9 @@ struct LaunchView: View {
                     switch Token.get(.accessToken) == nil {
                         
                     case true:
-                        navigator!.replace(paths: ["signin"], items: [:], isAnimated: true)
+                        navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
                     case false:
-                        navigator!.replace(paths: ["tabbar"], items: [:], isAnimated: true)
+                        navigator.replace(paths: ["tabbar"], items: [:], isAnimated: true)
                     }
                     
                 }

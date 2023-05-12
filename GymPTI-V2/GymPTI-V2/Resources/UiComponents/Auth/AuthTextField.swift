@@ -28,7 +28,7 @@ struct AuthTextfield: View {
             
             Text(title)
                 .setFont(18, .medium)
-                .foregroundColor(.white)
+                .foregroundColor(Colors.white.color)
             
             VStack {
                 
@@ -39,7 +39,7 @@ struct AuthTextfield: View {
                     .padding(.leading, 20)
             }
             .frame(height: 52)
-            .background(.white)
+            .background(Colors.white.color)
             .cornerRadius(15)
         }
     }

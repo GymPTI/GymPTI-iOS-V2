@@ -31,6 +31,7 @@ struct AppRouterGroup {
             ProfileRouteBuilder(),
             EditInfoRouteBuilder(),
             EditAccountRouteBuilder(),
+            FindIdRouteBuilder(),
             SettingRouteBuilder()
         ]
     }

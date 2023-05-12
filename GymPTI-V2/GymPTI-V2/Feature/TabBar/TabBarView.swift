@@ -30,26 +30,41 @@ struct TabBarView: View {
             default:
                 HomeView(store: .init(initialState: Home.State(), reducer: Home()))
             }
-            HStack(spacing: 60) {
+            HStack(spacing: 46) {
                 
                 Spacer()
                 
                 Button(action: { selected = "home" }) {
-                    Image(systemName: "house")
+                    if selected == "home" {
+                        Image("tabbar.Home.selected")
+                    } else {
+                        Image("tabbar.Home")
+                    }
                 }
+                .frame(width: 50)
                 
                 Button(action: { selected = "routine" }) {
-                    Image(systemName: "pencil")
+                    if selected == "routine" {
+                        Image("tabbar.Routine.selected")
+                    } else {
+                        Image("tabbar.Routine")
+                    }
                 }
+                .frame(width: 50)
                 
                 Button(action: { selected = "profile" }) {
-                    Image(systemName: "person")
+                    if selected == "profile" {
+                        Image("tabbar.Profile.selected")
+                    } else {
+                        Image("tabbar.Profile")
+                    }
                 }
+                .frame(width: 50)
 
                 Spacer()
             }
             .frame(maxHeight: 48)
-            .background(.black)
+            .background(Colors.white.color)
         }
         
     }

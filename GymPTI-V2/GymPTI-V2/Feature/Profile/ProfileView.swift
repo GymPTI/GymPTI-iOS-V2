@@ -24,53 +24,56 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        VStack(alignment: .center, spacing: 10) {
+        ScrollView {
             
-            ZStack(alignment: .bottom) {
+            VStack(alignment: .center, spacing: 10) {
                 
-                KFImage(URL(string: viewStore.profileImage))
-                    .placeholder {
-                        Image("Profile")
-                            .resizable()
-                            .frame(width: 108, height: 108)
-                            .clipShape(Circle())
-                    }
-                    .resizable()
-                    .frame(width: 108, height: 108)
-                    .clipShape(Circle())
-            }
-            .padding(.bottom, 20)
-            
-            VStack(spacing: 10) {
+                ZStack(alignment: .bottom) {
+                    
+                    KFImage(URL(string: viewStore.profileImage))
+                        .placeholder {
+                            Image("Profile")
+                                .resizable()
+                                .frame(width: 108, height: 108)
+                                .clipShape(Circle())
+                        }
+                        .resizable()
+                        .frame(width: 108, height: 108)
+                        .clipShape(Circle())
+                }
+                .padding(.bottom, 20)
                 
-                Text("\(viewStore.name)")
-                    .setFont(22, .semibold)
-                    .foregroundColor(.white)
+                VStack(spacing: 10) {
+                    
+                    //                Text("\(viewStore.name)")
+                    Text("대소고이민규")
+                        .setFont(22, .bold)
+                        .foregroundColor(Colors.white.color)
+                    
+                    //                Text("\"\(viewStore.message)\"")
+                    Text("\"내 꿈은 또 누군가의 꿈이 된다.\"")
+                        .setFont(16, .medium)
+                        .foregroundColor(Colors.white.color)
+                }
                 
-                Text("\"\(viewStore.email)\"")
-                    .setFont(16, .medium)
-                    .foregroundColor(.white)
+                AuthButton("정보 수정하기", disabled: false) {
+                    viewStore.send(.onTapEditInfoButton)
+                }
                 
-                Text("\"\(viewStore.message)\"")
-                    .setFont(16, .medium)
-                    .foregroundColor(.white)
+                AuthButton("계정 수정하기", disabled: false) {
+                    viewStore.send(.onTapEditAccountButton)
+                }
+                
+                AuthButton("아이디 찾기", disabled: false) {
+                    viewStore.send(.onTapFindIdButton)
+                }
+                
+                AuthButton("설정하기", disabled: false) {
+                    viewStore.send(.onTapSettingButton)
+                }
+                
+                Spacer()
             }
-            
-            AuthButton("정보 수정하기", disabled: false) {
-                viewStore.send(.onTapEditInfoButton)
-            }
-            
-            AuthButton("계정 수정하기", disabled: false) {
-                viewStore.send(.onTapEditAccountButton)
-            }
-            
-            
-            AuthButton("설정하기", disabled: false) {
-                viewStore.send(.onTapSettingButton)
-            }
-            
-            Spacer()
-            
         }
         .padding(.horizontal, 20)
         .setBackground()

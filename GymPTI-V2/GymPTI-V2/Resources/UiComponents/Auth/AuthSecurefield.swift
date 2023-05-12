@@ -30,7 +30,7 @@ struct AuthSecurefield: View {
             
             Text(title)
                 .setFont(18, .medium)
-                .foregroundColor(.white)
+                .foregroundColor(Colors.white.color)
             
             HStack {
                 
@@ -56,14 +56,14 @@ struct AuthSecurefield: View {
                             .foregroundColor(Color(.systemGray3))
                     } else {
                         Image(systemName: "eye.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(Colors.black.color)
                     }
                 }
                 .padding(.trailing, 10)
                 
             }
             .frame(height: 52)
-            .background(.white)
+            .background(Colors.white.color)
             .cornerRadius(15)
         }
     }

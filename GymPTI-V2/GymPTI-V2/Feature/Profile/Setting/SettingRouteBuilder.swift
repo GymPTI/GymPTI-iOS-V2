@@ -18,6 +18,7 @@ struct SettingRouteBuilder: RouteBuilder {
                 SettingView(store: .init(
                     initialState: Setting.State(),
                     reducer: Setting()))
+                .navigationBarHidden(true)
             }
         }
     }

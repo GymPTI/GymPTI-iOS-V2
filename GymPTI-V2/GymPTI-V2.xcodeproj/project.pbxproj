@@ -10,6 +10,11 @@
 		526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593DD2A0D11CD00D9446B /* Interceptor.swift */; };
 		526593E62A0DD39300D9446B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 526593E52A0DD39300D9446B /* Kingfisher */; };
 		526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593ED2A0E0D1E00D9446B /* FindIdView.swift */; };
+		526593F02A0E0D6C00D9446B /* FindIdCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593EF2A0E0D6C00D9446B /* FindIdCore.swift */; };
+		526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F12A0E0D7600D9446B /* FindIdSideEffect.swift */; };
+		526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */; };
+		526593F62A0E42F300D9446B /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F52A0E42F300D9446B /* ColorExt.swift */; };
+		526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F72A0E520A00D9446B /* hashedPassword.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -81,6 +86,11 @@
 /* Begin PBXFileReference section */
 		526593DD2A0D11CD00D9446B /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		526593ED2A0E0D1E00D9446B /* FindIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdView.swift; sourceTree = "<group>"; };
+		526593EF2A0E0D6C00D9446B /* FindIdCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdCore.swift; sourceTree = "<group>"; };
+		526593F12A0E0D7600D9446B /* FindIdSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdSideEffect.swift; sourceTree = "<group>"; };
+		526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdRouteBuilder.swift; sourceTree = "<group>"; };
+		526593F52A0E42F300D9446B /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
+		526593F72A0E520A00D9446B /* hashedPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashedPassword.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -167,8 +177,20 @@
 			isa = PBXGroup;
 			children = (
 				526593ED2A0E0D1E00D9446B /* FindIdView.swift */,
+				526593EF2A0E0D6C00D9446B /* FindIdCore.swift */,
+				526593F12A0E0D7600D9446B /* FindIdSideEffect.swift */,
+				526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */,
 			);
 			path = FindId;
+			sourceTree = "<group>";
+		};
+		526593F92A0E53A400D9446B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
+				526593F72A0E520A00D9446B /* hashedPassword.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		52C8037B2A0B951900417B08 = {
@@ -229,7 +251,7 @@
 				52C803AC2A0B9A6500417B08 /* Archetecture */,
 				52C803AE2A0B9A9A00417B08 /* Network */,
 				52C803B52A0BACE500417B08 /* Ext */,
-				52C803BA2A0BAD4500417B08 /* class */,
+				526593F92A0E53A400D9446B /* Utility */,
 				52C804282A0C949900417B08 /* UiComponents */,
 			);
 			path = Resources;
@@ -266,19 +288,12 @@
 		52C803B52A0BACE500417B08 /* Ext */ = {
 			isa = PBXGroup;
 			children = (
+				526593F52A0E42F300D9446B /* ColorExt.swift */,
 				52C803B82A0BAD3900417B08 /* ViewExt.swift */,
 				52C803BD2A0BAE4100417B08 /* StringExt.swift */,
 				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
 			);
 			name = Ext;
-			sourceTree = "<group>";
-		};
-		52C803BA2A0BAD4500417B08 /* class */ = {
-			isa = PBXGroup;
-			children = (
-				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
-			);
-			path = class;
 			sourceTree = "<group>";
 		};
 		52C803BF2A0BAE6900417B08 /* Launch */ = {
@@ -379,13 +394,13 @@
 		52C804192A0C873100417B08 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				526593EC2A0E0D1000D9446B /* FindId */,
 				52C8041B2A0C876300417B08 /* ProfileView.swift */,
 				52C8041D2A0C877300417B08 /* ProfileCore.swift */,
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
 				52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */,
 				52C804382A0CB21100417B08 /* EditInfo */,
 				52C804412A0CB9C800417B08 /* EditAccount */,
+				526593EC2A0E0D1000D9446B /* FindId */,
 				52C8044A2A0CBED600417B08 /* Setting */,
 			);
 			path = Profile;
@@ -553,6 +568,7 @@
 				52C804142A0C870700417B08 /* RoutineCore.swift in Sources */,
 				52C803F92A0BDB6C00417B08 /* PwSideEffect.swift in Sources */,
 				52C804222A0C878A00417B08 /* ProfileRouteBuilder.swift in Sources */,
+				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
 				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */,
@@ -565,13 +581,16 @@
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
 				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
+				526593F62A0E42F300D9446B /* ColorExt.swift in Sources */,
 				52C803F72A0BDB4700417B08 /* PwCore.swift in Sources */,
 				52C803DC2A0BB8E200417B08 /* SignInSideEffect.swift in Sources */,
 				52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */,
+				526593F02A0E0D6C00D9446B /* FindIdCore.swift in Sources */,
 				52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */,
 				52C804352A0CAE1F00417B08 /* AuthTextField.swift in Sources */,
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
+				526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */,
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
 				52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */,
 				52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */,
@@ -593,6 +612,7 @@
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
 				52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */,
+				526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */,
 				52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */,
 				52C8040F2A0C804300417B08 /* TabBarRouteBuilder.swift in Sources */,
 				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,
