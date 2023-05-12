@@ -6,12 +6,19 @@
 //
 
 import ComposableArchitecture
+import _PhotosUI_SwiftUI
 
 public struct EditInfo: ReducerProtocol {
     
+    @available(iOS 16.0, *)
     public struct State: Equatable {
         
+        var profileImage: String = ""
+        
         @BindingState var newNickname: String = ""
+        
+        @available(iOS 16.0, *)
+        @BindingState var selectedItem: PhotosPickerItem? = nil
     }
     
     public enum Action: Equatable, BindableAction {

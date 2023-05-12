@@ -5,17 +5,30 @@
 //  Created by 이민규 on 2023/05/11.
 //
 
-import SwiftUI
 import ComposableArchitecture
+import Combine
+import _PhotosUI_SwiftUI
 
 public struct Profile: ReducerProtocol {
     
     public struct State: Equatable {
         
-        var name: String = ""
-        var email: String = ""
-        var message: String = ""
-        var profileImage: String = "Profile"
+        var data: User?
+        
+        var name: String {
+            data?.nickname ?? ""
+        }
+        var email: String {
+            data?.email ?? ""
+        }
+        var message: String {
+            data?.statusMessage ?? ""
+        }
+        var profileImage: String {
+            data?.profileImage ?? "Profile"
+        }
+        
+        @BindingState var selectedImageData: Data? = nil
     }
     
     public enum Action: Equatable {
@@ -24,6 +37,7 @@ public struct Profile: ReducerProtocol {
         case onTapEditAccountButton
         case onTapSettingButton
         case onAppearProfile
+        case userDataReceived(User)
     }
     
     @Dependency(\.sideEffect.profile) var sideEffect
@@ -35,7 +49,7 @@ public struct Profile: ReducerProtocol {
             switch action {
                 
             case .onTapEditInfoButton:
-                sideEffect.onTapEditInfoButton()
+                sideEffect.onTapEditInfoButton(state.profileImage)
                 return .none
                 
             case .onTapEditAccountButton:
@@ -47,25 +61,39 @@ public struct Profile: ReducerProtocol {
                 return .none
                 
             case .onAppearProfile:
-                getUserData()
+                return getUserData()
+                    .map(Profile.Action.userDataReceived)
+                    .eraseToEffect()
+                
+            case .userDataReceived(let user):
+                state.data = user
                 return .none
             }
         }
     }
     
-    private func getUserData() {
-        
-        Requests.request("/user/my", .get, User.self, failure: {
-            print("겟 실패")
-        }) { response in
-            print(response)
+    private var userDataSubject = PassthroughSubject<User, Never>()
+    
+    private func getUserData() -> EffectPublisher<User, Never> {
+        Effect.run { subscriber in
+            Requests.request(
+                "/user/my", .get, User.self,
+                failure: {
+                    print("실패")
+                },
+                completion: { user in
+                    subscriber.send(user)
+                    subscriber.send(completion: .finished)
+                }
+            )
+            
+            return AnyCancellable {}
         }
     }
     
-    
 }
 
-struct User: Codable {
+public struct User: Codable, Equatable {
     
     let userId, nickname, email, profileImage, statusMessage: String?
 }

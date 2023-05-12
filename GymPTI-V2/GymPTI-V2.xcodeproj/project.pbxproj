@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593DD2A0D11CD00D9446B /* Interceptor.swift */; };
+		526593E62A0DD39300D9446B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 526593E52A0DD39300D9446B /* Kingfisher */; };
+		526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593ED2A0E0D1E00D9446B /* FindIdView.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -78,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		526593DD2A0D11CD00D9446B /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		526593ED2A0E0D1E00D9446B /* FindIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdView.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -153,12 +156,21 @@
 				52C8042E2A0CABD200417B08 /* CachedAsyncImage in Frameworks */,
 				52C8039B2A0B964400417B08 /* LinkNavigator in Frameworks */,
 				52C803982A0B963600417B08 /* ComposableArchitecture in Frameworks */,
+				526593E62A0DD39300D9446B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		526593EC2A0E0D1000D9446B /* FindId */ = {
+			isa = PBXGroup;
+			children = (
+				526593ED2A0E0D1E00D9446B /* FindIdView.swift */,
+			);
+			path = FindId;
+			sourceTree = "<group>";
+		};
 		52C8037B2A0B951900417B08 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +379,7 @@
 		52C804192A0C873100417B08 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				526593EC2A0E0D1000D9446B /* FindId */,
 				52C8041B2A0C876300417B08 /* ProfileView.swift */,
 				52C8041D2A0C877300417B08 /* ProfileCore.swift */,
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
@@ -459,6 +472,7 @@
 				52C8039A2A0B964400417B08 /* LinkNavigator */,
 				52C8039D2A0B965000417B08 /* Alamofire */,
 				52C8042D2A0CABD200417B08 /* CachedAsyncImage */,
+				526593E52A0DD39300D9446B /* Kingfisher */,
 			);
 			productName = "GymPTI-V2";
 			productReference = 52C803842A0B951900417B08 /* GymPTI-V2.app */;
@@ -493,6 +507,7 @@
 				52C803992A0B964400417B08 /* XCRemoteSwiftPackageReference "LinkNavigator" */,
 				52C8039C2A0B965000417B08 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				52C8042C2A0CABD200417B08 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				526593E42A0DD39300D9446B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 52C803852A0B951900417B08 /* Products */;
 			projectDirPath = "";
@@ -573,6 +588,7 @@
 				52C8041E2A0C877300417B08 /* ProfileCore.swift in Sources */,
 				52C8043A2A0CB2A200417B08 /* EditInfoView.swift in Sources */,
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
+				526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
@@ -720,7 +736,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -756,7 +772,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -797,6 +813,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		526593E42A0DD39300D9446B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		52C803962A0B963600417B08 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture/";
@@ -832,6 +856,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		526593E52A0DD39300D9446B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 526593E42A0DD39300D9446B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		52C803972A0B963600417B08 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52C803962A0B963600417B08 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

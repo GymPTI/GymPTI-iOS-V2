@@ -9,7 +9,7 @@ import LinkNavigator
 
 public protocol ProfileSideEffect {
     
-    var onTapEditInfoButton: () -> Void { get }
+    var onTapEditInfoButton: (String) -> Void { get }
     var onTapEditAccountButton: () -> Void { get }
     var onTapSettingButton: () -> Void { get }
 }
@@ -25,9 +25,9 @@ public struct ProfileSideEffectLive {
 
 extension ProfileSideEffectLive: ProfileSideEffect {
     
-    public var onTapEditInfoButton: () -> Void {
-        {
-            navigator.next(paths: ["editinfo"], items: [:], isAnimated: true)
+    public var onTapEditInfoButton: (String) -> Void {
+        { profile in
+            navigator.next(paths: ["editinfo"], items: ["editinfo-profileImage": profile], isAnimated: true)
         }
     }
     

@@ -16,9 +16,16 @@ struct EditInfoRouteBuilder: RouteBuilder {
         { navigator, items, dep in
             WrappingController(matchPath: matchPath) {
                 EditInfoView(store: .init(
-                    initialState: EditInfo.State(),
+                    initialState: EditInfo.State(
+                        profileImage: items.getValue(key: "editinfo-profileImage") ?? ""),
                     reducer: EditInfo()))
             }
         }
+    }
+}
+
+extension [String: String] {
+    fileprivate func getValue(key: String) -> String? {
+        first(where: { $0.key == key })?.value as? String
     }
 }
