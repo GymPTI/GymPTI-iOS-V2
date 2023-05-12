@@ -21,6 +21,12 @@
 		526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594022A0E595900D9446B /* VerificationSideEffect.swift */; };
 		526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594042A0E596100D9446B /* VerificationRouteBuilder.swift */; };
 		526594072A0E62AE00D9446B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594062A0E62AE00D9446B /* Colors.swift */; };
+		5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265940A2A0E7AC100D9446B /* FriendView.swift */; };
+		5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265940C2A0E7ACC00D9446B /* FriendCore.swift */; };
+		5265940F2A0E7ADA00D9446B /* FriendSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265940E2A0E7ADA00D9446B /* FriendSideEffect.swift */; };
+		526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */; };
+		526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594122A0E84EE00D9446B /* FriendCellView.swift */; };
+		526594162A0E89E000D9446B /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594152A0E89E000D9446B /* ProfileTextField.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -103,6 +109,12 @@
 		526594022A0E595900D9446B /* VerificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSideEffect.swift; sourceTree = "<group>"; };
 		526594042A0E596100D9446B /* VerificationRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationRouteBuilder.swift; sourceTree = "<group>"; };
 		526594062A0E62AE00D9446B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5265940A2A0E7AC100D9446B /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		5265940C2A0E7ACC00D9446B /* FriendCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCore.swift; sourceTree = "<group>"; };
+		5265940E2A0E7ADA00D9446B /* FriendSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSideEffect.swift; sourceTree = "<group>"; };
+		526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRouteBuilder.swift; sourceTree = "<group>"; };
+		526594122A0E84EE00D9446B /* FriendCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellView.swift; sourceTree = "<group>"; };
+		526594152A0E89E000D9446B /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -231,8 +243,21 @@
 		526594082A0E7A8000D9446B /* Friend */ = {
 			isa = PBXGroup;
 			children = (
+				5265940A2A0E7AC100D9446B /* FriendView.swift */,
+				5265940C2A0E7ACC00D9446B /* FriendCore.swift */,
+				5265940E2A0E7ADA00D9446B /* FriendSideEffect.swift */,
+				526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */,
+				526594122A0E84EE00D9446B /* FriendCellView.swift */,
 			);
 			path = Friend;
+			sourceTree = "<group>";
+		};
+		526594142A0E89CD00D9446B /* ProfileComponent */ = {
+			isa = PBXGroup;
+			children = (
+				526594152A0E89E000D9446B /* ProfileTextField.swift */,
+			);
+			path = ProfileComponent;
 			sourceTree = "<group>";
 		};
 		52C8037B2A0B951900417B08 = {
@@ -295,7 +320,6 @@
 				52C803AE2A0B9A9A00417B08 /* Network */,
 				526593FA2A0E549F00D9446B /* Extension */,
 				526593F92A0E53A400D9446B /* Utility */,
-				52C804282A0C949900417B08 /* UiComponents */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -340,6 +364,7 @@
 		52C803C42A0BB58700417B08 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				52C804312A0CAE0D00417B08 /* AuthComponent */,
 				52C803C52A0BB59300417B08 /* SignIn */,
 				52C803E12A0BCB2000417B08 /* SignUp */,
 			);
@@ -427,6 +452,7 @@
 		52C804192A0C873100417B08 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				526594142A0E89CD00D9446B /* ProfileComponent */,
 				52C8041B2A0C876300417B08 /* ProfileView.swift */,
 				52C8041D2A0C877300417B08 /* ProfileCore.swift */,
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
@@ -447,15 +473,7 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		52C804282A0C949900417B08 /* UiComponents */ = {
-			isa = PBXGroup;
-			children = (
-				52C804312A0CAE0D00417B08 /* Auth */,
-			);
-			path = UiComponents;
-			sourceTree = "<group>";
-		};
-		52C804312A0CAE0D00417B08 /* Auth */ = {
+		52C804312A0CAE0D00417B08 /* AuthComponent */ = {
 			isa = PBXGroup;
 			children = (
 				52C804322A0CAE1500417B08 /* AuthButton.swift */,
@@ -463,7 +481,7 @@
 				52C804362A0CAE2B00417B08 /* AuthSecurefield.swift */,
 				526593FB2A0E586C00D9446B /* AuthProgress.swift */,
 			);
-			path = Auth;
+			path = AuthComponent;
 			sourceTree = "<group>";
 		};
 		52C804382A0CB21100417B08 /* EditInfo */ = {
@@ -584,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C803DA2A0BB74200417B08 /* SignInRouteBuilder.swift in Sources */,
+				5265940F2A0E7ADA00D9446B /* FriendSideEffect.swift in Sources */,
 				52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */,
 				52C804182A0C872900417B08 /* RoutineRouteBuilder.swift in Sources */,
 				52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */,
@@ -595,6 +614,7 @@
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
 				52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */,
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
+				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
@@ -628,19 +648,23 @@
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
 				526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */,
+				526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */,
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
 				52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */,
 				52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
+				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				526593FC2A0E586C00D9446B /* AuthProgress.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
+				526594162A0E89E000D9446B /* ProfileTextField.swift in Sources */,
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
+				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
 				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
 				52C8041E2A0C877300417B08 /* ProfileCore.swift in Sources */,

@@ -13,6 +13,8 @@ struct AppRouterGroup {
         [
             LaunchRouteBuilder(),
             
+            
+            // 회원가입
             SignInRouteBuilder(),
             IdRouteBuilder(),
             PwRouteBuilder(),
@@ -20,15 +22,19 @@ struct AppRouterGroup {
             EmailRouteBuilder(),
             VerificationRouteBuilder(),
             
+            // 탭바
             TabBarRouteBuilder(),
             
-            
+            // 홈 화면
             HomeRouteBuilder(),
             
-            
+            // 루틴 화면
             RoutineRouteBuilder(),
             
+            // 친구 화면
+            FriendRouteBuilder(),
             
+            // 프로필 화면
             ProfileRouteBuilder(),
             EditInfoRouteBuilder(),
             EditAccountRouteBuilder(),

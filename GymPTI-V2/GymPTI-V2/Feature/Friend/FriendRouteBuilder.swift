@@ -1,23 +1,23 @@
 //
-//  HomeRouteBuilder.swift
+//  FriendRouteBuilder.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/10.
+//  Created by 이민규 on 2023/05/12.
 //
 
 import SwiftUI
 import LinkNavigator
 
-struct HomeRouteBuilder: RouteBuilder {
+struct FriendRouteBuilder: RouteBuilder {
     
-    var matchPath: String { "home" }
+    var matchPath: String { "friend" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
         { navigator, items, dep in
             WrappingController(matchPath: matchPath) {
-                HomeView(store: .init(
-                        initialState: Home.State(),
-                        reducer: Home()))
+                FriendView(store: .init(
+                    initialState: Friend.State(),
+                    reducer: Friend()))
                 .navigationBarHidden(true)
             }
         }

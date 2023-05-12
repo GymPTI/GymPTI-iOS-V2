@@ -40,7 +40,6 @@ extension EditInfoView: View {
                 .setFont(34, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.vertical, 20)
             
             ZStack(alignment: .bottom) {
                 
@@ -48,7 +47,7 @@ extension EditInfoView: View {
                     .placeholder {
                         Image("Profile")
                             .resizable()
-                            .frame(width: 108, height: 108)
+                            .frame(width: 86, height: 86)
                             .clipShape(Circle())
                     }
                     .resizable()
@@ -70,18 +69,20 @@ extension EditInfoView: View {
                         .cornerRadius(28)
                         .overlay(RoundedRectangle(cornerRadius: 28)
                             .strokeBorder(Colors.black.color, lineWidth: 6))
-                        .padding(.bottom, -20)
+                        .padding(.bottom, -10)
+                        .padding(.trailing, -20)
                     }
             }
             .padding(.bottom, 20)
             
             AuthTextfield("닉네임 변경","바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+        
+            Spacer()
             
             AuthButton("정보 수정하기", disabled: false) {
                 viewStore.send(.onTapChangeButton)
             }
             
-            Spacer()
         }
         .padding(.horizontal, 20)
         .setBackground()

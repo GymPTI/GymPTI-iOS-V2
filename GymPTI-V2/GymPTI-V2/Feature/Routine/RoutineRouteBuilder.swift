@@ -18,6 +18,7 @@ struct RoutineRouteBuilder: RouteBuilder {
                 RoutineView(store: .init(
                     initialState: Routine.State(),
                     reducer: Routine()))
+                .navigationBarHidden(true)
             }
         }
     }

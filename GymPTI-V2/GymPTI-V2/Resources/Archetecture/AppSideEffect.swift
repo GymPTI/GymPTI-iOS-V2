@@ -33,6 +33,8 @@ public struct AppSideEffect: DependencyKey {
     
     let routine: RoutineSideEffect
     
+    let friend: FriendSideEffect
+    
     let profile: ProfileSideEffect
     let editInfo: EditInfoSideEffect
     let editAccount: EditAccountSideEffect
@@ -54,6 +56,8 @@ public struct AppSideEffect: DependencyKey {
             home: HomeSideEffectLive(navigator: navigator),
             
             routine: RoutineSideEffectLive(navigator: navigator),
+            
+            friend: FriendSideEffectLive(navigator: navigator),
             
             profile: ProfileSideEffectLive(navigator: navigator),
             editInfo: EditInfoSideEffectLive(navigator: navigator),

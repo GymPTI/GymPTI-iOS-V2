@@ -38,7 +38,8 @@ extension EditAccountView: View {
                 .setFont(34, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.vertical, 20)
+            
+            Spacer()
             
             AuthSecurefield("이전 비밀번호", "이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
             

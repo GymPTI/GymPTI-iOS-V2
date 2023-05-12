@@ -38,7 +38,6 @@ extension SettingView: View {
                 .setFont(34, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.vertical, 20)
             
             Spacer()
             

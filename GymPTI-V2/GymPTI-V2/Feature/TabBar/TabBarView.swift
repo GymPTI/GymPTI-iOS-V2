@@ -25,7 +25,7 @@ struct TabBarView: View {
                 RoutineView(store: .init(initialState: Routine.State(), reducer: Routine()))
                 
             case "friend":
-                HomeView(store: .init(initialState: Home.State(), reducer: Home()))
+                FriendView(store: .init(initialState: Friend.State(), reducer: Friend()))
                 
             case "profile":
                 ProfileView(store: .init(initialState: Profile.State(), reducer: Profile()))
@@ -81,6 +81,7 @@ struct TabBarView: View {
             .frame(maxHeight: 48)
             .background(Colors.white.color)
         }
+        .navigationBarHidden(true)
         
     }
 }

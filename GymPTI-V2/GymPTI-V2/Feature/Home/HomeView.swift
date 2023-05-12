@@ -23,18 +23,10 @@ extension HomeView: View {
     
     public var body: some View {
         
-        ScrollView {
-            
-            VStack(spacing: 20) {
-                Text("홈 화면")
-                    .setFont(28, .semibold)
-                    .foregroundColor(Colors.white.color)
-
-                Text("오늘의 루틴")
-                    .setFont(18, .medium)
-                    .foregroundColor(Colors.white.color)
-            }
-            .padding()
+        VStack {
+            Text("홈 화면")
+                .setFont(28, .semibold)
+                .foregroundColor(Colors.white.color)
         }
         .setBackground()
     }
