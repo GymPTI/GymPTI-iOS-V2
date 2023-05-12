@@ -193,6 +193,17 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		526593FA2A0E549F00D9446B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				526593F52A0E42F300D9446B /* ColorExt.swift */,
+				52C803B82A0BAD3900417B08 /* ViewExt.swift */,
+				52C803BD2A0BAE4100417B08 /* StringExt.swift */,
+				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		52C8037B2A0B951900417B08 = {
 			isa = PBXGroup;
 			children = (
@@ -246,11 +257,11 @@
 		52C803AB2A0B9A3F00417B08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				526593FA2A0E549F00D9446B /* Extension */,
 				52C8038B2A0B951A00417B08 /* Assets.xcassets */,
 				52C803AD2A0B9A7F00417B08 /* Navigator */,
 				52C803AC2A0B9A6500417B08 /* Archetecture */,
 				52C803AE2A0B9A9A00417B08 /* Network */,
-				52C803B52A0BACE500417B08 /* Ext */,
 				526593F92A0E53A400D9446B /* Utility */,
 				52C804282A0C949900417B08 /* UiComponents */,
 			);
@@ -283,17 +294,6 @@
 				526593DD2A0D11CD00D9446B /* Interceptor.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		52C803B52A0BACE500417B08 /* Ext */ = {
-			isa = PBXGroup;
-			children = (
-				526593F52A0E42F300D9446B /* ColorExt.swift */,
-				52C803B82A0BAD3900417B08 /* ViewExt.swift */,
-				52C803BD2A0BAE4100417B08 /* StringExt.swift */,
-				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
-			);
-			name = Ext;
 			sourceTree = "<group>";
 		};
 		52C803BF2A0BAE6900417B08 /* Launch */ = {
