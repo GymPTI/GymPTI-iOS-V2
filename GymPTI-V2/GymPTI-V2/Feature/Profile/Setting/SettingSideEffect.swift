@@ -11,6 +11,7 @@ public protocol SettingSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onTapLogoutButton: () -> Void { get }
+    var onTapFindIdButton: () -> Void { get }
 }
 
 public struct SettingSideEffectLive {
@@ -35,6 +36,12 @@ extension SettingSideEffectLive: SettingSideEffect {
             Token.remove(.accessToken)
             Token.remove(.refreshToken)
             navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapFindIdButton: () -> Void {
+        {
+            navigator.next(paths: ["findid"], items: [:], isAnimated: true)
         }
     }
 }

@@ -24,11 +24,17 @@ struct TabBarView: View {
             case "routine":
                 RoutineView(store: .init(initialState: Routine.State(), reducer: Routine()))
                 
+            case "friend":
+                HomeView(store: .init(initialState: Home.State(), reducer: Home()))
+                
             case "profile":
                 ProfileView(store: .init(initialState: Profile.State(), reducer: Profile()))
                 
             default:
-                Text("오류 발생")
+                Text("화면이 로딩되지 않습니다.")
+                    .onAppear {
+                        selected = "home"
+                    }
             }
             HStack(spacing: 46) {
                 
@@ -36,27 +42,36 @@ struct TabBarView: View {
                 
                 Button(action: { selected = "home" }) {
                     if selected == "home" {
-                        Image("tabbar.Home.selected")
+                        Image("home.selected")
                     } else {
-                        Image("tabbar.Home")
+                        Image("home")
                     }
                 }
                 .frame(width: 50)
                 
                 Button(action: { selected = "routine" }) {
                     if selected == "routine" {
-                        Image("tabbar.Routine.selected")
+                        Image("routine.selected")
                     } else {
-                        Image("tabbar.Routine")
+                        Image("routine")
+                    }
+                }
+                .frame(width: 50)
+                
+                Button(action: { selected = "friend" }) {
+                    if selected == "friend" {
+                        Image("friend.selected")
+                    } else {
+                        Image("friend")
                     }
                 }
                 .frame(width: 50)
                 
                 Button(action: { selected = "profile" }) {
                     if selected == "profile" {
-                        Image("tabbar.Profile.selected")
+                        Image("profile.selected")
                     } else {
-                        Image("tabbar.Profile")
+                        Image("profile")
                     }
                 }
                 .frame(width: 50)
@@ -65,9 +80,6 @@ struct TabBarView: View {
             }
             .frame(maxHeight: 48)
             .background(Colors.white.color)
-            .onAppear {
-                selected = "home"
-            }
         }
         
     }

@@ -17,6 +17,7 @@ public struct Setting: ReducerProtocol {
         
         case onTapLogoutButton
         case onTapBackButton
+        case onTapFindIdButton
     }
     
     @Dependency(\.sideEffect.setting) var sideEffect
@@ -33,6 +34,10 @@ public struct Setting: ReducerProtocol {
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
+                return .none
+                
+            case .onTapFindIdButton:
+                sideEffect.onTapFindIdButton()
                 return .none
             }
         }

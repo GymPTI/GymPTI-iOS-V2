@@ -24,56 +24,88 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        ScrollView {
+        VStack(alignment: .center, spacing: 10) {
             
-            VStack(alignment: .center, spacing: 10) {
+            ZStack {
                 
-                ZStack(alignment: .bottom) {
-                    
-                    KFImage(URL(string: viewStore.profileImage))
-                        .placeholder {
-                            Image("Profile")
-                                .resizable()
-                                .frame(width: 108, height: 108)
-                                .clipShape(Circle())
-                        }
+                Button(action: {
+                    print("띵~~")
+                }) {
+                    Image("bell")
                         .resizable()
-                        .frame(width: 108, height: 108)
-                        .clipShape(Circle())
+                        .frame(width: 28, height: 28)
                 }
-                .padding(.bottom, 20)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 40)
                 
-                VStack(spacing: 10) {
-                    
-                    //                Text("\(viewStore.name)")
-                    Text("대소고이민규")
-                        .setFont(22, .bold)
-                        .foregroundColor(Colors.white.color)
-                    
-                    //                Text("\"\(viewStore.message)\"")
-                    Text("\"내 꿈은 또 누군가의 꿈이 된다.\"")
-                        .setFont(16, .medium)
-                        .foregroundColor(Colors.white.color)
-                }
-                
-                AuthButton("정보 수정하기", disabled: false) {
-                    viewStore.send(.onTapEditInfoButton)
-                }
-                
-                AuthButton("계정 수정하기", disabled: false) {
-                    viewStore.send(.onTapEditAccountButton)
-                }
-                
-                AuthButton("아이디 찾기", disabled: false) {
-                    viewStore.send(.onTapFindIdButton)
-                }
-                
-                AuthButton("설정하기", disabled: false) {
+                Button(action: {
                     viewStore.send(.onTapSettingButton)
+                }) {
+                    Image(systemName: "gear")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .foregroundColor(Colors.white.color)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            
+            ZStack(alignment: .bottom) {
+                
+                KFImage(URL(string: viewStore.profileImage))
+                    .placeholder {
+                        Image("Profile")
+                            .resizable()
+                            .frame(width: 86, height: 86)
+                            .clipShape(Circle())
+                    }
+                    .resizable()
+                    .frame(width: 108, height: 108)
+                    .clipShape(Circle())
+            }
+            .padding(.bottom, 10)
+            
+            VStack(spacing: 10) {
+                
+                //                Text("\(viewStore.name)")
+                Text("대소고이민규")
+                    .setFont(18, .bold)
+                    .foregroundColor(Colors.white.color)
+                
+                //                Text("\"\(viewStore.message)\"")
+                Text("\"내 꿈이 누군가의 꿈이 되는 삶.\"")
+                    .setFont(14, .medium)
+                    .foregroundColor(Colors.white.color)
+            }
+            
+            HStack {
+                
+                Button(action: {
+                    viewStore.send(.onTapEditInfoButton)
+                }) {
+                    Text("프로필 수정")
+                        .setFont(14, .medium)
+                        .foregroundColor(Colors.white.color)
+                        .frame(height: 34)
+                        .frame(maxWidth: .infinity)
+                        .background(Colors.darkGray.color)
+                        .cornerRadius(10)
                 }
                 
-                Spacer()
+                Button(action: {
+                    viewStore.send(.onTapEditAccountButton)
+                }) {
+                    Text("계정 정보 수정")
+                        .setFont(14, .medium)
+                        .foregroundColor(Colors.white.color)
+                        .frame(height: 34)
+                        .frame(maxWidth: .infinity)
+                        .background(Colors.darkGray.color)
+                        .cornerRadius(10)
+                }
             }
+            .padding(.top, 10)
+            
+            Spacer()
         }
         .padding(.horizontal, 20)
         .setBackground()

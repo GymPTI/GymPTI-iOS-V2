@@ -11,7 +11,6 @@ public protocol ProfileSideEffect {
     
     var onTapEditInfoButton: (String) -> Void { get }
     var onTapEditAccountButton: () -> Void { get }
-    var onTapFindIdButton: () -> Void { get }
     var onTapSettingButton: () -> Void { get }
 }
 
@@ -35,12 +34,6 @@ extension ProfileSideEffectLive: ProfileSideEffect {
     public var onTapEditAccountButton: () -> Void {
         {
             navigator.next(paths: ["editaccount"], items: [:], isAnimated: true)
-        }
-    }
-    
-    public var onTapFindIdButton: () -> Void {
-        {
-            navigator.next(paths: ["findid"], items: [:], isAnimated: true)
         }
     }
     

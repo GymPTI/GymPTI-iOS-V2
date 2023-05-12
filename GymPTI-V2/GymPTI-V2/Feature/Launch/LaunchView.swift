@@ -15,15 +15,8 @@ struct LaunchView: View {
     public var body: some View {
         
         ZStack {
-            VStack {
-                Text("나만의 인공지능 PT 선생님")
-                    .setFont(18, .light)
-                    .foregroundColor(Colors.white.color)
-                Text("GymPTI")
-                    .setFont(28, .bold)
-                    .foregroundColor(Colors.white.color)
-            }
-            .padding(40)
+            Image("launch.logo")
+                .padding(.bottom, 40)
         }
         .setBackground()
         .onAppear {
@@ -44,4 +37,3 @@ struct LaunchView: View {
         }
     }
 }
-//.opacity.animation(.easeIn)

@@ -34,8 +34,8 @@ extension EditAccountView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text("비밀번호 변경하기")
-                .setFont(32, .bold)
+            Text("계정 정보 수정")
+                .setFont(34, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 20)

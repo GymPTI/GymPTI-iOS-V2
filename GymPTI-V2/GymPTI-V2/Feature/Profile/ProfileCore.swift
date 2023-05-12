@@ -35,7 +35,6 @@ public struct Profile: ReducerProtocol {
         
         case onTapEditInfoButton
         case onTapEditAccountButton
-        case onTapFindIdButton
         case onTapSettingButton
         case onAppearProfile
         case userDataReceived(User)
@@ -55,10 +54,6 @@ public struct Profile: ReducerProtocol {
                 
             case .onTapEditAccountButton:
                 sideEffect.onTapEditAccountButton()
-                return .none
-                
-            case .onTapFindIdButton:
-                sideEffect.onTapFindIdButton()
                 return .none
                 
             case .onTapSettingButton:

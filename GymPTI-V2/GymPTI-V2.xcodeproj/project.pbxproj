@@ -228,6 +228,13 @@
 			path = Verification;
 			sourceTree = "<group>";
 		};
+		526594082A0E7A8000D9446B /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
 		52C8037B2A0B951900417B08 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +280,7 @@
 				52C8041A2A0C874900417B08 /* TabBar */,
 				52C803A32A0B970300417B08 /* Home */,
 				52C804102A0C86CF00417B08 /* Routine */,
+				526594082A0E7A8000D9446B /* Friend */,
 				52C804192A0C873100417B08 /* Profile */,
 			);
 			path = Feature;
@@ -425,7 +433,6 @@
 				52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */,
 				52C804382A0CB21100417B08 /* EditInfo */,
 				52C804412A0CB9C800417B08 /* EditAccount */,
-				526593EC2A0E0D1000D9446B /* FindId */,
 				52C8044A2A0CBED600417B08 /* Setting */,
 			);
 			path = Profile;
@@ -488,6 +495,7 @@
 				52C8044D2A0CBEF900417B08 /* SettingCore.swift */,
 				52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */,
 				52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */,
+				526593EC2A0E0D1000D9446B /* FindId */,
 			);
 			path = Setting;
 			sourceTree = "<group>";

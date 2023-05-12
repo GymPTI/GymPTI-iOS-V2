@@ -35,7 +35,7 @@ extension SettingView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Text("설정")
-                .setFont(32, .bold)
+                .setFont(34, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 20)
@@ -48,6 +48,14 @@ extension SettingView: View {
                 Text("로그아웃")
                     .setFont(18, .medium)
             }
+            
+            Button(action: {
+                viewStore.send(.onTapFindIdButton)
+            }) {
+                Text("아이디 찾기")
+                    .setFont(18, .medium)
+            }
+
             
             Spacer()
         }

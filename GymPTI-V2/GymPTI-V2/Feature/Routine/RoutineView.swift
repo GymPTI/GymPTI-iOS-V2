@@ -27,10 +27,6 @@ extension RoutineView: View {
             Text("루틴 화면")
                 .setFont(28, .semibold)
                 .foregroundColor(Colors.white.color)
-
-            Button("로그아웃") {
-                viewStore.send(.tabButton)
-            }
         }
         .padding()
         .setBackground()

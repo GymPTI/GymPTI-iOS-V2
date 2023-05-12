@@ -36,8 +36,8 @@ extension EditInfoView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text("정보 수정하기")
-                .setFont(32, .bold)
+            Text("프로필 수정")
+                .setFont(34, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 20)

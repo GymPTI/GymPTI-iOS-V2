@@ -13,6 +13,7 @@ enum Colors {
     case white
     case black
     case gray
+    case darkGray
     
     var color: Color {
         
@@ -26,6 +27,8 @@ enum Colors {
             return Color(hex: 0x1B1A20)
         case .gray:
             return Color(hex: 0xC8C8C8)
+        case .darkGray:
+            return Color(hex: 0x2E2D33)
         }
     }
 }
