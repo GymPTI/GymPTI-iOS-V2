@@ -29,14 +29,19 @@ extension PwView: View {
                 viewStore.send(.onTapBackButton)
             }
             
-            AuthTextfield("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
+            CustomSecureField("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
                 .padding(.top, 10)
+            
+            Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
+                .setFont(14, .regular)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             
             AuthProgress(2)
             
-            AuthButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
+            CustomWideButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

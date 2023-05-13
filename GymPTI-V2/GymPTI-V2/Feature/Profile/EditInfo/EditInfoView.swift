@@ -65,16 +65,31 @@ extension EditInfoView: View {
             }
             .padding(.bottom, 20)
             
-            AuthTextfield("바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            Text("이름")
+                .setFont(18, .medium)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 10)
+            
+            CustomTextField("바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            
+            Text("상태 메시지")
+                .setFont(18, .medium)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .top], 10)
+            
+            CustomTextField("바꿀 상태 메시지을 입력해주세요.", text: viewStore.binding(\.$newNickname))
         
             Spacer()
             
-            AuthButton("정보 수정하기", disabled: false) {
+            CustomWideButton("정보 수정하기", disabled: false) {
                 viewStore.send(.onTapChangeButton)
             }
+            .padding(.bottom, 20)
             
         }
-        .padding(.horizontal, 20)
+        .padding()
         .setBackground()
     }
 }

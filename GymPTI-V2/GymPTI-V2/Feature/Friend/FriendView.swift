@@ -43,10 +43,10 @@ extension FriendView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Text("친구 추가 요청")
-                    .setFont(14, .semibold)
-                    .foregroundColor(Colors.main.color)
+                    .setFont(18, .medium)
+                    .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 10)
+                    .padding(.leading, 10)
                 
                 VStack {
                     
@@ -67,6 +67,7 @@ extension FriendView: View {
                                 .setFont(10, .light)
                                 .foregroundColor(Colors.gray.color)
                         }
+                        .padding(.leading, 4)
                         
                         Spacer()
                         
@@ -100,10 +101,10 @@ extension FriendView: View {
                 }
                 
                 Text("친구 목록")
-                    .setFont(14, .semibold)
-                    .foregroundColor(Colors.main.color)
+                    .setFont(18, .medium)
+                    .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 10)
+                    .padding([.leading, .top], 10)
                 
                 ForEach(0 ..< viewStore.cellCnt, id: \.self) { cnt in
                     FriendCellView(name: "\(cnt + 1)번째친구", id: "myfriend\(cnt + 1)") {

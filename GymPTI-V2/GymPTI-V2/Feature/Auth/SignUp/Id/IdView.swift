@@ -29,14 +29,19 @@ extension IdView: View {
                 viewStore.send(.onTapBackButton)
             }
             
-            AuthTextfield("아이디를 입력해주세요", text: viewStore.binding(\.$id))
+            CustomTextField("아이디를 입력해주세요", text: viewStore.binding(\.$id))
                 .padding(.top, 10)
+            
+            Text("*4~20자의 영문 소/대문자를 입력해주세요")
+                .setFont(14, .regular)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             
             AuthProgress(1)
             
-            AuthButton("다음", disabled: !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
+            CustomWideButton("다음", disabled: !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

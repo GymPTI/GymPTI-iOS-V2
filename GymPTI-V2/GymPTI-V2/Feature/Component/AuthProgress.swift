@@ -22,7 +22,7 @@ struct AuthProgress: View {
             
             Text("\(progress)/5")
                 .setFont(18 ,.regular)
-                .foregroundColor(Colors.gray.color)
+                .foregroundColor(Colors.white.color)
                 .autocapitalization(.none)
                 .frame(maxWidth: .infinity, alignment: .trailing)
             
@@ -31,16 +31,15 @@ struct AuthProgress: View {
                 ZStack(alignment: .leading) {
                     Rectangle()
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        .opacity(0.3)
-                        .foregroundColor(Colors.gray.color)
+                        .foregroundColor(Colors.white.color)
                     
                     Rectangle()
-                        .frame(width: min(CGFloat(progress) * 0.2 * geometry.size.width, geometry.size.width), height: geometry.size.height)
+                        .frame(width: min(CGFloat(progress) * 0.2 * geometry.size.width, geometry.size.width), height: 4)
                         .foregroundColor(Colors.main.color)
                 }
                 .cornerRadius(45.0)
             }
-            .frame(height: 4)
+            .frame(height: 2)
         }
         .padding([.horizontal, .bottom], 2)
 

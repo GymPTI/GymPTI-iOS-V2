@@ -44,6 +44,7 @@ struct FriendCellView: View {
                         .setFont(10, .light)
                         .foregroundColor(Colors.gray.color)
                 }
+                .padding(.leading, 4)
                 
                 Spacer()
             }

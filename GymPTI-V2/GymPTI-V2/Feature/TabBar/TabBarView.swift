@@ -36,7 +36,7 @@ struct TabBarView: View {
                         selected = "home"
                     }
             }
-            HStack(spacing: 46) {
+            HStack(spacing: 32) {
                 
                 Spacer()
                 
@@ -78,9 +78,10 @@ struct TabBarView: View {
 
                 Spacer()
             }
-            .frame(maxHeight: 48)
+            .frame(maxHeight: 44)
             .background(Colors.white.color)
         }
+        .background(Colors.white.color)
         .navigationBarHidden(true)
         
     }

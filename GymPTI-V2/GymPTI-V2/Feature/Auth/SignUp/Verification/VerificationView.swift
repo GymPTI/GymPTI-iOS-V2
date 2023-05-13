@@ -25,18 +25,23 @@ extension VerificationView: View {
         
         VStack(spacing: 10) {
             
-            CustomNavi("이메일 인증") {
+            CustomNavi("인증번호") {
                 viewStore.send(.onTapBackButton)
             }
             
-            AuthTextfield("인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
+            CustomTextField("인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
                 .padding(.top, 10)
+            
+            Text("*받으신 인증번호를 입력해주세요")
+                .setFont(14, .regular)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             
             AuthProgress(5)
             
-            AuthButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
+            CustomWideButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
                 viewStore.send(.onTapVerificationButton)
                 KeyboardManager.downKeyborad()
             }

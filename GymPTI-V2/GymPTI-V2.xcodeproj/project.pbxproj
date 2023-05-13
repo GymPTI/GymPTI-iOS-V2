@@ -78,9 +78,9 @@
 		52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */; };
 		52C804222A0C878A00417B08 /* ProfileRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */; };
 		52C8042E2A0CABD200417B08 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52C8042D2A0CABD200417B08 /* CachedAsyncImage */; };
-		52C804332A0CAE1500417B08 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804322A0CAE1500417B08 /* AuthButton.swift */; };
-		52C804352A0CAE1F00417B08 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804342A0CAE1F00417B08 /* AuthTextField.swift */; };
-		52C804372A0CAE2C00417B08 /* AuthSecurefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804362A0CAE2B00417B08 /* AuthSecurefield.swift */; };
+		52C804332A0CAE1500417B08 /* CustomWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804322A0CAE1500417B08 /* CustomWideButton.swift */; };
+		52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804342A0CAE1F00417B08 /* CustomTextField.swift */; };
+		52C804372A0CAE2C00417B08 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804362A0CAE2B00417B08 /* CustomSecureField.swift */; };
 		52C8043A2A0CB2A200417B08 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804392A0CB2A200417B08 /* EditInfoView.swift */; };
 		52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */; };
 		52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */; };
@@ -164,9 +164,9 @@
 		52C8041D2A0C877300417B08 /* ProfileCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCore.swift; sourceTree = "<group>"; };
 		52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSideEffect.swift; sourceTree = "<group>"; };
 		52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouteBuilder.swift; sourceTree = "<group>"; };
-		52C804322A0CAE1500417B08 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		52C804342A0CAE1F00417B08 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
-		52C804362A0CAE2B00417B08 /* AuthSecurefield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSecurefield.swift; sourceTree = "<group>"; };
+		52C804322A0CAE1500417B08 /* CustomWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWideButton.swift; sourceTree = "<group>"; };
+		52C804342A0CAE1F00417B08 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		52C804362A0CAE2B00417B08 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		52C804392A0CB2A200417B08 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoCore.swift; sourceTree = "<group>"; };
 		52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoSideEffect.swift; sourceTree = "<group>"; };
@@ -253,13 +253,6 @@
 			path = Friend;
 			sourceTree = "<group>";
 		};
-		526594172A0E8AA400D9446B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		52C8037B2A0B951900417B08 = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +293,7 @@
 		52C803AA2A0B9A2B00417B08 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				52C804312A0CAE0D00417B08 /* Component */,
 				52C803BF2A0BAE6900417B08 /* Launch */,
 				52C803C42A0BB58700417B08 /* Auth */,
 				52C8041A2A0C874900417B08 /* TabBar */,
@@ -364,9 +358,9 @@
 		52C803C42A0BB58700417B08 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				52C804312A0CAE0D00417B08 /* AuthComponent */,
 				52C803C52A0BB59300417B08 /* SignIn */,
 				52C803E12A0BCB2000417B08 /* SignUp */,
+				526593EC2A0E0D1000D9446B /* FindId */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -452,7 +446,6 @@
 		52C804192A0C873100417B08 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				526594172A0E8AA400D9446B /* New Group */,
 				52C8041B2A0C876300417B08 /* ProfileView.swift */,
 				52C8041D2A0C877300417B08 /* ProfileCore.swift */,
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
@@ -473,15 +466,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		52C804312A0CAE0D00417B08 /* AuthComponent */ = {
+		52C804312A0CAE0D00417B08 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				52C804322A0CAE1500417B08 /* AuthButton.swift */,
-				52C804342A0CAE1F00417B08 /* AuthTextField.swift */,
-				52C804362A0CAE2B00417B08 /* AuthSecurefield.swift */,
 				526593FB2A0E586C00D9446B /* AuthProgress.swift */,
+				52C804342A0CAE1F00417B08 /* CustomTextField.swift */,
+				52C804362A0CAE2B00417B08 /* CustomSecureField.swift */,
+				52C804322A0CAE1500417B08 /* CustomWideButton.swift */,
 			);
-			path = AuthComponent;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		52C804382A0CB21100417B08 /* EditInfo */ = {
@@ -513,7 +506,6 @@
 				52C8044D2A0CBEF900417B08 /* SettingCore.swift */,
 				52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */,
 				52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */,
-				526593EC2A0E0D1000D9446B /* FindId */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -609,7 +601,7 @@
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C804162A0C871D00417B08 /* RoutineSideEffect.swift in Sources */,
-				52C804332A0CAE1500417B08 /* AuthButton.swift in Sources */,
+				52C804332A0CAE1500417B08 /* CustomWideButton.swift in Sources */,
 				52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */,
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
 				52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */,
@@ -631,7 +623,7 @@
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
-				52C804372A0CAE2C00417B08 /* AuthSecurefield.swift in Sources */,
+				52C804372A0CAE2C00417B08 /* CustomSecureField.swift in Sources */,
 				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
 				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
@@ -644,7 +636,7 @@
 				52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */,
 				526593F02A0E0D6C00D9446B /* FindIdCore.swift in Sources */,
 				52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */,
-				52C804352A0CAE1F00417B08 /* AuthTextField.swift in Sources */,
+				52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */,
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
 				526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */,

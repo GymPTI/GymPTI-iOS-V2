@@ -41,9 +41,9 @@ extension ProfileView: View {
                 Button(action: {
                     viewStore.send(.onTapSettingButton)
                 }) {
-                    Image(systemName: "gear")
+                    Image("setting")
                         .resizable()
-                        .frame(width: 28, height: 28)
+                        .frame(width: 26, height: 26)
                         .foregroundColor(Colors.white.color)
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
@@ -107,7 +107,7 @@ extension ProfileView: View {
             
             Spacer()
         }
-        .padding(.horizontal, 20)
+        .padding()
         .setBackground()
         .onAppear {
             viewStore.send(.onAppearProfile)

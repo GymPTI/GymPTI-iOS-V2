@@ -29,11 +29,11 @@ extension FindIdView: View {
                 viewStore.send(.onTapBackButton)
             }
             
-            AuthTextfield("이메일을 입력해주세요.", text: viewStore.binding(\.$email))
+            CustomTextField("이메일을 입력해주세요.", text: viewStore.binding(\.$email))
             
             Spacer()
             
-            AuthButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+            CustomWideButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
                 viewStore.send(.onTapFindIdButton)
                 KeyboardManager.downKeyborad()
             }

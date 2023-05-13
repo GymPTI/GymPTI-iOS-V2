@@ -40,11 +40,11 @@ extension SignInView: View {
             
             VStack(spacing: 20) {
                 
-                AuthTextfield("아이디를 입력해주세요", text: viewStore.binding(\.$id))
+                CustomTextField("아이디를 입력해주세요", text: viewStore.binding(\.$id))
                 
-                AuthSecurefield("비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
+                CustomSecureField("비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
                 
-                AuthButton("로그인", disabled: false) {
+                CustomWideButton("로그인", disabled: false) {
                     viewStore.send(.onTapSignInButton)
                 }
                 

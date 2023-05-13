@@ -48,7 +48,7 @@ extension SettingView: View {
             
             Spacer()
         }
-        .padding(.horizontal, 20)
+        .padding()
         .setBackground()
     }
 }

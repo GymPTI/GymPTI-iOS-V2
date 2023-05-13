@@ -1,5 +1,5 @@
 //
-//  AuthButton.swift
+//  CustomWideButton.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/05/11.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AuthButton: View {
+struct CustomWideButton: View {
     
     let text: String
     let disabled: Bool

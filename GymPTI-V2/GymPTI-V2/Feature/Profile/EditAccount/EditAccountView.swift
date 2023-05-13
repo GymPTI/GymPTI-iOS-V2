@@ -29,19 +29,35 @@ extension EditAccountView: View {
                 viewStore.send(.onTapBackButton)
             }
             
+            Text("이전 비밀번호")
+                .setFont(18, .medium)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .top], 10)
+            
+            CustomSecureField("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
+            
+            Text("새로운 비밀번호")
+                .setFont(18, .medium)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .top], 10)
+            
+            CustomSecureField("새로운 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
+            
+            Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
+                .setFont(14, .regular)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 10)
+            
             Spacer()
             
-            AuthSecurefield("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
-            
-            AuthSecurefield("바꿀 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
-            
-            Spacer()
-            
-            AuthButton("비밀번호 변경", disabled: false) {
+            CustomWideButton("비밀번호 변경", disabled: false) {
                 viewStore.send(.onTapChangeButton)
             }
         }
-        .padding(.horizontal, 20)
+        .padding()
         .setBackground()
     }
 }

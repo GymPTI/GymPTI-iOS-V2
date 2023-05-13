@@ -20,7 +20,7 @@ enum Colors {
         switch self {
             
         case .main:
-            return Color(hex: 0x9047ED)
+            return Color(hex: 0x8D4BF9)
         case .white:
             return Color(hex: 0xF8F8F8)
         case .black:

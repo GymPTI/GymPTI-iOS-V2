@@ -28,15 +28,20 @@ extension EmailView: View {
             CustomNavi("이메일") {
                 viewStore.send(.onTapBackButton)
             }
-            
-            AuthTextfield("이메일을 입력해주세요", text: viewStore.binding(\.$email))
+             
+            CustomTextField("이메일을 입력해주세요", text: viewStore.binding(\.$email))
                 .padding(.top, 10)
+            
+            Text("*인증번호를 받으실 이메일을 입력해주세요")
+                .setFont(14, .regular)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             
             AuthProgress(4)
             
-            AuthButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+            CustomWideButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
                 viewStore.send(.onTapSendEmailButton)
                 KeyboardManager.downKeyborad()
             }
