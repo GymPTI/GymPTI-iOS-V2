@@ -65,7 +65,6 @@ extension SignInView: View {
                 .padding(.bottom, UIScreen.main.bounds.size.height / 12)
                 
             }
-            
         }
         .padding(.horizontal, 20)
         .setBackground()

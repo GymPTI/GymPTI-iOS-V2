@@ -57,8 +57,8 @@ public struct EditAccount: ReducerProtocol {
             .uppercased()
         ]
         
-        Requests.simple("/user/password", .put, params: params, failure: {
-            print("비번 변경 실패")
+        Requests.simple("/user/password", .put, params: params, failure: { message in
+            print(message)
         }) {
             print("비번 변경 성공")
         }

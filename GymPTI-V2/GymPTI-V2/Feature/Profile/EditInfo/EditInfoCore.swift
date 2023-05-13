@@ -12,10 +12,11 @@ public struct EditInfo: ReducerProtocol {
     
     @available(iOS 16.0, *)
     public struct State: Equatable {
-        
+
         var profileImage: String = ""
         
-        @BindingState var newNickname: String = ""
+        @BindingState var newName: String
+        @BindingState var newStatusMessage: String
         
         @available(iOS 16.0, *)
         @BindingState var selectedItem: PhotosPickerItem? = nil
@@ -45,18 +46,28 @@ public struct EditInfo: ReducerProtocol {
                 return .none
                 
             case .onTapChangeButton:
-                chageNickName(state: state)
+                editProfileRequest(state: state)
                 return .none
             }
         }
     }
     
-    private func chageNickName(state: State) {
+    private func editProfileRequest(state: State) {
         
-        Requests.simple("/user/nickname", .put, params: ["newNickname": state.newNickname], failure: {
-            print("닉네임 변경 실패")
+        Requests.simple("/user/nickname", .put, params: ["newNickname": state.newName], failure: { message in
+            
+            print(message)
         }) {
             print("닉네임 변경 성공")
+            sideEffect.onTapBackButton()
+        }
+        
+        Requests.simple("/user/status", .put, params: ["newStatus": state.newStatusMessage], failure: { message in
+            
+            print(message)
+        }) {
+            print("상태 메시지 변경 성공")
+            sideEffect.onTapBackButton()
         }
     }
 }

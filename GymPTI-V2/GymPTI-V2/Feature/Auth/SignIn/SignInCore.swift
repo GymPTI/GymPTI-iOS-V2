@@ -56,9 +56,11 @@ public struct SignIn: ReducerProtocol {
             "password": hashedPassword(state.pw)
         ]
         
-        Requests.request("/auth/login", .post, params: params, token.self ,failure: {
+        Requests.request("/auth/login", .post, params: params, token.self ,failure: { error in
             
+            sideEffect.onFailSignIn(error)
         }) { data in
+            
             Token.save(.accessToken, data.accessToken)
             Token.save(.refreshToken, data.refreshToken)
             sideEffect.onTapSignInButton()

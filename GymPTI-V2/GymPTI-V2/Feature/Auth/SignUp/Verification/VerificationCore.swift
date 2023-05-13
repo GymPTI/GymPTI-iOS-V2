@@ -58,11 +58,14 @@ public struct Verification: ReducerProtocol {
             "password": hashedPassword(state.pw)
         ]
         
-        Requests.simple("/auth/validateMailVerification", .post, params: ["email": state.email, "emailVerificationCode": state.emailVerificationCode], failure: {
-            sideEffect.failVerification()
+        Requests.simple("/auth/validateMailVerification", .post, params: ["email": state.email, "emailVerificationCode": state.emailVerificationCode], failure : { message in
+            
+            sideEffect.failVerification(message)
         }) {
-            Requests.simple("/auth/register", .post, params: params, failure: {
-                sideEffect.failSignUp()
+            
+            Requests.simple("/auth/register", .post, params: params, failure : { message in
+                
+                sideEffect.failSignUp(message)
             }) {
                 sideEffect.sucessSignUp()
             }

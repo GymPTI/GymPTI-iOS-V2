@@ -211,7 +211,6 @@
 		526593F92A0E53A400D9446B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				526594182A0E8B2500D9446B /* CustomNavi.swift */,
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
 				526594062A0E62AE00D9446B /* Colors.swift */,
@@ -469,6 +468,7 @@
 		52C804312A0CAE0D00417B08 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				526594182A0E8B2500D9446B /* CustomNavi.swift */,
 				526593FB2A0E586C00D9446B /* AuthProgress.swift */,
 				52C804342A0CAE1F00417B08 /* CustomTextField.swift */,
 				52C804362A0CAE2B00417B08 /* CustomSecureField.swift */,

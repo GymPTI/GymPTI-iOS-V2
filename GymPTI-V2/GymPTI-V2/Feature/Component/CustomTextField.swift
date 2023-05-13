@@ -33,12 +33,13 @@ struct CustomTextField: View {
                     strokeBorderOpacity = 0.3
                 }
             }
-            .setFont(18, .medium)
+            .setFont(14, .medium)
             .foregroundColor(Colors.white.color)
             .frame(maxWidth: .infinity, alignment: .leading)
             .autocapitalization(.none)
             .autocorrectionDisabled(true)
             .padding(.leading, 20)
+            
         }
         .frame(height: 52)
         .background(Colors.black.color)

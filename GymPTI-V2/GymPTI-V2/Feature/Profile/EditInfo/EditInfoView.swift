@@ -31,7 +31,7 @@ extension EditInfoView: View {
                 viewStore.send(.onTapBackButton)
             }
             
-            ZStack(alignment: .bottom) {
+            ZStack(alignment: .bottomTrailing) {
                 
                 KFImage(URL(string: viewStore.profileImage))
                     .placeholder {
@@ -52,15 +52,15 @@ extension EditInfoView: View {
                         HStack {
                             Image("Edit")
                                 .resizable()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 18, height: 18)
                         }
-                        .frame(width: 42, height: 42)
+                        .frame(width: 36, height: 36)
                         .background(Colors.main.color)
                         .cornerRadius(28)
                         .overlay(RoundedRectangle(cornerRadius: 28)
                             .strokeBorder(Colors.black.color, lineWidth: 6))
-                        .padding(.bottom, -10)
-                        .padding(.trailing, -20)
+                        .padding(.bottom, 4)
+                        .padding(.trailing, 4)
                     }
             }
             .padding(.bottom, 20)
@@ -71,7 +71,7 @@ extension EditInfoView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
             
-            CustomTextField("바꿀 닉네임을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            CustomTextField("바꾸실 이름을 입력해주세요", text: viewStore.binding(\.$newName))
             
             Text("상태 메시지")
                 .setFont(18, .medium)
@@ -79,7 +79,7 @@ extension EditInfoView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.leading, .top], 10)
             
-            CustomTextField("바꿀 상태 메시지을 입력해주세요.", text: viewStore.binding(\.$newNickname))
+            CustomTextField("바꾸실 상태 메시지를 입력해주세요", text: viewStore.binding(\.$newStatusMessage))
         
             Spacer()
             

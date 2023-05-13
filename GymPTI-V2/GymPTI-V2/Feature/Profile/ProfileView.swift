@@ -27,7 +27,7 @@ extension ProfileView: View {
         VStack(alignment: .center, spacing: 10) {
             
             ZStack {
-                
+                            
                 Button(action: {
                     print("띵~~")
                 }) {
@@ -43,11 +43,16 @@ extension ProfileView: View {
                 }) {
                     Image("setting")
                         .resizable()
-                        .frame(width: 26, height: 26)
+                        .frame(width: 22, height: 22)
                         .foregroundColor(Colors.white.color)
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
+            
+            Text("프로필")
+                .setFont(38, .bold)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             ZStack(alignment: .bottom) {
                 
@@ -66,13 +71,11 @@ extension ProfileView: View {
             
             VStack(spacing: 10) {
                 
-                //                Text("\(viewStore.name)")
-                Text("대소고이민규")
+                Text("\(viewStore.name)")
                     .setFont(18, .bold)
                     .foregroundColor(Colors.white.color)
                 
-                //                Text("\"\(viewStore.message)\"")
-                Text("\"내 꿈이 누군가의 꿈이 되는 삶.\"")
+                Text("\"\(viewStore.message)\"")
                     .setFont(14, .medium)
                     .foregroundColor(Colors.white.color)
             }
@@ -107,7 +110,7 @@ extension ProfileView: View {
             
             Spacer()
         }
-        .padding()
+        .padding([.top,.horizontal], 20)
         .setBackground()
         .onAppear {
             viewStore.send(.onAppearProfile)

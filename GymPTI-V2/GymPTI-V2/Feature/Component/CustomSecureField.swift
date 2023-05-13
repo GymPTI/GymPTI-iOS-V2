@@ -39,7 +39,7 @@ struct CustomSecureField: View {
                             strokeBorderOpacity = 0.3
                         }
                     }
-                        .setFont(18, .medium)
+                        .setFont(14, .medium)
                         .textContentType(.password)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -55,7 +55,7 @@ struct CustomSecureField: View {
                             strokeBorderOpacity = 0.3
                         }
                     }
-                        .setFont(18, .medium)
+                        .setFont(14, .medium)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .autocapitalization(.none)

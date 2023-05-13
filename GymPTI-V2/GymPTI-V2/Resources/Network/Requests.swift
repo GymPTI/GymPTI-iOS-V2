@@ -10,29 +10,10 @@ import Alamofire
 
 class Requests {
     
-    static func failure(_ data: Data?) {
-        
-        if NetworkReachabilityManager()!.isReachable {
-            
-            if let data = data {
-                let decoder = JSONDecoder()
-                
-                if let decodedData = try? decoder.decode(ErrorResponse.self, from: data) {
-                    print(decodedData)
-                }
-            }
-        } else {
-            UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                exit(0)
-            }
-        }
-    }
-    
     static func simple(_ url: String,
                        _ method: HTTPMethod,
                        params: [String: Any]? = nil,
-                       failure: @escaping () -> Void,
+                       failure: @escaping (String) -> Void,
                        completion: @escaping () -> Void) {
         AF.request("\(API)\(url)",
                    method: method,
@@ -51,8 +32,16 @@ class Requests {
                 completion()
                 
             case .failure:
-                self.failure(response.data)
-                failure()
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    
+                    if let decodedData = try? decoder.decode(ErrorResponse.self, from: data) {
+                        
+                        DispatchQueue.main.async {
+                            failure(decodedData.message)
+                        }
+                    }
+                }
             }
         }
     }
@@ -61,7 +50,7 @@ class Requests {
                                     _ method: HTTPMethod,
                                     params: [String: Any]? = nil,
                                     _ model: T.Type,
-                                    failure: @escaping () -> Void,
+                                    failure: @escaping (String) -> Void,
                                     completion: @escaping (T) -> Void) {
         AF.request("\(API)\(url)",
                    method: method,
@@ -69,23 +58,38 @@ class Requests {
                    encoding: method == .get ? URLEncoding.default : JSONEncoding.default,
                    interceptor: Interceptor()
         ) { $0.timeoutInterval = 5 }
-            .validate()
+            .validate(statusCode: 200 ..< 204)
             .responseData { response in
+                
                 if let resdata = response.data {
                     print(String(decoding: resdata, as: UTF8.self))
                 }
+                
                 switch response.result {
+                    
                 case .success:
                     if let data = response.data {
                         let decoder = JSONDecoder()
-                        if let decodedData = try? decoder.decode(Response<T>.self, from: data) {
+                        
+                        if let decodedData = try?
+                            decoder.decode(Response<T>.self, from: data) {
                             DispatchQueue.main.async {
                                 completion(decodedData.data)
                             }
                         }
                     }
                 case .failure:
-                    self.failure(response.data)
+                    
+                    if let data = response.data {
+                        let decoder = JSONDecoder()
+                        
+                        if let decodedData = try? decoder.decode(ErrorResponse.self, from: data) {
+                            
+                            DispatchQueue.main.async {
+                                failure(decodedData.message)
+                            }
+                        }
+                    }
                 }
             }
     }

@@ -17,7 +17,9 @@ struct EditInfoRouteBuilder: RouteBuilder {
             WrappingController(matchPath: matchPath) {
                 EditInfoView(store: .init(
                     initialState: EditInfo.State(
-                        profileImage: items.getValue(key: "editinfo-profileImage") ?? ""),
+                        profileImage: items.getValue(key: "editinfo-profileImage") ?? "",
+                        newName: items.getValue(key: "editinfo-newName") ?? "",
+                        newStatusMessage: items.getValue(key: "editinfo-newStatusMessage") ?? ""),
                     reducer: EditInfo()))
                 .navigationBarHidden(true)
             }

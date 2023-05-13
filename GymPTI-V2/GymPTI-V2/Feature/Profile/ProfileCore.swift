@@ -16,13 +16,13 @@ public struct Profile: ReducerProtocol {
         var data: User?
         
         var name: String {
-            data?.nickname ?? ""
+            data?.nickname ?? "대소고이민규"
         }
         var email: String {
             data?.email ?? ""
         }
         var message: String {
-            data?.statusMessage ?? ""
+            data?.statusMessage ?? "내가 누군가의 꿈이 되는 삶"
         }
         var profileImage: String {
             data?.profileImage ?? "Profile"
@@ -49,7 +49,7 @@ public struct Profile: ReducerProtocol {
             switch action {
                 
             case .onTapEditInfoButton:
-                sideEffect.onTapEditInfoButton(state.profileImage)
+                sideEffect.onTapEditInfoButton(state.name, state.message, state.profileImage)
                 return .none
                 
             case .onTapEditAccountButton:
@@ -78,11 +78,11 @@ public struct Profile: ReducerProtocol {
         Effect.run { subscriber in
             Requests.request(
                 "/user/my", .get, User.self,
-                failure: {
-                    print("실패")
+                failure: { data in
+                    print(data)
                 },
-                completion: { user in
-                    subscriber.send(user)
+                completion: { data in
+                    subscriber.send(data)
                     subscriber.send(completion: .finished)
                 }
             )

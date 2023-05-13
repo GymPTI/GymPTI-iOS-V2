@@ -52,8 +52,9 @@ public struct Email: ReducerProtocol {
     
     private func sendEmailRequest(state: State) {
         
-        Requests.simple("/auth/sendMailVerification", .post, params: ["email": state.email], failure: {
-            sideEffect.failSendEmail()
+        Requests.simple("/auth/sendMailVerification", .post, params: ["email": state.email], failure : { message in
+            
+            print(message)
         }) {
             sideEffect.sucessSendEmail(state.id, state.pw, state.name, state.email)
         }

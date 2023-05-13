@@ -11,6 +11,8 @@ public protocol SignInSideEffect {
     
     var onTapSignInButton: () -> Void { get }
     var onTapSignUpButton: () -> Void { get }
+    
+    var onFailSignIn: (String) -> Void { get }
 }
 
 public struct SignInSideEffectLive {
@@ -33,6 +35,17 @@ extension SignInSideEffectLive: SignInSideEffect {
     public var onTapSignUpButton: () -> Void {
         {
             navigator.next(paths: ["id"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onFailSignIn: (String) -> Void {
+        { message in
+            let alertModel = Alert(
+                title: "실패",
+                message: "\(message)",
+                buttons: [.init(title: "확인", style: .default) ],
+                flagType: .error)
+            navigator.alert(target: .default, model: alertModel)
         }
     }
 }

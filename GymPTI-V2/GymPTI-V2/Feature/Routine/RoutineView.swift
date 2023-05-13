@@ -23,12 +23,28 @@ extension RoutineView: View {
     
     public var body: some View {
         
-        VStack {
-            Text("루틴 화면")
-                .setFont(28, .semibold)
+        VStack(alignment: .center, spacing: 10) {
+
+            ZStack {
+                            
+                Button(action: {
+                    print("띵~~")
+                }) {
+                    Image("bell")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            
+            Text("루틴")
+                .setFont(38, .bold)
                 .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Spacer()
         }
-        .padding()
+        .padding([.top,.horizontal], 20)
         .setBackground()
     }
 }
