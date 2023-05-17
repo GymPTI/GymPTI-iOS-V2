@@ -30,6 +30,7 @@ public struct AppSideEffect: DependencyKey {
     let verification: VerificationSideEffect
     
     let home: HomeSideEffect
+    let tip: TipSideEffect
     
     let routine: RoutineSideEffect
     
@@ -54,6 +55,7 @@ public struct AppSideEffect: DependencyKey {
             verification: VerificationSideEffectLive(navigator: navigator),
             
             home: HomeSideEffectLive(navigator: navigator),
+            tip: TipSideEffectLive(navigator: navigator),
             
             routine: RoutineSideEffectLive(navigator: navigator),
             

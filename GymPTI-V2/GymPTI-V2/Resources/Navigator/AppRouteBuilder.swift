@@ -27,6 +27,7 @@ struct AppRouterGroup {
             
             // 홈 화면
             HomeRouteBuilder(),
+            TipRouteBuilder(),
             
             // 루틴 화면
             RoutineRouteBuilder(),

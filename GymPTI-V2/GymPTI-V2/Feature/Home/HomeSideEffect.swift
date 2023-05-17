@@ -9,7 +9,7 @@ import LinkNavigator
 
 public protocol HomeSideEffect {
     
-    var tabButton: () -> Void { get }
+    var onTapTipButton: () -> Void { get }
 }
 
 public struct HomeSideEffectLive {
@@ -23,11 +23,9 @@ public struct HomeSideEffectLive {
 
 extension HomeSideEffectLive: HomeSideEffect {
     
-    public var tabButton: () -> Void {
+    public var onTapTipButton: () -> Void {
         {
-            Token.remove(.accessToken)
-            Token.remove(.refreshToken)
-            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+            navigator.fullSheet(paths: ["tip"], items: [:], isAnimated: true, prefersLargeTitles: false)
         }
     }
 }

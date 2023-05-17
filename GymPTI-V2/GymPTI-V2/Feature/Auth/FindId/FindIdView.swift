@@ -38,7 +38,7 @@ extension FindIdView: View {
                 KeyboardManager.downKeyborad()
             }
         }
-        .padding(.horizontal, 20)
+        .padding([.top,.horizontal], 20)
         .setBackground()
     }
 }

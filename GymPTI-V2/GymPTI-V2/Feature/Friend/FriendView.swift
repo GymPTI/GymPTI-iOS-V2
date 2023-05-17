@@ -40,11 +40,12 @@ extension FriendView: View {
                     .padding(.trailing, 40)
                     
                     Button(action: {
-                        print("띵~~")
+                        print("설정설정")
                     }) {
-                        Image("search")
+                        Image("setting")
                             .resizable()
                             .frame(width: 22, height: 22)
+                            .foregroundColor(Colors.white.color)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
@@ -134,7 +135,7 @@ extension FriendView: View {
                 
                 VStack(spacing: 10) {
                     
-                    Text("친구 목록")
+                    Text("친구 목록 • \(viewStore.cellCnt)명")
                         .setFont(14, .medium)
                         .foregroundColor(Colors.main.color)
                         .frame(maxWidth: .infinity, alignment: .leading)

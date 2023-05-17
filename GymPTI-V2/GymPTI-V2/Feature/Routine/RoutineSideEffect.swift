@@ -9,7 +9,7 @@ import LinkNavigator
 
 public protocol RoutineSideEffect {
     
-    var tabButton: () -> Void { get }
+    var a: () -> Void { get }
 }
 
 public struct RoutineSideEffectLive {
@@ -23,7 +23,7 @@ public struct RoutineSideEffectLive {
 
 extension RoutineSideEffectLive: RoutineSideEffect {
     
-    public var tabButton: () -> Void {
+    public var a: () -> Void {
         {
             Token.remove(.accessToken)
             Token.remove(.refreshToken)

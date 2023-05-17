@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 import Combine
-import _PhotosUI_SwiftUI
+import PhotosUI
 
 public struct Profile: ReducerProtocol {
     
@@ -16,13 +16,13 @@ public struct Profile: ReducerProtocol {
         var data: User?
         
         var name: String {
-            data?.nickname ?? "대소고이민규"
+            data?.nickname ?? "ㅤㅤㅤ"
         }
         var email: String {
             data?.email ?? ""
         }
         var message: String {
-            data?.statusMessage ?? "내가 누군가의 꿈이 되는 삶"
+            data?.statusMessage ?? ""
         }
         var profileImage: String {
             data?.profileImage ?? "Profile"

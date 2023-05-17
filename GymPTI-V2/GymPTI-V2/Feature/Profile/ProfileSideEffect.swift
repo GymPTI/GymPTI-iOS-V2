@@ -30,7 +30,7 @@ extension ProfileSideEffectLive: ProfileSideEffect {
             navigator.next(paths: ["editinfo"], items: [
                 "editinfo-newName": name,
                 "editinfo-newStatusMessage": statusMessage,
-                "editinfo-profileimage": profileImage
+                "editinfo-profileImage": profileImage
             ], isAnimated: true)
         }
     }

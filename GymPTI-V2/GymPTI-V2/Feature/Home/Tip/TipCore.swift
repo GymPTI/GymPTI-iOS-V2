@@ -1,24 +1,27 @@
 //
-//  RoutineCore.swift
+//  TipCore.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/11.
+//  Created by 이민규 on 2023/05/16.
 //
 
 import ComposableArchitecture
+import Combine
+import Foundation
 
-public struct Routine: ReducerProtocol {
+public struct Tip: ReducerProtocol {
     
     public struct State: Equatable {
         
+        var url: String = ""
     }
     
     public enum Action: Equatable {
         
-        case a
+        case onTapBackButton
     }
     
-    @Dependency(\.sideEffect.routine) var sideEffect
+    @Dependency(\.sideEffect.tip) var sideEffect
     
     public var body: some ReducerProtocol<State, Action> {
         
@@ -26,11 +29,10 @@ public struct Routine: ReducerProtocol {
             
             switch action {
                 
-            case .a:
-                sideEffect.a()
+            case .onTapBackButton:
+                sideEffect.onTapBackButton()
                 return .none
             }
         }
     }
 }
-

@@ -32,7 +32,7 @@ struct CustomNavi: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Text("\(title)")
-                .setFont(34, .bold)
+                .setFont(38, .bold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }

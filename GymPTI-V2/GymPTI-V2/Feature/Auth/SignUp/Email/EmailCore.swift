@@ -52,7 +52,7 @@ public struct Email: ReducerProtocol {
     
     private func sendEmailRequest(state: State) {
         
-        Requests.simple("/auth/sendMailVerification", .post, params: ["email": state.email], failure : { message in
+        Requests.simple("/email/sendMailVerification", .post, params: ["email": state.email], failure : { message in
             
             print(message)
         }) {

@@ -16,7 +16,7 @@ public struct Home: ReducerProtocol {
     
     public enum Action: Equatable {
         
-        case tabButton
+        case onTapTipButton
     }
     
     @Dependency(\.sideEffect.home) var sideEffect
@@ -27,11 +27,10 @@ public struct Home: ReducerProtocol {
             
             switch action {
                 
-            case .tabButton:
-                sideEffect.tabButton()
+            case .onTapTipButton:
+                sideEffect.onTapTipButton()
                 return .none
             }
         }
     }
 }
-

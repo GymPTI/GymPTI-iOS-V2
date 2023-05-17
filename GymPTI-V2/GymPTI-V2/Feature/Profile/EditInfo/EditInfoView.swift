@@ -33,16 +33,25 @@ extension EditInfoView: View {
             
             ZStack(alignment: .bottomTrailing) {
                 
-                KFImage(URL(string: viewStore.profileImage))
-                    .placeholder {
-                        Image("Profile")
-                            .resizable()
-                            .frame(width: 86, height: 86)
-                            .clipShape(Circle())
-                    }
-                    .resizable()
-                    .frame(width: 108, height: 108)
-                    .clipShape(Circle())
+                if viewStore.selectedImageData == nil {
+                    
+                    KFImage(URL(string: viewStore.profileImage))
+                        .placeholder {
+                            Image("Profile")
+                                .resizable()
+                                .frame(width: 86, height: 86)
+                                .clipShape(Circle())
+                        }
+                        .resizable()
+                        .frame(width: 108, height: 108)
+                        .clipShape(Circle())
+                } else {
+                    
+                    Image(uiImage: UIImage(data: viewStore.selectedImageData!)!)
+                        .resizable()
+                        .frame(width: 108, height: 108)
+                        .clipShape(Circle())
+                }
                 
                 PhotosPicker(
                     selection: viewStore.binding(\.$selectedItem),
@@ -62,6 +71,14 @@ extension EditInfoView: View {
                         .padding(.bottom, 4)
                         .padding(.trailing, 4)
                     }
+                    .onChange(of: viewStore.selectedItem) { item in
+                        
+                        Task {
+                            if let data = try? await    item?.loadTransferable(type: Data.self) {
+                                viewStore.send(.onChangeProfileImage(data))
+                            }
+                        }
+                    }
             }
             .padding(.bottom, 20)
             
@@ -80,10 +97,13 @@ extension EditInfoView: View {
                 .padding([.leading, .top], 10)
             
             CustomTextField("바꾸실 상태 메시지를 입력해주세요", text: viewStore.binding(\.$newStatusMessage))
-        
+            
             Spacer()
             
-            CustomWideButton("정보 수정하기", disabled: false) {
+            CustomWideButton("정보 수정하기",
+                             disabled: !viewStore.newName.regex("[a-zA-Z0-9가-힣]{2,20}") &&
+                             !viewStore.newStatusMessage.regex("[a-zA-Z0-9가-힣!@#$%^+=- ]{0,30}")
+            ) {
                 viewStore.send(.onTapChangeButton)
             }
             .padding(.bottom, 20)
@@ -91,5 +111,8 @@ extension EditInfoView: View {
         }
         .padding()
         .setBackground()
+        .onAppear {
+            print(viewStore.newName, viewStore.profileImage)
+        }
     }
 }

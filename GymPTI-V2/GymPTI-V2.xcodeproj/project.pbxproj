@@ -27,6 +27,12 @@
 		526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */; };
 		526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594122A0E84EE00D9446B /* FriendCellView.swift */; };
 		526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594182A0E8B2500D9446B /* CustomNavi.swift */; };
+		528B5E512A132AE800373C79 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E502A132AE800373C79 /* TipView.swift */; };
+		528B5E542A134BD000373C79 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = 528B5E532A134BD000373C79 /* CardStack */; };
+		528B5E562A1353A000373C79 /* TipCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E552A1353A000373C79 /* TipCore.swift */; };
+		528B5E582A1353A800373C79 /* TipSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E572A1353A800373C79 /* TipSideEffect.swift */; };
+		528B5E5A2A13731400373C79 /* TipRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E592A13731300373C79 /* TipRouteBuilder.swift */; };
+		52C02F422A14C947003BA884 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C02F412A14C947003BA884 /* WebView.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -115,6 +121,11 @@
 		526594102A0E7AE700D9446B /* FriendRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRouteBuilder.swift; sourceTree = "<group>"; };
 		526594122A0E84EE00D9446B /* FriendCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellView.swift; sourceTree = "<group>"; };
 		526594182A0E8B2500D9446B /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
+		528B5E502A132AE800373C79 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
+		528B5E552A1353A000373C79 /* TipCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCore.swift; sourceTree = "<group>"; };
+		528B5E572A1353A800373C79 /* TipSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSideEffect.swift; sourceTree = "<group>"; };
+		528B5E592A13731300373C79 /* TipRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRouteBuilder.swift; sourceTree = "<group>"; };
+		52C02F412A14C947003BA884 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -191,6 +202,7 @@
 				52C8039B2A0B964400417B08 /* LinkNavigator in Frameworks */,
 				52C803982A0B963600417B08 /* ComposableArchitecture in Frameworks */,
 				526593E62A0DD39300D9446B /* Kingfisher in Frameworks */,
+				528B5E542A134BD000373C79 /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +226,7 @@
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
 				526594062A0E62AE00D9446B /* Colors.swift */,
+				52C02F412A14C947003BA884 /* WebView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -252,6 +265,17 @@
 			path = Friend;
 			sourceTree = "<group>";
 		};
+		528B5E4F2A132AB700373C79 /* Tip */ = {
+			isa = PBXGroup;
+			children = (
+				528B5E502A132AE800373C79 /* TipView.swift */,
+				528B5E552A1353A000373C79 /* TipCore.swift */,
+				528B5E572A1353A800373C79 /* TipSideEffect.swift */,
+				528B5E592A13731300373C79 /* TipRouteBuilder.swift */,
+			);
+			path = Tip;
+			sourceTree = "<group>";
+		};
 		52C8037B2A0B951900417B08 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +309,7 @@
 				52C803A82A0B97CD00417B08 /* HomeCore.swift */,
 				52C803A62A0B977900417B08 /* HomeSideEffect.swift */,
 				52C803A12A0B96CD00417B08 /* HomeRouteBuilder.swift */,
+				528B5E4F2A132AB700373C79 /* Tip */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -532,6 +557,7 @@
 				52C8039D2A0B965000417B08 /* Alamofire */,
 				52C8042D2A0CABD200417B08 /* CachedAsyncImage */,
 				526593E52A0DD39300D9446B /* Kingfisher */,
+				528B5E532A134BD000373C79 /* CardStack */,
 			);
 			productName = "GymPTI-V2";
 			productReference = 52C803842A0B951900417B08 /* GymPTI-V2.app */;
@@ -567,6 +593,7 @@
 				52C8039C2A0B965000417B08 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				52C8042C2A0CABD200417B08 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 				526593E42A0DD39300D9446B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				528B5E522A134BD000373C79 /* XCRemoteSwiftPackageReference "CardStack" */,
 			);
 			productRefGroup = 52C803852A0B951900417B08 /* Products */;
 			projectDirPath = "";
@@ -601,6 +628,7 @@
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C804162A0C871D00417B08 /* RoutineSideEffect.swift in Sources */,
+				528B5E562A1353A000373C79 /* TipCore.swift in Sources */,
 				52C804332A0CAE1500417B08 /* CustomWideButton.swift in Sources */,
 				52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */,
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
@@ -647,11 +675,13 @@
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
 				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
+				528B5E5A2A13731400373C79 /* TipRouteBuilder.swift in Sources */,
 				526593FC2A0E586C00D9446B /* AuthProgress.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
+				528B5E582A1353A800373C79 /* TipSideEffect.swift in Sources */,
 				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
@@ -664,6 +694,8 @@
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
 				526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */,
 				526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */,
+				528B5E512A132AE800373C79 /* TipView.swift in Sources */,
+				52C02F422A14C947003BA884 /* WebView.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
@@ -897,6 +929,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		528B5E522A134BD000373C79 /* XCRemoteSwiftPackageReference "CardStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/notsobigcompany/CardStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		52C803962A0B963600417B08 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture/";
@@ -936,6 +976,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 526593E42A0DD39300D9446B /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		528B5E532A134BD000373C79 /* CardStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 528B5E522A134BD000373C79 /* XCRemoteSwiftPackageReference "CardStack" */;
+			productName = CardStack;
 		};
 		52C803972A0B963600417B08 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

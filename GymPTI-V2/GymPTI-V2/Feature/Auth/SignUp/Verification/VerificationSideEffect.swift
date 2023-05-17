@@ -59,6 +59,7 @@ extension VerificationSideEffectLive: VerificationSideEffect {
     
     public var sucessSignUp: () -> Void {
         {
+            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
             let alertModel = Alert(
                 title: "회원가입 성공",
                 message: "바로 로그인을 해보세요!",
@@ -66,7 +67,6 @@ extension VerificationSideEffectLive: VerificationSideEffect {
                 flagType: .error)
             
             navigator.alert(target: .default, model: alertModel)
-            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
         }
     }
     
