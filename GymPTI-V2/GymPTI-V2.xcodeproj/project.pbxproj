@@ -32,6 +32,7 @@
 		528B5E562A1353A000373C79 /* TipCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E552A1353A000373C79 /* TipCore.swift */; };
 		528B5E582A1353A800373C79 /* TipSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E572A1353A800373C79 /* TipSideEffect.swift */; };
 		528B5E5A2A13731400373C79 /* TipRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E592A13731300373C79 /* TipRouteBuilder.swift */; };
+		528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D4CC22A15CEB8008A0F7A /* SettingButton.swift */; };
 		52C02F422A14C947003BA884 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C02F412A14C947003BA884 /* WebView.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
@@ -125,6 +126,7 @@
 		528B5E552A1353A000373C79 /* TipCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCore.swift; sourceTree = "<group>"; };
 		528B5E572A1353A800373C79 /* TipSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSideEffect.swift; sourceTree = "<group>"; };
 		528B5E592A13731300373C79 /* TipRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRouteBuilder.swift; sourceTree = "<group>"; };
+		528D4CC22A15CEB8008A0F7A /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		52C02F412A14C947003BA884 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				52C804102A0C86CF00417B08 /* Routine */,
 				526594082A0E7A8000D9446B /* Friend */,
 				52C804192A0C873100417B08 /* Profile */,
+				52C8044A2A0CBED600417B08 /* Setting */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -475,8 +478,6 @@
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
 				52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */,
 				52C804382A0CB21100417B08 /* EditInfo */,
-				52C804412A0CB9C800417B08 /* EditAccount */,
-				52C8044A2A0CBED600417B08 /* Setting */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -498,6 +499,7 @@
 				52C804342A0CAE1F00417B08 /* CustomTextField.swift */,
 				52C804362A0CAE2B00417B08 /* CustomSecureField.swift */,
 				52C804322A0CAE1500417B08 /* CustomWideButton.swift */,
+				528D4CC22A15CEB8008A0F7A /* SettingButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -531,6 +533,7 @@
 				52C8044D2A0CBEF900417B08 /* SettingCore.swift */,
 				52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */,
 				52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */,
+				52C804412A0CB9C800417B08 /* EditAccount */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				52C804332A0CAE1500417B08 /* CustomWideButton.swift in Sources */,
 				52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */,
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
+				528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */,
 				52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */,
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
 				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,

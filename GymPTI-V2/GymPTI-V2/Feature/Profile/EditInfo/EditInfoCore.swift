@@ -66,7 +66,9 @@ public struct EditInfo: ReducerProtocol {
             sideEffect.onTapBackButton()
         }
         
-        Requests.simple("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage], failure: { message in
+        Requests.simple("/user/statusMessage", .put,
+                        params: ["statusMessage": state.newStatusMessage],
+                        failure: { message in
             
             print(message)
         }) {
@@ -74,12 +76,16 @@ public struct EditInfo: ReducerProtocol {
             sideEffect.onTapBackButton()
         }
         
-        Requests.simple("/user/profileImage", .put, params: ["profileImage": state.selectedImageData!], failure: { message in
-            
-            print(message)
-        }) {
-            print("프로필 사진 변경 성공")
-            sideEffect.onTapBackButton()
+        if let image = state.selectedImageData {
+            Requests.uploadImage("/user/profileImage", image: image)
         }
+        
+        //        Requests.simple("/user/profileImage", .put, params: ["profileImage": state.selectedImageData!], failure: { message in
+        //
+        //            print(message)
+        //        }) {
+        //            print("프로필 사진 변경 성공")
+        //            sideEffect.onTapBackButton()
+        //        }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 
 public protocol SettingSideEffect {
     
+    var onTapEditAccountButton: () -> Void { get }
     var onTapBackButton: () -> Void { get }
     var onTapLogoutButton: () -> Void { get }
     var onTapFindIdButton: () -> Void { get }
@@ -25,6 +26,12 @@ public struct SettingSideEffectLive {
 }
 
 extension SettingSideEffectLive: SettingSideEffect {
+    
+    public var onTapEditAccountButton: () -> Void {
+        {
+            navigator.next(paths: ["editaccount"], items: [:], isAnimated: true)
+        }
+    }
     
     public var onTapBackButton: () -> Void {
         {

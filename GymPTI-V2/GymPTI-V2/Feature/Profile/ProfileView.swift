@@ -56,24 +56,29 @@ extension ProfileView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                ZStack(alignment: .bottom) {
+                VStack(spacing: 0) {
                     
-                    KFImage(URL(string: viewStore.profileImage))
-                        .placeholder {
-                            Image("Profile")
-                                .resizable()
-                                .frame(width: 86, height: 86)
-                                .clipShape(Circle())
-                        }
-                        .resizable()
-                        .frame(width: 108, height: 108)
-                        .clipShape(Circle())
-                }
-                
-                VStack(spacing: 10) {
+                    ZStack(alignment: .bottom) {
+                        
+                        KFImage(URL(string: viewStore.profileImage))
+                            .placeholder {
+                                Image("Profile")
+                                    .resizable()
+                                    .frame(width: 108, height: 108)
+                                    .clipShape(Circle())
+                            }
+                            .resizable()
+                            .frame(width: 108, height: 108)
+                            .clipShape(Circle())
+                    }
                     
                     Text("\(viewStore.name)")
                         .setFont(20, .bold)
+                        .foregroundColor(Colors.white.color)
+                        .padding(.top, 10)
+                    
+                    Text("@\(viewStore.id)")
+                        .setFont(14, .light)
                         .foregroundColor(Colors.white.color)
                     
                     if !(viewStore.message == "") {
@@ -81,36 +86,14 @@ extension ProfileView: View {
                         Text("\(viewStore.message)")
                             .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
                     }
-                }
-                
-                HStack {
                     
-                    Button(action: {
+                    SettingButton("프로필 정보 수정") {
                         viewStore.send(.onTapEditInfoButton)
-                    }) {
-                        Text("프로필 수정")
-                            .setFont(14, .medium)
-                            .foregroundColor(Colors.white.color)
-                            .frame(height: 34)
-                            .frame(maxWidth: .infinity)
-                            .background(Colors.darkGray.color)
-                            .cornerRadius(10)
                     }
-                    
-                    Button(action: {
-                        viewStore.send(.onTapEditAccountButton)
-                    }) {
-                        Text("계정 정보 수정")
-                            .setFont(14, .medium)
-                            .foregroundColor(Colors.white.color)
-                            .frame(height: 34)
-                            .frame(maxWidth: .infinity)
-                            .background(Colors.darkGray.color)
-                            .cornerRadius(10)
-                    }
+                    .padding(.top, 20)
                 }
-                .padding(.top, 10)
                 
                 Spacer()
             }

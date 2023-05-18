@@ -93,4 +93,27 @@ class Requests {
                 }
             }
     }
+    
+    static func uploadImage(_ url: String,
+                            image: Data) {
+        
+        let accessToken = Token.get(.accessToken)!.replacingOccurrences(of: "(", with: "_")
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(accessToken)",
+            "Content-Type": "multipart/form-data"
+        ]
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(image, withName: "profileImage", fileName: "image.png", mimeType: "image/png")
+            
+        }, to: "\(API)\(url)", method: .put, headers: headers)
+        .validate(statusCode: 200 ..< 204)
+        .responseData { response in
+            
+            if let resdata = response.data {
+                print(String(decoding: resdata, as: UTF8.self))
+            }
+        }
+    }
 }

@@ -100,11 +100,11 @@ extension EditInfoView: View {
             
             Spacer()
             
-            CustomWideButton("정보 수정하기",
-                             disabled: !viewStore.newName.regex("[a-zA-Z0-9가-힣]{2,20}") &&
-                             !viewStore.newStatusMessage.regex("[a-zA-Z0-9가-힣!@#$%^+=- ]{0,30}")
-            ) {
-                viewStore.send(.onTapChangeButton)
+            CustomWideButton("정보 수정하기", disabled:
+                                !viewStore.newName.regex("[a-zA-Z0-9가-힣 ]{0,20}")) {
+                if viewStore.newName.count >= 2 {
+                    viewStore.send(.onTapChangeButton)
+                }
             }
             .padding(.bottom, 20)
             

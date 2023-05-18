@@ -16,13 +16,13 @@ public struct Profile: ReducerProtocol {
         var data: User?
         
         var name: String {
-            data?.nickname ?? "ㅤㅤㅤ"
+            data?.nickname ?? "ㅤㅤㅤ "
         }
-        var email: String {
-            data?.email ?? ""
+        var id: String {
+            data?.userId ?? " "
         }
         var message: String {
-            data?.statusMessage ?? ""
+            data?.statusMessage ?? " "
         }
         var profileImage: String {
             data?.profileImage ?? "Profile"
@@ -34,7 +34,6 @@ public struct Profile: ReducerProtocol {
     public enum Action: Equatable {
         
         case onTapEditInfoButton
-        case onTapEditAccountButton
         case onTapSettingButton
         case onAppearProfile
         case userDataReceived(User)
@@ -50,10 +49,6 @@ public struct Profile: ReducerProtocol {
                 
             case .onTapEditInfoButton:
                 sideEffect.onTapEditInfoButton(state.name, state.message, state.profileImage)
-                return .none
-                
-            case .onTapEditAccountButton:
-                sideEffect.onTapEditAccountButton()
                 return .none
                 
             case .onTapSettingButton:

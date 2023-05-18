@@ -33,7 +33,7 @@ extension EditAccountView: View {
                 .setFont(18, .medium)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading, .top], 10)
+                .padding(.top, 10)
             
             CustomSecureField("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
             
@@ -41,7 +41,7 @@ extension EditAccountView: View {
                 .setFont(18, .medium)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading, .top], 10)
+                .padding(.top, 10)
             
             CustomTextField("새로운 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
             

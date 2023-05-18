@@ -23,32 +23,38 @@ extension SettingView: View {
     
     public var body: some View {
         
-        VStack {
+        VStack(spacing: 0) {
             
             CustomNavi("설정") {
                 viewStore.send(.onTapBackButton)
             }
             
-            Spacer()
-            
-            Button(action: {
-                viewStore.send(.onTapLogoutButton)
-            }) {
-                Text("로그아웃")
+            VStack(alignment: .leading, spacing: 10) {
+                
+                Text("계정 정보")
                     .setFont(18, .medium)
-            }
-            
-            Button(action: {
-                viewStore.send(.onTapFindIdButton)
-            }) {
-                Text("아이디 찾기")
+                    .foregroundColor(Colors.main.color)
+                
+                
+                SettingButton("계정 정보 수정") {
+                    viewStore.send(.onTapEditAccountButton)
+                }
+                
+                Text("기타")
                     .setFont(18, .medium)
+                    .foregroundColor(Colors.main.color)
+                    .padding(.top, 10)
+                
+                SettingButton("로그아웃") {
+                    viewStore.send(.onTapLogoutButton)
+                }
+                
             }
-
+            .padding(.top, 20)
             
             Spacer()
         }
-        .padding()
+        .padding([.top, .horizontal], 20)
         .setBackground()
     }
 }

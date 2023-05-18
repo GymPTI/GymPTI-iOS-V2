@@ -41,7 +41,8 @@ extension NameView: View {
             
             AuthProgress(3)
             
-            CustomWideButton("다음", disabled: !viewStore.name.regex("[a-zA-Z0-9가-힣]{2,20}")) {
+            CustomWideButton("다음", disabled:
+                                !viewStore.name.regex("[a-zA-Z0-9가-힣 ]{2,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

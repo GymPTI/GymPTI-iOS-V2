@@ -10,7 +10,6 @@ import LinkNavigator
 public protocol ProfileSideEffect {
     
     var onTapEditInfoButton: (String, String, String) -> Void { get }
-    var onTapEditAccountButton: () -> Void { get }
     var onTapSettingButton: () -> Void { get }
 }
 
@@ -32,12 +31,6 @@ extension ProfileSideEffectLive: ProfileSideEffect {
                 "editinfo-newStatusMessage": statusMessage,
                 "editinfo-profileImage": profileImage
             ], isAnimated: true)
-        }
-    }
-    
-    public var onTapEditAccountButton: () -> Void {
-        {
-            navigator.next(paths: ["editaccount"], items: [:], isAnimated: true)
         }
     }
     

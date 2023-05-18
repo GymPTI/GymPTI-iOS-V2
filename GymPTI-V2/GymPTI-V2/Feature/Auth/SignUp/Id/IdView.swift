@@ -41,7 +41,8 @@ extension IdView: View {
             
             AuthProgress(1)
             
-            CustomWideButton("다음", disabled: !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
+            CustomWideButton("다음", disabled:
+                                !viewStore.id.regex("[a-zA-Z0-9]{4,20}")) {
                 viewStore.send(.onTapNextButton)
                 KeyboardManager.downKeyborad()
             }

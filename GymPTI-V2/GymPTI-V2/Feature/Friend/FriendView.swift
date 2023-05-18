@@ -74,13 +74,14 @@ extension FriendView: View {
                 .background(Colors.darkGray.color)
                 .cornerRadius(10)
                 
-                VStack(spacing: 10) {
-                    
-                    Text("친구 추가 요청")
-                        .setFont(14, .medium)
-                        .foregroundColor(Colors.main.color)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 10)
+                Text("친구 추가 요청")
+                    .setFont(14, .medium)
+                    .foregroundColor(Colors.main.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 10)
+                
+                
+                VStack {
                     
                     HStack(alignment: .center, spacing: 6) {
                         

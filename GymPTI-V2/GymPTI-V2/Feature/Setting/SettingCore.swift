@@ -15,9 +15,9 @@ public struct Setting: ReducerProtocol {
     
     public enum Action: Equatable {
         
+        case onTapEditAccountButton
         case onTapLogoutButton
         case onTapBackButton
-        case onTapFindIdButton
     }
     
     @Dependency(\.sideEffect.setting) var sideEffect
@@ -28,16 +28,16 @@ public struct Setting: ReducerProtocol {
             
             switch action {
                 
+            case .onTapEditAccountButton:
+                sideEffect.onTapEditAccountButton()
+                return .none
+                
             case .onTapLogoutButton:
                 sideEffect.onTapLogoutButton()
                 return .none
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
-                return .none
-                
-            case .onTapFindIdButton:
-                sideEffect.onTapFindIdButton()
                 return .none
             }
         }

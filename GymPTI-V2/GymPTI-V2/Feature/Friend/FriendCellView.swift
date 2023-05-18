@@ -12,8 +12,6 @@ struct FriendCellView: View {
     let name: String
     let id: String
     
-    @State var isTapButon: Bool = false
-    
     init(name: String,
          id : String)
     {
@@ -23,78 +21,34 @@ struct FriendCellView: View {
     
     var body: some View {
         
-        Button(action: {
-            isTapButon.toggle()
-        }) {
-            if !isTapButon {
+        VStack {
+            
+            HStack(alignment: .center, spacing: 6) {
                 
-                HStack(alignment: .center, spacing: 6) {
-                    
-                    Image("Profile")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .padding(.leading, 20)
-                    
-                    VStack(alignment: .leading) {
-                        
-                        Text("\(name)")
-                            .setFont(16, .semibold)
-                            .foregroundColor(Colors.white.color)
-                        
-                        Text("\(id)")
-                            .setFont(10, .light)
-                            .foregroundColor(Colors.gray.color)
-                    }
-                    .padding(.leading, 4)
-                    
-                    Spacer()
-                }
-                .frame(height: 64)
-                .frame(maxWidth: .infinity)
-                .background(Colors.darkGray.color)
-                .cornerRadius(10)
-            } else {
+                Image("Profile")
+                    .resizable()
+                    .frame(width: 36, height: 36)
+                    .padding(.leading, 20)
                 
                 VStack(alignment: .leading) {
                     
-                    HStack(alignment: .center, spacing: 6) {
-                        
-                        Image("Profile")
-                            .resizable()
-                            .frame(width: 36, height: 36)
-                            .padding(.leading, 20)
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text("\(name)")
-                                .setFont(16, .semibold)
-                                .foregroundColor(Colors.white.color)
-                            
-                            Text("\(id)")
-                                .setFont(10, .light)
-                                .foregroundColor(Colors.gray.color)
-                        }
-                        .padding(.leading, 4)
-                        
-                        Spacer()
-                    }
-                    .padding(.top, 10)
+                    Text("푸쉬업1000개")
+                        .setFont(16, .semibold)
+                        .foregroundColor(Colors.white.color)
                     
-                    Text("친구의 더 상세한 정보")
-                        .setFont(14, .medium)
+                    Text("nowTryPushUp1000")
+                        .setFont(10, .light)
                         .foregroundColor(Colors.gray.color)
-                        .padding()
-                    
-                    Spacer()
                 }
-                .frame(height: 144)
-                .frame(maxWidth: .infinity)
-                .background(Colors.darkGray.color)
-                .cornerRadius(10)
+                .padding(.leading, 4)
+                
+                Spacer()
             }
-            
+            .frame(height: 64)
+            .frame(maxWidth: .infinity)
+            .background(Colors.darkGray.color)
+            .cornerRadius(10)
         }
-        
     }
     
 }
