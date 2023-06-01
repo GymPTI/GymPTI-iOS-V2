@@ -25,8 +25,20 @@ extension PwView: View {
         
         VStack(spacing: 10) {
             
-            CustomNavi("비밀번호") {
-                viewStore.send(.onTapBackButton)
+            VStack {
+                Button(action: {
+                    viewStore.send(.onTapBackButton)
+                }) {
+                    Image("Back")
+                        .resizable()
+                        .frame(width: 10, height: 18)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("비밀번호")
+                    .setFont(38, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             CustomSecureField("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))

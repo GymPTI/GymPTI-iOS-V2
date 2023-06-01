@@ -19,6 +19,8 @@ public struct EditInfo: ReducerProtocol {
         
         @BindingState var selectedItem: PhotosPickerItem? = nil
         @BindingState var selectedImageData: Data? = nil
+        
+        @BindingState var successEditProfile: Bool = false
     }
     
     public enum Action: Equatable, BindableAction {
@@ -27,6 +29,7 @@ public struct EditInfo: ReducerProtocol {
         case onTapBackButton
         case onTapChangeButton
         case onChangeProfileImage(Data)
+        case onSuccessEditProfile(Bool)
     }
     
     @Dependency(\.sideEffect.editInfo) var sideEffect
@@ -52,6 +55,10 @@ public struct EditInfo: ReducerProtocol {
             case .onChangeProfileImage(let data):
                 state.selectedImageData = data
                 return .none
+                
+            case .onSuccessEditProfile(let success):
+                state.successEditProfile = success
+                return .none
             }
         }
     }
@@ -63,7 +70,6 @@ public struct EditInfo: ReducerProtocol {
             print(message)
         }) {
             print("닉네임 변경 성공")
-            sideEffect.onTapBackButton()
         }
         
         Requests.simple("/user/statusMessage", .put,
@@ -73,19 +79,15 @@ public struct EditInfo: ReducerProtocol {
             print(message)
         }) {
             print("상태 메시지 변경 성공")
-            sideEffect.onTapBackButton()
         }
         
         if let image = state.selectedImageData {
-            Requests.uploadImage("/user/profileImage", image: image)
+            
+            Requests.uploadImage("/user/profileImage", image: image) {
+                sideEffect.onTapBackButton()
+            }
+        } else {
+            sideEffect.onTapBackButton()
         }
-        
-        //        Requests.simple("/user/profileImage", .put, params: ["profileImage": state.selectedImageData!], failure: { message in
-        //
-        //            print(message)
-        //        }) {
-        //            print("프로필 사진 변경 성공")
-        //            sideEffect.onTapBackButton()
-        //        }
     }
 }

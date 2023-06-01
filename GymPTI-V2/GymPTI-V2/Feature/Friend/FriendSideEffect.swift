@@ -9,7 +9,8 @@ import LinkNavigator
 
 public protocol FriendSideEffect {
     
-    var tabButton: () -> Void { get }
+    var onTapSettingButton: () -> Void { get }
+    var onTapNotificationButton: () -> Void { get }
 }
 
 public struct FriendSideEffectLive {
@@ -23,11 +24,15 @@ public struct FriendSideEffectLive {
 
 extension FriendSideEffectLive: FriendSideEffect {
     
-    public var tabButton: () -> Void {
+    public var onTapSettingButton: () -> Void {
         {
-            Token.remove(.accessToken)
-            Token.remove(.refreshToken)
-            navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+            navigator.next(paths: ["setting"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapNotificationButton: () -> Void {
+        {
+            navigator.next(paths: ["notification"], items: [:], isAnimated: true)
         }
     }
 }

@@ -15,6 +15,4 @@ extension Color {
         let blue = Double((hex) & 0xff) / 255.0
         self.init(red: red, green: green, blue: blue, opacity: opacity)
     }
-    
-    
 }

@@ -10,31 +10,49 @@ import SwiftUI
 struct CustomNavi: View {
     
     let title: String
-    let action: () -> Void
+    let notificationButtonAction: () -> Void
+    let settingButtonAction: () -> Void
     
     init(_ title: String,
-         _ action: @escaping () -> Void)
+         _ notificationButtonAction: @escaping () -> Void,
+         _ settingButtonAction: @escaping () -> Void)
     {
         self.title = title
-        self.action = action
+        self.notificationButtonAction = notificationButtonAction
+        self.settingButtonAction = settingButtonAction
     }
     
     var body: some View {
         
-        VStack {
-            Button(action: {
-                action()
-            }) {
-                Image("Back")
-                    .resizable()
-                    .frame(width: 10, height: 18)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+        HStack {
             
             Text("\(title)")
-                .setFont(38, .bold)
+                .setFont(34, .semibold)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
+            
+            ZStack {
+                
+                Button(action: {
+                    notificationButtonAction()
+                }) {
+                    Image("bell")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 40)
+                
+                Button(action: {
+                    settingButtonAction()
+                }) {
+                    Image("setting")
+                        .resizable()
+                        .frame(width: 22, height: 22)
+                        .foregroundColor(Colors.white.color)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            }
         }
     }
 }

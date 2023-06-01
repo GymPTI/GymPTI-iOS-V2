@@ -1,29 +1,29 @@
 //
-//  FindIdView.swift
+//  NotificationView.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/12.
+//  Created by 이민규 on 2023/05/31.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-public struct FindIdView {
+public struct NotificationView {
     
-    private let store: StoreOf<FindId>
-    @ObservedObject var viewStore: ViewStoreOf<FindId>
+    private let store: StoreOf<Notification>
+    @ObservedObject var viewStore: ViewStoreOf<Notification>
     
-    public init(store: StoreOf<FindId>) {
+    public init(store: StoreOf<Notification>) {
         self.store = store
         viewStore = ViewStore(store)
     }
 }
 
-extension FindIdView: View {
+extension NotificationView: View {
     
     public var body: some View {
         
-        VStack(spacing: 10) {
+        VStack(spacing: 0) {
             
             VStack {
                 Button(action: {
@@ -35,22 +35,26 @@ extension FindIdView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("아이디 찾기")
+                Text("알림")
                     .setFont(38, .bold)
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField("이메일을 입력해주세요.", text: viewStore.binding(\.$email))
-            
-            Spacer()
-            
-            CustomWideButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
-                viewStore.send(.onTapFindIdButton)
-                KeyboardManager.downKeyborad()
+            ScrollView {
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                    Text("알림")
+                        .setFont(18, .medium)
+                        .foregroundColor(Colors.main.color)
+                }
+                .padding(.top, 20)
+                
+                Spacer()
             }
         }
-        .padding([.top,.horizontal], 20)
+        .padding([.top, .horizontal], 20)
         .setBackground()
     }
 }

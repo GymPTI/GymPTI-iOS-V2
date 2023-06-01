@@ -25,8 +25,20 @@ extension IdView: View {
         
         VStack(spacing: 10) {
             
-            CustomNavi("아이디") {
-                viewStore.send(.onTapBackButton)
+            VStack {
+                Button(action: {
+                    viewStore.send(.onTapBackButton)
+                }) {
+                    Image("Back")
+                        .resizable()
+                        .frame(width: 10, height: 18)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("아이디")
+                    .setFont(38, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             CustomTextField("아이디를 입력해주세요", text: viewStore.binding(\.$id))

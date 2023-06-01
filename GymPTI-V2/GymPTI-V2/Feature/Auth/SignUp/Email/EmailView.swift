@@ -25,8 +25,20 @@ extension EmailView: View {
         
         VStack(spacing: 10) {
             
-            CustomNavi("이메일") {
-                viewStore.send(.onTapBackButton)
+            VStack {
+                Button(action: {
+                    viewStore.send(.onTapBackButton)
+                }) {
+                    Image("back")
+                        .resizable()
+                        .frame(width: 10, height: 18)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("이메일")
+                    .setFont(38, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
              
             CustomTextField("이메일을 입력해주세요", text: viewStore.binding(\.$email))

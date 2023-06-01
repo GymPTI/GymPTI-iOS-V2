@@ -10,7 +10,27 @@ import ComposableArchitecture
 
 struct TabBarView: View {
     
+    @Namespace var animation
     @State var selected: String
+    
+    @ViewBuilder func makeIcon(_ imageName: String) -> some View {
+        Button(action: { selected = imageName }) {
+            ZStack {
+                if selected == imageName {
+                    Color.black
+                        .clipShape(Circle())
+                        .overlay(Circle()
+                            .stroke(Color.white, lineWidth: 5))
+                        .frame(width: 48, height: 48)
+                        .matchedGeometryEffect(id: "a", in: animation)
+                }
+                Image(imageName)
+                    .renderingMode(.template)
+                    .foregroundColor(selected == imageName ? Colors.white.color : Colors.black.color)
+                    .frame(width: 48, height: 48)
+            }
+        }
+    }
     
     var body: some View {
         
@@ -41,54 +61,18 @@ struct TabBarView: View {
                 
                 Spacer()
                 
-                Button(action: { selected = "home" }) {
-                    if selected == "home" {
-                        Image("home.selected")
-                            .frame(width: 48,height: 48)
-                    } else {
-                        Image("home")
-                            .frame(width: 48,height: 48)
-                    }
-                }
-                
-                Button(action: { selected = "routine" }) {
-                    if selected == "routine" {
-                        Image("routine.selected")
-                            .frame(width: 48,height: 48)
-                    } else {
-                        Image("routine")
-                            .frame(width: 48,height: 48)
-                    }
-                }
-                
-                Button(action: { selected = "friend" }) {
-                    if selected == "friend" {
-                        Image("friend.selected")
-                            .frame(width: 48,height: 48)
-                    } else {
-                        Image("friend")
-                            .frame(width: 48,height: 48)
-                    }
-                }
-                
-                Button(action: { selected = "profile" }) {
-                    if selected == "profile" {
-                        Image("profile.selected")
-                            .frame(width: 48,height: 48)
-                    } else {
-                        Image("profile")
-                            .frame(width: 48,height: 48)
-                    }
-                }
+                makeIcon("home")
+                makeIcon("routine")
+                makeIcon("friend")
+                makeIcon("profile")
 
                 Spacer()
             }
-            .padding(.bottom, 8)
+            .padding(.bottom, 2)
             .frame(maxHeight: 48)
             .background(Colors.white.color)
         }
         .setBackground()
         .navigationBarHidden(true)
-        
     }
 }

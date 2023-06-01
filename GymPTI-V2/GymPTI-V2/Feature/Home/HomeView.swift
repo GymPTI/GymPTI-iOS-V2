@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ComposableArchitecture
-import CardStack
 
 public struct HomeView {
     
@@ -24,26 +23,15 @@ extension HomeView: View {
     
     public var body: some View {
         
-        ScrollView {
+        VStack {
             
-            VStack(alignment: .center, spacing: 10) {
-                
-                ZStack {
-                    
-                    Button(action: {
-                        print("띵~~")
-                    }) {
-                        Image("bell")
-                            .resizable()
-                            .frame(width: 28, height: 28)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-                
-                Text("홈")
-                    .setFont(38, .bold)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            CustomNavi("홈", {
+                viewStore.send(.onTapNotificationButton)
+            }) {
+                viewStore.send(.onTapSettingButton)
+            }
+            
+            ScrollView {
                 
                 VStack {
                     
@@ -56,7 +44,7 @@ extension HomeView: View {
                 
                 Spacer()
             }
-            
+            .frame(maxHeight: .infinity)
         }
         .padding([.top,.horizontal], 20)
         .setBackground()

@@ -24,37 +24,15 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        VStack(alignment: .center, spacing: 10) {
+        VStack {
             
-            ZStack {
-                
-                Button(action: {
-                    print("띵~~")
-                }) {
-                    Image("bell")
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.trailing, 40)
-                
-                Button(action: {
-                    viewStore.send(.onTapSettingButton)
-                }) {
-                    Image("setting")
-                        .resizable()
-                        .frame(width: 22, height: 22)
-                        .foregroundColor(Colors.white.color)
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
+            CustomNavi("프로필", {
+                viewStore.send(.onTapNotificationButton)
+            }) {
+                viewStore.send(.onTapSettingButton)
             }
             
             ScrollView {
-                
-                Text("프로필")
-                    .setFont(38, .bold)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(spacing: 0) {
                     
@@ -94,8 +72,6 @@ extension ProfileView: View {
                     }
                     .padding(.top, 20)
                 }
-                
-                Spacer()
             }
         }
         .padding([.top,.horizontal], 20)

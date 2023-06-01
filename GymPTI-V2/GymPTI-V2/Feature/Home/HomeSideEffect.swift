@@ -9,6 +9,8 @@ import LinkNavigator
 
 public protocol HomeSideEffect {
     
+    var onTapSettingButton: () -> Void { get }
+    var onTapNotificationButton: () -> Void { get }
     var onTapTipButton: () -> Void { get }
 }
 
@@ -22,6 +24,18 @@ public struct HomeSideEffectLive {
 }
 
 extension HomeSideEffectLive: HomeSideEffect {
+    
+    public var onTapSettingButton: () -> Void {
+        {
+            navigator.next(paths: ["setting"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapNotificationButton: () -> Void {
+        {
+            navigator.next(paths: ["notification"], items: [:], isAnimated: true)
+        }
+    }
     
     public var onTapTipButton: () -> Void {
         {

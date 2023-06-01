@@ -33,8 +33,9 @@ public struct Profile: ReducerProtocol {
     
     public enum Action: Equatable {
         
-        case onTapEditInfoButton
+        case onTapNotificationButton
         case onTapSettingButton
+        case onTapEditInfoButton
         case onAppearProfile
         case userDataReceived(User)
     }
@@ -47,12 +48,16 @@ public struct Profile: ReducerProtocol {
             
             switch action {
                 
-            case .onTapEditInfoButton:
-                sideEffect.onTapEditInfoButton(state.name, state.message, state.profileImage)
+            case .onTapNotificationButton:
+                sideEffect.onTapNotificationButton()
                 return .none
                 
             case .onTapSettingButton:
                 sideEffect.onTapSettingButton()
+                return .none
+                
+            case .onTapEditInfoButton:
+                sideEffect.onTapEditInfoButton(state.name, state.message, state.profileImage)
                 return .none
                 
             case .onAppearProfile:

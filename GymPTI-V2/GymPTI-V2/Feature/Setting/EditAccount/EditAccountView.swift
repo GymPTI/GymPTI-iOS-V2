@@ -25,8 +25,20 @@ extension EditAccountView: View {
         
         VStack(alignment: .center) {
             
-            CustomNavi("계정 정보 수정") {
-                viewStore.send(.onTapBackButton)
+            VStack {
+                Button(action: {
+                    viewStore.send(.onTapBackButton)
+                }) {
+                    Image("Back")
+                        .resizable()
+                        .frame(width: 10, height: 18)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("계정 정보 수정")
+                    .setFont(38, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             Text("이전 비밀번호")

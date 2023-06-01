@@ -11,13 +11,13 @@ public struct Friend: ReducerProtocol {
     
     public struct State: Equatable {
         
-        var cellCnt: Int = 0
+        var cellCnt: Int = 5
     }
     
     public enum Action: Equatable {
         
-        case tabButton1
-        case tabButton2
+        case onTapNotificationButton
+        case onTapSettingButton
     }
     
     @Dependency(\.sideEffect.friend) var sideEffect
@@ -28,14 +28,12 @@ public struct Friend: ReducerProtocol {
             
             switch action {
                 
-            case .tabButton1:
-                state.cellCnt += 1
+            case .onTapNotificationButton:
+                sideEffect.onTapNotificationButton()
                 return .none
                 
-            case .tabButton2:
-                if state.cellCnt > 0 {
-                    state.cellCnt -= 1
-                }
+            case .onTapSettingButton:
+                sideEffect.onTapSettingButton()
                 return .none
             }
         }

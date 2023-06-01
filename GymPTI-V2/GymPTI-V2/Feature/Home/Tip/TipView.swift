@@ -75,7 +75,6 @@ extension TipView: View {
             
             WebView(url: URL(string: "https://mingyu.run")!)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-            //            }
             
             Button(action: {
                 viewStore.send(.onTapBackButton)
@@ -86,8 +85,6 @@ extension TipView: View {
                     .background(.pink)
             }
             .padding([.top, .trailing], 20)
-        }
-        .setBackground()
-        
+        }    
     }
 }

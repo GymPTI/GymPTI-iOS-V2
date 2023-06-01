@@ -40,7 +40,10 @@ struct AppRouterGroup {
             EditInfoRouteBuilder(),
             EditAccountRouteBuilder(),
             FindIdRouteBuilder(),
-            SettingRouteBuilder()
+            SettingRouteBuilder(),
+            
+            // 알림 화면
+            NotificationRouteBuilder()
         ]
     }
 }

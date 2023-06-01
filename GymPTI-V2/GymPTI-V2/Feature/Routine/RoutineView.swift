@@ -23,26 +23,28 @@ extension RoutineView: View {
     
     public var body: some View {
         
-        VStack(alignment: .center, spacing: 10) {
-
-            ZStack {
-                            
-                Button(action: {
-                    print("띵~~")
-                }) {
-                    Image("bell")
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
+        VStack {
+            
+            CustomNavi("루틴", {
+                viewStore.send(.onTapNotificationButton)
+            }) {
+                viewStore.send(.onTapSettingButton)
             }
             
-            Text("루틴")
-                .setFont(38, .bold)
-                .foregroundColor(Colors.white.color)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer()
+            ScrollView {
+                
+                VStack {
+                    
+                    Button(action: {
+                        
+                    })  {
+                        Text("루틴")
+                    }
+                }
+                
+                Spacer()
+            }
+            .frame(maxHeight: .infinity)
         }
         .padding([.top,.horizontal], 20)
         .setBackground()

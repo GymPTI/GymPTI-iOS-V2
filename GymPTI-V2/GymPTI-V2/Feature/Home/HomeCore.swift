@@ -16,6 +16,8 @@ public struct Home: ReducerProtocol {
     
     public enum Action: Equatable {
         
+        case onTapNotificationButton
+        case onTapSettingButton
         case onTapTipButton
     }
     
@@ -26,6 +28,14 @@ public struct Home: ReducerProtocol {
         Reduce { state, action in
             
             switch action {
+                
+            case .onTapNotificationButton:
+                sideEffect.onTapNotificationButton()
+                return .none
+                
+            case .onTapSettingButton:
+                sideEffect.onTapSettingButton()
+                return .none
                 
             case .onTapTipButton:
                 sideEffect.onTapTipButton()

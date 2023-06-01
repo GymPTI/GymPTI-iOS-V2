@@ -9,8 +9,9 @@ import LinkNavigator
 
 public protocol ProfileSideEffect {
     
-    var onTapEditInfoButton: (String, String, String) -> Void { get }
     var onTapSettingButton: () -> Void { get }
+    var onTapNotificationButton: () -> Void { get }
+    var onTapEditInfoButton: (String, String, String) -> Void { get }
 }
 
 public struct ProfileSideEffectLive {
@@ -24,6 +25,18 @@ public struct ProfileSideEffectLive {
 
 extension ProfileSideEffectLive: ProfileSideEffect {
     
+    public var onTapSettingButton: () -> Void {
+        {
+            navigator.next(paths: ["setting"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapNotificationButton: () -> Void {
+        {
+            navigator.next(paths: ["notification"], items: [:], isAnimated: true)
+        }
+    }
+    
     public var onTapEditInfoButton: (String, String, String) -> Void {
         { name, statusMessage, profileImage in
             navigator.next(paths: ["editinfo"], items: [
@@ -31,12 +44,6 @@ extension ProfileSideEffectLive: ProfileSideEffect {
                 "editinfo-newStatusMessage": statusMessage,
                 "editinfo-profileImage": profileImage
             ], isAnimated: true)
-        }
-    }
-    
-    public var onTapSettingButton: () -> Void {
-        {
-            navigator.next(paths: ["setting"], items: [:], isAnimated: true)
         }
     }
 }

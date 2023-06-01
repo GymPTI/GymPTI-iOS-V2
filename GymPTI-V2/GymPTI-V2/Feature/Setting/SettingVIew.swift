@@ -25,8 +25,20 @@ extension SettingView: View {
         
         VStack(spacing: 0) {
             
-            CustomNavi("설정") {
-                viewStore.send(.onTapBackButton)
+            VStack {
+                Button(action: {
+                    viewStore.send(.onTapBackButton)
+                }) {
+                    Image("Back")
+                        .resizable()
+                        .frame(width: 10, height: 18)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("설정")
+                    .setFont(38, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             VStack(alignment: .leading, spacing: 10) {
@@ -44,6 +56,10 @@ extension SettingView: View {
                     .setFont(18, .medium)
                     .foregroundColor(Colors.main.color)
                     .padding(.top, 10)
+                
+                SettingButton("계정 정보 처리 방침") {
+                    viewStore.send(.onTapEditAccountButton)
+                }
                 
                 SettingButton("로그아웃") {
                     viewStore.send(.onTapLogoutButton)

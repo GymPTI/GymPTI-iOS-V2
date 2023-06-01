@@ -13,7 +13,7 @@ public struct EmptyDependency: DependencyType {
     
 }
 
-fileprivate var navigator: LinkNavigatorType = LinkNavigator(
+var navigator: LinkNavigatorType = LinkNavigator(
     dependency: EmptyDependency(),
     builders: AppRouterGroup().routers)
 
@@ -42,6 +42,8 @@ public struct AppSideEffect: DependencyKey {
     let findId: FindIdSideEffect
     let setting: SettingSideEffect
     
+    let notification: NotificationSideEffect
+    
     public static var liveValue: AppSideEffect {
         
         return .init(
@@ -65,7 +67,9 @@ public struct AppSideEffect: DependencyKey {
             editInfo: EditInfoSideEffectLive(navigator: navigator),
             editAccount: EditAccountSideEffectLive(navigator: navigator),
             findId: FindIdSideEffectLive(navigator: navigator),
-            setting: SettingSideEffectLive(navigator: navigator)
+            setting: SettingSideEffectLive(navigator: navigator),
+            
+            notification: NotificationSideEffectLive(navigator: navigator)
         )
     }
 }

@@ -23,37 +23,15 @@ extension FriendView: View {
     
     public var body: some View {
         
-        ScrollView {
+        VStack {
             
-            VStack(alignment: .center, spacing: 10) {
-                
-                ZStack {
-                    
-                    Button(action: {
-                        print("띵~~")
-                    }) {
-                        Image("bell")
-                            .resizable()
-                            .frame(width: 28, height: 28)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing, 40)
-                    
-                    Button(action: {
-                        print("설정설정")
-                    }) {
-                        Image("setting")
-                            .resizable()
-                            .frame(width: 22, height: 22)
-                            .foregroundColor(Colors.white.color)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-                
-                Text("친구")
-                    .setFont(38, .bold)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            CustomNavi("친구", {
+                viewStore.send(.onTapNotificationButton)
+            }) {
+                viewStore.send(.onTapSettingButton)
+            }
+            
+            ScrollView {
                 
                 HStack(spacing: 10) {
                     
@@ -74,69 +52,9 @@ extension FriendView: View {
                 .background(Colors.darkGray.color)
                 .cornerRadius(10)
                 
-                Text("친구 추가 요청")
-                    .setFont(14, .medium)
-                    .foregroundColor(Colors.main.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 10)
-                
-                
-                VStack {
-                    
-                    HStack(alignment: .center, spacing: 6) {
-                        
-                        Image("Profile")
-                            .resizable()
-                            .frame(width: 36, height: 36)
-                            .padding(.leading, 20)
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text("푸쉬업1000개")
-                                .setFont(16, .semibold)
-                                .foregroundColor(Colors.white.color)
-                            
-                            Text("nowTryPushUp1000")
-                                .setFont(10, .light)
-                                .foregroundColor(Colors.gray.color)
-                        }
-                        .padding(.leading, 4)
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            viewStore.send(.tabButton2)
-                        }) {
-                            Text("요청 삭제")
-                                .setFont(12, .semibold)
-                                .foregroundColor(Colors.white.color)
-                                .frame(width: 64, height: 22)
-                                .background(Colors.darkGray.color)
-                                .cornerRadius(10)
-                        }
-                        
-                        Button(action: {
-                            viewStore.send(.tabButton1)
-                        }) {
-                            Text("요청 수락")
-                                .setFont(12, .semibold)
-                                .foregroundColor(Colors.white.color)
-                                .frame(width: 64, height: 22)
-                                .background(Colors.main.color)
-                                .cornerRadius(10)
-                        }
-                        .padding(.trailing, 20)
-                    }
-                    .frame(height: 64)
-                    .frame(maxWidth: .infinity)
-                    .background(Colors.darkGray.color)
-                    .cornerRadius(10)
-                }
-                .padding(.top, 20)
-                
                 VStack(spacing: 10) {
                     
-                    Text("친구 목록 • \(viewStore.cellCnt)명")
+                    Text("당신의 친구 • \(viewStore.cellCnt)명")
                         .setFont(14, .medium)
                         .foregroundColor(Colors.main.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -147,7 +65,6 @@ extension FriendView: View {
                     }
                 }
                 .padding(.top, 10)
-
             }
         }
         .padding([.top,.horizontal], 20)

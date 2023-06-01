@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7B2A275BA600B63DDA /* NotificationView.swift */; };
+		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
+		524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */; };
+		524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */; };
 		526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593DD2A0D11CD00D9446B /* Interceptor.swift */; };
 		526593E62A0DD39300D9446B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 526593E52A0DD39300D9446B /* Kingfisher */; };
 		526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593ED2A0E0D1E00D9446B /* FindIdView.swift */; };
@@ -33,6 +37,7 @@
 		528B5E582A1353A800373C79 /* TipSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E572A1353A800373C79 /* TipSideEffect.swift */; };
 		528B5E5A2A13731400373C79 /* TipRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B5E592A13731300373C79 /* TipRouteBuilder.swift */; };
 		528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D4CC22A15CEB8008A0F7A /* SettingButton.swift */; };
+		52A3FC8E2A276BFC002B79A7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */; };
 		52C02F422A14C947003BA884 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C02F412A14C947003BA884 /* WebView.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
@@ -103,6 +108,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524CEB7B2A275BA600B63DDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
+		524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSideEffect.swift; sourceTree = "<group>"; };
+		524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRouteBuilder.swift; sourceTree = "<group>"; };
 		526593DD2A0D11CD00D9446B /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		526593ED2A0E0D1E00D9446B /* FindIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdView.swift; sourceTree = "<group>"; };
 		526593EF2A0E0D6C00D9446B /* FindIdCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdCore.swift; sourceTree = "<group>"; };
@@ -127,6 +136,7 @@
 		528B5E572A1353A800373C79 /* TipSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSideEffect.swift; sourceTree = "<group>"; };
 		528B5E592A13731300373C79 /* TipRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRouteBuilder.swift; sourceTree = "<group>"; };
 		528D4CC22A15CEB8008A0F7A /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		52C02F412A14C947003BA884 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
@@ -211,6 +221,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		524CEB7D2A275BAB00B63DDA /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				524CEB7B2A275BA600B63DDA /* NotificationView.swift */,
+				524CEB7E2A275BC200B63DDA /* NotificationCore.swift */,
+				524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */,
+				524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		526593EC2A0E0D1000D9446B /* FindId */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,9 +246,9 @@
 		526593F92A0E53A400D9446B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				526594062A0E62AE00D9446B /* Colors.swift */,
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
-				526594062A0E62AE00D9446B /* Colors.swift */,
 				52C02F412A14C947003BA884 /* WebView.swift */,
 			);
 			path = Utility;
@@ -328,6 +349,7 @@
 				526594082A0E7A8000D9446B /* Friend */,
 				52C804192A0C873100417B08 /* Profile */,
 				52C8044A2A0CBED600417B08 /* Setting */,
+				524CEB7D2A275BAB00B63DDA /* Notification */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -494,12 +516,13 @@
 		52C804312A0CAE0D00417B08 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				526594182A0E8B2500D9446B /* CustomNavi.swift */,
 				526593FB2A0E586C00D9446B /* AuthProgress.swift */,
+				526594182A0E8B2500D9446B /* CustomNavi.swift */,
 				52C804342A0CAE1F00417B08 /* CustomTextField.swift */,
 				52C804362A0CAE2B00417B08 /* CustomSecureField.swift */,
 				52C804322A0CAE1500417B08 /* CustomWideButton.swift */,
 				528D4CC22A15CEB8008A0F7A /* SettingButton.swift */,
+				52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -640,6 +663,7 @@
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
 				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
+				524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
 				52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */,
@@ -648,6 +672,7 @@
 				52C804222A0C878A00417B08 /* ProfileRouteBuilder.swift in Sources */,
 				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
 				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
+				524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */,
@@ -676,6 +701,7 @@
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
 				52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */,
 				52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */,
+				524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
 				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
@@ -703,11 +729,13 @@
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
+				524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */,
 				52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */,
 				526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */,
 				52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */,
 				52C8040F2A0C804300417B08 /* TabBarRouteBuilder.swift in Sources */,
 				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,
+				52A3FC8E2A276BFC002B79A7 /* LoadingView.swift in Sources */,
 				52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -95,7 +95,8 @@ class Requests {
     }
     
     static func uploadImage(_ url: String,
-                            image: Data) {
+                            image: Data,
+                            completion: @escaping () -> Void) {
         
         let accessToken = Token.get(.accessToken)!.replacingOccurrences(of: "(", with: "_")
         
@@ -113,6 +114,16 @@ class Requests {
             
             if let resdata = response.data {
                 print(String(decoding: resdata, as: UTF8.self))
+            }
+            
+            switch response.result {
+                
+            case .success:
+                DispatchQueue.main.async {
+                    completion()
+                }
+            case .failure:
+                print("프로필 이미지 변경 실패")
             }
         }
     }

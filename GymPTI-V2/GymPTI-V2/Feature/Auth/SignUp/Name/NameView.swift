@@ -25,8 +25,20 @@ extension NameView: View {
         
         VStack(spacing: 10) {
             
-            CustomNavi("이름") {
-                viewStore.send(.onTapBackButton)
+            VStack {
+                Button(action: {
+                    viewStore.send(.onTapBackButton)
+                }) {
+                    Image("Back")
+                        .resizable()
+                        .frame(width: 10, height: 18)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("이름")
+                    .setFont(38, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             CustomTextField("이름을 입력해주세요", text: viewStore.binding(\.$name))
