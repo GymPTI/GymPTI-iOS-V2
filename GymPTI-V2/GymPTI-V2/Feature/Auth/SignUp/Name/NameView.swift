@@ -41,7 +41,7 @@ extension NameView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField("이름을 입력해주세요", text: viewStore.binding(\.$name))
+            CustomTextField(text: viewStore.binding(\.$name))
                 .padding(.top, 10)
             
             Text("*이름은 가입 후 마음껏 바꾸실 수 있어요")
@@ -50,14 +50,13 @@ extension NameView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
+        
             
-            AuthProgress(3)
-            
-            CustomWideButton("다음", disabled:
-                                !viewStore.name.regex("[a-zA-Z0-9가-힣 ]{2,20}")) {
-                viewStore.send(.onTapNextButton)
-                KeyboardManager.downKeyborad()
-            }
+//            CustomWideButton("다음", disabled:
+//                                !viewStore.name.regex("[a-zA-Z0-9가-힣 ]{2,20}")) {
+//                viewStore.send(.onTapNextButton)
+//                KeyboardManager.downKeyborad()
+//            }
         }
         .padding()
         .setBackground()

@@ -21,6 +21,8 @@ public struct AppSideEffect: DependencyKey {
     
     let linkNavigator: LinkNavigatorType
     
+    let start: StartSideEffect
+    
     let signIn: SignInSideEffect
     
     let id: IdSideEffect
@@ -48,6 +50,9 @@ public struct AppSideEffect: DependencyKey {
         
         return .init(
             linkNavigator: navigator,
+            
+            start: StartSideEffectLive(navigator: navigator),
+            
             signIn: SignInSideEffectLive(navigator: navigator),
             
             id: IdSideEffectLive(navigator: navigator),

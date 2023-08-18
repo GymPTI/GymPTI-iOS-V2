@@ -33,18 +33,15 @@ extension RoutineView: View {
             
             ScrollView {
                 
-                VStack {
+                Button(action: {
                     
-                    Button(action: {
-                        
-                    })  {
-                        Text("루틴")
-                    }
+                })  {
+                    Text("루틴")
                 }
                 
                 Spacer()
             }
-            .frame(maxHeight: .infinity)
+            .padding(.top, 20)
         }
         .padding([.top,.horizontal], 20)
         .setBackground()

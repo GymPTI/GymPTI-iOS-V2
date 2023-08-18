@@ -33,18 +33,15 @@ extension HomeView: View {
             
             ScrollView {
                 
-                VStack {
-                    
-                    Button(action: {
-                        viewStore.send(.onTapTipButton)
-                    })  {
-                        Text("오늘의 운동 팁!")
-                    }
+                Button(action: {
+                    viewStore.send(.onTapTipButton)
+                })  {
+                    Text("오늘의 운동 팁!")
                 }
                 
                 Spacer()
             }
-            .frame(maxHeight: .infinity)
+            .padding(.top, 20)
         }
         .padding([.top,.horizontal], 20)
         .setBackground()

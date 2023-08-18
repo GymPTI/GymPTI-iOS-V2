@@ -20,6 +20,7 @@ struct SignInRouteBuilder: RouteBuilder {
                         id: items.getValue(key: "id") ?? "",
                         pw: items.getValue(key: "pw") ?? ""),
                     reducer: SignIn()))
+                .navigationBarHidden(true)
             }
         }
     }

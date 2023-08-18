@@ -11,8 +11,13 @@ struct LoadingView: View {
     
     var body: some View {
         
-        ProgressView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.black.opacity(0.4))
+        HStack {
+            
+            ProgressView()
+                .progressViewStyle(.circular)
+                .scaleEffect(2)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.black.opacity(0.6))
     }
 }

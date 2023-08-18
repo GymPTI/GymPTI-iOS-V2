@@ -44,22 +44,50 @@ extension ProfileView: View {
                                     .resizable()
                                     .frame(width: 108, height: 108)
                                     .clipShape(Circle())
+                                    .overlay(RoundedRectangle(cornerRadius: 108)
+                                        .strokeBorder(Colors.white.color, lineWidth: 2))
                             }
                             .resizable()
                             .frame(width: 108, height: 108)
                             .clipShape(Circle())
+                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                .strokeBorder(Colors.white.color, lineWidth: 2))
                     }
                     
-                    Text("\(viewStore.name)")
-                        .setFont(20, .bold)
-                        .foregroundColor(Colors.white.color)
-                        .padding(.top, 10)
-                    
-                    Text("@\(viewStore.id)")
-                        .setFont(14, .light)
-                        .foregroundColor(Colors.white.color)
-                    
-                    if !(viewStore.message == "") {
+                    if viewStore.message == "" {
+                        
+                        Text("이름을 불러오는 중")
+                            .setFont(22, .bold)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
+                            .redacted(reason: .placeholder)
+                            .shimmering()
+
+                        Text("id를 불러오는 중")
+                            .setFont(10, .light)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
+                            .redacted(reason: .placeholder)
+                            .shimmering()
+
+                        Text("상태 메세지를 불러오는 중")
+                            .setFont(14, .medium)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
+                            .redacted(reason: .placeholder)
+                            .shimmering()
+                        
+                    } else {
+                        
+                        Text("\(viewStore.name)")
+                            .setFont(22, .bold)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
+                        
+                        Text("@\(viewStore.id)")
+                            .setFont(10, .light)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
                         
                         Text("\(viewStore.message)")
                             .setFont(14, .medium)
@@ -77,9 +105,6 @@ extension ProfileView: View {
         .padding([.top,.horizontal], 20)
         .setBackground()
         .onAppear {
-            viewStore.send(.onAppearProfile)
-        }
-        .refreshable {
             viewStore.send(.onAppearProfile)
         }
     }

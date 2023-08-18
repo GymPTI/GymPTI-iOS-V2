@@ -41,14 +41,14 @@ extension FindIdView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField("이메일을 입력해주세요.", text: viewStore.binding(\.$email))
+            CustomTextField(text: viewStore.binding(\.$email))
             
             Spacer()
             
-            CustomWideButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
-                viewStore.send(.onTapFindIdButton)
-                KeyboardManager.downKeyborad()
-            }
+//            CustomWideButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+//                viewStore.send(.onTapFindIdButton)
+//                KeyboardManager.downKeyborad()
+//            }
         }
         .padding([.top,.horizontal], 20)
         .setBackground()

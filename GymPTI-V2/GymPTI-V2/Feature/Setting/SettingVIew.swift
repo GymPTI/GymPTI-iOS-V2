@@ -25,7 +25,8 @@ extension SettingView: View {
         
         VStack(spacing: 0) {
             
-            VStack {
+            HStack {
+                
                 Button(action: {
                     viewStore.send(.onTapBackButton)
                 }) {
@@ -33,42 +34,55 @@ extension SettingView: View {
                         .resizable()
                         .frame(width: 10, height: 18)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: 32, height: 24)
+                
+                Spacer()
                 
                 Text("설정")
-                    .setFont(38, .bold)
+                    .setFont(18, .semibold)
                     .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                }) {
+                    
+                }
+                .frame(width: 32, height: 24)
             }
             
-            VStack(alignment: .leading, spacing: 10) {
+            ScrollView {
                 
-                Text("계정 정보")
-                    .setFont(18, .medium)
-                    .foregroundColor(Colors.main.color)
-                
-                
-                SettingButton("계정 정보 수정") {
-                    viewStore.send(.onTapEditAccountButton)
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                    Text("계정 정보")
+                        .setFont(18, .medium)
+                        .foregroundColor(Colors.main.color)
+                    
+                    
+                    SettingButton("비밀번호 수정") {
+                        viewStore.send(.onTapEditAccountButton)
+                    }
+                    
+                    Text("기타")
+                        .setFont(18, .medium)
+                        .foregroundColor(Colors.main.color)
+                        .padding(.top, 10)
+                    
+                    SettingButton("계정 정보 처리 방침") {
+                        viewStore.send(.onTapEditAccountButton)
+                    }
+                    
+                    SettingButton("로그아웃") {
+                        viewStore.send(.onTapLogoutButton)
+                    }
+                    
                 }
                 
-                Text("기타")
-                    .setFont(18, .medium)
-                    .foregroundColor(Colors.main.color)
-                    .padding(.top, 10)
-                
-                SettingButton("계정 정보 처리 방침") {
-                    viewStore.send(.onTapEditAccountButton)
-                }
-                
-                SettingButton("로그아웃") {
-                    viewStore.send(.onTapLogoutButton)
-                }
-                
+                Spacer()
             }
             .padding(.top, 20)
-            
-            Spacer()
         }
         .padding([.top, .horizontal], 20)
         .setBackground()

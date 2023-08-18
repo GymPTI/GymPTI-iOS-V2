@@ -48,6 +48,7 @@ struct TabBarView: View {
                 FriendView(store: .init(initialState: Friend.State(), reducer: Friend()))
                 
             case "profile":
+                
                 ProfileView(store: .init(initialState: Profile.State(), reducer: Profile()))
                 
             default:

@@ -41,7 +41,7 @@ extension EmailView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
              
-            CustomTextField("이메일을 입력해주세요", text: viewStore.binding(\.$email))
+            CustomTextField(text: viewStore.binding(\.$email))
                 .padding(.top, 10)
             
             Text("*인증번호를 받으실 이메일을 입력해주세요")
@@ -50,13 +50,12 @@ extension EmailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
+        
             
-            AuthProgress(4)
-            
-            CustomWideButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
-                viewStore.send(.onTapSendEmailButton)
-                KeyboardManager.downKeyborad()
-            }
+//            CustomWideButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+//                viewStore.send(.onTapSendEmailButton)
+//                KeyboardManager.downKeyborad()
+//            }
             
         }
         .padding()

@@ -41,7 +41,7 @@ extension VerificationView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField("인증번호를 입력해주세요", text: viewStore.binding(\.$emailVerificationCode))
+            CustomTextField(text: viewStore.binding(\.$emailVerificationCode))
                 .padding(.top, 10)
             
             Text("*받으신 인증번호를 입력해주세요")
@@ -50,13 +50,12 @@ extension VerificationView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
+        
             
-            AuthProgress(5)
-            
-            CustomWideButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
-                viewStore.send(.onTapVerificationButton)
-                KeyboardManager.downKeyborad()
-            }
+//            CustomWideButton("인증 받기", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
+//                viewStore.send(.onTapVerificationButton)
+//                KeyboardManager.downKeyborad()
+//            }
             
         }
         .padding()

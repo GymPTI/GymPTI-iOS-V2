@@ -16,13 +16,13 @@ public struct Profile: ReducerProtocol {
         var data: User?
         
         var name: String {
-            data?.nickname ?? "ㅤㅤㅤ "
+            data?.nickname ?? "ㅤㅤㅤ"
         }
         var id: String {
-            data?.userId ?? " "
+            data?.userId ?? ""
         }
         var message: String {
-            data?.statusMessage ?? " "
+            data?.statusMessage ?? ""
         }
         var profileImage: String {
             data?.profileImage ?? "Profile"

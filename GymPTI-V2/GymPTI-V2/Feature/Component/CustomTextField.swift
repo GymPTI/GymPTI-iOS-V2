@@ -7,26 +7,23 @@
 
 import SwiftUI
 
-struct CustomTextField: View {
+public struct CustomTextField: View {
     
-    let title: String
     let text: Binding<String>
     
     @State var isEditing: Bool = false
     @State var strokeBorderOpacity: CGFloat = 0.3
     
-    init(_ title: String,
-         text: Binding<String>)
+    init(text: Binding<String>)
     {
-        self.title = title
         self.text = text
     }
     
-    var body: some View {
+    public var body: some View {
         
         VStack(alignment: .leading) {
             
-            TextField(title, text: text) { isEditing in
+            TextField("", text: text) { isEditing in
                 if isEditing {
                     strokeBorderOpacity = 1
                 } else {

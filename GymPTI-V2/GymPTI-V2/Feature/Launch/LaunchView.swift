@@ -27,7 +27,7 @@ struct LaunchView: View {
                     switch Token.get(.accessToken) == nil {
                         
                     case true:
-                        navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+                        navigator.replace(paths: ["start"], items: [:], isAnimated: true)
                     case false:
                         navigator.replace(paths: ["tabbar"], items: [:], isAnimated: true)
                     }

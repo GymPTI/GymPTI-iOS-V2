@@ -11,11 +11,6 @@ public struct SignIn: ReducerProtocol {
     
     public struct State: Equatable {
         
-        public init(id: String, pw: String) {
-            self.id = id
-            self.pw = pw
-        }
-        
         @BindingState var id: String = ""
         @BindingState var pw: String = ""
     }
@@ -23,8 +18,8 @@ public struct SignIn: ReducerProtocol {
     public enum Action: Equatable, BindableAction {
         
         case binding(BindingAction<State>)
+        case onTapBackButton
         case onTapSignInButton
-        case onTapSignUpButton
     }
     
     @Dependency(\.sideEffect.signIn) var sideEffect
@@ -33,17 +28,18 @@ public struct SignIn: ReducerProtocol {
         
         BindingReducer()
         Reduce { state, action in
+            
             switch action {
                 
             case .binding:
                 return .none
                 
-            case .onTapSignInButton:
-                loginRequest(state)
+            case .onTapBackButton:
+                sideEffect.onTapBackButton()
                 return .none
                 
-            case .onTapSignUpButton:
-                sideEffect.onTapSignUpButton()
+            case .onTapSignInButton:
+                loginRequest(state)
                 return .none
             }
         }
@@ -63,7 +59,6 @@ public struct SignIn: ReducerProtocol {
             
             Token.save(.accessToken, data.accessToken)
             Token.save(.refreshToken, data.refreshToken)
-            sideEffect.onTapSignInButton()
         }
         
     }

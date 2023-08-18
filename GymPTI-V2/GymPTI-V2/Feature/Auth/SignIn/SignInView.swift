@@ -23,50 +23,65 @@ extension SignInView: View {
     
     public var body: some View {
         
-        VStack(spacing: 10) {
+        VStack {
             
-            VStack(spacing: 10) {
-                Text("GymPTI")
-                    .setFont(32, .bold)
-                    .foregroundColor(Colors.white.color)
-                
-                Text("나만의 인공지능 PT 선생님")
-                    .setFont(16, .regular)
-                    .foregroundColor(Colors.white.color)
+            Button(action: {
+                viewStore.send(.onTapBackButton)
+            }) {
+                Image("Back")
+                    .resizable()
+                    .frame(width: 10, height: 18)
             }
-            .padding(.top, UIScreen.main.bounds.size.height / 8)
+            .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
-            
-            VStack(spacing: 20) {
+            VStack {
                 
-                CustomTextField("아이디를 입력해주세요", text: viewStore.binding(\.$id))
-                
-                CustomSecureField("비밀번호를 입력해주세요.", text: viewStore.binding(\.$pw))
-                
-                CustomWideButton("로그인", disabled: false) {
-                    viewStore.send(.onTapSignInButton)
-                }
-                
-                HStack {
-                    Text("계정이 없으신가요?")
-                        .setFont(14, .regular)
+                VStack(alignment: .leading) {
+                    
+                    Text("아이디")
+                        .setFont(24, .semibold)
                         .foregroundColor(Colors.white.color)
                     
-                    Button(action: {
-                        viewStore.send(.onTapSignUpButton)
-                        KeyboardManager.downKeyborad()
-                    }) {
-                        Text("회원가입 하러가기!")
-                            .setFont(15, .bold)
-                            .foregroundColor(Colors.main.color)
-                    }
+                    CustomTextField(text: viewStore.binding(\.$id))
                 }
-                .padding(.bottom, UIScreen.main.bounds.size.height / 12)
                 
+                VStack(alignment: .leading) {
+                    
+                    Text("비밀번호")
+                        .setFont(24, .semibold)
+                        .foregroundColor(Colors.white.color)
+                    
+                    CustomTextField(text: viewStore.binding(\.$pw))
+                }
+                
+                Button(action: {
+                    viewStore.send(.onTapSignInButton)
+                }) {
+                    Text("로그인")
+                        .setFont(18, .semibold)
+                        .foregroundColor(Colors.white.color)
+                        .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(Colors.main.color)
+                        .cornerRadius(50)
+                        .padding(.horizontal, 60)
+                }
+                .padding(.top, 20)
+                
+                Button(action: {
+                    viewStore.send(.onTapSignInButton)
+                    KeyboardManager.downKeyborad()
+                }) {
+                    Text("아이디 혹은 비밀번호 찾기")
+                        .setFont(18, .semibold)
+                        .foregroundColor(Colors.white.color)
+                }
             }
+            .padding(.top, 20)
+            
+            Spacer()
         }
-        .padding(.horizontal, 20)
+        .padding([.top, .horizontal], 20)
         .setBackground()
     }
 }

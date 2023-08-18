@@ -9,6 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 import Kingfisher
 import PhotosUI
+import Shimmer
 
 public struct EditInfoView {
     
@@ -29,7 +30,8 @@ extension EditInfoView: View {
             
             VStack(alignment: .center) {
                 
-                VStack {
+                HStack {
+                    
                     Button(action: {
                         viewStore.send(.onTapBackButton)
                     }) {
@@ -37,12 +39,28 @@ extension EditInfoView: View {
                             .resizable()
                             .frame(width: 10, height: 18)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(width: 32, height: 24)
+                    
+                    Spacer()
                     
                     Text("프로필 수정")
-                        .setFont(38, .bold)
+                        .setFont(18, .semibold)
                         .foregroundColor(Colors.white.color)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        if viewStore.newName.count >= 2 {
+                            viewStore.send(.onSuccessEditProfile(true))
+                            viewStore.send(.onTapChangeButton)
+                        }
+                    }) {
+                        Text("완료")
+                            .setFont(18, .medium)
+                            .foregroundColor(Colors.white.color)
+                    }
+                    .disabled(!viewStore.newName.regex("[a-zA-Z0-9가-힣]{0,10}") && !viewStore.newStatusMessage.regex("[a-zA-Z0-9가-힣!@#$%^&*()<>?.,;:'\"]{0,30}"))
+                    .frame(width: 32, height: 32)
                 }
                 
                 ZStack(alignment: .bottomTrailing) {
@@ -77,13 +95,13 @@ extension EditInfoView: View {
                                     .resizable()
                                     .frame(width: 18, height: 18)
                             }
-                            .frame(width: 36, height: 36)
+                            .frame(width: 40, height: 40)
                             .background(Colors.main.color)
                             .cornerRadius(28)
                             .overlay(RoundedRectangle(cornerRadius: 28)
                                 .strokeBorder(Colors.black.color, lineWidth: 6))
-                            .padding(.bottom, 4)
-                            .padding(.trailing, 4)
+                            .padding(.bottom, -4)
+                            .padding(.trailing, -4)
                         }
                         .onChange(of: viewStore.selectedItem) { item in
                             
@@ -94,6 +112,7 @@ extension EditInfoView: View {
                             }
                         }
                 }
+                .padding(.top, 40)
                 .padding(.bottom, 20)
                 
                 Text("이름")
@@ -102,7 +121,7 @@ extension EditInfoView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 10)
                 
-                CustomTextField("바꾸실 이름을 입력해주세요", text: viewStore.binding(\.$newName))
+                CustomTextField(text: viewStore.binding(\.$newName))
                 
                 Text("상태 메시지")
                     .setFont(18, .medium)
@@ -110,18 +129,9 @@ extension EditInfoView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading, .top], 10)
                 
-                CustomTextField("바꾸실 상태 메시지를 입력해주세요", text: viewStore.binding(\.$newStatusMessage))
+                CustomTextField(text: viewStore.binding(\.$newStatusMessage))
                 
                 Spacer()
-                
-                CustomWideButton("정보 수정하기", disabled:
-                                    !viewStore.newName.regex("[a-zA-Z0-9가-힣]{0,20}")) {
-                    if viewStore.newName.count >= 2 {
-                        viewStore.send(.onSuccessEditProfile(true))
-                        viewStore.send(.onTapChangeButton)
-                    }
-                }
-                                    .padding(.bottom, 20)
                 
             }
             .padding()

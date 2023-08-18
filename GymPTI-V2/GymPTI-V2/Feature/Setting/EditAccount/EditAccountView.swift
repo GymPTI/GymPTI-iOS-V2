@@ -25,7 +25,8 @@ extension EditAccountView: View {
         
         VStack(alignment: .center) {
             
-            VStack {
+            HStack {
+                
                 Button(action: {
                     viewStore.send(.onTapBackButton)
                 }) {
@@ -33,12 +34,22 @@ extension EditAccountView: View {
                         .resizable()
                         .frame(width: 10, height: 18)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: 32, height: 24)
                 
-                Text("계정 정보 수정")
-                    .setFont(38, .bold)
+                Spacer()
+                
+                Text("비밀번호 변경")
+                    .setFont(18, .semibold)
                     .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                }) {
+                    
+                }
+                .frame(width: 32, height: 24)
             }
             
             Text("이전 비밀번호")
@@ -47,7 +58,7 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
             
-            CustomSecureField("이전 비밀번호를 입력해주세요.", text: viewStore.binding(\.$oldPassword))
+            CustomTextField(text: viewStore.binding(\.$oldPassword))
             
             Text("새로운 비밀번호")
                 .setFont(18, .medium)
@@ -55,7 +66,7 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
             
-            CustomTextField("새로운 비밀번호를 입력해주세요.", text: viewStore.binding(\.$newPassword))
+            CustomTextField(text: viewStore.binding(\.$newPassword))
             
             Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
                 .setFont(14, .regular)
@@ -65,9 +76,9 @@ extension EditAccountView: View {
             
             Spacer()
             
-            CustomWideButton("비밀번호 변경", disabled: !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
-                viewStore.send(.onTapChangeButton)
-            }
+//            CustomWideButton("비밀번호 변경", disabled: !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
+//                viewStore.send(.onTapChangeButton)
+//            }
         }
         .padding()
         .setBackground()

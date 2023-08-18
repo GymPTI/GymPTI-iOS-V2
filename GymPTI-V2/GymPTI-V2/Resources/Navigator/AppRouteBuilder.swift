@@ -13,7 +13,7 @@ struct AppRouterGroup {
         [
             LaunchRouteBuilder(),
             
-            
+            StartRouteBuilder(),
             // 회원가입
             SignInRouteBuilder(),
             IdRouteBuilder(),

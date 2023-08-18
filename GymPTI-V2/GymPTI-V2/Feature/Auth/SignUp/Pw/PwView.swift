@@ -41,7 +41,7 @@ extension PwView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomSecureField("비밀번호를 입력해주세요", text: viewStore.binding(\.$pw))
+            CustomTextField(text: viewStore.binding(\.$pw))
                 .padding(.top, 10)
             
             Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
@@ -50,13 +50,12 @@ extension PwView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
+
             
-            AuthProgress(2)
-            
-            CustomWideButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
-                viewStore.send(.onTapNextButton)
-                KeyboardManager.downKeyborad()
-            }
+//            CustomWideButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
+//                viewStore.send(.onTapNextButton)
+//                KeyboardManager.downKeyborad()
+//            }
         }
         .padding()
         .setBackground()

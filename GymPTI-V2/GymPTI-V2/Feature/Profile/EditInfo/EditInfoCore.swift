@@ -65,29 +65,27 @@ public struct EditInfo: ReducerProtocol {
     
     private func editProfileRequest(state: State) {
         
-        Requests.simple("/user/nickname", .put, params: ["newNickname": state.newName], failure: { message in
-            
-            print(message)
-        }) {
-            print("닉네임 변경 성공")
-        }
-        
-        Requests.simple("/user/statusMessage", .put,
-                        params: ["statusMessage": state.newStatusMessage],
-                        failure: { message in
-            
-            print(message)
-        }) {
-            print("상태 메시지 변경 성공")
-        }
-        
         if let image = state.selectedImageData {
             
             Requests.uploadImage("/user/profileImage", image: image) {
                 sideEffect.onTapBackButton()
             }
         } else {
-            sideEffect.onTapBackButton()
+            
+            Requests.simple("/user/nickname", .put, params: ["newNickname": state.newName], failure: { _ in
+                sideEffect.onTapBackButton()
+            }) {
+                print("닉네임 변경 성공")
+            }
+            
+            Requests.simple("/user/statusMessage", .put,
+                            params: ["statusMessage": state.newStatusMessage],
+                            failure: { _ in
+                sideEffect.onTapBackButton()
+            }) {
+                print("상태 메시지 변경 성공")
+                sideEffect.onTapBackButton()
+            }
         }
     }
 }

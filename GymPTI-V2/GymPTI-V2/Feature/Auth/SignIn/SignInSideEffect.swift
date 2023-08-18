@@ -9,9 +9,7 @@ import LinkNavigator
 
 public protocol SignInSideEffect {
     
-    var onTapSignInButton: () -> Void { get }
-    var onTapSignUpButton: () -> Void { get }
-    
+    var onTapBackButton: () -> Void { get }
     var onFailSignIn: (String) -> Void { get }
 }
 
@@ -26,15 +24,9 @@ public struct SignInSideEffectLive {
 
 extension SignInSideEffectLive: SignInSideEffect {
     
-    public var onTapSignInButton: () -> Void {
+    public var onTapBackButton: () -> Void {
         {
-            navigator.replace(paths: ["tabbar"], items: [:], isAnimated: true)
-        }
-    }
-    
-    public var onTapSignUpButton: () -> Void {
-        {
-            navigator.next(paths: ["id"], items: [:], isAnimated: true)
+            navigator.back(isAnimated: true)
         }
     }
     

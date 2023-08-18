@@ -25,7 +25,8 @@ extension NotificationView: View {
         
         VStack(spacing: 0) {
             
-            VStack {
+            HStack {
+                
                 Button(action: {
                     viewStore.send(.onTapBackButton)
                 }) {
@@ -33,12 +34,22 @@ extension NotificationView: View {
                         .resizable()
                         .frame(width: 10, height: 18)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: 32, height: 24)
+                
+                Spacer()
                 
                 Text("알림")
-                    .setFont(38, .bold)
+                    .setFont(18, .semibold)
                     .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                }) {
+                    
+                }
+                .frame(width: 32, height: 24)
             }
             
             ScrollView {
@@ -53,6 +64,7 @@ extension NotificationView: View {
                 
                 Spacer()
             }
+            .padding(.top, 20)
         }
         .padding([.top, .horizontal], 20)
         .setBackground()
