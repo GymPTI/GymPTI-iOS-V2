@@ -13,11 +13,13 @@ struct StartRouteBuilder: RouteBuilder {
     var matchPath: String { "start" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 StartView(store: .init(
                     initialState: Start.State(),
-                    reducer: Start()))
+                    reducer: {
+                        Start()
+                    }))
             }
         }
     }

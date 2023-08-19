@@ -15,7 +15,7 @@ public struct FriendView {
     
     public init(store: StoreOf<Friend>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 

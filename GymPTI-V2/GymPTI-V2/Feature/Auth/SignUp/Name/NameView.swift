@@ -15,7 +15,7 @@ public struct NameView {
     
     public init(store: StoreOf<Name>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -41,22 +41,22 @@ extension NameView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField(text: viewStore.binding(\.$name))
+            CustomTextField(text: viewStore.$name)
                 .padding(.top, 10)
             
             Text("*이름은 가입 후 마음껏 바꾸실 수 있어요")
-                .setFont(14, .regular)
+                .setFont(12, .regular)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
-        
+            CustomButton("다음", disabled: !viewStore.name.regex("[a-zA-Z0-9가-힣 ]{2,20}")) {
+                viewStore.send(.onTapNextButton)
+                KeyboardManager.downKeyborad()
+            }
+            .padding(.top, 60)
+            .padding(.horizontal, 100)
             
-//            CustomWideButton("다음", disabled:
-//                                !viewStore.name.regex("[a-zA-Z0-9가-힣 ]{2,20}")) {
-//                viewStore.send(.onTapNextButton)
-//                KeyboardManager.downKeyborad()
-//            }
+            Spacer()
         }
         .padding()
         .setBackground()

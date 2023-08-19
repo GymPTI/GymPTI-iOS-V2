@@ -13,11 +13,13 @@ struct TipRouteBuilder: RouteBuilder {
     var matchPath: String { "tip" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 TipView(store: .init(
                         initialState: Tip.State(),
-                        reducer: Tip()))
+                        reducer: {
+                            Tip()
+                        }))
                 .navigationBarHidden(true)
             }
         }

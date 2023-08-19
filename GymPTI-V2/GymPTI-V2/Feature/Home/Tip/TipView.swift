@@ -15,7 +15,7 @@ public struct TipView {
     
     public init(store: StoreOf<Tip>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -24,54 +24,6 @@ extension TipView: View {
     public var body: some View {
         
         ZStack(alignment: .topTrailing) {
-            
-            //            ScrollView {
-            
-            //                VStack(alignment: .leading) {
-            //
-            //                    Text("\(viewStore.title)")
-            //                        .setFont(38, .bold)
-            //                        .foregroundColor(Colors.white.color)
-            //                        .lineLimit(10)
-            //                        .frame(maxWidth: .infinity, alignment: .leading)
-            //                        .padding(.top, 60)
-            //
-            //                    Image("test")
-            //
-            //                    Text("\(viewStore.contents[0])")
-            //                        .setFont(18, .medium)
-            //                        .foregroundColor(Colors.gray.color)
-            //                        .lineLimit(10)
-            //
-            //                    Text("점진적 과부화란?")
-            //                        .setFont(22, .medium)
-            //                        .foregroundColor(Colors.white.color)
-            //                        .padding(.top, 10)
-            //
-            //                    Image("test2")
-            //
-            //                    Text("\(viewStore.contents[1])")
-            //                        .setFont(18, .medium)
-            //                        .foregroundColor(Colors.gray.color)
-            //                        .lineLimit(10)
-            //
-            //                    Text("푸쉬업에 점진적 과부화 적용하기")
-            //                        .setFont(22, .medium)
-            //                        .foregroundColor(Colors.white.color)
-            //                        .padding(.top, 10)
-            //
-            //                    Text("\(viewStore.contents[0])")
-            //                        .setFont(18, .medium)
-            //                        .foregroundColor(Colors.gray.color)
-            //                        .lineLimit(10)
-            //
-            //                    Image("test")
-            //
-            //                    Text("\(viewStore.contents[1])")
-            //                        .setFont(18, .medium)
-            //                        .foregroundColor(Colors.gray.color)
-            //                        .lineLimit(10)
-            //                }
             
             WebView(url: URL(string: "https://mingyu.run")!)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

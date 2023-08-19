@@ -13,11 +13,13 @@ struct RoutineRouteBuilder: RouteBuilder {
     var matchPath: String { "routine" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 RoutineView(store: .init(
                     initialState: Routine.State(),
-                    reducer: Routine()))
+                    reducer: {
+                        Routine()
+                    }))
                 .navigationBarHidden(true)
             }
         }

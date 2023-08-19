@@ -11,6 +11,7 @@ public protocol SignInSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onFailSignIn: (String) -> Void { get }
+    var onSuccessSignIn: () -> Void { get }
 }
 
 public struct SignInSideEffectLive {
@@ -38,6 +39,12 @@ extension SignInSideEffectLive: SignInSideEffect {
                 buttons: [.init(title: "확인", style: .default) ],
                 flagType: .error)
             navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var onSuccessSignIn: () -> Void {
+        {
+            navigator.replace(paths: ["tabbar"], items: [:], isAnimated: true)
         }
     }
 }

@@ -18,7 +18,7 @@ public struct EditInfoView {
     
     public init(store: StoreOf<EditInfo>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -86,7 +86,7 @@ extension EditInfoView: View {
                     }
                     
                     PhotosPicker(
-                        selection: viewStore.binding(\.$selectedItem),
+                        selection: viewStore.$selectedItem,
                         matching: .images,
                         photoLibrary: .shared()) {
                             
@@ -121,7 +121,7 @@ extension EditInfoView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 10)
                 
-                CustomTextField(text: viewStore.binding(\.$newName))
+                CustomTextField(text: viewStore.$newName)
                 
                 Text("상태 메시지")
                     .setFont(18, .medium)
@@ -129,7 +129,7 @@ extension EditInfoView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading, .top], 10)
                 
-                CustomTextField(text: viewStore.binding(\.$newStatusMessage))
+                CustomTextField(text: viewStore.$newStatusMessage)
                 
                 Spacer()
                 

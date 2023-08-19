@@ -15,7 +15,7 @@ public struct HomeView {
     
     public init(store: StoreOf<Home>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 

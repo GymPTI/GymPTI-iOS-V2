@@ -48,7 +48,7 @@ extension SettingSideEffectLive: SettingSideEffect {
                     
                     Token.remove(.accessToken)
                     Token.remove(.refreshToken)
-                    navigator.replace(paths: ["signin"], items: [:], isAnimated: true)
+                    navigator.replace(paths: ["start"], items: [:], isAnimated: true)
                 }), ActionButton(title: "취소", style: .cancel)],
                 flagType: .error
             )

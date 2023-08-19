@@ -15,7 +15,7 @@ public struct FindIdView {
     
     public init(store: StoreOf<FindId>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -41,14 +41,15 @@ extension FindIdView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField(text: viewStore.binding(\.$email))
+            CustomTextField(text: viewStore.$email)
             
             Spacer()
             
-//            CustomWideButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
-//                viewStore.send(.onTapFindIdButton)
-//                KeyboardManager.downKeyborad()
-//            }
+            CustomButton("찾기", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+                
+                viewStore.send(.onTapFindIdButton)
+                KeyboardManager.downKeyborad()
+            }
         }
         .padding([.top,.horizontal], 20)
         .setBackground()

@@ -13,12 +13,14 @@ struct IdRouteBuilder: RouteBuilder {
     var matchPath: String { "id" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 IdView(store: .init(
                     initialState: Id.State(
                         id: items.getValue(key: "id-id") ?? ""),
-                    reducer: Id()))
+                    reducer: {
+                        Id()
+                    }))
                 .navigationBarHidden(true)
             }
         }

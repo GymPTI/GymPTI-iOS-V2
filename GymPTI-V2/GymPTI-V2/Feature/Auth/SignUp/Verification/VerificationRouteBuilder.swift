@@ -12,7 +12,7 @@ struct VerificationRouteBuilder: RouteBuilder {
     var matchPath: String { "verification" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 VerificationView(store: .init(
                     initialState: Verification.State(
@@ -20,7 +20,9 @@ struct VerificationRouteBuilder: RouteBuilder {
                         pw: items.getValue(key: "verification-pw") ?? "",
                         name: items.getValue(key: "verification-name") ?? "",
                         email: items.getValue(key: "verification-email") ?? ""),
-                    reducer: Verification()))
+                    reducer: {
+                        Verification()
+                    }))
                 .navigationBarHidden(true)
             }
         }

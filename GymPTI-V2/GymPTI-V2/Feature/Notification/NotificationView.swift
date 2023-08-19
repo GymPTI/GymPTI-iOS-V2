@@ -15,7 +15,7 @@ public struct NotificationView {
     
     public init(store: StoreOf<Notification>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 

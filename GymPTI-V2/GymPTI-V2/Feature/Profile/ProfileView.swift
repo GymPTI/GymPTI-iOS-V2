@@ -16,7 +16,7 @@ public struct ProfileView {
     
     public init(store: StoreOf<Profile>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -24,60 +24,46 @@ extension ProfileView: View {
     
     public var body: some View {
         
-        VStack {
+        ZStack {
             
-            CustomNavi("프로필", {
-                viewStore.send(.onTapNotificationButton)
-            }) {
-                viewStore.send(.onTapSettingButton)
-            }
-            
-            ScrollView {
+            VStack {
                 
-                VStack(spacing: 0) {
+                CustomNavi("프로필", {
+                    viewStore.send(.onTapNotificationButton)
+                }) {
+                    viewStore.send(.onTapSettingButton)
+                }
+                
+                ScrollView {
                     
-                    ZStack(alignment: .bottom) {
+                    VStack(spacing: 0) {
                         
-                        KFImage(URL(string: viewStore.profileImage))
-                            .placeholder {
-                                Image("Profile")
-                                    .resizable()
-                                    .frame(width: 108, height: 108)
-                                    .clipShape(Circle())
-                                    .overlay(RoundedRectangle(cornerRadius: 108)
-                                        .strokeBorder(Colors.white.color, lineWidth: 2))
-                            }
-                            .resizable()
-                            .frame(width: 108, height: 108)
-                            .clipShape(Circle())
-                            .overlay(RoundedRectangle(cornerRadius: 108)
-                                .strokeBorder(Colors.white.color, lineWidth: 2))
-                    }
-                    
-                    if viewStore.message == "" {
-                        
-                        Text("이름을 불러오는 중")
-                            .setFont(22, .bold)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                            .redacted(reason: .placeholder)
-                            .shimmering()
-
-                        Text("id를 불러오는 중")
-                            .setFont(10, .light)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                            .redacted(reason: .placeholder)
-                            .shimmering()
-
-                        Text("상태 메세지를 불러오는 중")
-                            .setFont(14, .medium)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                            .redacted(reason: .placeholder)
-                            .shimmering()
-                        
-                    } else {
+                        ZStack(alignment: .bottom) {
+                            
+                            KFImage(URL(string: viewStore.profileImage))
+                                .placeholder {
+                                    if viewStore.name == "뉴진스" {
+                                        Image("Newjeans")
+                                            .resizable()
+                                            .frame(width: 108, height: 108)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                                .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    } else {
+                                        Image("Profile")
+                                            .resizable()
+                                            .frame(width: 108, height: 108)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                                .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    }
+                                }
+                                .resizable()
+                                .frame(width: 108, height: 108)
+                                .clipShape(Circle())
+                                .overlay(RoundedRectangle(cornerRadius: 108)
+                                    .strokeBorder(Colors.white.color, lineWidth: 2))
+                        }
                         
                         Text("\(viewStore.name)")
                             .setFont(22, .bold)
@@ -93,18 +79,19 @@ extension ProfileView: View {
                             .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
                             .padding(.top, 10)
+                        
+                        SettingButton("프로필 정보 수정") {
+                            viewStore.send(.onTapEditInfoButton)
+                        }
+                        .padding(.top, 20)
                     }
-                    
-                    SettingButton("프로필 정보 수정") {
-                        viewStore.send(.onTapEditInfoButton)
-                    }
-                    .padding(.top, 20)
                 }
             }
+            .padding([.top,.horizontal], 20)
+            
         }
-        .padding([.top,.horizontal], 20)
         .setBackground()
-        .onAppear {
+        .task {
             viewStore.send(.onAppearProfile)
         }
     }

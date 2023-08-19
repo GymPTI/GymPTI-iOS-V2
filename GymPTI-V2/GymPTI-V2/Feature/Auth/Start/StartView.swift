@@ -15,7 +15,7 @@ public struct StartView {
     
     public init(store: StoreOf<Start>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -25,9 +25,7 @@ extension StartView: View {
         
         VStack(spacing: 20) {
             
-            Text("나만의 인공지능 PT 선생님\n을 지금 바로 사용해보세요.")
-                .setFont(24, .bold)
-                .foregroundColor(Colors.white.color)
+            Image("launch.logo")
                 .padding([.horizontal, .bottom], 60)
             
             Button(action: {

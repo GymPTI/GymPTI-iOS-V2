@@ -13,7 +13,7 @@ struct TabBarRouteBuilder: RouteBuilder {
     var matchPath: String { "tabbar" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 TabBarView(selected: "")
             }

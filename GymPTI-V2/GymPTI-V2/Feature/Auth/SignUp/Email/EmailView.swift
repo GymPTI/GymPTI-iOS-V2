@@ -15,7 +15,7 @@ public struct EmailView {
     
     public init(store: StoreOf<Email>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -41,22 +41,22 @@ extension EmailView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
              
-            CustomTextField(text: viewStore.binding(\.$email))
+            CustomTextField(text: viewStore.$email)
                 .padding(.top, 10)
             
             Text("*인증번호를 받으실 이메일을 입력해주세요")
-                .setFont(14, .regular)
+                .setFont(12, .regular)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
+            CustomButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
+                viewStore.send(.onTapSendEmailButton)
+                KeyboardManager.downKeyborad()
+            }
+            .padding(.top, 60)
+            .padding(.horizontal, 100)
+            
             Spacer()
-        
-            
-//            CustomWideButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
-//                viewStore.send(.onTapSendEmailButton)
-//                KeyboardManager.downKeyborad()
-//            }
-            
         }
         .padding()
         .setBackground()

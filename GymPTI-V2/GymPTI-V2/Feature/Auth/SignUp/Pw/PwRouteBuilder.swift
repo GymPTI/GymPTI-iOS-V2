@@ -13,13 +13,15 @@ struct PwRouteBuilder: RouteBuilder {
     var matchPath: String { "pw" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 PwView(store: .init(
                     initialState: Pw.State(
                         id: items.getValue(key: "pw-id") ?? "",
                         pw: items.getValue(key: "pw-pw") ?? ""),
-                    reducer: Pw()))
+                    reducer: {
+                        Pw()
+                    }))
                 .navigationBarHidden(true)
             }
         }

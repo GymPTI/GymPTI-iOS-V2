@@ -13,11 +13,13 @@ struct FindIdRouteBuilder: RouteBuilder {
     var matchPath: String { "findid" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 FindIdView(store: .init(
                     initialState: FindId.State(),
-                    reducer: FindId()))
+                    reducer: {
+                        FindId()
+                    }))
                 .navigationBarHidden(true)
             }
         }

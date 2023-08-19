@@ -13,11 +13,13 @@ struct ProfileRouteBuilder: RouteBuilder {
     var matchPath: String { "profile" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 ProfileView(store: .init(
                     initialState: Profile.State(),
-                    reducer: Profile()))
+                    reducer: {
+                        Profile()
+                    }))
                 .navigationBarHidden(true)
             }
         }

@@ -57,6 +57,7 @@ public struct SignIn: ReducerProtocol {
             sideEffect.onFailSignIn(error)
         }) { data in
             
+            sideEffect.onSuccessSignIn()
             Token.save(.accessToken, data.accessToken)
             Token.save(.refreshToken, data.refreshToken)
         }

@@ -15,7 +15,7 @@ public struct EditAccountView {
     
     public init(store: StoreOf<EditAccount>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -58,7 +58,7 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
             
-            CustomTextField(text: viewStore.binding(\.$oldPassword))
+            CustomTextField(text: viewStore.$oldPassword)
             
             Text("새로운 비밀번호")
                 .setFont(18, .medium)
@@ -66,7 +66,7 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
             
-            CustomTextField(text: viewStore.binding(\.$newPassword))
+            CustomTextField(text: viewStore.$newPassword)
             
             Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
                 .setFont(14, .regular)
@@ -76,9 +76,9 @@ extension EditAccountView: View {
             
             Spacer()
             
-//            CustomWideButton("비밀번호 변경", disabled: !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
-//                viewStore.send(.onTapChangeButton)
-//            }
+            CustomButton("비밀번호 변경", disabled: !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
+                viewStore.send(.onTapChangeButton)
+            }
         }
         .padding()
         .setBackground()

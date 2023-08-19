@@ -15,7 +15,7 @@ public struct PwView {
     
     public init(store: StoreOf<Pw>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -41,21 +41,22 @@ extension PwView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField(text: viewStore.binding(\.$pw))
+            CustomTextField(text: viewStore.$pw)
                 .padding(.top, 10)
             
             Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
-                .setFont(14, .regular)
+                .setFont(12, .regular)
                 .foregroundColor(Colors.white.color)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
-
+            CustomButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
+                viewStore.send(.onTapNextButton)
+                KeyboardManager.downKeyborad()
+            }
+            .padding(.top, 60)
+            .padding(.horizontal, 100)
             
-//            CustomWideButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
-//                viewStore.send(.onTapNextButton)
-//                KeyboardManager.downKeyborad()
-//            }
+            Spacer()
         }
         .padding()
         .setBackground()

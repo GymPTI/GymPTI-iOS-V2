@@ -15,7 +15,7 @@ public struct RoutineView {
     
     public init(store: StoreOf<Routine>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 

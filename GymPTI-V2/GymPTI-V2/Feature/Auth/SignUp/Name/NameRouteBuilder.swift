@@ -12,14 +12,16 @@ struct NameRouteBuilder: RouteBuilder {
     var matchPath: String { "name" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 NameView(store: .init(
                     initialState: Name.State(
                         id: items.getValue(key: "name-id") ?? "",
                         pw: items.getValue(key: "name-pw") ?? "",
                         name: items.getValue(key: "name-name") ?? ""),
-                    reducer: Name()))
+                    reducer: {
+                        Name()
+                    }))
                 .navigationBarHidden(true)
             }
         }

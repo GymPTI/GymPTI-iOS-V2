@@ -13,11 +13,13 @@ struct FriendRouteBuilder: RouteBuilder {
     var matchPath: String { "friend" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 FriendView(store: .init(
                     initialState: Friend.State(),
-                    reducer: Friend()))
+                    reducer: {
+                        Friend()
+                    }))
                 .navigationBarHidden(true)
             }
         }

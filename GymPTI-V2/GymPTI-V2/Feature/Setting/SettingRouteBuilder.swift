@@ -13,11 +13,13 @@ struct SettingRouteBuilder: RouteBuilder {
     var matchPath: String { "setting" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 SettingView(store: .init(
                     initialState: Setting.State(),
-                    reducer: Setting()))
+                    reducer: {
+                        Setting()
+                    }))
                 .navigationBarHidden(true)
             }
         }

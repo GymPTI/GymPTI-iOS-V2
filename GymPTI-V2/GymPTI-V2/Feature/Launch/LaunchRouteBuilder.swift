@@ -13,7 +13,7 @@ struct LaunchRouteBuilder: RouteBuilder {
     var matchPath: String { "launch" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 LaunchView(navigator: navigator)
             }

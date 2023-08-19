@@ -122,8 +122,9 @@ class Requests {
                 DispatchQueue.main.async {
                     completion()
                 }
-            case .failure:
-                print("프로필 이미지 변경 실패")
+            case .failure(let error):
+                print("이미지 전송 실패, failed sending image : \(error)")
+                exit(0)
             }
         }
     }

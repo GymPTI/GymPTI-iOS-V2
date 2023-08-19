@@ -13,11 +13,13 @@ struct EditAccountRouteBuilder: RouteBuilder {
     var matchPath: String { "editaccount" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { navigator, items, dep in
+        { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 EditAccountView(store: .init(
                     initialState: EditAccount.State(),
-                    reducer: EditAccount()))
+                    reducer: {
+                        EditAccount()
+                    }))
                 .navigationBarHidden(true)
             }
         }

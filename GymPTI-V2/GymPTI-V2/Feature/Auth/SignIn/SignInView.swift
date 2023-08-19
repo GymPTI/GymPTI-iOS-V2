@@ -15,7 +15,7 @@ public struct SignInView {
     
     public init(store: StoreOf<SignIn>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
@@ -34,38 +34,31 @@ extension SignInView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            VStack {
+            VStack(spacing: 20) {
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 6) {
                     
                     Text("아이디")
                         .setFont(24, .semibold)
                         .foregroundColor(Colors.white.color)
                     
-                    CustomTextField(text: viewStore.binding(\.$id))
+                    CustomTextField(text: viewStore.$id)
                 }
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 6) {
                     
                     Text("비밀번호")
                         .setFont(24, .semibold)
                         .foregroundColor(Colors.white.color)
                     
-                    CustomTextField(text: viewStore.binding(\.$pw))
+                    CustomTextField(text: viewStore.$pw)
                 }
                 
-                Button(action: {
+                CustomButton("로그인", disabled: viewStore.id == "" || viewStore.pw == "" ? true : false) {
                     viewStore.send(.onTapSignInButton)
-                }) {
-                    Text("로그인")
-                        .setFont(18, .semibold)
-                        .foregroundColor(Colors.white.color)
-                        .frame(height: 50)
-                        .frame(maxWidth: .infinity)
-                        .background(Colors.main.color)
-                        .cornerRadius(50)
-                        .padding(.horizontal, 60)
+                    KeyboardManager.downKeyborad()
                 }
+                .padding(.horizontal, 60)
                 .padding(.top, 20)
                 
                 Button(action: {
@@ -73,7 +66,7 @@ extension SignInView: View {
                     KeyboardManager.downKeyborad()
                 }) {
                     Text("아이디 혹은 비밀번호 찾기")
-                        .setFont(18, .semibold)
+                        .setFont(14, .medium)
                         .foregroundColor(Colors.white.color)
                 }
             }

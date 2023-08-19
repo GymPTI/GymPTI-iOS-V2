@@ -15,7 +15,7 @@ public struct SettingView {
     
     public init(store: StoreOf<Setting>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
