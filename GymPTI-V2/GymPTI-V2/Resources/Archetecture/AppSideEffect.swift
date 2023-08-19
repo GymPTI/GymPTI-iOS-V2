@@ -26,12 +26,17 @@ public struct AppSideEffect: DependencyKey {
     let signIn: SignInSideEffect
     
     let id: IdSideEffect
+    
     let pw: PwSideEffect
+    
     let name: NameSideEffect
+    
     let email: EmailSideEffect
+    
     let verification: VerificationSideEffect
     
     let home: HomeSideEffect
+    
     let tip: TipSideEffect
     
     let routine: RoutineSideEffect
@@ -39,10 +44,14 @@ public struct AppSideEffect: DependencyKey {
     let friend: FriendSideEffect
     
     let profile: ProfileSideEffect
+    
     let editInfo: EditInfoSideEffect
+    
     let editAccount: EditAccountSideEffect
-    let findId: FindIdSideEffect
+    
     let setting: SettingSideEffect
+    
+    let findId: FindIdSideEffect
     
     let notification: NotificationSideEffect
     
@@ -56,12 +65,17 @@ public struct AppSideEffect: DependencyKey {
             signIn: SignInSideEffectLive(navigator: navigator),
             
             id: IdSideEffectLive(navigator: navigator),
+            
             pw: PwSideEffectLive(navigator: navigator),
+            
             name: NameSideEffectLive(navigator: navigator),
+            
             email: EmailSideEffectLive(navigator: navigator),
+            
             verification: VerificationSideEffectLive(navigator: navigator),
             
             home: HomeSideEffectLive(navigator: navigator),
+            
             tip: TipSideEffectLive(navigator: navigator),
             
             routine: RoutineSideEffectLive(navigator: navigator),
@@ -69,10 +83,14 @@ public struct AppSideEffect: DependencyKey {
             friend: FriendSideEffectLive(navigator: navigator),
             
             profile: ProfileSideEffectLive(navigator: navigator),
+            
             editInfo: EditInfoSideEffectLive(navigator: navigator),
+            
             editAccount: EditAccountSideEffectLive(navigator: navigator),
-            findId: FindIdSideEffectLive(navigator: navigator),
+            
             setting: SettingSideEffectLive(navigator: navigator),
+            
+            findId: FindIdSideEffectLive(navigator: navigator),
             
             notification: NotificationSideEffectLive(navigator: navigator)
         )

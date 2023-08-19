@@ -39,17 +39,17 @@ struct TabBarView: View {
             switch selected {
                 
             case "home":
-                HomeView(store: .init(initialState: Home.State(), reducer: Home()))
+                HomeView(store: .init(initialState: Home.State(), reducer: { Home() }))
                 
             case "routine":
-                RoutineView(store: .init(initialState: Routine.State(), reducer: Routine()))
+                RoutineView(store: .init(initialState: Routine.State(), reducer: { Routine() }))
                 
             case "friend":
-                FriendView(store: .init(initialState: Friend.State(), reducer: Friend()))
+                FriendView(store: .init(initialState: Friend.State(), reducer: { Friend() }))
                 
             case "profile":
                 
-                ProfileView(store: .init(initialState: Profile.State(), reducer: Profile()))
+                ProfileView(store: .init(initialState: Profile.State(), reducer: { Profile() }))
                 
             default:
                 Text("화면이 로딩되지 않습니다.")

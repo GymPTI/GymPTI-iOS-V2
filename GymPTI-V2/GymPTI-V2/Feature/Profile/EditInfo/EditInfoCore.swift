@@ -14,10 +14,13 @@ public struct EditInfo: ReducerProtocol {
     public struct State: Equatable {
         
         @BindingState var profileImage: String = ""
+        
         @BindingState var newName: String
+        
         @BindingState var newStatusMessage: String
         
         @BindingState var selectedItem: PhotosPickerItem? = nil
+        
         @BindingState var selectedImageData: Data? = nil
         
         @BindingState var successEditProfile: Bool = false

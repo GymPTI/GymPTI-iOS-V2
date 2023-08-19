@@ -32,41 +32,32 @@ extension NotificationView: View {
                 }) {
                     Image("Back")
                         .resizable()
-                        .frame(width: 10, height: 18)
+                        .frame(width: 9, height: 15)
                 }
-                .frame(width: 32, height: 24)
+                .frame(width: 42, height: 36)
+                .padding(.bottom, 6)
                 
                 Spacer()
                 
-                Text("알림")
+                Text("알람")
                     .setFont(18, .semibold)
                     .foregroundColor(Colors.white.color)
+                    .padding(.bottom, 6)
+                    .padding(.trailing, 42)
                 
                 Spacer()
-                
-                Button(action: {
-                    
-                }) {
-                    
-                }
-                .frame(width: 32, height: 24)
             }
+            .frame(maxWidth: .infinity)
+            .frame(height: 40)
+            .background(Colors.darkGray.color)
             
             ScrollView {
                 
-                VStack(alignment: .leading, spacing: 10) {
-                    
-                    Text("알림")
-                        .setFont(18, .medium)
-                        .foregroundColor(Colors.main.color)
-                }
-                .padding(.top, 20)
-                
-                Spacer()
+                Text("알람")
+                    .padding(.top, 40)
+                    .frame(maxWidth: .infinity)
             }
-            .padding(.top, 20)
         }
-        .padding([.top, .horizontal], 20)
         .setBackground()
     }
 }

@@ -16,6 +16,7 @@ struct LaunchRouteBuilder: RouteBuilder {
         { _, _, _ in
             WrappingController(matchPath: matchPath) {
                 LaunchView(navigator: navigator)
+                    .navigationBarHidden(true)
             }
         }
     }

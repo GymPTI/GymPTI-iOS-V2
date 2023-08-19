@@ -28,7 +28,7 @@ extension EditInfoView: View {
         
         ZStack {
             
-            VStack(alignment: .center) {
+            VStack(spacing: 0) {
                 
                 HStack {
                     
@@ -37,104 +37,38 @@ extension EditInfoView: View {
                     }) {
                         Image("Back")
                             .resizable()
-                            .frame(width: 10, height: 18)
+                            .frame(width: 9, height: 15)
                     }
-                    .frame(width: 32, height: 24)
+                    .frame(width: 42, height: 36)
+                    .padding(.bottom, 6)
                     
                     Spacer()
                     
-                    Text("프로필 수정")
+                    Text("정보 수정")
                         .setFont(18, .semibold)
                         .foregroundColor(Colors.white.color)
+                        .padding(.bottom, 6)
                     
                     Spacer()
                     
                     Button(action: {
-                        if viewStore.newName.count >= 2 {
-                            viewStore.send(.onSuccessEditProfile(true))
-                            viewStore.send(.onTapChangeButton)
-                        }
+                        viewStore.send(.onTapChangeButton)
                     }) {
-                        Text("완료")
-                            .setFont(18, .medium)
+                        Text("저장")
+                            .setFont(16, .semibold)
                             .foregroundColor(Colors.white.color)
+                            .padding(.trailing, 10)
                     }
-                    .disabled(!viewStore.newName.regex("[a-zA-Z0-9가-힣]{0,10}") && !viewStore.newStatusMessage.regex("[a-zA-Z0-9가-힣!@#$%^&*()<>?.,;:'\"]{0,30}"))
-                    .frame(width: 32, height: 32)
+                    .frame(width: 42, height: 36)
+                    .padding(.bottom, 6)
                 }
+                .frame(maxWidth: .infinity)
+                .frame(height: 40)
+                .background(Colors.darkGray.color)
                 
-                ZStack(alignment: .bottomTrailing) {
-                    
-                    if viewStore.selectedImageData == nil {
-                        
-                        KFImage(URL(string: viewStore.profileImage))
-                            .placeholder {
-                                Image("Profile")
-                                    .resizable()
-                                    .frame(width: 86, height: 86)
-                                    .clipShape(Circle())
-                            }
-                            .resizable()
-                            .frame(width: 108, height: 108)
-                            .clipShape(Circle())
-                    } else {
-                        
-                        Image(uiImage: UIImage(data: viewStore.selectedImageData!)!)
-                            .resizable()
-                            .frame(width: 108, height: 108)
-                            .clipShape(Circle())
-                    }
-                    
-                    PhotosPicker(
-                        selection: viewStore.$selectedItem,
-                        matching: .images,
-                        photoLibrary: .shared()) {
-                            
-                            HStack {
-                                Image("Edit")
-                                    .resizable()
-                                    .frame(width: 18, height: 18)
-                            }
-                            .frame(width: 40, height: 40)
-                            .background(Colors.main.color)
-                            .cornerRadius(28)
-                            .overlay(RoundedRectangle(cornerRadius: 28)
-                                .strokeBorder(Colors.black.color, lineWidth: 6))
-                            .padding(.bottom, -4)
-                            .padding(.trailing, -4)
-                        }
-                        .onChange(of: viewStore.selectedItem) { item in
-                            
-                            Task {
-                                if let data = try? await    item?.loadTransferable(type: Data.self) {
-                                    viewStore.send(.onChangeProfileImage(data))
-                                }
-                            }
-                        }
-                }
-                .padding(.top, 40)
-                .padding(.bottom, 20)
-                
-                Text("이름")
-                    .setFont(18, .medium)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 10)
-                
-                CustomTextField(text: viewStore.$newName)
-                
-                Text("상태 메시지")
-                    .setFont(18, .medium)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding([.leading, .top], 10)
-                
-                CustomTextField(text: viewStore.$newStatusMessage)
-                
-                Spacer()
+                EditInfoScrollView(viewStore: self.viewStore)
                 
             }
-            .padding()
             .setBackground()
             .onAppear {
                 print(viewStore.newName, viewStore.profileImage)
@@ -142,6 +76,98 @@ extension EditInfoView: View {
             
             if viewStore.successEditProfile {
                 LoadingView()
+            }
+        }
+    }
+}
+
+extension EditInfoView {
+    
+    struct EditInfoScrollView: View {
+        
+        let viewStore: ViewStoreOf<EditInfo>
+        
+        init(viewStore: ViewStoreOf<EditInfo>) {
+            self.viewStore = viewStore
+        }
+        
+        var body: some View {
+            
+            ScrollView {
+                
+                VStack(alignment: .center) {
+                    
+                    ZStack(alignment: .bottomTrailing) {
+                        
+                        if viewStore.selectedImageData == nil {
+                            
+                            KFImage(URL(string: viewStore.profileImage))
+                                .placeholder {
+                                    Image("Profile")
+                                        .resizable()
+                                        .frame(width: 86, height: 86)
+                                        .clipShape(Circle())
+                                }
+                                .resizable()
+                                .frame(width: 108, height: 108)
+                                .clipShape(Circle())
+                        } else {
+                            
+                            Image(uiImage: UIImage(data: viewStore.selectedImageData!)!)
+                                .resizable()
+                                .frame(width: 108, height: 108)
+                                .clipShape(Circle())
+                        }
+                        
+                        PhotosPicker(
+                            selection: viewStore.$selectedItem,
+                            matching: .images,
+                            photoLibrary: .shared()) {
+                                
+                                HStack {
+                                    Image("Edit")
+                                        .resizable()
+                                        .frame(width: 18, height: 18)
+                                }
+                                .frame(width: 40, height: 40)
+                                .background(Colors.main.color)
+                                .cornerRadius(28)
+                                .overlay(RoundedRectangle(cornerRadius: 28)
+                                    .strokeBorder(Colors.black.color, lineWidth: 6))
+                                .padding(.bottom, -4)
+                                .padding(.trailing, -4)
+                            }
+                            .onChange(of: viewStore.selectedItem) { item in
+                                
+                                Task {
+                                    if let data = try? await    item?.loadTransferable(type: Data.self) {
+                                        viewStore.send(.onChangeProfileImage(data))
+                                    }
+                                }
+                            }
+                    }
+                    .padding(.top, 40)
+                    .padding(.bottom, 20)
+                    
+                    Text("이름")
+                        .setFont(18, .medium)
+                        .foregroundColor(Colors.white.color)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                    
+                    CustomTextField(text: viewStore.$newName)
+                    
+                    Text("상태 메시지")
+                        .setFont(18, .medium)
+                        .foregroundColor(Colors.white.color)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .top], 10)
+                    
+                    CustomTextField(text: viewStore.$newStatusMessage)
+                    
+                    Spacer()
+                }
+                .padding()
             }
         }
     }

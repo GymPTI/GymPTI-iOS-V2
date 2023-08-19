@@ -12,7 +12,10 @@ public struct SignIn: ReducerProtocol {
     public struct State: Equatable {
         
         @BindingState var id: String = ""
+        
         @BindingState var pw: String = ""
+        
+        @BindingState var isLoging: Bool = false
     }
     
     public enum Action: Equatable, BindableAction {
