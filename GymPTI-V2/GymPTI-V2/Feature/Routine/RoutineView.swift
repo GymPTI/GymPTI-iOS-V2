@@ -121,6 +121,8 @@ struct WeekButton: View {
     let dayOfTheWeekOnEng: String
     let dayOfTheWeekOnKr: String
     
+    @State private var isButtonPressed = false
+    
     init(_ eng: String, _ kr: String)
     {
         dayOfTheWeekOnEng = eng
@@ -131,20 +133,21 @@ struct WeekButton: View {
         
         Button(action: {
             print("\(dayOfTheWeekOnKr)요일")
+            isButtonPressed.toggle()
         }) {
             
             VStack(spacing: 10) {
                 
                 Text("\(dayOfTheWeekOnEng)")
                     .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
+                    .foregroundColor(isButtonPressed ? Colors.main.color : Colors.white.color)
                 
                 Text("\(dayOfTheWeekOnKr)")
                     .setFont(16, .bold)
                     .foregroundColor(Colors.white.color)
                     .background(
                         Circle()
-                            .fill(Colors.black.color)
+                            .fill(isButtonPressed ? Colors.main.color : Colors.black.color)
                             .frame(width: 34, height: 34)
                     )
             }

@@ -15,7 +15,7 @@ struct LaunchView: View {
     public var body: some View {
         
         ZStack {
-            Image("launch.logo")
+            Image("logo")
                 .padding(.bottom, 40)
         }
         .setBackground()

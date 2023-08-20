@@ -25,7 +25,7 @@ extension StartView: View {
         
         VStack(spacing: 20) {
             
-            Image("launch.logo")
+            Image("logo")
                 .padding([.horizontal, .bottom], 60)
             
             Button(action: {

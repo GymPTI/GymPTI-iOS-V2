@@ -64,7 +64,6 @@ extension EditInfoView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 40)
-                .background(Colors.darkGray.color)
                 
                 EditInfoScrollView(viewStore: self.viewStore)
                 
@@ -95,7 +94,7 @@ extension EditInfoView {
             
             ScrollView {
                 
-                VStack(alignment: .center) {
+                VStack(alignment: .center, spacing: 10) {
                     
                     ZStack(alignment: .bottomTrailing) {
                         
@@ -146,22 +145,21 @@ extension EditInfoView {
                                 }
                             }
                     }
-                    .padding(.top, 40)
-                    .padding(.bottom, 20)
+                    .padding(.top, 15)
+                    .padding(.bottom, 15)
                     
                     Text("이름")
-                        .setFont(18, .medium)
+                        .setFont(24, .bold)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 10)
                     
                     CustomTextField(text: viewStore.$newName)
                     
                     Text("상태 메시지")
-                        .setFont(18, .medium)
+                        .setFont(24, .bold)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.leading, .top], 10)
+                        .padding(.top, 10)
                     
                     CustomTextField(text: viewStore.$newStatusMessage)
                     

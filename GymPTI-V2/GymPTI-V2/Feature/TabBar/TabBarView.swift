@@ -44,8 +44,8 @@ struct TabBarView: View {
             case "routine":
                 RoutineView(store: .init(initialState: Routine.State(), reducer: { Routine() }))
                 
-            case "friend":
-                FriendView(store: .init(initialState: Friend.State(), reducer: { Friend() }))
+//            case "friend":
+//                FriendView(store: .init(initialState: Friend.State(), reducer: { Friend() }))
                 
             case "profile":
                 
@@ -58,21 +58,21 @@ struct TabBarView: View {
                     }
             }
             
-            HStack(spacing: 32) {
+            HStack(spacing: 54) {
                 
                 Spacer()
                 
                 makeIcon("home")
                 makeIcon("routine")
-                makeIcon("friend")
+//                makeIcon("friend")
                 makeIcon("profile")
 
                 Spacer()
             }
             .padding(.bottom, 2)
             .frame(maxHeight: 48)
-//            .cornerRadius(20, corners: [.topLeft, .topRight])
             .background(Colors.white.color)
+//            .cornerRadius(20, corners: [.topLeft, .topRight])
         }
         .setBackground()
         .navigationBarHidden(true)
