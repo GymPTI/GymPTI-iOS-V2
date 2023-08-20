@@ -26,7 +26,12 @@ extension RoutineSideEffectLive: RoutineSideEffect {
     
     public var onTapAiAddRoutineButton: () -> Void {
         {
-            navigator.next(paths: ["setting"], items: [:], isAnimated: true)
+            let alertModel = Alert(
+                title: "앗!",
+                message: "AI 루틴 추가는 아직 구현되지 않았어요.",
+                buttons: [.init(title: "확인", style: .default) ],
+                flagType: .error)
+            navigator.alert(target: .default, model: alertModel)
         }
     }
     

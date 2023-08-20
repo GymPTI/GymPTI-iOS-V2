@@ -71,6 +71,7 @@ struct TabBarView: View {
             }
             .padding(.bottom, 2)
             .frame(maxHeight: 48)
+//            .cornerRadius(20, corners: [.topLeft, .topRight])
             .background(Colors.white.color)
         }
         .setBackground()

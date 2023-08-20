@@ -49,10 +49,10 @@ extension AddRoutineView: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: 40)
+            .background(Colors.darkGray.color)
             
             Spacer()
         }
-        .padding()
         .setBackground()
     }
 }

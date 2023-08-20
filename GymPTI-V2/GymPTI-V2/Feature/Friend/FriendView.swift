@@ -30,6 +30,7 @@ extension FriendView: View {
             }) {
                 viewStore.send(.onTapSettingButton)
             }
+            .padding(.horizontal, 20)
             
 //            ScrollView {
 //
@@ -68,7 +69,7 @@ extension FriendView: View {
 //            }
             Spacer()
         }
-        .padding([.top,.horizontal], 20)
+        .padding(.top, 20)
         .setBackground()
     }
 }

@@ -30,6 +30,7 @@ extension HomeView: View {
             }) {
                 viewStore.send(.onTapSettingButton)
             }
+            .padding(.horizontal, 20)
             
             ScrollView {
                 
@@ -43,7 +44,7 @@ extension HomeView: View {
             }
             .padding(.top, 20)
         }
-        .padding([.top,.horizontal], 20)
+        .padding(.top, 20)
         .setBackground()
     }
 }

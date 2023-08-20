@@ -33,6 +33,7 @@ extension ProfileView: View {
                 }) {
                     viewStore.send(.onTapSettingButton)
                 }
+                .padding(.horizontal, 20)
                 
                 ScrollView {
                     
@@ -83,12 +84,11 @@ extension ProfileView: View {
                         SettingButton("프로필 정보 수정") {
                             viewStore.send(.onTapEditInfoButton)
                         }
-                        .padding(.top, 20)
+                        .padding([.horizontal, .top], 20)
                     }
                 }
             }
-            .padding([.top,.horizontal], 20)
-            
+            .padding(.top, 20)
         }
         .setBackground()
         .task {
