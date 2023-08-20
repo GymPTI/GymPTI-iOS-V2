@@ -51,6 +51,9 @@ struct AppRouterGroup {
             /// Routine View : 루틴 화면
             RoutineRouteBuilder(),
             
+            /// Routine -> AddRoutine View: 루틴 -> 루틴 추가 화면
+            AddRoutineRouteBuilder(),
+            
             /// Friend View : 친구 화면
             FriendRouteBuilder(),
             

@@ -76,7 +76,7 @@ extension SignInView: View {
                         viewStore.send(.onTapSignInButton)
                         KeyboardManager.downKeyborad()
                     }
-                    .padding(.horizontal, 60)
+                    .padding(.horizontal, 100)
                     .padding(.top, 20)
                     
                     Button(action: {

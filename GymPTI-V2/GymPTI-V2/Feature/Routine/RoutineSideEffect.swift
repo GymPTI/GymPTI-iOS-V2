@@ -9,8 +9,8 @@ import LinkNavigator
 
 public protocol RoutineSideEffect {
     
-    var onTapSettingButton: () -> Void { get }
-    var onTapNotificationButton: () -> Void { get }
+    var onTapAiAddRoutineButton: () -> Void { get }
+    var onTapAddRoutineButton: () -> Void { get }
 }
 
 public struct RoutineSideEffectLive {
@@ -24,15 +24,15 @@ public struct RoutineSideEffectLive {
 
 extension RoutineSideEffectLive: RoutineSideEffect {
     
-    public var onTapSettingButton: () -> Void {
+    public var onTapAiAddRoutineButton: () -> Void {
         {
             navigator.next(paths: ["setting"], items: [:], isAnimated: true)
         }
     }
     
-    public var onTapNotificationButton: () -> Void {
+    public var onTapAddRoutineButton: () -> Void {
         {
-            navigator.next(paths: ["notification"], items: [:], isAnimated: true)
+            navigator.next(paths: ["addroutine"], items: [:], isAnimated: true)
         }
     }
 }

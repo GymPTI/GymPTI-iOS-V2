@@ -12,6 +12,10 @@
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
 		52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */; };
 		52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C992A8FC02900871C0B /* CustomButton.swift */; };
+		523BE9222A91CD9800519285 /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* AddRoutineView.swift */; };
+		523BE9242A91CDB300519285 /* AddRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* AddRoutineCore.swift */; };
+		523BE9262A91CDBE00519285 /* AddRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */; };
+		523BE9282A91CDD400519285 /* AddRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */; };
 		524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7B2A275BA600B63DDA /* NotificationView.swift */; };
 		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
 		524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */; };
@@ -117,6 +121,10 @@
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
 		52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteBuilder.swift; sourceTree = "<group>"; };
 		52256C992A8FC02900871C0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		523BE9212A91CD9800519285 /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
+		523BE9232A91CDB300519285 /* AddRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineCore.swift; sourceTree = "<group>"; };
+		523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineSideEffect.swift; sourceTree = "<group>"; };
+		523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineRouteBuilder.swift; sourceTree = "<group>"; };
 		524CEB7B2A275BA600B63DDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
 		524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSideEffect.swift; sourceTree = "<group>"; };
@@ -238,6 +246,17 @@
 				52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		523BE9202A91CD0E00519285 /* AddRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				523BE9212A91CD9800519285 /* AddRoutineView.swift */,
+				523BE9232A91CDB300519285 /* AddRoutineCore.swift */,
+				523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */,
+				523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */,
+			);
+			path = AddRoutine;
 			sourceTree = "<group>";
 		};
 		524CEB7D2A275BAB00B63DDA /* Notification */ = {
@@ -508,6 +527,7 @@
 				52C804132A0C870700417B08 /* RoutineCore.swift */,
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
+				523BE9202A91CD0E00519285 /* AddRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -729,7 +749,9 @@
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				528B5E5A2A13731400373C79 /* TipRouteBuilder.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
+				523BE9282A91CDD400519285 /* AddRoutineRouteBuilder.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
+				523BE9262A91CDBE00519285 /* AddRoutineSideEffect.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
 				528B5E582A1353A800373C79 /* TipSideEffect.swift in Sources */,
@@ -738,6 +760,7 @@
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
+				523BE9242A91CDB300519285 /* AddRoutineCore.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
 				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
@@ -750,6 +773,7 @@
 				52C02F422A14C947003BA884 /* WebView.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
+				523BE9222A91CD9800519285 /* AddRoutineView.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
 				524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */,
 				52256C922A8FAE0400871C0B /* StartView.swift in Sources */,

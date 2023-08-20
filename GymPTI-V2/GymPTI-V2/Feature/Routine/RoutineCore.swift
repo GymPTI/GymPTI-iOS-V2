@@ -15,8 +15,8 @@ public struct Routine: ReducerProtocol {
     
     public enum Action: Equatable {
         
-        case onTapNotificationButton
-        case onTapSettingButton
+        case onTapAiAddRoutineButton
+        case onTapAddRoutineButton
     }
     
     @Dependency(\.sideEffect.routine) var sideEffect
@@ -27,12 +27,12 @@ public struct Routine: ReducerProtocol {
             
             switch action {
                 
-            case .onTapNotificationButton:
-                sideEffect.onTapNotificationButton()
+            case .onTapAiAddRoutineButton:
+                sideEffect.onTapAiAddRoutineButton()
                 return .none
                 
-            case .onTapSettingButton:
-                sideEffect.onTapSettingButton()
+            case .onTapAddRoutineButton:
+                sideEffect.onTapAddRoutineButton()
                 return .none
             }
         }

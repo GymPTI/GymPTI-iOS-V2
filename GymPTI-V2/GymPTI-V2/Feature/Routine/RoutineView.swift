@@ -25,10 +25,35 @@ extension RoutineView: View {
         
         VStack {
             
-            CustomNavi("루틴", {
-                viewStore.send(.onTapNotificationButton)
-            }) {
-                viewStore.send(.onTapSettingButton)
+            HStack {
+                
+                Text("루틴")
+                    .setFont(34, .semibold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                ZStack {
+                    
+                    Button(action: {
+                        viewStore.send(.onTapAiAddRoutineButton)
+                    }) {
+                        Image("ai")
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 40)
+                    
+                    Button(action: {
+                        viewStore.send(.onTapAddRoutineButton)
+                    }) {
+                        Image("add")
+                            .resizable()
+                            .frame(width: 22, height: 22)
+                            .foregroundColor(Colors.white.color)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                }
             }
             
             ScrollView {
