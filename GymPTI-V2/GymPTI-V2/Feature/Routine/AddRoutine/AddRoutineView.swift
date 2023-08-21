@@ -23,8 +23,6 @@ extension AddRoutineView: View {
     
     public var body: some View {
         
-        var shoulderExcersize = ["사이드 레터널 레이즈", "프론트 레이즈", "숄더 프레스", "밀리터리 프레스"]
-        
         let groups: [(String, String)] = [
             ("CHEST", "가슴"), ("BACK", "등"), ("LEGS", "하체"),
             ("SHLDR", "어깨"), ("ARM", "팔")

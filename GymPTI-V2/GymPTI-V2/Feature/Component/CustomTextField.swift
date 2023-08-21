@@ -13,7 +13,8 @@ public struct CustomTextField: View {
     let isSecurable: Bool
     
     @State var isEditing: Bool = false
-    @State var strokeBorderOpacity: CGFloat = 0.3
+    
+    @FocusState var isFocusing: Bool
     
     init(text: Binding<String>,
          isSecurable: Bool)
@@ -26,31 +27,36 @@ public struct CustomTextField: View {
         
         VStack(alignment: .leading) {
             
-            TextField("", text: text) { isEditing in
-                if isEditing {
-                    strokeBorderOpacity = 1
-                } else {
-                    strokeBorderOpacity = 0.3
-                }
+            if isSecurable {
+                
+                SecureField("", text: text)
+                    .focused($isFocusing)
+                    .setFont(14, .medium)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled(true)
+                    .padding(.leading, 20)
+                
+            } else {
+                
+                TextField("", text: text)
+                    .focused($isFocusing)
+                    .setFont(14, .medium)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled(true)
+                    .padding(.leading, 20)
             }
-//            .keyboardType(.decimalPad)
-            .setFont(14, .medium)
-            .foregroundColor(Colors.white.color)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .autocapitalization(.none)
-            .autocorrectionDisabled(true)
-            .padding(.leading, 20)
-            .onAppear {
-                if isSecurable {
-//                    text = text
-                }
-            }
-            
         }
         .frame(height: 52)
         .background(Colors.black.color)
         .overlay(RoundedRectangle(cornerRadius: 10)
-            .strokeBorder(Colors.main.color.opacity(strokeBorderOpacity), lineWidth: 2))
-        
+            .strokeBorder({ () -> Color in
+                let color = Colors.main.color
+                let opacity = isFocusing ? 1 : 0.3
+                return color.opacity(opacity)
+            }(), lineWidth: 2))
     }
 }

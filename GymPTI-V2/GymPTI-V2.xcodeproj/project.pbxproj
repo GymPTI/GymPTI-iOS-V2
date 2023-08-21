@@ -97,7 +97,6 @@
 		52C804222A0C878A00417B08 /* ProfileRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */; };
 		52C8042E2A0CABD200417B08 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52C8042D2A0CABD200417B08 /* CachedAsyncImage */; };
 		52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804342A0CAE1F00417B08 /* CustomTextField.swift */; };
-		52C804372A0CAE2C00417B08 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804362A0CAE2B00417B08 /* CustomSecureField.swift */; };
 		52C8043A2A0CB2A200417B08 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804392A0CB2A200417B08 /* EditInfoView.swift */; };
 		52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */; };
 		52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */; };
@@ -198,7 +197,6 @@
 		52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSideEffect.swift; sourceTree = "<group>"; };
 		52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouteBuilder.swift; sourceTree = "<group>"; };
 		52C804342A0CAE1F00417B08 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		52C804362A0CAE2B00417B08 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		52C804392A0CB2A200417B08 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoCore.swift; sourceTree = "<group>"; };
 		52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoSideEffect.swift; sourceTree = "<group>"; };
@@ -541,7 +539,6 @@
 			children = (
 				526594182A0E8B2500D9446B /* CustomNavi.swift */,
 				52C804342A0CAE1F00417B08 /* CustomTextField.swift */,
-				52C804362A0CAE2B00417B08 /* CustomSecureField.swift */,
 				528D4CC22A15CEB8008A0F7A /* SettingButton.swift */,
 				52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */,
 				52256C992A8FC02900871C0B /* CustomButton.swift */,
@@ -704,7 +701,6 @@
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
 				52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */,
-				52C804372A0CAE2C00417B08 /* CustomSecureField.swift in Sources */,
 				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
 				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
