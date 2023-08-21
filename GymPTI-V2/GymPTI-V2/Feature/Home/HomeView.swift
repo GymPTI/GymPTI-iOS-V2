@@ -32,17 +32,8 @@ extension HomeView: View {
             }
             .padding(.horizontal, 20)
             
-            ScrollView {
-                
-                Button(action: {
-                    viewStore.send(.onTapTipButton)
-                })  {
-                    Text("오늘의 운동 팁!")
-                }
-                
-                Spacer()
-            }
-            .padding(.top, 20)
+            Spacer()
+            
         }
         .padding(.top, 20)
         .setBackground()

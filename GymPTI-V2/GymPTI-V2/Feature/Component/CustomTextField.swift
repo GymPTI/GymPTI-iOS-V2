@@ -10,13 +10,16 @@ import SwiftUI
 public struct CustomTextField: View {
     
     let text: Binding<String>
+    let isSecurable: Bool
     
     @State var isEditing: Bool = false
     @State var strokeBorderOpacity: CGFloat = 0.3
     
-    init(text: Binding<String>)
+    init(text: Binding<String>,
+         isSecurable: Bool)
     {
         self.text = text
+        self.isSecurable = isSecurable
     }
     
     public var body: some View {
@@ -30,12 +33,18 @@ public struct CustomTextField: View {
                     strokeBorderOpacity = 0.3
                 }
             }
+//            .keyboardType(.decimalPad)
             .setFont(14, .medium)
             .foregroundColor(Colors.white.color)
             .frame(maxWidth: .infinity, alignment: .leading)
             .autocapitalization(.none)
             .autocorrectionDisabled(true)
             .padding(.leading, 20)
+            .onAppear {
+                if isSecurable {
+//                    text = text
+                }
+            }
             
         }
         .frame(height: 52)

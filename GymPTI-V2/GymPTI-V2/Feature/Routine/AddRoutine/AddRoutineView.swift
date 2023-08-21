@@ -23,6 +23,13 @@ extension AddRoutineView: View {
     
     public var body: some View {
         
+        var shoulderExcersize = ["사이드 레터널 레이즈", "프론트 레이즈", "숄더 프레스", "밀리터리 프레스"]
+        
+        let groups: [(String, String)] = [
+            ("CHEST", "가슴"), ("BACK", "등"), ("LEGS", "하체"),
+            ("SHLDR", "어깨"), ("ARM", "팔")
+        ] // 더미데이터
+        
         VStack(alignment: .center) {
             
             HStack {
@@ -49,9 +56,59 @@ extension AddRoutineView: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: 40)
-            .background(Colors.darkGray.color)
+            
+            VStack {
+                
+                Text("운동 종류 선택")
+                    .setFont(20, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                HStack {
+                    
+                    ForEach(groups, id: \.0) { (eng, kor) in
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            print("CHEST")
+                        }) {
+                            
+                            VStack(spacing: 10) {
+                                
+                                Text("\(eng)")
+                                    .setFont(14, .regular)
+                                    .foregroundColor(Colors.white.color)
+                                
+                                Text("\(kor)")
+                                    .setFont(16, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                    .background(
+                                        Rectangle()
+                                            .fill(Colors.black.color)
+                                            .frame(width: 58, height: 34)
+                                            .cornerRadius(15)
+                                    )
+                            }
+                        }
+                    }
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 80)
+                .background(Colors.darkGray.color)
+                .cornerRadius(10)
+            }
+            .padding(.horizontal, 20)
+            
+            CustomButton("다음", disabled: false) {
+                print("운동이름")
+            }
+            .padding(.horizontal, 100)
             
             Spacer()
+            
         }
         .setBackground()
     }

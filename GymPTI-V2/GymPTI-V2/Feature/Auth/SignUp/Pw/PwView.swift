@@ -57,7 +57,7 @@ extension PwView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                CustomTextField(text: viewStore.$pw)
+                CustomTextField(text: viewStore.$pw, isSecurable: true)
                 
                 Text("8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
                     .setFont(14, .regular)

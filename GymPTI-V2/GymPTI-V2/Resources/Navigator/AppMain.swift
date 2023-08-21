@@ -33,7 +33,7 @@ extension AppMain: App {
         WindowGroup {
             navigator
                 .launch(paths: ["launch"], items: [:], prefersLargeTitles: false)
-                .ignoresSafeArea()
+                .ignoresSafeArea(edges: .vertical)
         }
     }
 }

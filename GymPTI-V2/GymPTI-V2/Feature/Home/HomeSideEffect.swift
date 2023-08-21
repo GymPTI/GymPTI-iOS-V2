@@ -11,7 +11,6 @@ public protocol HomeSideEffect {
     
     var onTapSettingButton: () -> Void { get }
     var onTapNotificationButton: () -> Void { get }
-    var onTapTipButton: () -> Void { get }
 }
 
 public struct HomeSideEffectLive {
@@ -34,12 +33,6 @@ extension HomeSideEffectLive: HomeSideEffect {
     public var onTapNotificationButton: () -> Void {
         {
             navigator.next(paths: ["notification"], items: [:], isAnimated: true)
-        }
-    }
-    
-    public var onTapTipButton: () -> Void {
-        {
-            navigator.fullSheet(paths: ["tip"], items: [:], isAnimated: true, prefersLargeTitles: false)
         }
     }
 }

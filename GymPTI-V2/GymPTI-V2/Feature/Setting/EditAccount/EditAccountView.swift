@@ -58,7 +58,7 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
             
-            CustomTextField(text: viewStore.$oldPassword)
+            CustomTextField(text: viewStore.$oldPassword, isSecurable: true)
             
             Text("새로운 비밀번호")
                 .setFont(18, .medium)
@@ -66,7 +66,7 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
             
-            CustomTextField(text: viewStore.$newPassword)
+            CustomTextField(text: viewStore.$newPassword, isSecurable: true)
             
             Text("*8~20자의 영문 소/대문자 또는 기호를 입력해주세요")
                 .setFont(14, .regular)
@@ -74,11 +74,13 @@ extension EditAccountView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
             
-            Spacer()
-            
             CustomButton("비밀번호 변경", disabled: !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
                 viewStore.send(.onTapChangeButton)
             }
+            .padding(.horizontal, 100)
+            .padding(.top, 20)
+            
+            Spacer()
         }
         .padding()
         .setBackground()

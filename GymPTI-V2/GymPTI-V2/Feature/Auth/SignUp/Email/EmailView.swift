@@ -57,7 +57,7 @@ extension EmailView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                CustomTextField(text: viewStore.$email)
+                CustomTextField(text: viewStore.$email, isSecurable: false)
                 
                 Text("인증번호를 받으실 이메일을 입력해주세요")
                     .setFont(14, .regular)

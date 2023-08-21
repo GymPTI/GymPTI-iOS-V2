@@ -60,7 +60,7 @@ extension SignInView: View {
                             .setFont(24, .bold)
                             .foregroundColor(Colors.white.color)
                         
-                        CustomTextField(text: viewStore.$id)
+                        CustomTextField(text: viewStore.$id, isSecurable: false)
                     }
                     
                     VStack(alignment: .leading, spacing: 10) {
@@ -69,7 +69,7 @@ extension SignInView: View {
                             .setFont(24, .bold)
                             .foregroundColor(Colors.white.color)
                         
-                        CustomTextField(text: viewStore.$pw)
+                        CustomTextField(text: viewStore.$pw, isSecurable: true)
                     }
                     
                     CustomButton("로그인", disabled: viewStore.id == "" || viewStore.pw == "" ? true : false) {

@@ -57,7 +57,7 @@ extension IdView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                CustomTextField(text: viewStore.$id)
+                CustomTextField(text: viewStore.$id, isSecurable: false)
                 
                 Text("4~20자의 영문 소/대문자를 입력해주세요")
                     .setFont(14, .regular)

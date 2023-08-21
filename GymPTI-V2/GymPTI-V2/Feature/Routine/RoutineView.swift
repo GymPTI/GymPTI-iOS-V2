@@ -82,7 +82,7 @@ extension RoutineView: View {
                             
                             Spacer()
                             WeekButton(eng, kor)
-                                .padding(.bottom, 4)
+                                .padding(.bottom, 8)
                         }
                         
                         Spacer()
@@ -97,8 +97,7 @@ extension RoutineView: View {
                         .foregroundColor(Colors.white.color)
                     
                     ForEach(routines, id: \.0) { routines in
-                        RoutineExcersize(
-                            routines.0,
+                        RoutineExcersizeCell(routines.0,
                             targetMuscles: routines.1,
                             reps: routines.2,
                             sets: routines.3,
@@ -152,66 +151,5 @@ struct WeekButton: View {
                     )
             }
         }
-    }
-}
-
-struct RoutineExcersize: View {
-    
-    let excersizeName: String
-    let targetMuscles: String
-    let reps: Int
-    let sets: Int
-    let restTime: String
-    
-    init(_ name: String,
-         targetMuscles: String,
-         reps: Int,
-         sets: Int,
-         restTime: String)
-    {
-        excersizeName = name
-        self.targetMuscles = targetMuscles
-        self.sets = sets
-        self.reps = reps
-        self.restTime = restTime
-    }
-    
-    var body: some View {
-        
-        VStack(alignment: .leading, spacing: 4) {
-            
-            Text("\(excersizeName)")
-                .setFont(20, .bold)
-                .foregroundColor(Colors.white.color)
-            
-            Text("\(targetMuscles)")
-                .setFont(14, .regular)
-                .foregroundColor(Colors.white.color)
-            
-            HStack {
-                
-                Image("timer")
-                
-                Text("\(reps)회 / \(sets)세트")
-                    .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
-            }
-            .padding(.top, 10)
-            
-            HStack {
-                
-                Image("rest")
-                
-                Text("각 세트 후 \(restTime) 휴식")
-                    .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
-            }
-            
-        }
-        .padding(.leading, 20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(height: 140)
-        .background(Colors.darkGray.color)
-        .cornerRadius(10)
     }
 }

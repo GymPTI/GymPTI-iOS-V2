@@ -41,7 +41,7 @@ extension FindIdView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            CustomTextField(text: viewStore.$email)
+            CustomTextField(text: viewStore.$email, isSecurable: false)
             
             Spacer()
             

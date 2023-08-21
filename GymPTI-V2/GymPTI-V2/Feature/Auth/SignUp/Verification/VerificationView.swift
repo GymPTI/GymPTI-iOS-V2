@@ -57,7 +57,7 @@ extension VerificationView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                CustomTextField(text: viewStore.$emailVerificationCode)
+                CustomTextField(text: viewStore.$emailVerificationCode, isSecurable: false)
                 
                 Text("받으신 인증번호를 입력해주세요")
                     .setFont(14, .regular)

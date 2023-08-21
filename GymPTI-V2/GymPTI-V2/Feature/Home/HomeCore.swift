@@ -18,7 +18,6 @@ public struct Home: ReducerProtocol {
         
         case onTapNotificationButton
         case onTapSettingButton
-        case onTapTipButton
     }
     
     @Dependency(\.sideEffect.home) var sideEffect
@@ -35,10 +34,6 @@ public struct Home: ReducerProtocol {
                 
             case .onTapSettingButton:
                 sideEffect.onTapSettingButton()
-                return .none
-                
-            case .onTapTipButton:
-                sideEffect.onTapTipButton()
                 return .none
             }
         }

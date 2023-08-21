@@ -57,7 +57,7 @@ extension NameView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                CustomTextField(text: viewStore.$name)
+                CustomTextField(text: viewStore.$name, isSecurable: false)
                 
                 Text("이름은 가입 후 마음껏 바꾸실 수 있어요")
                     .setFont(14, .regular)
