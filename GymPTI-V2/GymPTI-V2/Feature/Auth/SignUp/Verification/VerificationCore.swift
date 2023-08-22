@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-public struct Verification: ReducerProtocol {
+public struct Verification: Reducer {
     
     public struct State: Equatable {
         
@@ -28,7 +28,7 @@ public struct Verification: ReducerProtocol {
     
     @Dependency(\.sideEffect.verification) var sideEffect
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerOf<Self> {
         
         BindingReducer()
         Reduce { state, action in

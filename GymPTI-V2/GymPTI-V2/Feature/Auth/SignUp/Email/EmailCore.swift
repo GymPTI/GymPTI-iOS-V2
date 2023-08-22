@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import CryptoKit
 
-public struct Email: ReducerProtocol {
+public struct Email: Reducer {
     
     public struct State: Equatable {
         
@@ -29,7 +29,7 @@ public struct Email: ReducerProtocol {
     
     @Dependency(\.sideEffect.email) var sideEffect
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerOf<Self> {
         
         BindingReducer()
         Reduce { state, action in

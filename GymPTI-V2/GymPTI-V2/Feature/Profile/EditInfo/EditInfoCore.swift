@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import _PhotosUI_SwiftUI
 
-public struct EditInfo: ReducerProtocol {
+public struct EditInfo: Reducer {
     
     @available(iOS 16.0, *)
     public struct State: Equatable {
@@ -37,7 +37,7 @@ public struct EditInfo: ReducerProtocol {
     
     @Dependency(\.sideEffect.editInfo) var sideEffect
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerOf<Self> {
         
         BindingReducer()
         Reduce { state, action in

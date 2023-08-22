@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-public struct SignIn: ReducerProtocol {
+public struct SignIn: Reducer {
     
     public struct State: Equatable {
         
@@ -27,7 +27,7 @@ public struct SignIn: ReducerProtocol {
     
     @Dependency(\.sideEffect.signIn) var sideEffect
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerOf<Self> {
         
         BindingReducer()
         Reduce { state, action in

@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-public struct Setting: ReducerProtocol {
+public struct Setting: Reducer {
     
     public struct State: Equatable {
         
@@ -22,7 +22,7 @@ public struct Setting: ReducerProtocol {
     
     @Dependency(\.sideEffect.setting) var sideEffect
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerOf<Self> {
         
         Reduce { state, action in
             

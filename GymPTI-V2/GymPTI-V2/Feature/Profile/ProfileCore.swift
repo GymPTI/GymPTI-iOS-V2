@@ -9,7 +9,7 @@ import ComposableArchitecture
 import Combine
 import PhotosUI
 
-public struct Profile: ReducerProtocol {
+public struct Profile: Reducer {
     
     public struct State: Equatable {
         
@@ -42,7 +42,7 @@ public struct Profile: ReducerProtocol {
     
     @Dependency(\.sideEffect.profile) var sideEffect
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerOf<Self> {
         
         Reduce { state, action in
             
