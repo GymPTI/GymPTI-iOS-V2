@@ -72,7 +72,7 @@ extension RoutineView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("2023년 8월 20일 (일)")
+                    Text("\(getToday())")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     
@@ -98,10 +98,10 @@ extension RoutineView: View {
                     
                     ForEach(routines, id: \.0) { routines in
                         RoutineExcersizeCell(routines.0,
-                            targetMuscles: routines.1,
-                            reps: routines.2,
-                            sets: routines.3,
-                            restTime: routines.4
+                                             targetMuscles: routines.1,
+                                             reps: routines.2,
+                                             sets: routines.3,
+                                             restTime: routines.4
                         )
                         .padding(.bottom, 10)
                     }
@@ -112,6 +112,20 @@ extension RoutineView: View {
         }
         .padding(.top, 20)
         .setBackground()
+    }
+}
+
+extension RoutineView {
+    
+    func getToday() -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        dateFormatter.dateFormat = "yyyy년 M월 d일 (E)"
+        let dateString = dateFormatter.string(from: Date())
+        
+        return dateString
     }
 }
 

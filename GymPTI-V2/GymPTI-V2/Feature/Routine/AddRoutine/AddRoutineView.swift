@@ -23,6 +23,11 @@ extension AddRoutineView: View {
     
     public var body: some View {
         
+        let weekdays: [(String, String)] = [
+            ("MON", "월"), ("THE", "화"), ("WEN", "수"),
+            ("THU", "목"), ("FRI", "금"), ("SAT", "토"), ("SUN", "일")
+        ] // 더미데이터
+        
         let groups: [(String, String)] = [
             ("CHEST", "가슴"), ("BACK", "등"), ("LEGS", "하체"),
             ("SHLDR", "어깨"), ("ARM", "팔")
@@ -56,6 +61,27 @@ extension AddRoutineView: View {
             .frame(height: 40)
             
             VStack {
+                
+                Text("추가할 요일 선택")
+                    .setFont(20, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                HStack {
+                    
+                    ForEach(weekdays, id: \.0) { (eng, kor) in
+                        
+                        Spacer()
+                        WeekButton(eng, kor)
+                            .padding(.bottom, 8)
+                    }
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 80)
+                .background(Colors.darkGray.color)
+                .cornerRadius(10)
                 
                 Text("운동 종류 선택")
                     .setFont(20, .bold)
