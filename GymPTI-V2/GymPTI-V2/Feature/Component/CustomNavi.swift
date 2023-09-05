@@ -33,9 +33,9 @@ struct CustomNavi: View {
             
             ZStack {
                 
-                Button(action: {
+                Button {
                     notificationButtonAction()
-                }) {
+                } label: {
                     Image("bell")
                         .resizable()
                         .frame(width: 28, height: 28)
@@ -43,9 +43,9 @@ struct CustomNavi: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding(.trailing, 40)
                 
-                Button(action: {
+                Button {
                     settingButtonAction()
-                }) {
+                } label: {
                     Image("setting")
                         .resizable()
                         .frame(width: 22, height: 22)

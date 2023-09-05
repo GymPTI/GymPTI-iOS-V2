@@ -51,6 +51,12 @@ struct AppRouterGroup {
             /// Routine -> AddRoutine View: 루틴 -> 루틴 추가 화면
             AddRoutineRouteBuilder(),
             
+            /// Routine -> SelectTargetMuscle View: 루틴 추가 화면 -> 근육 부위 선택 화면
+            SelectTargetMuscleRouteBuilder(),
+            
+            /// Routine -> SelectTargetMuscle View: 근육 부위 선택 화면 -> 루틴 디테일 설정 화면
+            SetRoutineDetailRouteBuilder(),
+            
             /// Friend View : 친구 화면
             FriendRouteBuilder(),
             

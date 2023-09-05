@@ -45,9 +45,9 @@ extension RoutineView: View {
                 
                 ZStack {
                     
-                    Button(action: {
+                    Button {
                         viewStore.send(.onTapAiAddRoutineButton)
-                    }) {
+                    } label: {
                         Image("ai")
                             .resizable()
                             .frame(width: 28, height: 28)
@@ -55,9 +55,9 @@ extension RoutineView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.trailing, 40)
                     
-                    Button(action: {
+                    Button {
                         viewStore.send(.onTapAddRoutineButton)
-                    }) {
+                    } label: {
                         Image("add")
                             .resizable()
                             .frame(width: 22, height: 22)
@@ -144,10 +144,10 @@ struct WeekButton: View {
     
     var body: some View {
         
-        Button(action: {
+        Button {
             print("\(dayOfTheWeekOnKr)요일")
             isButtonPressed.toggle()
-        }) {
+        } label: {
             
             VStack(spacing: 10) {
                 

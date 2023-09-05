@@ -27,9 +27,9 @@ extension VerificationView: View {
             
             HStack {
                 
-                Button(action: {
+                Button {
                     viewStore.send(.onTapBackButton)
-                }) {
+                } label: {
                     Image("Back")
                         .resizable()
                         .frame(width: 9, height: 15)

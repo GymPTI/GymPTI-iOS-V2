@@ -1,0 +1,27 @@
+//
+//  SelectTargetMuscleRouteBuilder.swift
+//  GymPTI-V2
+//
+//  Created by 이민규 on 2023/09/04.
+//
+
+import SwiftUI
+import LinkNavigator
+
+struct SelectTargetMuscleRouteBuilder: RouteBuilder {
+    
+    var matchPath: String { "selecttargetmuscle" }
+    
+    var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
+        { _, _, _ in
+            WrappingController(matchPath: matchPath) {
+                SelectTargetMuscleView(store: .init(
+                    initialState: SelectTargetMuscle.State(),
+                    reducer: {
+                        SelectTargetMuscle()
+                    }))
+                .navigationBarHidden(true)
+            }
+        }
+    }
+}

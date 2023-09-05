@@ -1,31 +1,31 @@
 //
-//  AddRoutineView.swift
+//  SelectTargetMuscleView.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/08/20.
+//  Created by 이민규 on 2023/09/04.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-public struct AddRoutineView {
+public struct SelectTargetMuscleView {
     
-    private let store: StoreOf<AddRoutine>
-    @ObservedObject var viewStore: ViewStoreOf<AddRoutine>
+    private let store: StoreOf<SelectTargetMuscle>
+    @ObservedObject var viewStore: ViewStoreOf<SelectTargetMuscle>
     
-    public init(store: StoreOf<AddRoutine>) {
+    public init(store: StoreOf<SelectTargetMuscle>) {
         self.store = store
         viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
-extension AddRoutineView: View {
+extension SelectTargetMuscleView: View {
     
     public var body: some View {
         
-        let weekdays: [(String, String)] = [
-            ("MON", "월"), ("THE", "화"), ("WEN", "수"),
-            ("THU", "목"), ("FRI", "금"), ("SAT", "토"), ("SUN", "일")
+        let groups: [(String, String)] = [
+            ("CHEST", "가슴"), ("BACK", "등"), ("LEGS", "하체"),
+            ("SHLDR", "어깨"), ("ARM", "팔")
         ] // 더미데이터
         
         VStack(alignment: .center) {
@@ -57,18 +57,38 @@ extension AddRoutineView: View {
             
             VStack {
                 
-                Text("추가할 요일 선택")
+                Text("운동 종류 선택")
                     .setFont(20, .bold)
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 HStack {
                     
-                    ForEach(weekdays, id: \.0) { (eng, kor) in
+                    ForEach(groups, id: \.0) { (eng, kor) in
                         
                         Spacer()
-                        WeekButton(eng, kor)
-                            .padding(.bottom, 8)
+                        
+                        Button {
+                            print("CHEST")
+                        } label: {
+                            
+                            VStack(spacing: 10) {
+                                
+                                Text("\(eng)")
+                                    .setFont(14, .regular)
+                                    .foregroundColor(Colors.white.color)
+                                
+                                Text("\(kor)")
+                                    .setFont(16, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                    .background(
+                                        Rectangle()
+                                            .fill(Colors.black.color)
+                                            .frame(width: 58, height: 34)
+                                            .cornerRadius(15)
+                                    )
+                            }
+                        }
                     }
                     
                     Spacer()

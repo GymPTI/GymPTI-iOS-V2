@@ -32,9 +32,9 @@ extension EditInfoView: View {
                 
                 HStack {
                     
-                    Button(action: {
+                    Button {
                         viewStore.send(.onTapBackButton)
-                    }) {
+                    } label: {
                         Image("Back")
                             .resizable()
                             .frame(width: 9, height: 15)
@@ -51,9 +51,9 @@ extension EditInfoView: View {
                     
                     Spacer()
                     
-                    Button(action: {
+                    Button {
                         viewStore.send(.onTapChangeButton)
-                    }) {
+                    } label: {
                         Text("저장")
                             .setFont(16, .semibold)
                             .foregroundColor(Colors.white.color)

@@ -21,9 +21,9 @@ struct SettingButton: View {
     
     var body: some View {
         
-        Button(action: {
+        Button {
             action()
-        }) {
+        } label: {
             HStack {
                 Text("\(title)")
                     .setFont(14, .medium)

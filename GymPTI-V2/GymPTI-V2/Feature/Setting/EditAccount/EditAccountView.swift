@@ -27,9 +27,9 @@ extension EditAccountView: View {
             
             HStack {
                 
-                Button(action: {
+                Button {
                     viewStore.send(.onTapBackButton)
-                }) {
+                } label: {
                     Image("Back")
                         .resizable()
                         .frame(width: 10, height: 18)
@@ -44,9 +44,9 @@ extension EditAccountView: View {
                 
                 Spacer()
                 
-                Button(action: {
+                Button {
                     
-                }) {
+                } label: {
                     
                 }
                 .frame(width: 32, height: 24)

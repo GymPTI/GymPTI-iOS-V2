@@ -41,6 +41,10 @@ public struct AppSideEffect: DependencyKey {
     
     let addRoutine: AddRoutineSideEffect
     
+    let selectTargetMuscle: SelectTargetMuscleSideEffect
+    
+    let setRoutineDetail: SetRoutineDetailSideEffect
+    
     let friend: FriendSideEffect
     
     let profile: ProfileSideEffect
@@ -79,6 +83,10 @@ public struct AppSideEffect: DependencyKey {
             routine: RoutineSideEffectLive(navigator: navigator),
             
             addRoutine: AddRoutineSideEffectLive(navigator: navigator),
+            
+            selectTargetMuscle: SelectTargetMuscleSideEffectLive(navigator: navigator),
+            
+            setRoutineDetail: SetRoutineDetailSideEffectLive(navigator: navigator),
             
             friend: FriendSideEffectLive(navigator: navigator),
             

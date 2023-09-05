@@ -29,9 +29,9 @@ extension SignInView: View {
                 
                 HStack {
                     
-                    Button(action: {
+                    Button {
                         viewStore.send(.onTapBackButton)
-                    }) {
+                    } label: {
                         Image("Back")
                             .resizable()
                             .frame(width: 9, height: 15)
@@ -79,10 +79,10 @@ extension SignInView: View {
                     .padding(.horizontal, 100)
                     .padding(.top, 20)
                     
-                    Button(action: {
+                    Button {
                         viewStore.send(.onTapSignInButton)
                         KeyboardManager.downKeyborad()
-                    }) {
+                    } label: {
                         Text("아이디 혹은 비밀번호 찾기")
                             .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)

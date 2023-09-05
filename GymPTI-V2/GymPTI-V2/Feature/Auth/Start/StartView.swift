@@ -28,9 +28,9 @@ extension StartView: View {
             Image("logo")
                 .padding([.horizontal, .bottom], 60)
             
-            Button(action: {
+            Button {
                 viewStore.send(.onTapSignUpButton)
-            }) {
+            } label: {
                 Text("회원가입 하기")
                     .setFont(18, .semibold)
                     .foregroundColor(Colors.white.color)
@@ -41,9 +41,9 @@ extension StartView: View {
                     .padding(.horizontal, 40)
             }
             
-            Button(action: {
+            Button {
                 viewStore.send(.onTapSignInButton)
-            }) {
+            } label: {
                 Text("로그인 하기")
                     .setFont(18, .semibold)
                     .foregroundColor(Colors.white.color)

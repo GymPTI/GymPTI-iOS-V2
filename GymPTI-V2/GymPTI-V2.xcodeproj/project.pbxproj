@@ -21,6 +21,14 @@
 		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
 		524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */; };
 		524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */; };
+		5258D7A82AA59AB900D77C40 /* SelectTargetMuscleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7A72AA59AB900D77C40 /* SelectTargetMuscleView.swift */; };
+		5258D7AC2AA59BA200D77C40 /* SelectTargetMuscleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */; };
+		5258D7AE2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */; };
+		5258D7B02AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */; };
+		5258D7B22AA59BEF00D77C40 /* SetRoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B12AA59BEF00D77C40 /* SetRoutineDetailView.swift */; };
+		5258D7B52AA7026800D77C40 /* SetRoutineDetailCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B42AA7026800D77C40 /* SetRoutineDetailCore.swift */; };
+		5258D7B72AA7029600D77C40 /* SetRoutineDetailSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B62AA7029600D77C40 /* SetRoutineDetailSideEffect.swift */; };
+		5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B82AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift */; };
 		526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593DD2A0D11CD00D9446B /* Interceptor.swift */; };
 		526593E62A0DD39300D9446B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 526593E52A0DD39300D9446B /* Kingfisher */; };
 		526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593ED2A0E0D1E00D9446B /* FindIdView.swift */; };
@@ -126,6 +134,14 @@
 		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
 		524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSideEffect.swift; sourceTree = "<group>"; };
 		524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRouteBuilder.swift; sourceTree = "<group>"; };
+		5258D7A72AA59AB900D77C40 /* SelectTargetMuscleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleView.swift; sourceTree = "<group>"; };
+		5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleCore.swift; sourceTree = "<group>"; };
+		5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleEffect.swift; sourceTree = "<group>"; };
+		5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleRouteBuilder.swift; sourceTree = "<group>"; };
+		5258D7B12AA59BEF00D77C40 /* SetRoutineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailView.swift; sourceTree = "<group>"; };
+		5258D7B42AA7026800D77C40 /* SetRoutineDetailCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailCore.swift; sourceTree = "<group>"; };
+		5258D7B62AA7029600D77C40 /* SetRoutineDetailSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailSideEffect.swift; sourceTree = "<group>"; };
+		5258D7B82AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailRouteBuilder.swift; sourceTree = "<group>"; };
 		526593DD2A0D11CD00D9446B /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		526593ED2A0E0D1E00D9446B /* FindIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdView.swift; sourceTree = "<group>"; };
 		526593EF2A0E0D6C00D9446B /* FindIdCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdCore.swift; sourceTree = "<group>"; };
@@ -260,6 +276,28 @@
 				524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */ = {
+			isa = PBXGroup;
+			children = (
+				5258D7A72AA59AB900D77C40 /* SelectTargetMuscleView.swift */,
+				5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */,
+				5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */,
+				5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */,
+			);
+			path = SelectTargetMuscle;
+			sourceTree = "<group>";
+		};
+		5258D7B32AA59C4700D77C40 /* SetRoutineDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5258D7B12AA59BEF00D77C40 /* SetRoutineDetailView.swift */,
+				5258D7B42AA7026800D77C40 /* SetRoutineDetailCore.swift */,
+				5258D7B62AA7029600D77C40 /* SetRoutineDetailSideEffect.swift */,
+				5258D7B82AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift */,
+			);
+			path = SetRoutineDetail;
 			sourceTree = "<group>";
 		};
 		526593EC2A0E0D1000D9446B /* FindId */ = {
@@ -509,6 +547,8 @@
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
 				523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */,
 				523BE9202A91CD0E00519285 /* AddRoutine */,
+				5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */,
+				5258D7B32AA59C4700D77C40 /* SetRoutineDetail */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -668,6 +708,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C803DA2A0BB74200417B08 /* SignInRouteBuilder.swift in Sources */,
+				5258D7B22AA59BEF00D77C40 /* SetRoutineDetailView.swift in Sources */,
 				5265940F2A0E7ADA00D9446B /* FriendSideEffect.swift in Sources */,
 				52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */,
 				52C804182A0C872900417B08 /* RoutineRouteBuilder.swift in Sources */,
@@ -675,6 +716,7 @@
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C804162A0C871D00417B08 /* RoutineSideEffect.swift in Sources */,
+				5258D7B72AA7029600D77C40 /* SetRoutineDetailSideEffect.swift in Sources */,
 				52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */,
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
 				528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */,
@@ -682,6 +724,7 @@
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
 				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
+				5258D7B02AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift in Sources */,
 				524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
@@ -692,6 +735,7 @@
 				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
 				52256C942A8FAF2200871C0B /* StartCore.swift in Sources */,
 				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
+				5258D7A82AA59AB900D77C40 /* SelectTargetMuscleView.swift in Sources */,
 				524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
@@ -707,6 +751,7 @@
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
 				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
+				5258D7B52AA7026800D77C40 /* SetRoutineDetailCore.swift in Sources */,
 				526593F62A0E42F300D9446B /* ColorExt.swift in Sources */,
 				52C803F72A0BDB4700417B08 /* PwCore.swift in Sources */,
 				52C803DC2A0BB8E200417B08 /* SignInSideEffect.swift in Sources */,
@@ -714,6 +759,7 @@
 				526593F02A0E0D6C00D9446B /* FindIdCore.swift in Sources */,
 				52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */,
 				52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */,
+				5258D7AC2AA59BA200D77C40 /* SelectTargetMuscleCore.swift in Sources */,
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
 				526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */,
@@ -739,8 +785,10 @@
 				523BE9242A91CDB300519285 /* AddRoutineCore.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
+				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
 				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
+				5258D7AE2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift in Sources */,
 				52C8041E2A0C877300417B08 /* ProfileCore.swift in Sources */,
 				52C8043A2A0CB2A200417B08 /* EditInfoView.swift in Sources */,
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,

@@ -1,17 +1,17 @@
 //
-//  AddRoutineCore.swift
+//  SelectTargetMuscleCore.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/08/20.
+//  Created by 이민규 on 2023/09/04.
 //
 
 import ComposableArchitecture
 
-public struct AddRoutine: Reducer {
+public struct SelectTargetMuscle: Reducer {
     
     public struct State: Equatable {
         
-        @BindingState var excersizeName: String = ""
+        @BindingState var targetMuscle: String = ""
     }
     
     public enum Action: Equatable, BindableAction {
@@ -21,7 +21,7 @@ public struct AddRoutine: Reducer {
         case onTapNextButton
     }
     
-    @Dependency(\.sideEffect.addRoutine) var sideEffect
+    @Dependency(\.sideEffect.selectTargetMuscle) var sideEffect
     
     public var body: some ReducerOf<Self> {
         

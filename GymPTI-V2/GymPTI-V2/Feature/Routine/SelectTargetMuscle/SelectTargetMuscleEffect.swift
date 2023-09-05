@@ -1,19 +1,19 @@
 //
-//  AddRoutineSideEffect.swift
+//  SelectTargetMuscleEffect.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/08/20.
+//  Created by 이민규 on 2023/09/04.
 //
 
 import LinkNavigator
 
-public protocol AddRoutineSideEffect {
+public protocol SelectTargetMuscleSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onTapNextButton: () -> Void { get }
 }
 
-public struct AddRoutineSideEffectLive {
+public struct SelectTargetMuscleSideEffectLive {
     
     let navigator: LinkNavigatorType
     
@@ -22,7 +22,7 @@ public struct AddRoutineSideEffectLive {
     }
 }
 
-extension AddRoutineSideEffectLive: AddRoutineSideEffect {
+extension SelectTargetMuscleSideEffectLive: SelectTargetMuscleSideEffect {
     
     public var onTapBackButton: () -> Void {
         {
@@ -32,7 +32,7 @@ extension AddRoutineSideEffectLive: AddRoutineSideEffect {
     
     public var onTapNextButton: () -> Void {
         {
-            navigator.next(paths: ["selecttargetmuscle"], items: [:], isAnimated: true)
+            navigator.next(paths: ["setroutinedetail"], items: [:], isAnimated: true)
         }
     }
 }

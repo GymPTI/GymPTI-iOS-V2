@@ -26,9 +26,9 @@ extension FindIdView: View {
         VStack(spacing: 10) {
             
             VStack {
-                Button(action: {
+                Button {
                     viewStore.send(.onTapBackButton)
-                }) {
+                } label: {
                     Image("Back")
                         .resizable()
                         .frame(width: 10, height: 18)

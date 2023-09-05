@@ -30,10 +30,10 @@ struct RoutineExcersizeCell: View {
     
     var body: some View {
         
-        Button(action: {
+        Button {
             
             print("운동")
-        }) {
+        } label: {
             
             VStack(alignment: .leading, spacing: 4) {
                 

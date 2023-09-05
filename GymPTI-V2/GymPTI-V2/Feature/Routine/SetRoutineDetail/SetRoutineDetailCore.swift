@@ -1,27 +1,27 @@
 //
-//  AddRoutineCore.swift
+//  SetRoutineDetailCore.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/08/20.
+//  Created by 이민규 on 2023/09/05.
 //
 
 import ComposableArchitecture
 
-public struct AddRoutine: Reducer {
+public struct SetRoutineDetail: Reducer {
     
     public struct State: Equatable {
         
-        @BindingState var excersizeName: String = ""
+        @BindingState var targetMuscle: String = ""
     }
     
     public enum Action: Equatable, BindableAction {
         
         case binding(BindingAction<State>)
         case onTapBackButton
-        case onTapNextButton
+        case onTapAddButton
     }
     
-    @Dependency(\.sideEffect.addRoutine) var sideEffect
+    @Dependency(\.sideEffect.setRoutineDetail) var sideEffect
     
     public var body: some ReducerOf<Self> {
         
@@ -37,8 +37,8 @@ public struct AddRoutine: Reducer {
                 sideEffect.onTapBackButton()
                 return .none
                 
-            case .onTapNextButton:
-                sideEffect.onTapNextButton()
+            case .onTapAddButton:
+                sideEffect.onTapAddButton()
                 return .none
             }
         }
