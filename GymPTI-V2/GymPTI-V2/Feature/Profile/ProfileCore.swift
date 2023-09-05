@@ -37,7 +37,7 @@ public struct Profile: Reducer {
         case onTapSettingButton
         case onTapEditInfoButton
         case onAppearProfile
-        case userDataReceived(User)
+        case userDataReceived(TaskResult<User>)
     }
     
     @Dependency(\.sideEffect.profile) var sideEffect
@@ -61,39 +61,45 @@ public struct Profile: Reducer {
                 return .none
                 
             case .onAppearProfile:
-                return getUserData()
-                    .map(Profile.Action.userDataReceived)
-                    .eraseToEffect()
+                return .run { send in
+                    
+                    await send(.userDataReceived(
+                        TaskResult { try await
+                            ProfileAPIManagement.getUserData()
+                        })
+                    )
+                }
                 
-            case .userDataReceived(let user):
-                state.data = user
+            case let .userDataReceived(.success(response)):
+                state.data = response
+                return .none
+                
+            case .userDataReceived(.failure):
                 return .none
             }
         }
     }
-    
-    private var userDataSubject = PassthroughSubject<User, Never>()
-    
-    private func getUserData() -> EffectPublisher<User, Never> {
-        Effect.run { subscriber in
-            Requests.request(
-                "/user/my", .get, User.self,
-                failure: { data in
-                    print(data)
-                },
-                completion: { data in
-                    subscriber.send(data)
-                    subscriber.send(completion: .finished)
-                }
-            )
-            
-            return AnyCancellable {}
-        }
-    }
-    
 }
 
 public struct User: Codable, Equatable {
     
     let userId, nickname, email, profileImage, statusMessage: String?
+}
+
+fileprivate class ProfileAPIManagement {
+    
+    static func getUserData() async throws -> User {
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            
+            Requests.request("/user/my", .get, User.self, failure: { _ in
+                
+                print("에러")
+            }) { user in
+                
+                continuation.resume(returning: user)
+            }
+        }
+    }
+
 }
