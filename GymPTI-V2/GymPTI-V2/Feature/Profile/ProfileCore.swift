@@ -58,7 +58,7 @@ public struct Profile: Reducer {
                     
                     await send(.userDataReceived(
                         TaskResult { try await
-                            ProfileAPIManagement.getUserData()
+                            getUserData()
                         })
                     )
                 }
@@ -75,16 +75,8 @@ public struct Profile: Reducer {
             }
         }
     }
-}
-
-public struct User: Codable, Equatable {
     
-    let userId, nickname, email, profileImage, statusMessage: String?
-}
-
-fileprivate class ProfileAPIManagement {
-    
-    static func getUserData() async throws -> User {
+    func getUserData() async throws -> User {
         
         return try await withCheckedThrowingContinuation { continuation in
             
@@ -95,5 +87,9 @@ fileprivate class ProfileAPIManagement {
             }
         }
     }
+}
 
+public struct User: Codable, Equatable {
+    
+    let userId, nickname, email, profileImage, statusMessage: String?
 }

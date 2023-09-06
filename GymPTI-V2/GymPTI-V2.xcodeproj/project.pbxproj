@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520A07A32AA8919E007BA4E4 /* DateFommat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A22AA8919E007BA4E4 /* DateFommat.swift */; };
+		520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
 		52256C942A8FAF2200871C0B /* StartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C932A8FAF2200871C0B /* StartCore.swift */; };
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
@@ -120,6 +122,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520A07A22AA8919E007BA4E4 /* DateFommat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFommat.swift; sourceTree = "<group>"; };
+		520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineWeekButton.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		52256C932A8FAF2200871C0B /* StartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCore.swift; sourceTree = "<group>"; };
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
@@ -256,6 +260,48 @@
 			path = SelectDay;
 			sourceTree = "<group>";
 		};
+		520A079E2AA858FE007BA4E4 /* AddRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				520A079D2AA8208F007BA4E4 /* SelectDay */,
+				5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */,
+				5258D7B32AA59C4700D77C40 /* SetRoutineDetail */,
+			);
+			path = AddRoutine;
+			sourceTree = "<group>";
+		};
+		520A079F2AA8590E007BA4E4 /* AddAiRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				520A07A12AA8592C007BA4E4 /* SelectLevel */,
+				520A07A02AA85919007BA4E4 /* SelectAiTargetMuscle */,
+			);
+			path = AddAiRoutine;
+			sourceTree = "<group>";
+		};
+		520A07A02AA85919007BA4E4 /* SelectAiTargetMuscle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SelectAiTargetMuscle;
+			sourceTree = "<group>";
+		};
+		520A07A12AA8592C007BA4E4 /* SelectLevel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SelectLevel;
+			sourceTree = "<group>";
+		};
+		520A07A62AA892CF007BA4E4 /* RoutineComponent */ = {
+			isa = PBXGroup;
+			children = (
+				523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */,
+				520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */,
+			);
+			path = RoutineComponent;
+			sourceTree = "<group>";
+		};
 		52256C902A8FAC0600871C0B /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,13 +311,6 @@
 				52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */,
 			);
 			path = Start;
-			sourceTree = "<group>";
-		};
-		523BE9202A91CD0E00519285 /* AddRoutine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddRoutine;
 			sourceTree = "<group>";
 		};
 		524CEB7D2A275BAB00B63DDA /* Notification */ = {
@@ -325,6 +364,7 @@
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
 				52C02F412A14C947003BA884 /* WebView.swift */,
+				520A07A22AA8919E007BA4E4 /* DateFommat.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -548,15 +588,13 @@
 		52C804102A0C86CF00417B08 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
-				520A079D2AA8208F007BA4E4 /* SelectDay */,
 				52C804112A0C86EB00417B08 /* RoutineView.swift */,
 				52C804132A0C870700417B08 /* RoutineCore.swift */,
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
-				523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */,
-				523BE9202A91CD0E00519285 /* AddRoutine */,
-				5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */,
-				5258D7B32AA59C4700D77C40 /* SetRoutineDetail */,
+				520A07A62AA892CF007BA4E4 /* RoutineComponent */,
+				520A079F2AA8590E007BA4E4 /* AddAiRoutine */,
+				520A079E2AA858FE007BA4E4 /* AddRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -721,6 +759,7 @@
 				52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */,
 				52C804182A0C872900417B08 /* RoutineRouteBuilder.swift in Sources */,
 				52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */,
+				520A07A32AA8919E007BA4E4 /* DateFommat.swift in Sources */,
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C804162A0C871D00417B08 /* RoutineSideEffect.swift in Sources */,
@@ -778,6 +817,7 @@
 				524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
 				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
+				520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
 				523BE9282A91CDD400519285 /* AddRoutineRouteBuilder.swift in Sources */,

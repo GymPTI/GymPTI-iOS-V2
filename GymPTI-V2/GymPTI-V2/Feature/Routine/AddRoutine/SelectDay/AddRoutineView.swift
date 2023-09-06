@@ -23,11 +23,6 @@ extension SelectDayView: View {
     
     public var body: some View {
         
-        let weekdays: [(String, String)] = [
-            ("MON", "월"), ("THE", "화"), ("WEN", "수"),
-            ("THU", "목"), ("FRI", "금"), ("SAT", "토"), ("SUN", "일")
-        ] // 더미데이터
-        
         VStack(alignment: .center) {
             
             HStack {
@@ -64,11 +59,18 @@ extension SelectDayView: View {
                 
                 HStack {
                     
-                    ForEach(weekdays, id: \.0) { (eng, kor) in
-                        
+                    ForEach([("SUN", "일"), ("MON", "월"),
+                             ("THE", "화"),("WEN", "수"),
+                             ("THU", "목"),("FRI", "금"),
+                             ("SAT", "토")], id: \.0) {
+                        day, label in
                         Spacer()
-                        WeekButton(eng, kor)
-                            .padding(.bottom, 8)
+                        
+                        RoutineWeekButton(day, label) {
+                            
+                            print("\(label)요일")
+                        }
+                        .padding(.bottom, 8)
                     }
                     
                     Spacer()
