@@ -13,10 +13,11 @@ struct SelectDayRouteBuilder: RouteBuilder {
     var matchPath: String { "selectday" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { _, _, _ in
+        { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 SelectDayView(store: .init(
-                    initialState: SelectDay.State(),
+                    initialState: SelectDay.State(
+                        day: items.getValue(key: "selectday-day") ?? ""),
                     reducer: {
                         SelectDay()
                     }))
@@ -25,3 +26,11 @@ struct SelectDayRouteBuilder: RouteBuilder {
         }
     }
 }
+
+extension [String: String] {
+  fileprivate func getValue(key: String) -> String? {
+    first(where: { $0.key == key })?.value as? String
+  }
+}
+
+

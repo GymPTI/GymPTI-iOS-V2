@@ -11,12 +11,11 @@ public struct SelectDay: Reducer {
     
     public struct State: Equatable {
         
-        @BindingState var excersizeName: String = ""
+        var day: String = ""
     }
     
-    public enum Action: Equatable, BindableAction {
+    public enum Action: Equatable {
         
-        case binding(BindingAction<State>)
         case onTapBackButton
         case onTapNextButton
     }
@@ -25,20 +24,16 @@ public struct SelectDay: Reducer {
     
     public var body: some ReducerOf<Self> {
         
-        BindingReducer()
         Reduce { state, action in
             
             switch action {
-                
-            case .binding:
-                return .none
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
                 return .none
                 
             case .onTapNextButton:
-                sideEffect.onTapNextButton()
+                sideEffect.onTapNextButton(state.day)
                 return .none
             }
         }

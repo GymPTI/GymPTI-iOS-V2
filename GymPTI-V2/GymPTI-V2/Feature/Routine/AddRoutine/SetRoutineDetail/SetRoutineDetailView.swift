@@ -60,8 +60,9 @@ extension SetRoutineDetailView: View {
             .padding(.horizontal, 20)
             
             CustomButton("추가", disabled: false) {
-                print("운동이름")
+                viewStore.send(.onTapAddButton)
             }
+            .padding(.top, 80)
             .padding(.horizontal, 100)
             
             Spacer()

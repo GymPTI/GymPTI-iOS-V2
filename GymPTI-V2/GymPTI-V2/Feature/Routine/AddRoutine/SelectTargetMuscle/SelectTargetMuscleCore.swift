@@ -11,7 +11,8 @@ public struct SelectTargetMuscle: Reducer {
     
     public struct State: Equatable {
         
-        @BindingState var targetMuscle: String = ""
+        var day: String = ""
+        var exerciseName: String = ""
     }
     
     public enum Action: Equatable, BindableAction {
@@ -38,7 +39,7 @@ public struct SelectTargetMuscle: Reducer {
                 return .none
                 
             case .onTapNextButton:
-                sideEffect.onTapNextButton()
+                sideEffect.onTapNextButton(state.day, state.exerciseName)
                 return .none
             }
         }

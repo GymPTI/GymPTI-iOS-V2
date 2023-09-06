@@ -13,15 +13,24 @@ struct SetRoutineDetailRouteBuilder: RouteBuilder {
     var matchPath: String { "setroutinedetail" }
     
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
-        { _, _, _ in
+        { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 SetRoutineDetailView(store: .init(
-                    initialState: SetRoutineDetail.State(),
+                    initialState: SetRoutineDetail.State(
+                        day: items.getValue(key: "setroutinedetail-day") ?? "",
+                        exerciseName: items.getValue(key: "setroutinedetail-exerciseName") ?? ""
+                    ),
                     reducer: {
                         SetRoutineDetail()
                     }))
                 .navigationBarHidden(true)
             }
         }
+    }
+}
+
+extension [String: String] {
+    fileprivate func getValue(key: String) -> String? {
+        first(where: { $0.key == key })?.value as? String
     }
 }

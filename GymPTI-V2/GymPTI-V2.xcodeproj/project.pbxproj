@@ -14,10 +14,10 @@
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
 		52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */; };
 		52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C992A8FC02900871C0B /* CustomButton.swift */; };
-		523BE9222A91CD9800519285 /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* AddRoutineView.swift */; };
-		523BE9242A91CDB300519285 /* AddRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* AddRoutineCore.swift */; };
-		523BE9262A91CDBE00519285 /* AddRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */; };
-		523BE9282A91CDD400519285 /* AddRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */; };
+		523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* SelectDayView.swift */; };
+		523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* SelectDayCore.swift */; };
+		523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */; };
+		523BE9282A91CDD400519285 /* SelectDayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9272A91CDD400519285 /* SelectDayBuilder.swift */; };
 		523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */; };
 		524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7B2A275BA600B63DDA /* NotificationView.swift */; };
 		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
@@ -129,10 +129,10 @@
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
 		52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteBuilder.swift; sourceTree = "<group>"; };
 		52256C992A8FC02900871C0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		523BE9212A91CD9800519285 /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
-		523BE9232A91CDB300519285 /* AddRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineCore.swift; sourceTree = "<group>"; };
-		523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineSideEffect.swift; sourceTree = "<group>"; };
-		523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineRouteBuilder.swift; sourceTree = "<group>"; };
+		523BE9212A91CD9800519285 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
+		523BE9232A91CDB300519285 /* SelectDayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayCore.swift; sourceTree = "<group>"; };
+		523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaySideEffect.swift; sourceTree = "<group>"; };
+		523BE9272A91CDD400519285 /* SelectDayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayBuilder.swift; sourceTree = "<group>"; };
 		523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExcersizeCell.swift; sourceTree = "<group>"; };
 		524CEB7B2A275BA600B63DDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
@@ -252,10 +252,10 @@
 		520A079D2AA8208F007BA4E4 /* SelectDay */ = {
 			isa = PBXGroup;
 			children = (
-				523BE9212A91CD9800519285 /* AddRoutineView.swift */,
-				523BE9232A91CDB300519285 /* AddRoutineCore.swift */,
-				523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */,
-				523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */,
+				523BE9212A91CD9800519285 /* SelectDayView.swift */,
+				523BE9232A91CDB300519285 /* SelectDayCore.swift */,
+				523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */,
+				523BE9272A91CDD400519285 /* SelectDayBuilder.swift */,
 			);
 			path = SelectDay;
 			sourceTree = "<group>";
@@ -820,9 +820,9 @@
 				520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
-				523BE9282A91CDD400519285 /* AddRoutineRouteBuilder.swift in Sources */,
+				523BE9282A91CDD400519285 /* SelectDayBuilder.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
-				523BE9262A91CDBE00519285 /* AddRoutineSideEffect.swift in Sources */,
+				523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
 				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
@@ -830,7 +830,7 @@
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
-				523BE9242A91CDB300519285 /* AddRoutineCore.swift in Sources */,
+				523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
@@ -845,7 +845,7 @@
 				52C02F422A14C947003BA884 /* WebView.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
-				523BE9222A91CD9800519285 /* AddRoutineView.swift in Sources */,
+				523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
 				524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */,
 				52256C922A8FAE0400871C0B /* StartView.swift in Sources */,

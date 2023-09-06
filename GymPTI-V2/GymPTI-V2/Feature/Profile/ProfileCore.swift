@@ -64,10 +64,10 @@ public struct Profile: Reducer {
                 }
                 
             case let .userDataReceived(.success(response)):
-                state.name = response.nickname!
-                state.id = response.userId!
-                state.message = response.statusMessage!
-                state.profileImage = response.profileImage!
+                state.name = response.nickname ?? ""
+                state.id = response.userId ?? ""
+                state.message = response.statusMessage ?? ""
+                state.profileImage = response.profileImage ?? "Profile"
                 return .none
                 
             case .userDataReceived(.failure):

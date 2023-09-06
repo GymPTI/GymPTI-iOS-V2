@@ -85,6 +85,7 @@ extension SelectDayView: View {
             CustomButton("다음", disabled: false) {
                 viewStore.send(.onTapNextButton)
             }
+            .padding(.top, 80)
             .padding(.horizontal, 100)
             
             Spacer()

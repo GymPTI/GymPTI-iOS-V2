@@ -10,7 +10,7 @@ import LinkNavigator
 public protocol SelectTargetMuscleSideEffect {
     
     var onTapBackButton: () -> Void { get }
-    var onTapNextButton: () -> Void { get }
+    var onTapNextButton: (String, String) -> Void { get }
 }
 
 public struct SelectTargetMuscleSideEffectLive {
@@ -30,9 +30,9 @@ extension SelectTargetMuscleSideEffectLive: SelectTargetMuscleSideEffect {
         }
     }
     
-    public var onTapNextButton: () -> Void {
-        {
-            navigator.next(paths: ["setroutinedetail"], items: [:], isAnimated: true)
+    public var onTapNextButton: (String, String) -> Void {
+        { day, excersizeName in
+            navigator.next(paths: ["setroutinedetail"], items: ["setroutinedetail-day": day, "setroutinedetail-exerciseName": "운동이름"], isAnimated: true)
         }
     }
 }

@@ -11,7 +11,11 @@ public struct SetRoutineDetail: Reducer {
     
     public struct State: Equatable {
         
-        @BindingState var targetMuscle: String = ""
+        var day: String = ""
+        var exerciseName: String = ""
+        var reps: Int = 0
+        var sets: Int = 0
+        var restTime: Int = 0
     }
     
     public enum Action: Equatable, BindableAction {
@@ -38,7 +42,8 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapAddButton:
-                sideEffect.onTapAddButton()
+//                sideEffect.onTapAddButton()
+                print(state.day, state.exerciseName)
                 return .none
             }
         }

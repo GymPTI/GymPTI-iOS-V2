@@ -14,13 +14,27 @@ func getToday() -> String {
     dateFormatter.dateFormat = "E"
     let today = dateFormatter.string(from: Date())
     
-    return today
+    return dateToKor(today)
 }
 
 func getDate() -> String {
     
-    dateFormatter.dateFormat = "yyyy년 M월 d일 (E)"
+    dateFormatter.dateFormat = "yyyy년 M월 d일"
     let dateString = dateFormatter.string(from: Date())
     
-    return dateString
+    return "\(dateString) (\(getToday()))"
+}
+
+func dateToKor(_ today: String) -> String {
+    
+    let week: [String: String] = [
+        "Sun": "일", "Mun": "월", "The": "화",
+        "Wed": "수", "Thu": "목", "fri": "금", "Sat": "토"
+    ]
+    
+    if let returnDay = week[today] {
+        return returnDay
+    } else {
+        return today
+    }
 }

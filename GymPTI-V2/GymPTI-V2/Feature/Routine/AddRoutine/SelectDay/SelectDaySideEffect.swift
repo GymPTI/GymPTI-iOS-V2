@@ -10,7 +10,7 @@ import LinkNavigator
 public protocol SelectDaySideEffect {
     
     var onTapBackButton: () -> Void { get }
-    var onTapNextButton: () -> Void { get }
+    var onTapNextButton: (String) -> Void { get }
 }
 
 public struct SelectDaySideEffectLive {
@@ -24,15 +24,16 @@ public struct SelectDaySideEffectLive {
 
 extension SelectDaySideEffectLive: SelectDaySideEffect {
     
+    
     public var onTapBackButton: () -> Void {
         {
             navigator.back(isAnimated: true)
         }
     }
     
-    public var onTapNextButton: () -> Void {
-        {
-            navigator.next(paths: ["selecttargetmuscle"], items: [:], isAnimated: true)
+    public var onTapNextButton: (String) -> Void {
+        { day in
+            navigator.next(paths: ["selecttargetmuscle"], items: ["selecttargetmuscle-day": "월"], isAnimated: true)
         }
     }
 }
