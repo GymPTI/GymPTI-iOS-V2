@@ -13,20 +13,13 @@ public struct Profile: Reducer {
     
     public struct State: Equatable {
         
-        var data: User?
+        var name: String = "Roading..."
         
-        var name: String {
-            data?.nickname ?? "ㅤㅤㅤ"
-        }
-        var id: String {
-            data?.userId ?? ""
-        }
-        var message: String {
-            data?.statusMessage ?? ""
-        }
-        var profileImage: String {
-            data?.profileImage ?? "Profile"
-        }
+        var id: String = "Roading..."
+        
+        var message: String = "Roading..."
+        
+        var profileImage: String = "Profile"
         
         @BindingState var selectedImageData: Data? = nil
     }
@@ -71,7 +64,10 @@ public struct Profile: Reducer {
                 }
                 
             case let .userDataReceived(.success(response)):
-                state.data = response
+                state.name = response.nickname!
+                state.id = response.userId!
+                state.message = response.statusMessage!
+                state.profileImage = response.profileImage!
                 return .none
                 
             case .userDataReceived(.failure):
@@ -92,11 +88,9 @@ fileprivate class ProfileAPIManagement {
         
         return try await withCheckedThrowingContinuation { continuation in
             
-            Requests.request("/user/my", .get, User.self, failure: { _ in
-                
-                print("에러")
-            }) { user in
-                
+            Requests.request("/user/my", .get, User.self) { error in
+                print("에러: \(error)")
+            } completion: { user in
                 continuation.resume(returning: user)
             }
         }

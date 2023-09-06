@@ -49,7 +49,7 @@ struct AppRouterGroup {
             RoutineRouteBuilder(),
             
             /// Routine -> AddRoutine View: 루틴 -> 루틴 추가 화면
-            AddRoutineRouteBuilder(),
+            SelectDayRouteBuilder(),
             
             /// Routine -> SelectTargetMuscle View: 루틴 추가 화면 -> 근육 부위 선택 화면
             SelectTargetMuscleRouteBuilder(),

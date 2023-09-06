@@ -245,6 +245,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520A079D2AA8208F007BA4E4 /* SelectDay */ = {
+			isa = PBXGroup;
+			children = (
+				523BE9212A91CD9800519285 /* AddRoutineView.swift */,
+				523BE9232A91CDB300519285 /* AddRoutineCore.swift */,
+				523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */,
+				523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */,
+			);
+			path = SelectDay;
+			sourceTree = "<group>";
+		};
 		52256C902A8FAC0600871C0B /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,10 +270,6 @@
 		523BE9202A91CD0E00519285 /* AddRoutine */ = {
 			isa = PBXGroup;
 			children = (
-				523BE9212A91CD9800519285 /* AddRoutineView.swift */,
-				523BE9232A91CDB300519285 /* AddRoutineCore.swift */,
-				523BE9252A91CDBE00519285 /* AddRoutineSideEffect.swift */,
-				523BE9272A91CDD400519285 /* AddRoutineRouteBuilder.swift */,
 			);
 			path = AddRoutine;
 			sourceTree = "<group>";
@@ -541,6 +548,7 @@
 		52C804102A0C86CF00417B08 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
+				520A079D2AA8208F007BA4E4 /* SelectDay */,
 				52C804112A0C86EB00417B08 /* RoutineView.swift */,
 				52C804132A0C870700417B08 /* RoutineCore.swift */,
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,

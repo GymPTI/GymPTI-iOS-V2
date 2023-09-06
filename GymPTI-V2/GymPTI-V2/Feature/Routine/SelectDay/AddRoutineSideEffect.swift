@@ -1,5 +1,5 @@
 //
-//  AddRoutineSideEffect.swift
+//  SelectDaySideEffect.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/08/20.
@@ -7,13 +7,13 @@
 
 import LinkNavigator
 
-public protocol AddRoutineSideEffect {
+public protocol SelectDaySideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onTapNextButton: () -> Void { get }
 }
 
-public struct AddRoutineSideEffectLive {
+public struct SelectDaySideEffectLive {
     
     let navigator: LinkNavigatorType
     
@@ -22,7 +22,7 @@ public struct AddRoutineSideEffectLive {
     }
 }
 
-extension AddRoutineSideEffectLive: AddRoutineSideEffect {
+extension SelectDaySideEffectLive: SelectDaySideEffect {
     
     public var onTapBackButton: () -> Void {
         {

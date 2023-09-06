@@ -1,5 +1,5 @@
 //
-//  AddRoutineCore.swift
+//  SelectDayCore.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/08/20.
@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-public struct AddRoutine: Reducer {
+public struct SelectDay: Reducer {
     
     public struct State: Equatable {
         
@@ -21,7 +21,7 @@ public struct AddRoutine: Reducer {
         case onTapNextButton
     }
     
-    @Dependency(\.sideEffect.addRoutine) var sideEffect
+    @Dependency(\.sideEffect.selectDay) var sideEffect
     
     public var body: some ReducerOf<Self> {
         

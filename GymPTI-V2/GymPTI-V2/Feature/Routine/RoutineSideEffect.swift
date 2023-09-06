@@ -37,7 +37,7 @@ extension RoutineSideEffectLive: RoutineSideEffect {
     
     public var onTapAddRoutineButton: () -> Void {
         {
-            navigator.next(paths: ["addroutine"], items: [:], isAnimated: true)
+            navigator.next(paths: ["selectDay"], items: [:], isAnimated: true)
         }
     }
 }

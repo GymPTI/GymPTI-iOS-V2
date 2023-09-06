@@ -1,5 +1,5 @@
 //
-//  AddRoutineView.swift
+//  SelectDayView.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/08/20.
@@ -8,18 +8,18 @@
 import SwiftUI
 import ComposableArchitecture
 
-public struct AddRoutineView {
+public struct SelectDayView {
     
-    private let store: StoreOf<AddRoutine>
-    @ObservedObject var viewStore: ViewStoreOf<AddRoutine>
+    private let store: StoreOf<SelectDay>
+    @ObservedObject var viewStore: ViewStoreOf<SelectDay>
     
-    public init(store: StoreOf<AddRoutine>) {
+    public init(store: StoreOf<SelectDay>) {
         self.store = store
         viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
-extension AddRoutineView: View {
+extension SelectDayView: View {
     
     public var body: some View {
         
