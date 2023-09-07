@@ -12,6 +12,8 @@ struct TabBarView: View {
     
     @Namespace var animation
     @State var selected: String
+    @State var isUnconnected = false
+    
     
     @ViewBuilder func makeIcon(_ imageName: String) -> some View {
         Button {
@@ -46,9 +48,6 @@ struct TabBarView: View {
             case "routine":
                 RoutineView(store: .init(initialState: Routine.State(), reducer: { Routine() }))
                 
-                //            case "friend":
-                //                FriendView(store: .init(initialState: Friend.State(), reducer: { Friend() }))
-                
             case "profile":
                 
                 ProfileView(store: .init(initialState: Profile.State(), reducer: { Profile() }))
@@ -66,7 +65,6 @@ struct TabBarView: View {
                 
                 makeIcon("home")
                 makeIcon("routine")
-                //                makeIcon("friend")
                 makeIcon("profile")
                 
                 Spacer()
@@ -74,9 +72,20 @@ struct TabBarView: View {
             .padding(.bottom, 2)
             .frame(maxHeight: 48)
             .background(Colors.white.color)
-            //            .cornerRadius(20, corners: [.topLeft, .topRight])
         }
         .setBackground()
         .navigationBarHidden(true)
+        .onAppear {
+            if !isInternetAvailable() {
+                isUnconnected = true
+            }
+        }
+        .alert(isPresented: $isUnconnected) {
+            Alert(title: Text("실패"),
+                  message: Text("인터넷이 연결되지 않았습니다,\n인터넷 연결을 확인하고 재접속 해주세요."),
+                  dismissButton: .default(Text("확인")) {
+                exit(1)
+            })
+        }
     }
 }

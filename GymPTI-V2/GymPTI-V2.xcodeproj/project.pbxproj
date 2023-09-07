@@ -591,11 +591,11 @@
 		52C804102A0C86CF00417B08 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
+				520A07A62AA892CF007BA4E4 /* RoutineComponent */,
 				52C804112A0C86EB00417B08 /* RoutineView.swift */,
 				52C804132A0C870700417B08 /* RoutineCore.swift */,
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
-				520A07A62AA892CF007BA4E4 /* RoutineComponent */,
 				520A079F2AA8590E007BA4E4 /* AddAiRoutine */,
 				520A079E2AA858FE007BA4E4 /* AddRoutine */,
 			);

@@ -121,7 +121,7 @@ public struct Routine: Reducer {
     }
 }
 
-public struct RoutineList: Codable, Equatable, Identifiable {
+public struct RoutineList: Codable, Equatable, Identifiable, Hashable {
 
     public let id: Int
     let exerciseName: String

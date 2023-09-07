@@ -57,7 +57,7 @@ extension RoutineView: View {
             }
             .padding(.horizontal, 20)
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
@@ -118,17 +118,35 @@ extension RoutineView: View {
                     if let routineData = viewStore.routineList {
                         
                         if routineData.isEmpty {
-                            Text("운동없음")
-                                .font(.title)
-                                .padding()
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                
+                                Text("휴식")
+                                    .setFont(20, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                
+                                Text("휴식은 운동 만큼 중요합니다, 푹 쉬세요!")
+                                    .setFont(14, .regular)
+                                    .foregroundColor(Colors.white.color)
+                                
+                            }
+                            .padding(.leading, 20)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(height: 80)
+                            .background(Colors.darkGray.color)
+                            .cornerRadius(10)
                         } else {
                             
-                            RoutineExcersizeCell(
-                                routineData[0].exerciseName,
-                                targetMuscles: routineData[0].targetMuscle.joined(separator: ", "),
-                                reps: routineData[0].reps,
-                                sets: routineData[0].sets,
-                                restTime: "\(routineData[0].restTime)회")
+                            ForEach(routineData) { data in
+                                RoutineExcersizeCell(
+                                    data.exerciseName,
+                                    targetMuscles: data.targetMuscle.joined(separator: ", "),
+                                    reps: data.reps,
+                                    sets: data.sets,
+                                    restTime: "\(data.restTime)회"
+                                )
+                                .padding(.bottom, 10)
+                            }
                             
                         }
                     }

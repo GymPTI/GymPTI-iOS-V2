@@ -78,16 +78,10 @@ public struct Profile: Reducer {
     
     func getUserData() async throws -> User {
         
-        return try await withUnsafeThrowingContinuation { continuation in
-            
-            Requests.request("/user/my",
-                             .get,
-                             User.self) { message in
-                print("에러: \(message)")
-            } completion: { user in
-                continuation.resume(returning: user)
-            }
-        }
+        let response = try await Service.request(
+            "/user/my", .get, Response<User>.self)
+        
+        return response.data
     }
 }
 
