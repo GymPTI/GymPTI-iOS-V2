@@ -12,6 +12,8 @@ public struct Routine: Reducer {
     public struct State: Equatable {
         
         var selectDay: String = ""
+        
+        var routineList: RoutineList = RoutineList(ElementsOfRoutine: [])
     }
     
     public enum Action: Equatable {
@@ -25,8 +27,9 @@ public struct Routine: Reducer {
         case onTapThuButton
         case onTapFriButton
         case onTapSatButton
+        case onSelectDay
         case onAppearRoutineView
-        case userDataReceived(TaskResult<User>)
+        case routineListDataReceived(TaskResult<RoutineList>)
     }
     
     @Dependency(\.sideEffect.routine) var sideEffect
@@ -73,36 +76,64 @@ public struct Routine: Reducer {
                 state.selectDay = "토"
                 return .none
                 
+            case .onSelectDay:
+                let selectDay = state.selectDay
+                return .run { send in
+                    
+                    await send(.routineListDataReceived(
+                        TaskResult { try await
+                            getRoutineList(day: getEnglishDayFullName(selectDay))
+                        })
+                    )
+                }
+                
             case .onAppearRoutineView:
                 let today = getToday()
                 state = State(selectDay: today)
                 return .run { send in
                     
-                    await send(.userDataReceived(
+                    await send(.routineListDataReceived(
                         TaskResult { try await
-                            getRoutineData(day: "")
+                            getRoutineList(day: getEnglishDayFullName(today))
                         })
                     )
                 }
                 
-            case let .userDataReceived(.success(response)):
+            case let .routineListDataReceived(.success(response)):
+                state.routineList = response
                 return .none
                 
-            case .userDataReceived(.failure):
+            case .routineListDataReceived(.failure):
                 return .none
             }
         }
     }
     
-    func getRoutineData(day: String) async throws -> User {
+    func getRoutineList(day: String) async throws -> RoutineList {
         
         return try await withCheckedThrowingContinuation { continuation in
             
-            Requests.request("/user/my", .get, User.self) { error in
-                print("에러: \(day)")
-            } completion: { user in
-                continuation.resume(returning: user)
+            Requests.request("/routine/list?dayOfWeek=\(day)", .get, RoutineList.self) { error in
+                print("error: \(error)")
+            } completion: { list in
+                continuation.resume(returning: list)
             }
         }
     }
+}
+
+public struct RoutineList: Codable, Equatable {
+    
+    let ElementsOfRoutine: [ElementsOfRoutine]
+}
+
+public struct ElementsOfRoutine: Codable, Equatable {
+    
+    let id: Int
+    let exerciseName: String
+    let targetMuscle: [String]
+    let reps: Int
+    let sets: Int
+    let restTime: Int
+    let completed: Bool
 }

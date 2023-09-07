@@ -8,7 +8,7 @@
 import Foundation
 
 //public let API: String = "http://veryhotseo81.duckdns.org:8888/gympti"
-public let API: String = "http://10.80.162.86:8080"
+public let API: String = "http://10.80.162.86:9000"
 
 enum TokenType {
     

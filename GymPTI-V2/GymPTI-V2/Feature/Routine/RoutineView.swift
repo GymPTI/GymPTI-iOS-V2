@@ -96,6 +96,8 @@ extension RoutineView: View {
                                 default:
                                     viewStore.send(.onTapSunButton)
                                 }
+                                
+                                viewStore.send(.onSelectDay)
                             }
                             .padding(.bottom, 8)
                         }
@@ -112,6 +114,28 @@ extension RoutineView: View {
                         .foregroundColor(Colors.white.color)
                         .padding(.top, 10)
                     
+                    if viewStore.routineList.ElementsOfRoutine == [] {
+                        Text("루틴 없음")
+                    } else {
+                        Text("루틴 있음")
+                            .onAppear {
+                                print(viewStore.routineList)
+                            }
+                    }
+
+
+//                        if let routineList = viewStore.routineList?.ElementsOfRoutine {
+//                            ForEach(routineList, id: \.id) { elementsOfRoutine in
+//                                RoutineExcersizeCell(
+//                                    elementsOfRoutine.exerciseName,
+//                                    targetMuscles: elementsOfRoutine.targetMuscle,
+//                                    reps: elementsOfRoutine.reps,
+//                                    sets: elementsOfRoutine.sets,
+//                                    restTime: elementsOfRoutine.restTime
+//                                )
+//                                .padding(.bottom, 10)
+//                            }
+//                        }
                 }
                 .padding(.horizontal, 20)
                 Spacer()

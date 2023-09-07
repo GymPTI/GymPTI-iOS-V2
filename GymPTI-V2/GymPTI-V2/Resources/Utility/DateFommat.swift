@@ -38,3 +38,14 @@ func dateToKor(_ today: String) -> String {
         return today
     }
 }
+
+func getEnglishDayFullName(_ day: String) -> String {
+    
+    let week: [String: String] = [
+        "일": "SUNDAY", "월": "MONDAY", "화": "TUESDAY",
+        "수": "WEDNESDAY", "목": "THURSDAY",
+        "금": "FRIDAY", "토": "SATURDAY"
+    ]
+    
+    return week[day]!
+}
