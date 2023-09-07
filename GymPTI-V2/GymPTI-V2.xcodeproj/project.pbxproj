@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		520A07A32AA8919E007BA4E4 /* DateFommat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A22AA8919E007BA4E4 /* DateFommat.swift */; };
 		520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */; };
+		520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
 		52256C942A8FAF2200871C0B /* StartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C932A8FAF2200871C0B /* StartCore.swift */; };
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
@@ -68,7 +69,7 @@
 		52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A82A0B97CD00417B08 /* HomeCore.swift */; };
 		52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803AF2A0B9AAB00417B08 /* Constants.swift */; };
 		52C803B22A0B9ABB00417B08 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B12A0B9ABB00417B08 /* Response.swift */; };
-		52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B32A0B9ACC00417B08 /* Requests.swift */; };
+		52C803B42A0B9ACC00417B08 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B32A0B9ACC00417B08 /* Service.swift */; };
 		52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */; };
 		52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B82A0BAD3900417B08 /* ViewExt.swift */; };
 		52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */; };
@@ -124,6 +125,7 @@
 /* Begin PBXFileReference section */
 		520A07A22AA8919E007BA4E4 /* DateFommat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFommat.swift; sourceTree = "<group>"; };
 		520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineWeekButton.swift; sourceTree = "<group>"; };
+		520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isInternetAvailable.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		52256C932A8FAF2200871C0B /* StartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCore.swift; sourceTree = "<group>"; };
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
@@ -179,7 +181,7 @@
 		52C803A82A0B97CD00417B08 /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
 		52C803AF2A0B9AAB00417B08 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52C803B12A0B9ABB00417B08 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		52C803B32A0B9ACC00417B08 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		52C803B32A0B9ACC00417B08 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
 		52C803B82A0BAD3900417B08 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
 				52C02F412A14C947003BA884 /* WebView.swift */,
 				520A07A22AA8919E007BA4E4 /* DateFommat.swift */,
+				520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -492,7 +495,7 @@
 			children = (
 				52C803AF2A0B9AAB00417B08 /* Constants.swift */,
 				52C803B12A0B9ABB00417B08 /* Response.swift */,
-				52C803B32A0B9ACC00417B08 /* Requests.swift */,
+				52C803B32A0B9ACC00417B08 /* Service.swift */,
 				526593DD2A0D11CD00D9446B /* Interceptor.swift */,
 			);
 			path = Network;
@@ -786,7 +789,7 @@
 				524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
-				52C803B42A0B9ACC00417B08 /* Requests.swift in Sources */,
+				52C803B42A0B9ACC00417B08 /* Service.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
@@ -844,6 +847,7 @@
 				526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */,
 				52C02F422A14C947003BA884 /* WebView.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
+				520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,

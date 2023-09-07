@@ -9,19 +9,19 @@ import SwiftUI
 
 struct RoutineExcersizeCell: View {
     
-    let excersizeName: String
+    let excerciseName: String
     let targetMuscles: String
     let reps: Int
     let sets: Int
     let restTime: String
     
-    init(_ excersizeName: String,
+    init(_ excerciseName: String,
          targetMuscles: String,
          reps: Int,
          sets: Int,
          restTime: String)
     {
-        self.excersizeName = excersizeName
+        self.excerciseName = excerciseName
         self.targetMuscles = targetMuscles
         self.sets = sets
         self.reps = reps
@@ -37,7 +37,7 @@ struct RoutineExcersizeCell: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 
-                Text("\(excersizeName)")
+                Text("\(excerciseName)")
                     .setFont(20, .bold)
                     .foregroundColor(Colors.white.color)
                 

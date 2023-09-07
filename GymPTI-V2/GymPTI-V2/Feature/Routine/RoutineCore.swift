@@ -13,7 +13,7 @@ public struct Routine: Reducer {
         
         var selectDay: String = ""
         
-        var routineList: RoutineList = RoutineList(ElementsOfRoutine: [])
+        var routineList: [RoutineList]? = nil
     }
     
     public enum Action: Equatable {
@@ -29,7 +29,7 @@ public struct Routine: Reducer {
         case onTapSatButton
         case onSelectDay
         case onAppearRoutineView
-        case routineListDataReceived(TaskResult<RoutineList>)
+        case routineListDataReceived(TaskResult<[RoutineList]>)
     }
     
     @Dependency(\.sideEffect.routine) var sideEffect
@@ -109,31 +109,23 @@ public struct Routine: Reducer {
         }
     }
     
-    func getRoutineList(day: String) async throws -> RoutineList {
+    func getRoutineList(day: String) async throws -> [RoutineList] {
         
-        return try await withCheckedThrowingContinuation { continuation in
-            
-            Requests.request("/routine/list?dayOfWeek=\(day)", .get, RoutineList.self) { error in
-                print("error: \(error)")
-            } completion: { list in
-                continuation.resume(returning: list)
-            }
-        }
+        let params: [String: Any] = ["dayOfWeek": day]
+        
+        let response = try await Service.request(
+            "/routine/list", .get,
+            params: params,[RoutineList].self)
+        
+        return response
     }
 }
 
-public struct RoutineList: Codable, Equatable {
-    
-    let ElementsOfRoutine: [ElementsOfRoutine]
-}
+public struct RoutineList: Codable, Equatable, Identifiable {
 
-public struct ElementsOfRoutine: Codable, Equatable {
-    
-    let id: Int
+    public let id: Int
     let exerciseName: String
     let targetMuscle: [String]
-    let reps: Int
-    let sets: Int
-    let restTime: Int
+    let reps, sets, restTime: Int
     let completed: Bool
 }

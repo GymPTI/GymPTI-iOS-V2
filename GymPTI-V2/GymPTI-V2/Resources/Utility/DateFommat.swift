@@ -47,5 +47,5 @@ func getEnglishDayFullName(_ day: String) -> String {
         "금": "FRIDAY", "토": "SATURDAY"
     ]
     
-    return week[day]!
+    return week[day] ?? "SUNDAY"
 }

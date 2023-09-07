@@ -27,6 +27,13 @@ final class Interceptor: RequestInterceptor {
         var urlRequest = urlRequest
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        
+        if urlRequest.httpMethod == "GET" {
+            urlRequest = try! URLEncoding.default.encode(urlRequest, with: nil)
+        } else {
+            urlRequest = try! JSONEncoding.default.encode(urlRequest, with: nil)
+        }
+        
         urlRequest.timeoutInterval = 5
         completion(.success(urlRequest))
     }

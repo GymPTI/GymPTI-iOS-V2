@@ -50,10 +50,15 @@ public struct SignIn: Reducer {
     
     private func loginRequest(_ state: State) {
         
-        let params = [
+        let params: [String: Any] = [
             "userId": state.id,
             "password": hashedPassword(state.pw)
         ]
+        
+//        let response = try await Service.request("/auth/login", .post, params: params, token.self)
+//
+//        Token.save(.accessToken, response.accessToken)
+//        Token.save(.refreshToken, response.refreshToken)
         
         Requests.request("/auth/login", .post, params: params, token.self ,failure: { error in
             

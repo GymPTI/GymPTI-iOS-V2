@@ -8,6 +8,36 @@
 import SwiftUI
 import Alamofire
 
+final class Service {
+    
+    static let shared = Service()
+    
+    private static let session: Session = {
+        
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 10
+        configuration.timeoutIntervalForResource = 10
+        let interceptor = Interceptor()
+        return Session(configuration: configuration,
+                       interceptor: interceptor)
+    }()
+    
+    private init() { }
+    
+    static func request<T: Codable>(_ url: String,
+                                    _ method: HTTPMethod,
+                                    params: [String: Any]? = nil,
+                                    _ model: T.Type) async throws -> T {
+        
+        return try await session.request("\(API)\(url)",
+                                         method: method,
+                                         parameters: params,
+                                         encoding: URLEncoding.default)
+        .serializingDecodable()
+        .value
+    }
+}
+
 class Requests {
     
     static func simple(_ url: String,
