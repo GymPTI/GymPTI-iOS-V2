@@ -10,8 +10,6 @@ import Alamofire
 
 final class Service {
     
-    static let shared = Service()
-    
     private static let session: Session = {
         
         let configuration = URLSessionConfiguration.default

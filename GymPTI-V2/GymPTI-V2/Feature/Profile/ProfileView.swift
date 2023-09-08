@@ -40,30 +40,32 @@ extension ProfileView: View {
                     VStack(spacing: 0) {
                         
                         ZStack(alignment: .bottom) {
-                            
-                            KFImage(URL(string: viewStore.profileImage))
-                                .placeholder {
-                                    if viewStore.name == "뉴진스" {
-                                        Image("Newjeans")
-                                            .resizable()
-                                            .frame(width: 108, height: 108)
-                                            .clipShape(Circle())
-                                            .overlay(RoundedRectangle(cornerRadius: 108)
-                                                .strokeBorder(Colors.white.color, lineWidth: 2))
-                                    } else {
-                                        Image("Profile")
-                                            .resizable()
-                                            .frame(width: 108, height: 108)
-                                            .clipShape(Circle())
-                                            .overlay(RoundedRectangle(cornerRadius: 108)
-                                                .strokeBorder(Colors.white.color, lineWidth: 2))
-                                    }
+                            if viewStore.name == "뉴진스" {
+                                Image("Newjeans")
+                                    .resizable()
+                                    .frame(width: 108, height: 108)
+                                    .clipShape(Circle())
+                                    .overlay(RoundedRectangle(cornerRadius: 108)
+                                        .strokeBorder(Colors.white.color, lineWidth: 2))
+                            } else {
+                                
+                                AsyncImage(url: URL(string: viewStore.profileImage)) { image in
+                                    image
+                                        .resizable()
+                                        .frame(width: 108, height: 108)
+                                        .clipShape(Circle())
+                                        .overlay(RoundedRectangle(cornerRadius: 108)
+                                            .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    
+                                } placeholder: {
+                                    Image("Profile")
+                                        .resizable()
+                                        .frame(width: 108, height: 108)
+                                        .clipShape(Circle())
+                                        .overlay(RoundedRectangle(cornerRadius: 108)
+                                            .strokeBorder(Colors.white.color, lineWidth: 2))
                                 }
-                                .resizable()
-                                .frame(width: 108, height: 108)
-                                .clipShape(Circle())
-                                .overlay(RoundedRectangle(cornerRadius: 108)
-                                    .strokeBorder(Colors.white.color, lineWidth: 2))
+                            }
                         }
                         
                         Text("\(viewStore.name)")

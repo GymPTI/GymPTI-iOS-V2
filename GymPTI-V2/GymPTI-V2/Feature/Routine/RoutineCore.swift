@@ -79,7 +79,10 @@ public struct Routine: Reducer {
                 
             case .onTapRoutineCell(let id):
                 sideEffect.onTapRoutineCell() {
-                    deleteRoutineCell(id: id)
+                    
+                    Task {
+                        await deleteRoutineCell(id: id)
+                    }
                 }
                 return .none
                 
@@ -116,13 +119,13 @@ public struct Routine: Reducer {
         }
     }
     
-    func deleteRoutineCell(id: Int) {
+    func deleteRoutineCell(id: Int) async {
         
-        Requests.simple("/routine/delete/\(id)",
-                        .delete) { message in
-            print("삭제 실패 : \(message)")
-        } completion : {
-            print("삭제 성공")
+        do {
+            let response = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
+            print(response)
+        } catch {
+            print("response")
         }
     }
     

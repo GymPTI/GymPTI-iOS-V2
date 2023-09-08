@@ -7,9 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
-import Kingfisher
 import PhotosUI
-import Shimmer
 
 public struct EditInfoView {
     
@@ -100,16 +98,17 @@ extension EditInfoView {
                         
                         if viewStore.selectedImageData == nil {
                             
-                            KFImage(URL(string: viewStore.profileImage))
-                                .placeholder {
-                                    Image("Profile")
-                                        .resizable()
-                                        .frame(width: 86, height: 86)
-                                        .clipShape(Circle())
-                                }
-                                .resizable()
-                                .frame(width: 108, height: 108)
-                                .clipShape(Circle())
+                            AsyncImage(url: URL(string: viewStore.profileImage)) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 108, height: 108)
+                                    .clipShape(Circle())
+                            } placeholder: {
+                                Image("Profile")
+                                    .resizable()
+                                    .frame(width: 86, height: 86)
+                                    .clipShape(Circle())
+                            }
                         } else {
                             
                             Image(uiImage: UIImage(data: viewStore.selectedImageData!)!)
