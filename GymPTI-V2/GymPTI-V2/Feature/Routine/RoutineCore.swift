@@ -28,6 +28,7 @@ public struct Routine: Reducer {
         case onTapFriButton
         case onTapSatButton
         case onSelectDay
+        case onTapRoutineCell(id: Int)
         case onAppearRoutineView
         case routineListDataReceived(TaskResult<[RoutineList]>)
     }
@@ -76,6 +77,12 @@ public struct Routine: Reducer {
                 state.selectDay = "토"
                 return .none
                 
+            case .onTapRoutineCell(let id):
+                sideEffect.onTapRoutineCell() {
+                    deleteRoutineCell(id: id)
+                }
+                return .none
+                
             case .onSelectDay:
                 let selectDay = state.selectDay
                 return .run { send in
@@ -106,6 +113,16 @@ public struct Routine: Reducer {
             case .routineListDataReceived(.failure):
                 return .none
             }
+        }
+    }
+    
+    func deleteRoutineCell(id: Int) {
+        
+        Requests.simple("/routine/delete/\(id)",
+                        .delete) { message in
+            print("삭제 실패 : \(message)")
+        } completion : {
+            print("삭제 성공")
         }
     }
     

@@ -12,10 +12,14 @@ public struct SetRoutineDetail: Reducer {
     public struct State: Equatable {
         
         var day: String = ""
+        
         var exerciseName: String = ""
-        var reps: Int = 0
-        var sets: Int = 0
-        var restTime: Int = 0
+        
+        @BindingState var reps: Int = 1
+        
+        @BindingState var sets: Int = 1
+        
+        @BindingState var restTime: Int = 1
     }
     
     public enum Action: Equatable, BindableAction {

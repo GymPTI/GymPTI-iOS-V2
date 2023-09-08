@@ -59,8 +59,21 @@ extension SetRoutineDetailView: View {
             }
             .padding(.horizontal, 20)
             
+            Stepper(value: viewStore.$reps, in: 0...30, step: 1) {
+                Text("반복 횟수 : \(viewStore.reps)번")
+            }
+            
+            Stepper(value: viewStore.$sets, in: 0...20, step: 1) {
+                Text("세트 수 : \(viewStore.sets)회")
+            }
+            
+            Stepper(value: viewStore.$restTime, in: 0...120, step: 15) {
+                Text("휴식시간 : \(viewStore.restTime)초")
+            }
+            
             CustomButton("추가", disabled: false) {
-                viewStore.send(.onTapAddButton)
+//                viewStore.send(.onTapAddButton)
+                print("\(viewStore.reps) \(viewStore.sets) \(viewStore.restTime)")
             }
             .padding(.top, 80)
             .padding(.horizontal, 100)

@@ -144,7 +144,9 @@ extension RoutineView: View {
                                     reps: data.reps,
                                     sets: data.sets,
                                     restTime: "\(data.restTime)회"
-                                )
+                                ) {
+                                    viewStore.send(.onTapRoutineCell(id: data.id))
+                                }
                                 .padding(.bottom, 10)
                             }
                             

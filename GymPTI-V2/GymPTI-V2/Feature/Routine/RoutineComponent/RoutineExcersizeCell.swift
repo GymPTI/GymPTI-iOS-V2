@@ -14,25 +14,28 @@ struct RoutineExcersizeCell: View {
     let reps: Int
     let sets: Int
     let restTime: String
+    let action: () -> Void
     
     init(_ excerciseName: String,
          targetMuscles: String,
          reps: Int,
          sets: Int,
-         restTime: String)
+         restTime: String,
+         action: @escaping () -> Void)
     {
         self.excerciseName = excerciseName
         self.targetMuscles = targetMuscles
         self.sets = sets
         self.reps = reps
         self.restTime = restTime
+        self.action = action
     }
     
     var body: some View {
         
         Button {
             
-            print("운동")
+            action()
         } label: {
             
             VStack(alignment: .leading, spacing: 4) {
