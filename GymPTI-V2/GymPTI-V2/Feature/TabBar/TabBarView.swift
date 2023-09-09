@@ -77,8 +77,8 @@ struct TabBarView: View {
         .navigationBarHidden(true)
         .onAppear {
             if !isInternetAvailable() {
-                // 와이파이가 없는 환경에서 코딩 시 코드 주석 처리 하기
-//                isUnconnected = true
+//                 와이파이가 없는 환경에서 코딩 시 코드 주석 처리 하기
+                isUnconnected = true
             }
         }
         .alert(isPresented: $isUnconnected) {

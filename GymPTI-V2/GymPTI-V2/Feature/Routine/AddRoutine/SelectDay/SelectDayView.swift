@@ -66,28 +66,10 @@ extension SelectDayView: View {
                         day, label in
                         Spacer()
                         
-                        Button {
+                        RoutineWeekButton(day, label,
+                                          selecetDay: viewStore.selectedDay) {
                             viewStore.send(.onSelectDayButton(day: label))
-                            print("\(viewStore.selectedDay) == \(label)")
-                        } label: {
-                            
-                            VStack(spacing: 10) {
-                                
-                                Text("\(day)")
-                                    .setFont(14, .regular)
-                                    .foregroundColor(viewStore.selectedDay == label ? Colors.main.color : Colors.white.color)
-                                
-                                Text("\(label)")
-                                    .setFont(16, .bold)
-                                    .foregroundColor(Colors.white.color)
-                                    .background(
-                                        Circle()
-                                            .fill(viewStore.selectedDay == label ? Colors.main.color : Colors.black.color)
-                                            .frame(width: 34, height: 34)
-                                    )
-                            }
                         }
-                        .padding(.bottom, 8)
                     }
                     
                     Spacer()

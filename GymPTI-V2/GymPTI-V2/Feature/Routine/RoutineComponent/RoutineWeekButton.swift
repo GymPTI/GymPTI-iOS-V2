@@ -9,16 +9,19 @@ import SwiftUI
 
 struct RoutineWeekButton: View {
     
-    let dayOfTheWeekOnEng: String
-    let dayOfTheWeekOnKr: String
+    let day: String
+    let label: String
+    let selecetDay: String
     let action: () -> Void
     
-    init(_ dayOfTheWeekOnEng: String,
-         _ dayOfTheWeekOnKr: String,
+    init(_ day: String,
+         _ label: String,
+         selecetDay: String,
          action: @escaping () -> Void)
     {
-        self.dayOfTheWeekOnEng = dayOfTheWeekOnEng
-        self.dayOfTheWeekOnKr = dayOfTheWeekOnKr
+        self.day = day
+        self.label = label
+        self.selecetDay = selecetDay
         self.action = action
     }
     
@@ -30,19 +33,20 @@ struct RoutineWeekButton: View {
             
             VStack(spacing: 10) {
                 
-                Text("\(dayOfTheWeekOnEng)")
+                Text("\(day)")
                     .setFont(14, .regular)
-                    .foregroundColor(false ? Colors.main.color : Colors.white.color)
+                    .foregroundColor(selecetDay == label ? Colors.main.color : Colors.white.color)
                 
-                Text("\(dayOfTheWeekOnKr)")
+                Text("\(label)")
                     .setFont(16, .bold)
                     .foregroundColor(Colors.white.color)
                     .background(
                         Circle()
-                            .fill(false ? Colors.main.color : Colors.black.color)
+                            .fill(selecetDay == label ? Colors.main.color : Colors.black.color)
                             .frame(width: 34, height: 34)
                     )
             }
         }
+        .padding(.bottom, 8)
     }
 }

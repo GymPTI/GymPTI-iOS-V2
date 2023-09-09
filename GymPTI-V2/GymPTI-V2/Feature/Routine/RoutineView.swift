@@ -75,7 +75,7 @@ extension RoutineView: View {
                             
                             Spacer()
                             
-                            RoutineWeekButton(day, label) {
+                            RoutineWeekButton(day, label, selecetDay: viewStore.selectDay) {
                                 
                                 switch label {
                                     
@@ -101,7 +101,6 @@ extension RoutineView: View {
                                 print(viewStore.routineList ?? "")
                                 viewStore.send(.onSelectDay)
                             }
-                            .padding(.bottom, 8)
                         }
                         
                         Spacer()
