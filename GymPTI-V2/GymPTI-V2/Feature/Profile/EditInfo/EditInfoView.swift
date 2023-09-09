@@ -104,7 +104,7 @@ extension EditInfoView {
                                     .frame(width: 108, height: 108)
                                     .clipShape(Circle())
                             } placeholder: {
-                                Image("Profile")
+                                Image("user")
                                     .resizable()
                                     .frame(width: 108, height: 108)
                                     .clipShape(Circle())

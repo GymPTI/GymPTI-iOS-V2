@@ -58,7 +58,7 @@ extension ProfileView: View {
                                             .strokeBorder(Colors.white.color, lineWidth: 2))
                                     
                                 } placeholder: {
-                                    Image("Profile")
+                                    Image("user")
                                         .resizable()
                                         .frame(width: 108, height: 108)
                                         .clipShape(Circle())

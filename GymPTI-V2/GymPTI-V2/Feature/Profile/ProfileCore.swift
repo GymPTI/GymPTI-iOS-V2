@@ -19,7 +19,7 @@ public struct Profile: Reducer {
         
         var message: String = "Roading..."
         
-        var profileImage: String = "Profile"
+        var profileImage: String = "user"
         
         @BindingState var selectedImageData: Data? = nil
     }
@@ -67,7 +67,7 @@ public struct Profile: Reducer {
                 state.name = response.nickname ?? ""
                 state.id = response.userId ?? ""
                 state.message = response.statusMessage ?? ""
-                state.profileImage = response.profileImage ?? "Profile"
+                state.profileImage = response.profileImage ?? "user"
                 return .none
                 
             case .userDataReceived(.failure):

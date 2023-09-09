@@ -25,7 +25,7 @@ struct FriendCellView: View {
             
             HStack(alignment: .center, spacing: 6) {
                 
-                Image("Profile")
+                Image("user")
                     .resizable()
                     .frame(width: 36, height: 36)
                     .padding(.leading, 20)
