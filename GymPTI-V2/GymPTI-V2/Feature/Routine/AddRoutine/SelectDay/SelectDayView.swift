@@ -62,8 +62,7 @@ extension SelectDayView: View {
                     ForEach([("SUN", "일"), ("MON", "월"),
                              ("THE", "화"), ("WEN", "수"),
                              ("THU", "목"), ("FRI", "금"),
-                             ("SAT", "토")], id: \.0) {
-                        day, label in
+                             ("SAT", "토")], id: \.0) { day, label in
                         Spacer()
                         
                         RoutineWeekButton(day, label,

@@ -23,11 +23,6 @@ extension SelectTargetMuscleView: View {
     
     public var body: some View {
         
-        let groups: [(String, String)] = [
-            ("CHEST", "가슴"), ("BACK", "등"), ("LEGS", "하체"),
-            ("SHLDR", "어깨"), ("ARM", "팔")
-        ] // 더미데이터
-        
         VStack(alignment: .center) {
             
             HStack {
@@ -64,7 +59,9 @@ extension SelectTargetMuscleView: View {
                 
                 HStack {
                     
-                    ForEach(groups, id: \.0) { (eng, kor) in
+                    ForEach([("CHEST", "가슴"), ("BACK", "등"),
+                         ("LEGS", "하체"), ("SHLDR", "어깨"), (
+                            "ARM", "팔")], id: \.0) { (eng, kor) in
                         
                         Spacer()
                         

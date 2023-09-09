@@ -119,6 +119,7 @@
 		52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */; };
 		52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */; };
 		52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */; };
+		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +233,7 @@
 		52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouteBuilder.swift; sourceTree = "<group>"; };
 		52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCore.swift; sourceTree = "<group>"; };
 		52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSideEffect.swift; sourceTree = "<group>"; };
+		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */,
 				5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */,
 				5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */,
+				52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */,
 			);
 			path = SelectTargetMuscle;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */,
 				520A07A32AA8919E007BA4E4 /* DateFommat.swift in Sources */,
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
+				52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C804162A0C871D00417B08 /* RoutineSideEffect.swift in Sources */,
 				5258D7B72AA7029600D77C40 /* SetRoutineDetailSideEffect.swift in Sources */,

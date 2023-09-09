@@ -106,7 +106,7 @@ extension EditInfoView {
                             } placeholder: {
                                 Image("Profile")
                                     .resizable()
-                                    .frame(width: 86, height: 86)
+                                    .frame(width: 108, height: 108)
                                     .clipShape(Circle())
                             }
                         } else {
@@ -125,13 +125,13 @@ extension EditInfoView {
                                 HStack {
                                     Image("Edit")
                                         .resizable()
-                                        .frame(width: 18, height: 18)
+                                        .frame(width: 16, height: 16)
                                 }
-                                .frame(width: 40, height: 40)
+                                .frame(width: 36, height: 36)
                                 .background(Colors.main.color)
                                 .cornerRadius(28)
                                 .overlay(RoundedRectangle(cornerRadius: 28)
-                                    .strokeBorder(Colors.black.color, lineWidth: 6))
+                                    .strokeBorder(Colors.black.color, lineWidth: 4))
                                 .padding(.bottom, -4)
                                 .padding(.trailing, -4)
                             }
