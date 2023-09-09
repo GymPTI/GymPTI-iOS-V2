@@ -35,6 +35,8 @@ public struct AppSideEffect: DependencyKey {
     
     let verification: VerificationSideEffect
     
+    let tabbar: TabBarSideEffect
+    
     let home: HomeSideEffect
     
     let routine: RoutineSideEffect
@@ -77,6 +79,8 @@ public struct AppSideEffect: DependencyKey {
             email: EmailSideEffectLive(navigator: navigator),
             
             verification: VerificationSideEffectLive(navigator: navigator),
+            
+            tabbar: TabBarSideEffectLive(navigator: navigator),
             
             home: HomeSideEffectLive(navigator: navigator),
             

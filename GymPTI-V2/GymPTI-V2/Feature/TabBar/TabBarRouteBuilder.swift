@@ -15,7 +15,12 @@ struct TabBarRouteBuilder: RouteBuilder {
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
         { _, items, _ in
             WrappingController(matchPath: matchPath) {
-                TabBarView(selected: items.getValue(key: "tabbar-selected") ?? "")
+                TabBarView(store: .init(
+                    initialState: TabBar.State(
+                        selected: items.getValue(key: "tabbar-selected") ?? ""),
+                    reducer: {
+                        TabBar()
+                    }))
             }
         }
     }

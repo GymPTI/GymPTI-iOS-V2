@@ -8,39 +8,28 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct TabBarView: View {
+
+import SwiftUI
+import ComposableArchitecture
+
+public struct TabBarView {
     
-    @Namespace var animation
-    @State var selected: String
-    @State var isUnconnected = false
+    private let store: StoreOf<TabBar>
+    @ObservedObject var viewStore: ViewStoreOf<TabBar>
     
-    
-    @ViewBuilder func makeIcon(_ imageName: String) -> some View {
-        Button {
-            selected = imageName
-        } label: {
-            ZStack {
-                if selected == imageName {
-                    Color.black
-                        .clipShape(Circle())
-                        .overlay(Circle()
-                            .stroke(Color.white, lineWidth: 5))
-                        .frame(width: 48, height: 48)
-                        .matchedGeometryEffect(id: "a", in: animation)
-                }
-                Image(imageName)
-                    .renderingMode(.template)
-                    .foregroundColor(selected == imageName ? Colors.white.color : Colors.black.color)
-                    .frame(width: 48, height: 48)
-            }
-        }
+    public init(store: StoreOf<TabBar>) {
+        self.store = store
+        viewStore = ViewStore(store, observe: { $0 })
     }
+}
+
+extension TabBarView: View {
     
-    var body: some View {
+    public var body: some View {
         
         VStack(spacing: 0) {
             
-            switch selected {
+            switch viewStore.selected {
                 
             case "home":
                 HomeView(store: .init(initialState: Home.State(), reducer: { Home() }))
@@ -51,21 +40,35 @@ struct TabBarView: View {
             case "profile":
                 
                 ProfileView(store: .init(initialState: Profile.State(), reducer: { Profile() }))
-                
             default:
-                Text("화면이 로딩되지 않습니다.")
-                    .onAppear {
-                        selected = "home"
-                    }
+                
+                HomeView(store: .init(initialState: Home.State(), reducer: { Home() }))
             }
             
             HStack(spacing: 54) {
                 
                 Spacer()
-                
-                makeIcon("home")
-                makeIcon("routine")
-                makeIcon("profile")
+                 
+                ForEach(["home", "routine", "profile"], id: \.self) { tabName in
+                    
+                    Button {
+                        viewStore.send(.selectTab(tabName: tabName))
+                    } label: {
+                        ZStack {
+                            if viewStore.selected == tabName {
+                                Color.black
+                                    .clipShape(Circle())
+                                    .overlay(Circle()
+                                        .stroke(Color.white, lineWidth: 5))
+                                    .frame(width: 48, height: 48)
+                            }
+                            Image(tabName)
+                                .renderingMode(.template)
+                                .foregroundColor(viewStore.selected == tabName ? Colors.white.color : Colors.black.color)
+                                .frame(width: 48, height: 48)
+                        }
+                    }
+                }
                 
                 Spacer()
             }
@@ -76,17 +79,11 @@ struct TabBarView: View {
         .setBackground()
         .navigationBarHidden(true)
         .onAppear {
+            viewStore.send(.selectTab(tabName: "home"))
             if !isInternetAvailable() {
-//                 와이파이가 없는 환경에서 코딩 시 코드 주석 처리 하기
-                isUnconnected = true
+                
+                viewStore.send(.isWifiUnconnected)
             }
-        }
-        .alert(isPresented: $isUnconnected) {
-            Alert(title: Text("실패"),
-                  message: Text("인터넷이 연결되지 않았습니다,\n인터넷 연결을 확인하고 재접속 해주세요."),
-                  dismissButton: .default(Text("확인")) {
-                exit(1)
-            })
         }
     }
 }

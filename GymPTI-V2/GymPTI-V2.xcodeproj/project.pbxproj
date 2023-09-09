@@ -117,6 +117,8 @@
 		52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044D2A0CBEF900417B08 /* SettingCore.swift */; };
 		52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */; };
 		52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */; };
+		52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */; };
+		52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -228,6 +230,8 @@
 		52C8044D2A0CBEF900417B08 /* SettingCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCore.swift; sourceTree = "<group>"; };
 		52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSideEffect.swift; sourceTree = "<group>"; };
 		52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouteBuilder.swift; sourceTree = "<group>"; };
+		52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCore.swift; sourceTree = "<group>"; };
+		52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSideEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,6 +592,8 @@
 			isa = PBXGroup;
 			children = (
 				52C8040C2A0C771900417B08 /* TabBarView.swift */,
+				52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */,
+				52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */,
 				52C8040E2A0C804300417B08 /* TabBarRouteBuilder.swift */,
 			);
 			path = TabBar;
@@ -762,6 +768,7 @@
 				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
 				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
+				52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */,
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
 				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
@@ -794,6 +801,7 @@
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
 				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
 				52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */,
+				52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */,
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
