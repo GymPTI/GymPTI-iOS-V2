@@ -10,7 +10,7 @@ import LinkNavigator
 public protocol SetRoutineDetailSideEffect {
     
     var onTapBackButton: () -> Void { get }
-    var onTapAddButton: () -> Void { get }
+    var onTapAddButton: ( @escaping () -> Void ) -> Void { get }
 }
 
 public struct SetRoutineDetailSideEffectLive {
@@ -30,9 +30,20 @@ extension SetRoutineDetailSideEffectLive: SetRoutineDetailSideEffect {
         }
     }
     
-    public var onTapAddButton: () -> Void {
-        {
-            navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
+    public var onTapAddButton: ( @escaping () -> Void ) -> Void {
+        { action in
+            let alertModel = Alert(
+                title: "추가",
+                message: "해당 루틴을 추가하시겠습니까?",
+                buttons: [ActionButton(title: "확인", style: .default, action: {
+                    
+                    action()
+                    
+                    navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
+                }), ActionButton(title: "취소", style: .cancel)],
+                flagType: .error
+            )
+            navigator.alert(target: .default, model: alertModel)
         }
     }
 }

@@ -53,8 +53,6 @@ extension NotificationSideEffectLive: NotificationSideEffect {
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)
-            
-            
         }
     }
     

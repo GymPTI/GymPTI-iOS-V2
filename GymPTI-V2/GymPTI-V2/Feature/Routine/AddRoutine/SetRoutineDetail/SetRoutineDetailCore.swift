@@ -47,10 +47,11 @@ public struct SetRoutineDetail: Reducer {
                 
             case .onTapAddButton:
                 let state = state
-                Task {
-                    await postRoutineCell(state: state)
+                sideEffect.onTapAddButton {
+                    Task {
+                        await postRoutineCell(state: state)
+                    }
                 }
-                sideEffect.onTapAddButton()
                 return .none
             }
         }

@@ -43,6 +43,9 @@ extension TabBarView: View {
             default:
                 
                 HomeView(store: .init(initialState: Home.State(), reducer: { Home() }))
+                    .task {
+                        viewStore.send(.selectTab(tabName: "home"))
+                    }
             }
             
             HStack(spacing: 54) {
@@ -79,9 +82,7 @@ extension TabBarView: View {
         .setBackground()
         .navigationBarHidden(true)
         .onAppear {
-            viewStore.send(.selectTab(tabName: "home"))
             if !isInternetAvailable() {
-                
                 viewStore.send(.isWifiUnconnected)
             }
         }
