@@ -49,7 +49,7 @@ public struct SetRoutineDetail: Reducer {
                 let state = state
                 sideEffect.onTapAddButton {
                     Task {
-                        await postRoutineCell(state: state)
+                        await postRoutineCard(state: state)
                     }
                 }
                 return .none
@@ -57,7 +57,7 @@ public struct SetRoutineDetail: Reducer {
         }
     }
     
-    func postRoutineCell(state: State) async {
+    func postRoutineCard(state: State) async {
         
         let params: [String: Any] = [
             "exercise": "PULL_UP",

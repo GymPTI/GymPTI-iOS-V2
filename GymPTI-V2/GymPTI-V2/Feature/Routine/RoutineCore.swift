@@ -15,7 +15,7 @@ public struct Routine: Reducer {
         
         var routineList: [RoutineList]? = nil
         
-        var isDeleteRoutineCell: Bool = false
+        var isDeleteRoutineCard: Bool = false
         
         var isSelected: Bool = false
     }
@@ -32,7 +32,7 @@ public struct Routine: Reducer {
         case onTapFriButton
         case onTapSatButton
         case onSelectDay
-        case onTapRoutineCell(id: Int)
+        case onTapRoutineCard(id: Int)
         case onAppearRoutineView
         case routineListDataReceived(TaskResult<[RoutineList]>)
     }
@@ -81,15 +81,15 @@ public struct Routine: Reducer {
                 state.selectDay = "토"
                 return .none
                 
-            case .onTapRoutineCell(let id):
-                state.isDeleteRoutineCell = false
-                sideEffect.onTapRoutineCell() {
+            case .onTapRoutineCard(let id):
+                state.isDeleteRoutineCard = false
+                sideEffect.onTapRoutineCard() {
                     
                     Task {
-                        await deleteRoutineCell(id: id)
+                        await deleteRoutineCard(id: id)
                     }
                 }
-                state.isDeleteRoutineCell = true
+                state.isDeleteRoutineCard = true
                 return .none
                 
             case .onSelectDay:
@@ -125,7 +125,7 @@ public struct Routine: Reducer {
         }
     }
     
-    func deleteRoutineCell(id: Int) async {
+    func deleteRoutineCard(id: Int) async {
         
         do {
             let response = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)

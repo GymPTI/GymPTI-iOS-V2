@@ -1,5 +1,5 @@
 //
-//  RoutineExcersizeCell.swift
+//  RoutineExcersizeCardView.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/08/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoutineExcersizeCell: View {
+struct RoutineExcersizeCardView: View {
     
     let excerciseName: String
     let targetMuscles: String

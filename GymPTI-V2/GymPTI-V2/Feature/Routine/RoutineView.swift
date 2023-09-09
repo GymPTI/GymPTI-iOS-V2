@@ -138,14 +138,14 @@ extension RoutineView: View {
                         } else {
                             
                             ForEach(routineData) { data in
-                                RoutineExcersizeCell(
+                                RoutineExcersizeCardView(
                                     data.exerciseName,
                                     targetMuscles: data.targetMuscle.joined(separator: ", "),
                                     reps: data.reps,
                                     sets: data.sets,
                                     restTime: "\(data.restTime)회"
                                 ) {
-                                    viewStore.send(.onTapRoutineCell(id: data.id))
+                                    viewStore.send(.onTapRoutineCard(id: data.id))
                                 }
                                 .padding(.bottom, 10)
                             }

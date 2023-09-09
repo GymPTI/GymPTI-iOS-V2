@@ -120,6 +120,7 @@
 		52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */; };
 		52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */; };
 		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
+		52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +235,7 @@
 		52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCore.swift; sourceTree = "<group>"; };
 		52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSideEffect.swift; sourceTree = "<group>"; };
 		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
+		52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +415,7 @@
 		52C803A32A0B970300417B08 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				52FCBE812AACD40200EB6E17 /* HomeComponent */,
 				52C803892A0B951900417B08 /* HomeView.swift */,
 				52C803A82A0B97CD00417B08 /* HomeCore.swift */,
 				52C803A62A0B977900417B08 /* HomeSideEffect.swift */,
@@ -648,6 +651,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		52FCBE812AACD40200EB6E17 /* HomeComponent */ = {
+			isa = PBXGroup;
+			children = (
+				52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */,
+			);
+			path = HomeComponent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -745,6 +756,7 @@
 				52C803A22A0B96CD00417B08 /* HomeRouteBuilder.swift in Sources */,
 				528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */,
 				52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */,
+				52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */,
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
 				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,

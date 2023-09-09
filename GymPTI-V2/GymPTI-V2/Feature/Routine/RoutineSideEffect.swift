@@ -11,7 +11,7 @@ public protocol RoutineSideEffect {
     
     var onTapAiAddRoutineButton: () -> Void { get }
     var onTapAddRoutineButton: () -> Void { get }
-    var onTapRoutineCell: ( @escaping () -> Void ) -> Void { get }
+    var onTapRoutineCard: ( @escaping () -> Void ) -> Void { get }
 }
 
 public struct RoutineSideEffectLive {
@@ -42,7 +42,7 @@ extension RoutineSideEffectLive: RoutineSideEffect {
         }
     }
     
-    public var onTapRoutineCell: ( @escaping () -> Void ) -> Void {
+    public var onTapRoutineCard: ( @escaping () -> Void ) -> Void {
         { action in
             let alertModel = Alert(
                 title: "삭제",
