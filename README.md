@@ -1,2 +1,6 @@
 # GymPTI-iOS-V2
-🔥프로젝트 GymPTI의 iOS 코드을 TCA 아키텍처로 다시 짠 버전🔥
+나만의 인공지능 AI PT선생님, 프로젝트: GymPTI iOS🍏
+
+##[TCA](https://github.com/pointfreeco/swift-composable-architecture)
+
+##[LinkNavigator](https://github.com/interactord/LinkNavigator)
