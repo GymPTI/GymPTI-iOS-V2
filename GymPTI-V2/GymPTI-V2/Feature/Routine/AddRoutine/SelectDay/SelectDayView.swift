@@ -60,15 +60,32 @@ extension SelectDayView: View {
                 HStack {
                     
                     ForEach([("SUN", "일"), ("MON", "월"),
-                             ("THE", "화"),("WEN", "수"),
-                             ("THU", "목"),("FRI", "금"),
+                             ("THE", "화"), ("WEN", "수"),
+                             ("THU", "목"), ("FRI", "금"),
                              ("SAT", "토")], id: \.0) {
                         day, label in
                         Spacer()
                         
-                        RoutineWeekButton(day, label) {
+                        Button {
+                            viewStore.send(.onSelectDayButton(day: label))
+                            print("\(viewStore.selectedDay) == \(label)")
+                        } label: {
                             
-                            print("\(label)요일")
+                            VStack(spacing: 10) {
+                                
+                                Text("\(day)")
+                                    .setFont(14, .regular)
+                                    .foregroundColor(viewStore.selectedDay == label ? Colors.main.color : Colors.white.color)
+                                
+                                Text("\(label)")
+                                    .setFont(16, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                    .background(
+                                        Circle()
+                                            .fill(viewStore.selectedDay == label ? Colors.main.color : Colors.black.color)
+                                            .frame(width: 34, height: 34)
+                                    )
+                            }
                         }
                         .padding(.bottom, 8)
                     }
@@ -82,7 +99,7 @@ extension SelectDayView: View {
             }
             .padding(.horizontal, 20)
             
-            CustomButton("다음", disabled: false) {
+            CustomButton("다음", disabled: !viewStore.isSelected) {
                 viewStore.send(.onTapNextButton)
             }
             .padding(.top, 80)

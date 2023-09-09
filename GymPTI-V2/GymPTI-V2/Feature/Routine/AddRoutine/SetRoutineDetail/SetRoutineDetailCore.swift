@@ -46,10 +46,30 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapAddButton:
-//                sideEffect.onTapAddButton()
-                print(state.day, state.exerciseName)
+                let state = state
+                Task {
+                    await postRoutineCell(state: state)
+                }
+                sideEffect.onTapAddButton()
                 return .none
             }
+        }
+    }
+    
+    func postRoutineCell(state: State) async {
+        
+        let params: [String: Any] = [
+            "exercise": "PULL_UP",
+            "dayOfWeek": getEnglishDayFullName(state.day),
+            "reps": state.reps,
+            "sets": state.sets,
+            "restTime": state.restTime
+        ]
+        do {
+            let response = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
+            print(response)
+        } catch {
+            print("response")
         }
     }
 }

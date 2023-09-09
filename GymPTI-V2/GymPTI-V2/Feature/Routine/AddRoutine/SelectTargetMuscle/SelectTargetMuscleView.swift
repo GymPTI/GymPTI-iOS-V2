@@ -69,7 +69,7 @@ extension SelectTargetMuscleView: View {
                         Spacer()
                         
                         Button {
-                            print("CHEST")
+                            viewStore.send(.onSelectExerciseButton(exercise: eng))
                         } label: {
                             
                             VStack(spacing: 10) {
@@ -100,7 +100,7 @@ extension SelectTargetMuscleView: View {
             }
             .padding(.horizontal, 20)
             
-            CustomButton("다음", disabled: false) {
+            CustomButton("다음", disabled: !viewStore.isSelected) {
                 viewStore.send(.onTapNextButton)
             }
             .padding(.top, 80)

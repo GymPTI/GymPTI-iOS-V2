@@ -72,6 +72,7 @@ extension RoutineView: View {
                                  ("THU", "목"),("FRI", "금"),
                                  ("SAT", "토")], id: \.0) {
                             day, label in
+                            
                             Spacer()
                             
                             RoutineWeekButton(day, label) {

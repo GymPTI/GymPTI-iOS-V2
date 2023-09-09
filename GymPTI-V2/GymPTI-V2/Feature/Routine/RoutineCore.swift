@@ -14,6 +14,10 @@ public struct Routine: Reducer {
         var selectDay: String = ""
         
         var routineList: [RoutineList]? = nil
+        
+        var isDeleteRoutineCell: Bool = false
+        
+        var isSelected: Bool = false
     }
     
     public enum Action: Equatable {
@@ -78,12 +82,14 @@ public struct Routine: Reducer {
                 return .none
                 
             case .onTapRoutineCell(let id):
+                state.isDeleteRoutineCell = false
                 sideEffect.onTapRoutineCell() {
                     
                     Task {
                         await deleteRoutineCell(id: id)
                     }
                 }
+                state.isDeleteRoutineCell = true
                 return .none
                 
             case .onSelectDay:

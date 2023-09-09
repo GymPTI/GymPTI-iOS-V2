@@ -33,7 +33,7 @@ extension SelectDaySideEffectLive: SelectDaySideEffect {
     
     public var onTapNextButton: (String) -> Void {
         { day in
-            navigator.next(paths: ["selecttargetmuscle"], items: ["selecttargetmuscle-day": "월"], isAnimated: true)
+            navigator.next(paths: ["selecttargetmuscle"], items: ["selecttargetmuscle-day": day], isAnimated: true)
         }
     }
 }

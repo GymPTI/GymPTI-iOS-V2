@@ -72,8 +72,8 @@ extension SetRoutineDetailView: View {
             }
             
             CustomButton("추가", disabled: false) {
-//                viewStore.send(.onTapAddButton)
-                print("\(viewStore.reps) \(viewStore.sets) \(viewStore.restTime)")
+                print("\(viewStore.exerciseName)\n\(getEnglishDayFullName(viewStore.day))\n\(viewStore.reps)\n\(viewStore.sets)\n\(viewStore.restTime)")
+                viewStore.send(.onTapAddButton)
             }
             .padding(.top, 80)
             .padding(.horizontal, 100)

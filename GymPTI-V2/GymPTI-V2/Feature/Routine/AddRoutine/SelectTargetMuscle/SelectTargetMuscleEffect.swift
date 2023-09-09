@@ -32,7 +32,7 @@ extension SelectTargetMuscleSideEffectLive: SelectTargetMuscleSideEffect {
     
     public var onTapNextButton: (String, String) -> Void {
         { day, excersizeName in
-            navigator.next(paths: ["setroutinedetail"], items: ["setroutinedetail-day": day, "setroutinedetail-exerciseName": "운동이름"], isAnimated: true)
+            navigator.next(paths: ["setroutinedetail"], items: ["setroutinedetail-day": day, "setroutinedetail-exerciseName": "PUSH_UP"], isAnimated: true)
         }
     }
 }

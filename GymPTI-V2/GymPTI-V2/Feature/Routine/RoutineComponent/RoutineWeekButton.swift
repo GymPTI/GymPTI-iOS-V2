@@ -32,14 +32,14 @@ struct RoutineWeekButton: View {
                 
                 Text("\(dayOfTheWeekOnEng)")
                     .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
+                    .foregroundColor(false ? Colors.main.color : Colors.white.color)
                 
                 Text("\(dayOfTheWeekOnKr)")
                     .setFont(16, .bold)
                     .foregroundColor(Colors.white.color)
                     .background(
                         Circle()
-                            .fill( Colors.black.color)
+                            .fill(false ? Colors.main.color : Colors.black.color)
                             .frame(width: 34, height: 34)
                     )
             }
