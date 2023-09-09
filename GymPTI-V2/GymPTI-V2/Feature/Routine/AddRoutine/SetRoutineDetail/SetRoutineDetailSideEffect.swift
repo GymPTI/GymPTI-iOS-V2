@@ -32,7 +32,7 @@ extension SetRoutineDetailSideEffectLive: SetRoutineDetailSideEffect {
     
     public var onTapAddButton: () -> Void {
         {
-            navigator.next(paths: [""], items: [:], isAnimated: true)
+            navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
         }
     }
 }
