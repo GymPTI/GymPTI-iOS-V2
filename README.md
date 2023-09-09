@@ -1,5 +1,5 @@
 # GymPTI-iOS-V2
-나만의 인공지능 AI PT선생님, 프로젝트: GymPTI iOS🍏
+나만의 인공지능 AI PT선생님, 프로젝트: GymPTI iOS🍏 (TCA 기반의 v2)
 
 ## [TCA](https://github.com/pointfreeco/swift-composable-architecture)
 
