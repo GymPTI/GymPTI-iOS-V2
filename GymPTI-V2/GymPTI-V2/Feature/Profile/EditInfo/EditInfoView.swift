@@ -148,14 +148,14 @@ extension EditInfoView {
                     .padding(.bottom, 15)
                     
                     Text("이름")
-                        .setFont(18, .medium)
+                        .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     CustomTextField(text: viewStore.$newName, isSecurable: false)
                     
                     Text("상태 메시지")
-                        .setFont(18, .medium)
+                        .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, 10)

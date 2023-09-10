@@ -69,7 +69,7 @@ extension ProfileView: View {
                         }
                         
                         Text("\(viewStore.name)")
-                            .setFont(22, .bold)
+                            .setFont(24, .bold)
                             .foregroundColor(Colors.white.color)
                             .padding(.top, 10)
                         

@@ -51,7 +51,7 @@ extension SettingView: View {
             .frame(height: 40)
             .background(Colors.darkGray.color)
             
-            SettingScrollView(viewStore: self.viewStore)
+            SettingScrollView(viewStore: viewStore)
             
         }
         .setBackground()
@@ -75,7 +75,7 @@ extension SettingView {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     Text("정보")
-                        .setFont(18, .medium)
+                        .setFont(20, .bold)
                         .foregroundColor(Colors.main.color)
                     
                     SettingButton("비밀번호 수정") {
@@ -87,7 +87,7 @@ extension SettingView {
                     }
                     
                     Text("기타")
-                        .setFont(18, .medium)
+                        .setFont(20, .bold)
                         .foregroundColor(Colors.main.color)
                         .padding(.top, 10)
                     
