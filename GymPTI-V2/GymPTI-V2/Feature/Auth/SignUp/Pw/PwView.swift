@@ -66,7 +66,6 @@ extension PwView: View {
                 
                 CustomButton("다음", disabled: !viewStore.pw.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}")) {
                     viewStore.send(.onTapNextButton)
-                    KeyboardManager.downKeyborad()
                 }
                 .padding(.top, 60)
                 .padding(.horizontal, 100)

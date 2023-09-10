@@ -23,7 +23,10 @@ struct CustomButton: View {
     }
     
     var body: some View {
-        Button(action: action) {
+        Button {
+            action()
+            KeyboardManager.tabBackgroundDownKeyborad()
+        } label: {
             Text(text)
                 .setFont(18, .semibold)
                 .foregroundColor(Colors.white.color)

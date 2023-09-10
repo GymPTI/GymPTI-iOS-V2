@@ -66,7 +66,6 @@ extension VerificationView: View {
                 
                 CustomButton("다음", disabled: !viewStore.emailVerificationCode.regex("[0-9]{4}")) {
                     viewStore.send(.onTapVerificationButton)
-                    KeyboardManager.downKeyborad()
                 }
                 .padding(.top, 60)
                 .padding(.horizontal, 100)

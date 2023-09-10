@@ -66,7 +66,6 @@ extension EmailView: View {
                 
                 CustomButton("다음", disabled: !viewStore.email.regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")) {
                     viewStore.send(.onTapSendEmailButton)
-                    KeyboardManager.downKeyborad()
                 }
                 .padding(.top, 60)
                 .padding(.horizontal, 100)

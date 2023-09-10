@@ -74,7 +74,6 @@ extension SignInView: View {
                     
                     CustomButton("로그인", disabled: viewStore.id == "" || viewStore.pw == "" ? true : false) {
                         viewStore.send(.onTapSignInButton)
-                        KeyboardManager.downKeyborad()
                     }
                     .padding(.horizontal, 100)
                     .padding(.top, 20)
