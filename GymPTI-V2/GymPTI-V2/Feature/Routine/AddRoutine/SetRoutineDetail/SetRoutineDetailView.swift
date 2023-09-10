@@ -25,30 +25,9 @@ extension SetRoutineDetailView: View {
         
         VStack(alignment: .center) {
             
-            HStack {
-                
-                Button {
-                    viewStore.send(.onTapBackButton)
-                } label: {
-                    Image("Back")
-                        .resizable()
-                        .frame(width: 9, height: 15)
-                }
-                .frame(width: 42, height: 36)
-                .padding(.bottom, 6)
-                
-                Spacer()
-                
-                Text("루틴 추가하기")
-                    .setFont(18, .semibold)
-                    .foregroundColor(Colors.white.color)
-                    .padding(.bottom, 6)
-                    .padding(.trailing, 42)
-                
-                Spacer()
+            CustomNavigationBar(title: "루틴 추가하기") {
+                viewStore.send(.onTapBackButton)
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 40)
             
             VStack {
                 

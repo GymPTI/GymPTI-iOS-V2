@@ -28,40 +28,15 @@ extension EditInfoView: View {
             
             VStack(spacing: 0) {
                 
-                HStack {
-                    
-                    Button {
+                CustomNavigationBar(
+                    title: "프로필 정보 수정",
+                    leadingButtonAction: {
                         viewStore.send(.onTapBackButton)
-                    } label: {
-                        Image("Back")
-                            .resizable()
-                            .frame(width: 9, height: 15)
-                    }
-                    .frame(width: 42, height: 36)
-                    .padding(.bottom, 6)
-                    
-                    Spacer()
-                    
-                    Text("정보 수정")
-                        .setFont(18, .semibold)
-                        .foregroundColor(Colors.white.color)
-                        .padding(.bottom, 6)
-                    
-                    Spacer()
-                    
-                    Button {
-                        viewStore.send(.onTapChangeButton)
-                    } label: {
-                        Text("저장")
-                            .setFont(16, .semibold)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.trailing, 10)
-                    }
-                    .frame(width: 42, height: 36)
-                    .padding(.bottom, 6)
+                    },
+                    trailingButtonTitle: "저장"
+                ) {
+                    viewStore.send(.onTapChangeButton)
                 }
-                .frame(maxWidth: .infinity)
-                .frame(height: 40)
                 
                 EditInfoScrollView(viewStore: self.viewStore)
                 

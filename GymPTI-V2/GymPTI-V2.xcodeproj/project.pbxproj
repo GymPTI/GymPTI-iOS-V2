@@ -121,6 +121,7 @@
 		52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */; };
 		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
 		52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */; };
+		52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -236,6 +237,7 @@
 		52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSideEffect.swift; sourceTree = "<group>"; };
 		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
 		52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCardView.swift; sourceTree = "<group>"; };
+		52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -609,6 +611,7 @@
 			isa = PBXGroup;
 			children = (
 				526594182A0E8B2500D9446B /* CustomNavi.swift */,
+				52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */,
 				52C804342A0CAE1F00417B08 /* CustomTextField.swift */,
 				528D4CC22A15CEB8008A0F7A /* SettingButton.swift */,
 				52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */,
@@ -784,6 +787,7 @@
 				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
 				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
+				52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */,
 				52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */,
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
 				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
@@ -976,7 +980,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GymPTI-V2/Preview Content\"";
 				DEVELOPMENT_TEAM = H4CNC953L3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1012,7 +1015,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GymPTI-V2/Preview Content\"";
 				DEVELOPMENT_TEAM = H4CNC953L3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

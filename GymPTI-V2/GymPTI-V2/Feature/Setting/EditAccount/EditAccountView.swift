@@ -25,41 +25,17 @@ extension EditAccountView: View {
         
         VStack(alignment: .center, spacing: 0) {
             
-            HStack {
-                
-                Button {
+            CustomNavigationBar(
+                title: "비밀번호 변경",
+                leadingButtonAction: {
                     viewStore.send(.onTapBackButton)
-                } label: {
-                    Image("Back")
-                        .resizable()
-                        .frame(width: 9, height: 15)
-                }
-                .frame(width: 42, height: 36)
-                .padding(.bottom, 6)
-                
-                Spacer()
-                
-                Text("비밀번호 변경")
-                    .setFont(18, .semibold)
-                    .foregroundColor(Colors.white.color)
-                    .padding(.bottom, 6)
-                
-                Spacer()
-                
-                Button {
+                },
+                trailingButtonTitle: "저장",
+                trailingButtonAction: {
                     viewStore.send(.onTapChangeButton)
-                } label: {
-                    Text("저장")
-                        .setFont(16, .semibold)
-                        .foregroundColor(Colors.white.color)
-                        .padding(.trailing, 10)
-                }
-                .frame(width: 42, height: 36)
-                .padding(.bottom, 6)
-                .disabled(!viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}"))
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 40)
+                },
+                trailingButtonDisabled:
+                    !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}"))
             
             VStack(alignment: .leading) {
                 

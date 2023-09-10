@@ -25,20 +25,8 @@ extension FindIdView: View {
         
         VStack(spacing: 10) {
             
-            VStack {
-                Button {
-                    viewStore.send(.onTapBackButton)
-                } label: {
-                    Image("Back")
-                        .resizable()
-                        .frame(width: 10, height: 18)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text("아이디 찾기")
-                    .setFont(38, .bold)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            CustomNavigationBar(title: "아이디 찾기") {
+                viewStore.send(.onTapBackButton)
             }
             
             CustomTextField(text: viewStore.$email, isSecurable: false)
