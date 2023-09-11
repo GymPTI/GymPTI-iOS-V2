@@ -58,7 +58,7 @@ extension SignInView: View {
                     .padding(.top, 20)
                     
                     Button {
-                        KeyboardManager.downKeyborad()
+                        KeyboardManager.dismissKeyboard()
                     } label: {
                         Text("아이디 혹은 비밀번호 찾기")
                             .setFont(14, .medium)

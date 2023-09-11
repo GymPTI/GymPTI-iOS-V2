@@ -55,7 +55,7 @@ public struct Verification: Reducer {
             "userId": state.id,
             "nickname": state.name,
             "email": state.email,
-            "password": hashedPassword(state.pw)
+            "password": state.pw.hashedPassword()
         ]
         
         Requests.simple("/email/validateMailVerification", .post, params: ["email": state.email, "emailVerificationCode": state.emailVerificationCode], failure : { message in

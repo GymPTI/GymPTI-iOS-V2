@@ -38,7 +38,6 @@
 		526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F12A0E0D7600D9446B /* FindIdSideEffect.swift */; };
 		526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */; };
 		526593F62A0E42F300D9446B /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F52A0E42F300D9446B /* ColorExt.swift */; };
-		526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593F72A0E520A00D9446B /* hashedPassword.swift */; };
 		526593FF2A0E594300D9446B /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526593FE2A0E594300D9446B /* VerificationView.swift */; };
 		526594012A0E594900D9446B /* VerificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594002A0E594900D9446B /* VerificationCore.swift */; };
 		526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594022A0E595900D9446B /* VerificationSideEffect.swift */; };
@@ -155,7 +154,6 @@
 		526593F12A0E0D7600D9446B /* FindIdSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdSideEffect.swift; sourceTree = "<group>"; };
 		526593F32A0E0D8100D9446B /* FindIdRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdRouteBuilder.swift; sourceTree = "<group>"; };
 		526593F52A0E42F300D9446B /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
-		526593F72A0E520A00D9446B /* hashedPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashedPassword.swift; sourceTree = "<group>"; };
 		526593FE2A0E594300D9446B /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		526594002A0E594900D9446B /* VerificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCore.swift; sourceTree = "<group>"; };
 		526594022A0E595900D9446B /* VerificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSideEffect.swift; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 			children = (
 				526594062A0E62AE00D9446B /* Colors.swift */,
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
-				526593F72A0E520A00D9446B /* hashedPassword.swift */,
 				520A07A22AA8919E007BA4E4 /* DateFommat.swift */,
 				520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */,
 			);
@@ -800,7 +797,6 @@
 				5258D7AC2AA59BA200D77C40 /* SelectTargetMuscleCore.swift in Sources */,
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
-				526593F82A0E520A00D9446B /* hashedPassword.swift in Sources */,
 				526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */,
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
 				52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */,

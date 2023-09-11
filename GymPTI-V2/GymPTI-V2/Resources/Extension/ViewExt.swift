@@ -19,7 +19,7 @@ extension View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Colors.black.color)
             .onTapGesture {
-                KeyboardManager.tabBackgroundDownKeyborad()
+                KeyboardManager.dismissKeyboardOnTapBackground()
             }
     }
     

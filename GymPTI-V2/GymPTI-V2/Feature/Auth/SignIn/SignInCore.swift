@@ -56,7 +56,7 @@ public struct SignIn: Reducer {
         
         let params: [String: Any] = [
             "userId": state.id,
-            "password": hashedPassword(state.pw)
+            "password": state.pw.hashedPassword()
         ]
         
         do {

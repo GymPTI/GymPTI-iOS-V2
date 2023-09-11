@@ -9,10 +9,19 @@ import SwiftUI
 
 enum Colors {
     
+    /// - Note: 메인색
     case main
+    
+    /// - Note: 흰색
     case white
+    
+    /// - Note: 검은 색
     case black
+    
+    /// - Note: 회색
     case gray
+    
+    /// - Note: 진한 회색
     case darkGray
     
     var color: Color {

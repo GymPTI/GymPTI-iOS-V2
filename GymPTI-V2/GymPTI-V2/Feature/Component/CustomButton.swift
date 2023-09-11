@@ -25,7 +25,7 @@ struct CustomButton: View {
     var body: some View {
         Button {
             action()
-            KeyboardManager.tabBackgroundDownKeyborad()
+            KeyboardManager.dismissKeyboardOnTapBackground()
         } label: {
             Text(text)
                 .setFont(18, .semibold)

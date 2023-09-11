@@ -49,8 +49,8 @@ public struct EditAccount: Reducer {
     private func chagePassword(state: State) {
         
         let params = [
-            "oldPassword": hashedPassword(state.oldPassword),
-            "newPassword": hashedPassword(state.newPassword)
+            "oldPassword": state.oldPassword.hashedPassword(),
+            "newPassword": state.newPassword.hashedPassword()
         ]
         
         Requests.simple("/user/password", .put, params: params, failure: { message in
