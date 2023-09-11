@@ -44,7 +44,7 @@ extension SignInSideEffectLive: SignInSideEffect {
     
     public var onSuccessSignIn: () -> Void {
         {
-            navigator.replace(paths: ["tabbar"], items: [:], isAnimated: true)
+            navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "home"], isAnimated: true)
         }
     }
 }

@@ -33,47 +33,48 @@ struct RoutineExcersizeCardView: View {
     
     var body: some View {
         
-        Button {
+        VStack(alignment: .leading, spacing: 4) {
             
-            action()
-        } label: {
+            Text("\(excerciseName)")
+                .setFont(20, .bold)
+                .foregroundColor(Colors.white.color)
             
-            VStack(alignment: .leading, spacing: 4) {
+            Text("\(targetMuscles)")
+                .setFont(14, .regular)
+                .foregroundColor(Colors.white.color)
+            
+            HStack {
                 
-                Text("\(excerciseName)")
-                    .setFont(20, .bold)
-                    .foregroundColor(Colors.white.color)
+                Image("timer")
                 
-                Text("\(targetMuscles)")
+                Text("\(reps)회 / \(sets)세트")
                     .setFont(14, .regular)
                     .foregroundColor(Colors.white.color)
-                
-                HStack {
-                    
-                    Image("timer")
-                
-                    Text("\(reps)회 / \(sets)세트")
-                        .setFont(14, .regular)
-                        .foregroundColor(Colors.white.color)
-                }
-                .padding(.top, 10)
-                
-                HStack {
-                    
-                    Image("rest")
-                    
-                    Text("각 세트 후 \(restTime) 휴식")
-                        .setFont(14, .regular)
-                        .foregroundColor(Colors.white.color)
-                }
-                
             }
-            .padding(.leading, 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .frame(height: 140)
-            .background(Colors.darkGray.color)
-            .cornerRadius(10)
+            .padding(.top, 10)
+            
+            HStack {
+                
+                Image("rest")
+                
+                Text("각 세트 후 \(restTime) 휴식")
+                    .setFont(14, .regular)
+                    .foregroundColor(Colors.white.color)
+            }
+            
         }
+        .padding(.bottom, 10)
+        .padding(.leading, 20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(height: 140)
+        .background(Colors.darkGray.color)
+        .cornerRadius(10)
+        .gesture(
+            LongPressGesture(minimumDuration: 0)
+                .onEnded { _ in
+                    action()
+                }
+        )
     }
 }
 

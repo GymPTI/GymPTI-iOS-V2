@@ -28,18 +28,10 @@ extension StartView: View {
             Image("logo")
                 .padding([.horizontal, .bottom], 60)
             
-            Button {
+            CustomButton("회원가입 하기", disabled: false) {
                 viewStore.send(.onTapSignUpButton)
-            } label: {
-                Text("회원가입 하기")
-                    .setFont(18, .semibold)
-                    .foregroundColor(Colors.white.color)
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .background(Colors.main.color)
-                    .cornerRadius(50)
-                    .padding(.horizontal, 40)
             }
+            .padding(.horizontal, 50)
             
             Button {
                 viewStore.send(.onTapSignInButton)

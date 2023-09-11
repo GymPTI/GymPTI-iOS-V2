@@ -60,12 +60,15 @@ public struct SetRoutineDetail: Reducer {
     func postRoutineCard(state: State) async {
         
         let params: [String: Any] = [
-            "exercise": "PULL_UP",
+            "exercise": "PUSH_UP",
             "dayOfWeek": getEnglishDayFullName(state.day),
             "reps": state.reps,
             "sets": state.sets,
             "restTime": state.restTime
         ]
+        
+        print(params)
+        
         do {
             let response = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
             print(response)

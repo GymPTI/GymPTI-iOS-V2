@@ -42,38 +42,35 @@ public struct SignIn: Reducer {
                 return .none
                 
             case .onTapSignInButton:
-                loginRequest(state)
+                let state = state
+                Task {
+                    await postLoginRequest(state: state)
+                }
+                sideEffect.onSuccessSignIn()
                 return .none
             }
         }
     }
     
-    private func loginRequest(_ state: State) {
+    func postLoginRequest(state: State) async {
         
         let params: [String: Any] = [
             "userId": state.id,
             "password": hashedPassword(state.pw)
         ]
         
-//        let response = try await Service.request("/auth/login", .post, params: params, token.self)
-//
-//        Token.save(.accessToken, response.accessToken)
-//        Token.save(.refreshToken, response.refreshToken)
-        
-        Requests.request("/auth/login", .post, params: params, token.self ,failure: { error in
+        do {
+            let response = try await Service.request("/auth/login", .post, params: params, Response<AccessToken>.self)
             
-            sideEffect.onFailSignIn(error)
-        }) { data in
-            
-            sideEffect.onSuccessSignIn()
-            Token.save(.accessToken, data.accessToken)
-            Token.save(.refreshToken, data.refreshToken)
+            Token.save(.accessToken, response.data.accessToken)
+            Token.save(.refreshToken, response.data.refreshToken)
+        } catch {
+            sideEffect.onFailSignIn("")
         }
-        
     }
 }
 
-struct token: Codable {
+struct AccessToken: Codable {
     
     let accessToken, refreshToken: String
 }

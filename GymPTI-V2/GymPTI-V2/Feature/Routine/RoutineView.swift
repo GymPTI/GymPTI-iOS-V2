@@ -97,8 +97,6 @@ extension RoutineView: View {
                                 default:
                                     viewStore.send(.onTapSunButton)
                                 }
-                                
-                                print(viewStore.routineList ?? "")
                                 viewStore.send(.onSelectDay)
                             }
                         }
@@ -138,6 +136,7 @@ extension RoutineView: View {
                         } else {
                             
                             ForEach(routineData) { data in
+                                
                                 RoutineExcersizeCardView(
                                     data.exerciseName,
                                     targetMuscles: data.targetMuscle.joined(separator: ", "),
@@ -147,9 +146,7 @@ extension RoutineView: View {
                                 ) {
                                     viewStore.send(.onTapRoutineCard(id: data.id))
                                 }
-                                .padding(.bottom, 10)
                             }
-                            
                         }
                     }
                 }

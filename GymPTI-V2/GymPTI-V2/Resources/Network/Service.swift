@@ -30,7 +30,7 @@ final class Service {
         return try await session.request("\(API)\(url)",
                                          method: method,
                                          parameters: params,
-                                         encoding: URLEncoding.default)
+                                         encoding: method == .get ? URLEncoding.default : JSONEncoding.default)
         .serializingDecodable()
         .value
     }

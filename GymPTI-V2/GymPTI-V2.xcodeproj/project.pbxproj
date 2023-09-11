@@ -52,7 +52,6 @@
 		526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526594182A0E8B2500D9446B /* CustomNavi.swift */; };
 		528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D4CC22A15CEB8008A0F7A /* SettingButton.swift */; };
 		52A3FC8E2A276BFC002B79A7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */; };
-		52C02F422A14C947003BA884 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C02F412A14C947003BA884 /* WebView.swift */; };
 		52C803882A0B951900417B08 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803872A0B951900417B08 /* AppMain.swift */; };
 		52C8038A2A0B951900417B08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803892A0B951900417B08 /* HomeView.swift */; };
 		52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C8038B2A0B951A00417B08 /* Assets.xcassets */; };
@@ -170,7 +169,6 @@
 		526594182A0E8B2500D9446B /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
 		528D4CC22A15CEB8008A0F7A /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		52C02F412A14C947003BA884 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		52C803842A0B951900417B08 /* GymPTI-V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GymPTI-V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C803872A0B951900417B08 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		52C803892A0B951900417B08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 				526594062A0E62AE00D9446B /* Colors.swift */,
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				526593F72A0E520A00D9446B /* hashedPassword.swift */,
-				52C02F412A14C947003BA884 /* WebView.swift */,
 				520A07A22AA8919E007BA4E4 /* DateFommat.swift */,
 				520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */,
 			);
@@ -837,7 +834,6 @@
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
 				526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */,
 				526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */,
-				52C02F422A14C947003BA884 /* WebView.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,

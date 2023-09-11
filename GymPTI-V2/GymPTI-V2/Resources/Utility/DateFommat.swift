@@ -28,7 +28,7 @@ func getDate() -> String {
 func dateToKor(_ today: String) -> String {
     
     let week: [String: String] = [
-        "Sun": "일", "Mun": "월", "The": "화",
+        "Sun": "일", "Mon": "월", "Tue": "화",
         "Wed": "수", "Thu": "목", "fri": "금", "Sat": "토"
     ]
     
