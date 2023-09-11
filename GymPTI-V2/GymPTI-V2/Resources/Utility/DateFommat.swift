@@ -9,6 +9,22 @@ import Foundation
 
 fileprivate let dateFormatter = DateFormatter()
 
+/// 영어 요일을 한글로 변환하는 함수
+///
+/// - Parameter day: 영어 요일 문자열
+/// - Returns: 한글 요일 문자열
+func dateToKor(_ day: String) -> String {
+    
+    let week: [String: String] = [
+        "Sun": "일", "Mon": "월", "Tue": "화",
+        "Wed": "수", "Thu": "목", "Fri": "금", "Sat": "토"
+    ]
+    return week[day] ?? day
+}
+
+/// 현재 요일을 문자열로 반환하는 함수
+///
+/// - Returns: 요일 문자열 (한글)
 func getToday() -> String {
     
     dateFormatter.dateFormat = "E"
@@ -17,28 +33,22 @@ func getToday() -> String {
     return dateToKor(today)
 }
 
+/// 현재 날짜와 요일을 문자열로 반환하는 함수
+///
+/// - Returns: "yyyy년 M월 d일 (요일)" 형식의 문자열
 func getDate() -> String {
     
     dateFormatter.dateFormat = "yyyy년 M월 d일"
     let dateString = dateFormatter.string(from: Date())
+    let today = getToday()
     
-    return "\(dateString) (\(getToday()))"
+    return "\(dateString) (\(today))"
 }
 
-func dateToKor(_ today: String) -> String {
-    
-    let week: [String: String] = [
-        "Sun": "일", "Mon": "월", "Tue": "화",
-        "Wed": "수", "Thu": "목", "fri": "금", "Sat": "토"
-    ]
-    
-    if let returnDay = week[today] {
-        return returnDay
-    } else {
-        return today
-    }
-}
-
+/// 한글 요일을 영어로 변환하는 함수
+///
+/// - Parameter day: 한글 요일 문자열
+/// - Returns: 영어 요일 문자열
 func getEnglishDayFullName(_ day: String) -> String {
     
     let week: [String: String] = [
@@ -46,6 +56,5 @@ func getEnglishDayFullName(_ day: String) -> String {
         "수": "WEDNESDAY", "목": "THURSDAY",
         "금": "FRIDAY", "토": "SATURDAY"
     ]
-    
-    return week[day] ?? "SUNDAY"
+    return week[day] ?? day
 }

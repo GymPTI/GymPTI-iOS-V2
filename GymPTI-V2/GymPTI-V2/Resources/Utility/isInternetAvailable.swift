@@ -7,6 +7,9 @@
 
 import SystemConfiguration
 
+/// 와이파이가 연결되어 있는지 확인하는 함수
+///
+/// - Returns: 연결 여부를 판단하는 Bool
 func isInternetAvailable() -> Bool {
     
     var zeroAddress = sockaddr_in()
