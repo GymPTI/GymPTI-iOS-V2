@@ -13,30 +13,27 @@ public struct SelectTargetMuscle: Reducer {
         
         var day: String = ""
         
-        var exerciseName: String = ""
+        var selectMuscle: String = ""
+        
+        var exerciseName: String = "PUSH_UP"
         
         var isSelected: Bool = false
     }
     
-    public enum Action: Equatable, BindableAction {
+    public enum Action: Equatable {
         
-        case binding(BindingAction<State>)
         case onTapBackButton
         case onTapNextButton
-        case onSelectExerciseButton(exercise: String)
+        case onSelectMuscleButton(muscle: String)
     }
     
     @Dependency(\.sideEffect.selectTargetMuscle) var sideEffect
     
     public var body: some ReducerOf<Self> {
         
-        BindingReducer()
         Reduce { state, action in
             
             switch action {
-                
-            case .binding:
-                return .none
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
@@ -46,8 +43,8 @@ public struct SelectTargetMuscle: Reducer {
                 sideEffect.onTapNextButton(state.day, state.exerciseName)
                 return .none
                 
-            case .onSelectExerciseButton(let exercise):
-                state.exerciseName = exercise
+            case .onSelectMuscleButton(let muscle):
+                state.selectMuscle = muscle
                 state.isSelected = true
                 return .none
             }

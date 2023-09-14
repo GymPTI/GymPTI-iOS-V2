@@ -38,16 +38,18 @@ extension SelectTargetMuscleView: View {
                 
                 HStack {
                     
-                    ForEach([("CHEST", "가슴"), ("BACK", "등"),
-                             ("LEGS", "하체"), ("SHLDR", "어깨"), (
-                                "ARM", "팔")], id: \.0) { (eng, kor) in
-                                    
-                                    Spacer()
-                                    
-                                    RoutineTargetMuscle(eng: eng, kor: kor) {
-                                        viewStore.send(.onSelectExerciseButton(exercise: eng))
-                                    }
-                                }
+                    ForEach([("CHEST", "가슴"),
+                             ("BACK", "등"),
+                             ("LEGS", "하체"),
+                             ("SHOULDER", "어깨"),
+                             ("ARM", "팔")],
+                            id: \.0) { (eng, kor) in
+                        
+                        RoutineTargetMuscle(eng, kor, selectMuscle: viewStore.selectMuscle) {
+                            
+                            viewStore.send(.onSelectMuscleButton(muscle: eng))
+                        }
+                    }
                     
                     Spacer()
                 }
