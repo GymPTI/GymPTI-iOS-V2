@@ -72,22 +72,22 @@ extension SelectTargetMuscleView: View {
                         
                         HStack {
                             
-                            ForEach([
-                                ("CHEST", ChestMuscleExercise.allCases.map { $0.rawValue }),
-                                ("BACK", BackMuscleExercise.allCases.map { $0.rawValue }),
-                                ("LEGS", LegsMuscleExercise.allCases.map { $0.rawValue }),
-                                ("SHOULDER", ShoulderMuscleExercise.allCases.map { $0.rawValue }),
-                                ("ARM", ArmMuscleExercise.allCases.map { $0.rawValue }),
-                                ("Abs", AbsExercise.allCases.map { $0.rawValue })
-                            ], id: \.0) { group, exercises in
-                                if viewStore.selectMuscle == group {
-                                    ForEach(exercises, id: \.self) { exercise in
-                                        Button(action: {
-                                            print(exercise)
-                                        }) {
-                                            Text(exercise)
-                                        }
-                                    }
+                            ForEach(exercises(forMuscle: viewStore.selectMuscle), id: \.self) { exercise in
+                                
+                                Button(action: {
+                                    viewStore.send(.onSelectExerciseButton(exercise: exercise))
+                                }) {
+                                    Text(exerciseNameToKor(exercise))
+                                        .setFont(16, .bold)
+                                        .foregroundColor(Colors.white.color)
+                                        .padding(15)
+                                        .background(
+                                            Rectangle()
+                                                .fill(viewStore.exerciseName == exercise ? Colors.main.color : Colors.darkGray.color)
+                                                .frame(minWidth: 0, maxWidth: 200)
+                                                .frame(height: 34)
+                                                .cornerRadius(15)
+                                        )
                                 }
                             }
                         }

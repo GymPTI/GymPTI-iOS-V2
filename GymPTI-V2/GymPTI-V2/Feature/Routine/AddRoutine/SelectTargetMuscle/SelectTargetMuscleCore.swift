@@ -27,6 +27,7 @@ public struct SelectTargetMuscle: Reducer {
         case onTapBackButton
         case onTapNextButton
         case onSelectMuscleButton(muscle: String)
+        case onSelectExerciseButton(exercise: String)
     }
     
     @Dependency(\.sideEffect.selectTargetMuscle) var sideEffect
@@ -48,6 +49,11 @@ public struct SelectTargetMuscle: Reducer {
             case .onSelectMuscleButton(let muscle):
                 state.selectMuscle = muscle
                 state.isSelectedMuscle = true
+                return .none
+                
+            case .onSelectExerciseButton(let exercise):
+                state.exerciseName = exercise
+                state.isSelectedExercize = true
                 return .none
             }
         }
