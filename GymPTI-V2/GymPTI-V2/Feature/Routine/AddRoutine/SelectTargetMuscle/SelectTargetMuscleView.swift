@@ -31,7 +31,7 @@ extension SelectTargetMuscleView: View {
             
             VStack {
                 
-                Text("운동 종류 선택")
+                Text("타겟 근육을 선택해주세요!")
                     .setFont(20, .bold)
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -39,33 +39,15 @@ extension SelectTargetMuscleView: View {
                 HStack {
                     
                     ForEach([("CHEST", "가슴"), ("BACK", "등"),
-                         ("LEGS", "하체"), ("SHLDR", "어깨"), (
-                            "ARM", "팔")], id: \.0) { (eng, kor) in
-                        
-                        Spacer()
-                        
-                        Button {
-                            viewStore.send(.onSelectExerciseButton(exercise: eng))
-                        } label: {
-                            
-                            VStack(spacing: 10) {
-                                
-                                Text("\(eng)")
-                                    .setFont(14, .regular)
-                                    .foregroundColor(Colors.white.color)
-                                
-                                Text("\(kor)")
-                                    .setFont(16, .bold)
-                                    .foregroundColor(Colors.white.color)
-                                    .background(
-                                        Rectangle()
-                                            .fill(Colors.black.color)
-                                            .frame(width: 58, height: 34)
-                                            .cornerRadius(15)
-                                    )
-                            }
-                        }
-                    }
+                             ("LEGS", "하체"), ("SHLDR", "어깨"), (
+                                "ARM", "팔")], id: \.0) { (eng, kor) in
+                                    
+                                    Spacer()
+                                    
+                                    RoutineTargetMuscle(eng: eng, kor: kor) {
+                                        viewStore.send(.onSelectExerciseButton(exercise: eng))
+                                    }
+                                }
                     
                     Spacer()
                 }

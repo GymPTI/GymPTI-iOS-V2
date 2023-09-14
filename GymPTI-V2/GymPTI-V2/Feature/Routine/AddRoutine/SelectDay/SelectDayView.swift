@@ -31,7 +31,7 @@ extension SelectDayView: View {
             
             VStack {
                 
-                Text("추가할 요일 선택")
+                Text("요일을 선택해주세요!")
                     .setFont(20, .bold)
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)

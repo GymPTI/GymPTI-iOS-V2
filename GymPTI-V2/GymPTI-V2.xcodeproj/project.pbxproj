@@ -16,6 +16,7 @@
 		52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */; };
 		52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C992A8FC02900871C0B /* CustomButton.swift */; };
 		522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */; };
+		522FCAD62AB2B316007DBC1F /* RoutineTargetMuscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */; };
 		523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* SelectDayView.swift */; };
 		523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* SelectDayCore.swift */; };
 		523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */; };
@@ -136,6 +137,7 @@
 		52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteBuilder.swift; sourceTree = "<group>"; };
 		52256C992A8FC02900871C0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtensions.swift; sourceTree = "<group>"; };
+		522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTargetMuscle.swift; sourceTree = "<group>"; };
 		523BE9212A91CD9800519285 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
 		523BE9232A91CDB300519285 /* SelectDayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayCore.swift; sourceTree = "<group>"; };
 		523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaySideEffect.swift; sourceTree = "<group>"; };
@@ -284,8 +286,10 @@
 		520A07A62AA892CF007BA4E4 /* RoutineComponent */ = {
 			isa = PBXGroup;
 			children = (
+				52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */,
 				523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */,
 				520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */,
+				522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */,
 			);
 			path = RoutineComponent;
 			sourceTree = "<group>";
@@ -319,7 +323,6 @@
 				5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */,
 				5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */,
 				5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */,
-				52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */,
 			);
 			path = SelectTargetMuscle;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
 				52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */,
 				52C804142A0C870700417B08 /* RoutineCore.swift in Sources */,
+				522FCAD62AB2B316007DBC1F /* RoutineTargetMuscle.swift in Sources */,
 				52C803F92A0BDB6C00417B08 /* PwSideEffect.swift in Sources */,
 				52C804222A0C878A00417B08 /* ProfileRouteBuilder.swift in Sources */,
 				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
