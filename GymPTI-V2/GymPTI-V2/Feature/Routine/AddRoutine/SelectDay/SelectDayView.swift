@@ -44,8 +44,8 @@ extension SelectDayView: View {
                              ("SAT", "토")], id: \.0) { day, label in
                         Spacer()
                         
-                        RoutineWeekButton(day, label,
-                                          selecetDay: viewStore.selectedDay) {
+                        RoutineWeekButton(day, label, selecetDay: viewStore.selectedDay) {
+                            
                             viewStore.send(.onSelectDayButton(day: label))
                         }
                     }

@@ -17,7 +17,9 @@ public struct SelectTargetMuscle: Reducer {
         
         var exerciseName: String = "PUSH_UP"
         
-        var isSelected: Bool = false
+        var isSelectedMuscle: Bool = false
+        
+        var isSelectedExercize: Bool = false
     }
     
     public enum Action: Equatable {
@@ -45,7 +47,7 @@ public struct SelectTargetMuscle: Reducer {
                 
             case .onSelectMuscleButton(let muscle):
                 state.selectMuscle = muscle
-                state.isSelected = true
+                state.isSelectedMuscle = true
                 return .none
             }
         }
