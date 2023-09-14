@@ -15,6 +15,7 @@
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
 		52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */; };
 		52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C992A8FC02900871C0B /* CustomButton.swift */; };
+		522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */; };
 		523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* SelectDayView.swift */; };
 		523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* SelectDayCore.swift */; };
 		523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */; };
@@ -68,7 +69,6 @@
 		52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */; };
 		52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B82A0BAD3900417B08 /* ViewExt.swift */; };
 		52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */; };
-		52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803BD2A0BAE4100417B08 /* StringExt.swift */; };
 		52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803C02A0BAE7500417B08 /* LaunchView.swift */; };
 		52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803C62A0BB5A900417B08 /* SignInView.swift */; };
 		52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803D62A0BB73300417B08 /* SignInCore.swift */; };
@@ -135,6 +135,7 @@
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
 		52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteBuilder.swift; sourceTree = "<group>"; };
 		52256C992A8FC02900871C0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtensions.swift; sourceTree = "<group>"; };
 		523BE9212A91CD9800519285 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
 		523BE9232A91CDB300519285 /* SelectDayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayCore.swift; sourceTree = "<group>"; };
 		523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaySideEffect.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
 		52C803B82A0BAD3900417B08 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
-		52C803BD2A0BAE4100417B08 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		52C803C02A0BAE7500417B08 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		52C803C62A0BB5A900417B08 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		52C803D62A0BB73300417B08 /* SignInCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCore.swift; sourceTree = "<group>"; };
@@ -362,8 +362,8 @@
 			children = (
 				526593F52A0E42F300D9446B /* ColorExt.swift */,
 				52C803B82A0BAD3900417B08 /* ViewExt.swift */,
-				52C803BD2A0BAE4100417B08 /* StringExt.swift */,
 				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
+				522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -781,6 +781,7 @@
 				5258D7B02AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift in Sources */,
 				524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
+				522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
 				52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */,
 				52C804142A0C870700417B08 /* RoutineCore.swift in Sources */,
@@ -829,7 +830,6 @@
 				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
 				520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
-				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
 				523BE9282A91CDD400519285 /* SelectDayRouteBuilder.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
 				523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */,
