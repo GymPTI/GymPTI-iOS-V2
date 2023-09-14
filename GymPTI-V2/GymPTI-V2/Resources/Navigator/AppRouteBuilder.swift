@@ -48,6 +48,8 @@ struct AppRouterGroup {
             /// Routine View : 루틴 화면
             RoutineRouteBuilder(),
             
+            SelectGoalRouteBuilder(),
+            
             /// Routine -> AddRoutine View: 루틴 -> 루틴 추가 화면
             SelectDayRouteBuilder(),
             

@@ -18,7 +18,7 @@
 		523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* SelectDayView.swift */; };
 		523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* SelectDayCore.swift */; };
 		523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */; };
-		523BE9282A91CDD400519285 /* SelectDayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9272A91CDD400519285 /* SelectDayBuilder.swift */; };
+		523BE9282A91CDD400519285 /* SelectDayRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9272A91CDD400519285 /* SelectDayRouteBuilder.swift */; };
 		523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */; };
 		524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7B2A275BA600B63DDA /* NotificationView.swift */; };
 		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
@@ -120,6 +120,10 @@
 		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
 		52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */; };
 		52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */; };
+		52FCBEE82AB2A41100EB6E17 /* SelectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEE72AB2A41100EB6E17 /* SelectGoalView.swift */; };
+		52FCBEEA2AB2A43500EB6E17 /* SelectGoalCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEE92AB2A43500EB6E17 /* SelectGoalCore.swift */; };
+		52FCBEEC2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEEB2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift */; };
+		52FCBEEE2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEED2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,7 +138,7 @@
 		523BE9212A91CD9800519285 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
 		523BE9232A91CDB300519285 /* SelectDayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayCore.swift; sourceTree = "<group>"; };
 		523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaySideEffect.swift; sourceTree = "<group>"; };
-		523BE9272A91CDD400519285 /* SelectDayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayBuilder.swift; sourceTree = "<group>"; };
+		523BE9272A91CDD400519285 /* SelectDayRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayRouteBuilder.swift; sourceTree = "<group>"; };
 		523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExcersizeCell.swift; sourceTree = "<group>"; };
 		524CEB7B2A275BA600B63DDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
@@ -234,6 +238,10 @@
 		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
 		52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCardView.swift; sourceTree = "<group>"; };
 		52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		52FCBEE72AB2A41100EB6E17 /* SelectGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalView.swift; sourceTree = "<group>"; };
+		52FCBEE92AB2A43500EB6E17 /* SelectGoalCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalCore.swift; sourceTree = "<group>"; };
+		52FCBEEB2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalSideEffect.swift; sourceTree = "<group>"; };
+		52FCBEED2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalRouteBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +265,7 @@
 				523BE9212A91CD9800519285 /* SelectDayView.swift */,
 				523BE9232A91CDB300519285 /* SelectDayCore.swift */,
 				523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */,
-				523BE9272A91CDD400519285 /* SelectDayBuilder.swift */,
+				523BE9272A91CDD400519285 /* SelectDayRouteBuilder.swift */,
 			);
 			path = SelectDay;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 		520A079E2AA858FE007BA4E4 /* AddRoutine */ = {
 			isa = PBXGroup;
 			children = (
+				52FCBEE62AB2A3F800EB6E17 /* SelectGoal */,
 				520A079D2AA8208F007BA4E4 /* SelectDay */,
 				5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */,
 				5258D7B32AA59C4700D77C40 /* SetRoutineDetail */,
@@ -656,6 +665,17 @@
 			path = HomeComponent;
 			sourceTree = "<group>";
 		};
+		52FCBEE62AB2A3F800EB6E17 /* SelectGoal */ = {
+			isa = PBXGroup;
+			children = (
+				52FCBEE72AB2A41100EB6E17 /* SelectGoalView.swift */,
+				52FCBEE92AB2A43500EB6E17 /* SelectGoalCore.swift */,
+				52FCBEEB2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift */,
+				52FCBEED2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift */,
+			);
+			path = SelectGoal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -737,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FCBEEE2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift in Sources */,
 				52C803DA2A0BB74200417B08 /* SignInRouteBuilder.swift in Sources */,
 				5258D7B22AA59BEF00D77C40 /* SetRoutineDetailView.swift in Sources */,
 				5265940F2A0E7ADA00D9446B /* FriendSideEffect.swift in Sources */,
@@ -773,10 +794,12 @@
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Service.swift in Sources */,
+				52FCBEEC2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
+				52FCBEE82AB2A41100EB6E17 /* SelectGoalView.swift in Sources */,
 				52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */,
 				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
@@ -807,7 +830,7 @@
 				520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				52C803BE2A0BAE4100417B08 /* StringExt.swift in Sources */,
-				523BE9282A91CDD400519285 /* SelectDayBuilder.swift in Sources */,
+				523BE9282A91CDD400519285 /* SelectDayRouteBuilder.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
 				523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
@@ -839,6 +862,7 @@
 				52256C922A8FAE0400871C0B /* StartView.swift in Sources */,
 				52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */,
 				526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */,
+				52FCBEEA2AB2A43500EB6E17 /* SelectGoalCore.swift in Sources */,
 				52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */,
 				52C8040F2A0C804300417B08 /* TabBarRouteBuilder.swift in Sources */,
 				52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */,
