@@ -9,18 +9,18 @@ import SwiftUI
 
 struct RoutineTargetMuscle: View {
     
-    let eng: String
-    let kor: String
+    let tag: String
+    let muscleName: String
     let selectMuscle: String
     let action: () -> Void
     
-    init(_ eng: String,
-         _ kor: String,
+    init(_ tag: String,
+         _ muscleName: String,
          selectMuscle: String,
          action: @escaping () -> Void)
     {
-        self.eng = eng
-        self.kor = kor
+        self.tag = tag
+        self.muscleName = muscleName
         self.selectMuscle = selectMuscle
         self.action = action
     }
@@ -31,22 +31,17 @@ struct RoutineTargetMuscle: View {
             action()
         } label: {
             
-            VStack(spacing: 10) {
-                
-                Text("\(eng)")
-                    .setFont(14, .regular)
-                    .foregroundColor(selectMuscle == eng ? Colors.main.color : Colors.white.color)
-                
-                Text("\(kor)")
-                    .setFont(16, .bold)
-                    .foregroundColor(Colors.white.color)
-                    .background(
-                        Rectangle()
-                            .fill(selectMuscle == eng ? Colors.main.color : Colors.black.color)
-                            .frame(width: 58, height: 34)
-                            .cornerRadius(15)
-                    )
-            }
+            Text("\(muscleName)")
+                .setFont(16, .bold)
+                .foregroundColor(Colors.white.color)
+                .padding(15)
+                .background(
+                    Rectangle()
+                        .fill(selectMuscle == tag ? Colors.main.color : Colors.black.color)
+                        .frame(minWidth: 0, maxWidth: 200)
+                        .frame(height: 34)
+                        .cornerRadius(15)
+                )
         }
     }
 }

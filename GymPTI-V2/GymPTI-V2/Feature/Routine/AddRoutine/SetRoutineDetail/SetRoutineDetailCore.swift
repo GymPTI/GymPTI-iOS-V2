@@ -15,31 +15,30 @@ public struct SetRoutineDetail: Reducer {
         
         var exerciseName: String = ""
         
-        @BindingState var reps: Int = 1
+        var reps: Int = 1
         
-        @BindingState var sets: Int = 1
+        var sets: Int = 1
         
-        @BindingState var restTime: Int = 1
+        var restTime: Int = 1
     }
     
-    public enum Action: Equatable, BindableAction {
+    public enum Action: Equatable {
         
-        case binding(BindingAction<State>)
         case onTapBackButton
         case onTapAddButton
+        case onTapPlusRepsButton
+        case onTapMinusRepsButton
+        case onTapPlusSetsButton
+        case onTapMinusSetsButton
     }
     
     @Dependency(\.sideEffect.setRoutineDetail) var sideEffect
     
     public var body: some ReducerOf<Self> {
         
-        BindingReducer()
         Reduce { state, action in
             
             switch action {
-                
-            case .binding:
-                return .none
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
@@ -52,6 +51,22 @@ public struct SetRoutineDetail: Reducer {
                         await postRoutineCard(state: state)
                     }
                 }
+                return .none
+                
+            case .onTapPlusRepsButton:
+                state.reps += 1
+                return .none
+                
+            case .onTapMinusRepsButton:
+                state.reps -= 1
+                return .none
+                
+            case .onTapPlusSetsButton:
+                state.sets += 1
+                return .none
+                
+            case .onTapMinusSetsButton:
+                state.sets -= 1
                 return .none
             }
         }

@@ -29,6 +29,15 @@ extension SelectGoalView: View {
                 viewStore.send(.onTapBackButton)
             }
             
+            VStack {
+                
+                Text("당신이 목표하는 몸이 있나요?")
+                    .setFont(20, .bold)
+                    .foregroundColor(Colors.white.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .padding(.horizontal, 20)
+            
             CustomButton("다음", disabled: false) {
                 viewStore.send(.onTapNextButton)
             }

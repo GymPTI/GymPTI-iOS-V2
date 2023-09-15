@@ -36,27 +36,28 @@ extension SelectTargetMuscleView: View {
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                HStack {
+                ScrollView(.horizontal, showsIndicators: false) {
                     
-                    ForEach([("CHEST", "가슴"),
-                             ("BACK", "등"),
-                             ("LEGS", "하체"),
-                             ("SHOULDER", "어깨"),
-                             ("ARM", "팔")],
-                            id: \.0) { (eng, kor) in
+                    HStack {
                         
-                        Spacer()
-                        
-                        RoutineTargetMuscle(eng, kor, selectMuscle: viewStore.selectMuscle) {
+                        ForEach([("CHEST", "가슴"),
+                                 ("BACK", "등"),
+                                 ("LEGS", "하체"),
+                                 ("SHOULDER", "어깨"),
+                                 ("ARM", "팔"),
+                                 ("ABS", "복근"),],
+                                id: \.0) { (tag, muscle) in
                             
-                            viewStore.send(.onSelectMuscleButton(muscle: eng))
+                            RoutineTargetMuscle(tag, muscle, selectMuscle: viewStore.selectMuscle) {
+                                
+                                viewStore.send(.onSelectMuscleButton(muscle: tag))
+                            }
                         }
                     }
-                    
-                    Spacer()
+                    .padding(.horizontal, 20)
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: 80)
+                .frame(height: 60)
                 .background(Colors.darkGray.color)
                 .cornerRadius(10)
                 

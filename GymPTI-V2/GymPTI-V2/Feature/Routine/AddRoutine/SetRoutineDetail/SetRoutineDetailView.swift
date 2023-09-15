@@ -35,23 +35,14 @@ extension SetRoutineDetailView: View {
                     .setFont(20, .bold)
                     .foregroundColor(Colors.white.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                
+                SetDetailView(viewStore: viewStore)
             }
             .padding(.horizontal, 20)
             
-            Stepper(value: viewStore.$reps, in: 0...30, step: 1) {
-                Text("반복 횟수 : \(viewStore.reps)번")
-            }
-            
-            Stepper(value: viewStore.$sets, in: 0...20, step: 1) {
-                Text("세트 수 : \(viewStore.sets)회")
-            }
-            
-            Stepper(value: viewStore.$restTime, in: 0...120, step: 15) {
-                Text("휴식시간 : \(viewStore.restTime)초")
-            }
-            
             CustomButton("추가", disabled: false) {
-                viewStore.send(.onTapAddButton)
+                //                viewStore.send(.onTapAddButton)
+                print(viewStore.reps)
             }
             .padding(.top, 80)
             .padding(.horizontal, 100)
@@ -60,5 +51,97 @@ extension SetRoutineDetailView: View {
             
         }
         .setBackground()
+    }
+}
+
+extension SetRoutineDetailView {
+    
+    struct SetDetailView: View {
+        
+        let viewStore: ViewStoreOf<SetRoutineDetail>
+        
+        init(viewStore: ViewStoreOf<SetRoutineDetail>) {
+            self.viewStore = viewStore
+        }
+        
+        var body: some View {
+            
+            VStack(spacing: 10) {
+                
+                HStack(spacing: 10) {
+                    
+                    Image("timer")
+                        .padding(.leading, 15)
+                    
+                    Text("반복 횟수")
+                        .setFont(16, .bold)
+                        .foregroundColor(Colors.white.color)
+                        .frame(width: 60, alignment: .leading)
+                    
+                    Text("\(viewStore.reps)")
+                        .setFont(14, .medium)
+                        .foregroundColor(Colors.white.color)
+                        .frame(minWidth: 0, maxWidth: 50)
+                        .frame(height: 46)
+                        .background(Colors.gray.color)
+                        .cornerRadius(15)
+                    
+                    Text("회")
+                        .setFont(16, .bold)
+                        .foregroundColor(Colors.white.color)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        
+                        Button {
+                            viewStore.send(.onTapMinusRepsButton)
+                        } label: {
+                            Text("-")
+                        }
+                        
+                        Button {
+                            viewStore.send(.onTapPlusRepsButton)
+                        } label: {
+                            Text("+")
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 60)
+                .background(Colors.darkGray.color)
+                .cornerRadius(10)
+                
+                HStack(spacing: 10) {
+                    
+                    Image("timer")
+                        .padding(.leading, 15)
+                    
+                    Text("세트 수")
+                        .setFont(16, .bold)
+                        .foregroundColor(Colors.white.color)
+                        .frame(width: 60, alignment: .leading)
+                    
+                    Text("\(viewStore.sets)")
+                        .setFont(14, .medium)
+                        .foregroundColor(Colors.white.color)
+                        .frame(minWidth: 0, maxWidth: 50)
+                        .frame(height: 46)
+                        .background(Colors.gray.color)
+                        .cornerRadius(15)
+                    
+                    Text("회")
+                        .setFont(16, .bold)
+                        .foregroundColor(Colors.white.color)
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 60)
+                .background(Colors.darkGray.color)
+                .cornerRadius(10)
+                
+            }
+        }
     }
 }
