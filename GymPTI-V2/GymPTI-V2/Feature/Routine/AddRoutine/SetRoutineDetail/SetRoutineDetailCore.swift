@@ -15,15 +15,15 @@ public struct SetRoutineDetail: Reducer {
         
         var exerciseName: String = ""
         
-        var reps: Int = 1
+        var reps: Int = 0
         
-        var sets: Int = 1
+        var sets: Int = 0
         
-        var restTime: Int = 1
+        var restTime: Int = 0
     }
     
     public enum Action: Equatable {
-        
+    
         case onTapBackButton
         case onTapAddButton
         case onTapPlusRepsButton
