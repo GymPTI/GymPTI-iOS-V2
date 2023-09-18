@@ -59,7 +59,9 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapMinusRepsButton:
-                state.reps -= 1
+                if state.reps > 0 {
+                    state.reps -= 1
+                }
                 return .none
                 
             case .onTapPlusSetsButton:
@@ -67,7 +69,9 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapMinusSetsButton:
-                state.sets -= 1
+                if state.sets > 0 {
+                    state.sets -= 1
+                }
                 return .none
                 
             case .onSelectRestTimeButton(let time):

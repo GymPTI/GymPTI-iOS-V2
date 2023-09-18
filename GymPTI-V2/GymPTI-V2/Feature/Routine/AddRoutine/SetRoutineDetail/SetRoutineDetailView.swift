@@ -155,6 +155,11 @@ extension SetRoutineDetailView: View {
                             .frame(width: 20, height: 20)
                             .padding(.leading, 15)
                         
+                        Text("휴식 시간")
+                            .setFont(14, .medium)
+                            .foregroundColor(Colors.white.color)
+                            .frame(width: 60, alignment: .leading)
+                        
                         ScrollView(.horizontal, showsIndicators: false) {
                             
                             HStack(spacing: 0) {
@@ -175,7 +180,7 @@ extension SetRoutineDetailView: View {
                                                     .fill(Colors.main.color)
                                                     .frame(minWidth: 0, maxWidth: 200)
                                                     .frame(height: 34)
-                                                    .cornerRadius(15) 
+                                                    .cornerRadius(15)
                                                 : nil
                                             )
                                         
@@ -188,6 +193,7 @@ extension SetRoutineDetailView: View {
                         .frame(height: 46)
                         .background(Colors.gray.color)
                         .cornerRadius(15)
+                        .padding(.trailing, 15)
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
@@ -198,8 +204,7 @@ extension SetRoutineDetailView: View {
             .padding(.horizontal, 20)
             
             CustomButton("추가", disabled: false) {
-                //                                viewStore.send(.onTapAddButton)
-                print(viewStore.reps, viewStore.sets, viewStore.restTime)
+                viewStore.send(.onTapAddButton)
             }
             .padding(.top, 80)
             .padding(.horizontal, 100)

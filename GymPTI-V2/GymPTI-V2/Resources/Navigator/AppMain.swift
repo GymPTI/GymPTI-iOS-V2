@@ -32,8 +32,7 @@ extension AppMain: App {
         
         WindowGroup {
             navigator
-//                .launch(paths: ["launch"], items: [:], prefersLargeTitles: false)
-                .launch(paths: ["setroutinedetail"], items: [:], prefersLargeTitles: false)
+                .launch(paths: ["launch"], items: [:], prefersLargeTitles: false)
                 .ignoresSafeArea(edges: .vertical)
         }
     }
