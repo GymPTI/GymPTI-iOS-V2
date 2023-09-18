@@ -19,7 +19,7 @@ public struct SetRoutineDetail: Reducer {
         
         var sets: Int = 0
         
-        var restTime: Int = 0
+        var restTime: Int = 15
     }
     
     public enum Action: Equatable {
@@ -30,6 +30,7 @@ public struct SetRoutineDetail: Reducer {
         case onTapMinusRepsButton
         case onTapPlusSetsButton
         case onTapMinusSetsButton
+        case onSelectRestTimeButton(time: Int)
     }
     
     @Dependency(\.sideEffect.setRoutineDetail) var sideEffect
@@ -67,6 +68,10 @@ public struct SetRoutineDetail: Reducer {
                 
             case .onTapMinusSetsButton:
                 state.sets -= 1
+                return .none
+                
+            case .onSelectRestTimeButton(let time):
+                state.restTime = time
                 return .none
             }
         }

@@ -44,7 +44,7 @@ extension SetRoutineDetailView: View {
                             .padding(.leading, 15)
                         
                         Text("반복 횟수")
-                            .setFont(16, .bold)
+                            .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
                             .frame(width: 60, alignment: .leading)
                         
@@ -57,7 +57,7 @@ extension SetRoutineDetailView: View {
                             .cornerRadius(15)
                         
                         Text("회")
-                            .setFont(16, .bold)
+                            .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
                         
                         Spacer()
@@ -92,7 +92,7 @@ extension SetRoutineDetailView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
                     .background(Colors.darkGray.color)
-                    .cornerRadius(10)
+                    .cornerRadius(15)
                     
                     HStack(spacing: 10) {
                         
@@ -100,7 +100,7 @@ extension SetRoutineDetailView: View {
                             .padding(.leading, 15)
                         
                         Text("세트 수")
-                            .setFont(16, .bold)
+                            .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
                             .frame(width: 60, alignment: .leading)
                         
@@ -113,7 +113,7 @@ extension SetRoutineDetailView: View {
                             .cornerRadius(15)
                         
                         Text("회")
-                            .setFont(16, .bold)
+                            .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
                         
                         Spacer()
@@ -147,18 +147,59 @@ extension SetRoutineDetailView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
                     .background(Colors.darkGray.color)
-                    .cornerRadius(10)
+                    .cornerRadius(15)
                     
+                    HStack(spacing: 10) {
+                        
+                        Image("rest")
+                            .frame(width: 20, height: 20)
+                            .padding(.leading, 15)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            
+                            HStack(spacing: 0) {
+                                
+                                ForEach([15, 30, 45, 60, 75, 90, 120],
+                                        id: \.self) { time in
+                                    
+                                    Button {
+                                        viewStore.send(.onSelectRestTimeButton(time: time))
+                                    } label: {
+                                        Text("\(time)초")
+                                            .setFont(14, .medium)
+                                            .foregroundColor(Colors.white.color)
+                                            .padding(15)
+                                            .background(
+                                                viewStore.restTime == time ?
+                                                Rectangle()
+                                                    .fill(Colors.main.color)
+                                                    .frame(minWidth: 0, maxWidth: 200)
+                                                    .frame(height: 34)
+                                                    .cornerRadius(15) 
+                                                : nil
+                                            )
+                                        
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 20)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 46)
+                        .background(Colors.gray.color)
+                        .cornerRadius(15)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    .background(Colors.darkGray.color)
+                    .cornerRadius(15)
                 }
-                
-                
             }
             .padding(.horizontal, 20)
             
-            
             CustomButton("추가", disabled: false) {
-                //                viewStore.send(.onTapAddButton)
-                print(viewStore.reps)
+                //                                viewStore.send(.onTapAddButton)
+                print(viewStore.reps, viewStore.sets, viewStore.restTime)
             }
             .padding(.top, 80)
             .padding(.horizontal, 100)
