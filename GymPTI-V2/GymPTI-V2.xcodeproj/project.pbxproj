@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520A07A32AA8919E007BA4E4 /* DateFommat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A22AA8919E007BA4E4 /* DateFommat.swift */; };
+		520A07A32AA8919E007BA4E4 /* Formmatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A22AA8919E007BA4E4 /* Formmatter.swift */; };
 		520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */; };
 		520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
@@ -128,7 +128,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		520A07A22AA8919E007BA4E4 /* DateFommat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFommat.swift; sourceTree = "<group>"; };
+		520A07A22AA8919E007BA4E4 /* Formmatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formmatter.swift; sourceTree = "<group>"; };
 		520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineWeekButton.swift; sourceTree = "<group>"; };
 		520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isInternetAvailable.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -354,7 +354,7 @@
 			children = (
 				526594062A0E62AE00D9446B /* Colors.swift */,
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
-				520A07A22AA8919E007BA4E4 /* DateFommat.swift */,
+				520A07A22AA8919E007BA4E4 /* Formmatter.swift */,
 				520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */,
 			);
 			path = Utility;
@@ -767,7 +767,7 @@
 				52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */,
 				52C804182A0C872900417B08 /* RoutineRouteBuilder.swift in Sources */,
 				52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */,
-				520A07A32AA8919E007BA4E4 /* DateFommat.swift in Sources */,
+				520A07A32AA8919E007BA4E4 /* Formmatter.swift in Sources */,
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
 				52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,

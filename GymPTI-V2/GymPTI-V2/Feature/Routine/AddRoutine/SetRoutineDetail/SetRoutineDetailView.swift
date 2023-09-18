@@ -165,7 +165,7 @@ extension SetRoutineDetailView: View {
                                     Button {
                                         viewStore.send(.onSelectRestTimeButton(time: time))
                                     } label: {
-                                        Text("\(time)초")
+                                        Text("\(secondsToMinutesAndSeconds(seconds: time))")
                                             .setFont(14, .medium)
                                             .foregroundColor(Colors.white.color)
                                             .padding(15)

@@ -1,5 +1,5 @@
 //
-//  DateFommat.swift
+//  Fommat.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/09/06.
@@ -57,4 +57,19 @@ func getEnglishDayFullName(_ day: String) -> String {
         "금": "FRIDAY", "토": "SATURDAY"
     ]
     return week[day] ?? day
+}
+
+func secondsToMinutesAndSeconds(seconds: Int) -> String {
+    
+    let minutes = seconds / 60
+    let remainingSeconds = seconds % 60
+    
+    switch (minutes, remainingSeconds) {
+    case (0, _):
+        return "\(remainingSeconds)초"
+    case (_, 0):
+        return "\(minutes)분"
+    default:
+        return "\(minutes)분 \(remainingSeconds)초"
+    }
 }
