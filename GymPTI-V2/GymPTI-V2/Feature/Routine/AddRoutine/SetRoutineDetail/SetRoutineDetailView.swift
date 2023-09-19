@@ -213,12 +213,5 @@ extension SetRoutineDetailView: View {
             
         }
         .setBackground()
-        .overlay {
-            Group {
-                if viewStore.isRequestProgress {
-                    LoadingView()
-                }
-            }
-        }
     }
 }

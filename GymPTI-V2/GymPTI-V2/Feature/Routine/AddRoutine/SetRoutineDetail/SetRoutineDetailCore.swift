@@ -15,9 +15,9 @@ public struct SetRoutineDetail: Reducer {
         
         var exerciseName: String = ""
         
-        var reps: Int = 0
+        var reps: Int = 1
         
-        var sets: Int = 0
+        var sets: Int = 1
         
         var restTime: Int = 15
     }
@@ -50,7 +50,7 @@ public struct SetRoutineDetail: Reducer {
                 sideEffect.onTapAddButton {
                     
                     Task {
-                        await postRoutineCard(state: state)
+                        await postRoutineCreateRequest(state: state)
                     }
                     sideEffect.sucessRequest()
                 }
@@ -61,7 +61,7 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapMinusRepsButton:
-                if state.reps > 0 {
+                if state.reps > 1 {
                     state.reps -= 1
                 }
                 return .none
@@ -71,7 +71,7 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapMinusSetsButton:
-                if state.sets > 0 {
+                if state.sets > 1 {
                     state.sets -= 1
                 }
                 return .none
@@ -83,8 +83,8 @@ public struct SetRoutineDetail: Reducer {
         }
     }
     
-    func postRoutineCard(state: State) async {
-        
+    func postRoutineCreateRequest(state: State) async {
+
         let params: [String: Any] = [
             "exercise": state.exerciseName,
             "dayOfWeek": getEnglishDayFullName(state.day),

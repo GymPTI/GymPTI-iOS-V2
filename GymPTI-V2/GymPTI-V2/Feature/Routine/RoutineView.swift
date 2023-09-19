@@ -117,7 +117,7 @@ extension RoutineView: View {
                         
                         if routineData.isEmpty {
                             
-                            VStack(alignment: .leading, spacing: 4) {
+                            VStack(alignment: .leading, spacing: 5) {
                                 
                                 Text("휴식")
                                     .setFont(20, .bold)
@@ -128,9 +128,10 @@ extension RoutineView: View {
                                     .foregroundColor(Colors.white.color)
                                 
                             }
-                            .padding(.leading, 20)
+                            .padding(.vertical, 15)
+                            .padding(.horizontal, 20)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .frame(height: 80)
+                            .frame(height: 76)
                             .background(Colors.darkGray.color)
                             .cornerRadius(10)
                         } else {
