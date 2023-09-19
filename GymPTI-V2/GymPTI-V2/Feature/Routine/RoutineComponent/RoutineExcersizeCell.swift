@@ -77,7 +77,7 @@ struct RoutineExcersizeCardView: View {
             .onTapGesture {
                 isTapCardView.toggle()
             }
-            .onLongPressGesture(minimumDuration: 0.5) {
+            .onLongPressGesture(minimumDuration: 0.25) {
                 action()
             }
         }

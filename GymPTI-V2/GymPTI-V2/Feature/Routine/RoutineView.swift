@@ -97,7 +97,7 @@ extension RoutineView: View {
                                 default:
                                     viewStore.send(.onTapSunButton)
                                 }
-                                viewStore.send(.onSelectDay)
+                                viewStore.send(.getRoutineList(day: viewStore.selectDay))
                             }
                         }
                         
@@ -158,7 +158,7 @@ extension RoutineView: View {
         .padding(.top, 20)
         .setBackground()
         .task {
-            viewStore.send(.onAppearRoutineView)
+            viewStore.send(.getRoutineList(day: getToday()))
         }
     }
 }

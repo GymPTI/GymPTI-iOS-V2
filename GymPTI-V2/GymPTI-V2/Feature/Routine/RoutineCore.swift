@@ -15,8 +15,6 @@ public struct Routine: Reducer {
 
         var routineList: [RoutineList]? = nil
         
-        var isDeleteRoutineCard: Bool = false
-        
         var isSelected: Bool = false
     }
     
@@ -31,9 +29,8 @@ public struct Routine: Reducer {
         case onTapThuButton
         case onTapFriButton
         case onTapSatButton
-        case onSelectDay
         case onTapRoutineCard(id: Int)
-        case onAppearRoutineView
+        case getRoutineList(day: String)
         case routineListDataReceived(TaskResult<[RoutineList]>)
     }
     
@@ -82,35 +79,19 @@ public struct Routine: Reducer {
                 return .none
                 
             case .onTapRoutineCard(let id):
-                state.isDeleteRoutineCard = false
                 sideEffect.onTapRoutineCard() {
-                    
                     Task {
                         await deleteRoutineCard(id: id)
                     }
                 }
-                state.isDeleteRoutineCard = true
                 return .none
                 
-            case .onSelectDay:
-                let selectDay = state.selectDay
+            case .getRoutineList(let day):
                 return .run { send in
                     
                     await send(.routineListDataReceived(
                         TaskResult { try await
-                            getRoutineList(day: getEnglishDayFullName(selectDay))
-                        })
-                    )
-                }
-                
-            case .onAppearRoutineView:
-                let today = getToday()
-                state = State(selectDay: today)
-                return .run { send in
-                    
-                    await send(.routineListDataReceived(
-                        TaskResult { try await
-                            getRoutineList(day: getEnglishDayFullName(today))
+                            getRoutineList(day: getEnglishDayFullName(day))
                         })
                     )
                 }
@@ -131,7 +112,7 @@ public struct Routine: Reducer {
             let response = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
             print(response)
         } catch {
-            print("오류 발생 : \(error.localizedDescription)")
+            print("\(error.localizedDescription)")
         }
     }
     

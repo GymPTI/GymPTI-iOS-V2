@@ -11,7 +11,7 @@ public enum ChestMuscleExercise: String, CaseIterable, Identifiable {
     case DIPS
     case BENCH_PRESS
     case CHEST_PRESS_MACHINE
-    case DUMBBEL_FLY
+//    case DUMBBEL_FLY
     case CABLE_FLY
     
     public var id: String { self.rawValue }
@@ -85,8 +85,6 @@ func exerciseNameToKor(_ exercise: String) -> String {
         return "벤치 프레스"
     case "CHEST_PRESS_MACHINE":
         return "체스트 프레스 머신"
-    case "DUMBBEL_FLY":
-        return "덤벨 플라이"
     case "CABLE_FLY":
         return "케이블 플라이"
     
