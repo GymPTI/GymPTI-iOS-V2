@@ -14,7 +14,7 @@ public struct SelectDay: Reducer {
         var day: String = ""
         
         var selectedDay: String = ""
-        
+
         var isSelected: Bool = false
     }
     

@@ -142,7 +142,7 @@ extension RoutineView: View {
                                     targetMuscles: data.targetMuscle.joined(separator: ", "),
                                     reps: data.reps,
                                     sets: data.sets,
-                                    restTime: "\(data.restTime)회"
+                                    restTime: data.restTime
                                 ) {
                                     viewStore.send(.onTapRoutineCard(id: data.id))
                                 }

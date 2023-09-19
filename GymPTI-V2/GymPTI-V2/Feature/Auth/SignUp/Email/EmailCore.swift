@@ -13,8 +13,11 @@ public struct Email: Reducer {
     public struct State: Equatable {
         
         var id: String = ""
+        
         var pw: String = ""
+        
         var name: String = ""
+        
         @BindingState var email: String = ""
         
         var isSendEmail: Bool = false

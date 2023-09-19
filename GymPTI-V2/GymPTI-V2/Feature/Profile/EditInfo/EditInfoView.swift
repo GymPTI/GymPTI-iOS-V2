@@ -24,30 +24,30 @@ extension EditInfoView: View {
     
     public var body: some View {
         
-        ZStack {
+        VStack(spacing: 0) {
             
-            VStack(spacing: 0) {
-                
-                CustomNavigationBar(
-                    title: "프로필 정보 수정",
-                    leadingButtonAction: {
-                        viewStore.send(.onTapBackButton)
-                    },
-                    trailingButtonTitle: "저장"
-                ) {
-                    viewStore.send(.onTapChangeButton)
+            CustomNavigationBar(
+                title: "프로필 정보 수정",
+                leadingButtonAction: {
+                    viewStore.send(.onTapBackButton)
+                },
+                trailingButtonTitle: "저장"
+            ) {
+                viewStore.send(.onTapChangeButton)
+            }
+            
+            EditInfoScrollView(viewStore: self.viewStore)
+            
+        }
+        .setBackground()
+        .onAppear {
+            print(viewStore.newName, viewStore.profileImage)
+        }
+        .overlay {
+            Group {
+                if viewStore.successEditProfile {
+                    LoadingView()
                 }
-                
-                EditInfoScrollView(viewStore: self.viewStore)
-                
-            }
-            .setBackground()
-            .onAppear {
-                print(viewStore.newName, viewStore.profileImage)
-            }
-            
-            if viewStore.successEditProfile {
-                LoadingView()
             }
         }
     }

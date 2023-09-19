@@ -11,6 +11,7 @@ public protocol SetRoutineDetailSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onTapAddButton: ( @escaping () -> Void ) -> Void { get }
+    var sucessRequest: () -> Void { get }
 }
 
 public struct SetRoutineDetailSideEffectLive {
@@ -38,12 +39,16 @@ extension SetRoutineDetailSideEffectLive: SetRoutineDetailSideEffect {
                 buttons: [ActionButton(title: "확인", style: .default, action: {
                     
                     action()
-                    
-                    navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
                 }), ActionButton(title: "취소", style: .cancel)],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var sucessRequest: () -> Void {
+        {
+            navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
         }
     }
 }

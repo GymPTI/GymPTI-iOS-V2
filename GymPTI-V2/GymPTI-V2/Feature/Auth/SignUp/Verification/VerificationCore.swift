@@ -12,8 +12,11 @@ public struct Verification: Reducer {
     public struct State: Equatable {
         
         var id: String = ""
+        
         var pw: String = ""
+        
         var name: String = ""
+        
         var email: String = ""
         
         @BindingState var emailVerificationCode: String = ""

@@ -10,10 +10,9 @@ import _PhotosUI_SwiftUI
 
 public struct EditInfo: Reducer {
     
-    @available(iOS 16.0, *)
     public struct State: Equatable {
         
-        @BindingState var profileImage: String = ""
+        var profileImage: String = ""
         
         @BindingState var newName: String
         
@@ -21,9 +20,9 @@ public struct EditInfo: Reducer {
         
         @BindingState var selectedItem: PhotosPickerItem? = nil
         
-        @BindingState var selectedImageData: Data? = nil
+        var selectedImageData: Data? = nil
         
-        @BindingState var successEditProfile: Bool = false
+        var successEditProfile: Bool = false
     }
     
     public enum Action: Equatable, BindableAction {

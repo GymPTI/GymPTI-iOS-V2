@@ -12,7 +12,7 @@ public struct Routine: Reducer {
     public struct State: Equatable {
         
         var selectDay: String = ""
-        
+
         var routineList: [RoutineList]? = nil
         
         var isDeleteRoutineCard: Bool = false
@@ -131,7 +131,7 @@ public struct Routine: Reducer {
             let response = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
             print(response)
         } catch {
-            print("response")
+            print("오류 발생 : \(error.localizedDescription)")
         }
     }
     

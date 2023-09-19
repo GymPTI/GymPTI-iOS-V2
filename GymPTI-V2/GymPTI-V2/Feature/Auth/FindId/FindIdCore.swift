@@ -11,8 +11,8 @@ public struct FindId: Reducer {
     
     public struct State: Equatable {
         
-        var id: String = "123123123"
-        
+        var id: String = ""
+
         @BindingState var email: String = ""
     }
     

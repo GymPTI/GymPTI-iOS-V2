@@ -48,9 +48,11 @@ public struct SetRoutineDetail: Reducer {
             case .onTapAddButton:
                 let state = state
                 sideEffect.onTapAddButton {
+                    
                     Task {
                         await postRoutineCard(state: state)
                     }
+                    sideEffect.sucessRequest()
                 }
                 return .none
                 
@@ -84,7 +86,7 @@ public struct SetRoutineDetail: Reducer {
     func postRoutineCard(state: State) async {
         
         let params: [String: Any] = [
-            "exercise": "PUSH_UP",
+            "exercise": state.exerciseName,
             "dayOfWeek": getEnglishDayFullName(state.day),
             "reps": state.reps,
             "sets": state.sets,
@@ -95,9 +97,10 @@ public struct SetRoutineDetail: Reducer {
         
         do {
             let response = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
+            sideEffect.sucessRequest()
             print(response)
         } catch {
-            print("response")
+            print("오류 발생 : \(error.localizedDescription)")
         }
     }
 }

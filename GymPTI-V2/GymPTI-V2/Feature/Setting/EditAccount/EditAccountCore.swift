@@ -13,6 +13,7 @@ public struct EditAccount: Reducer {
     public struct State: Equatable {
         
         @BindingState var oldPassword: String = ""
+        
         @BindingState var newPassword: String = ""
     }
     

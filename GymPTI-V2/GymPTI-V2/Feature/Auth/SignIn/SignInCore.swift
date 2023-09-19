@@ -15,7 +15,7 @@ public struct SignIn: Reducer {
         
         @BindingState var pw: String = ""
         
-        @BindingState var isLoging: Bool = false
+        var isLoging: Bool = false
     }
     
     public enum Action: Equatable, BindableAction {
@@ -65,7 +65,8 @@ public struct SignIn: Reducer {
             Token.save(.accessToken, response.data.accessToken)
             Token.save(.refreshToken, response.data.refreshToken)
         } catch {
-            sideEffect.onFailSignIn("")
+            sideEffect.onFailSignIn(error.localizedDescription)
+            print("오류 발생 : \(error.localizedDescription)")
         }
     }
 }

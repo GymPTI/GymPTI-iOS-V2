@@ -13,14 +13,14 @@ struct RoutineExcersizeCardView: View {
     let targetMuscles: String
     let reps: Int
     let sets: Int
-    let restTime: String
+    let restTime: Int
     let action: () -> Void
     
     init(_ excerciseName: String,
          targetMuscles: String,
          reps: Int,
          sets: Int,
-         restTime: String,
+         restTime: Int,
          action: @escaping () -> Void)
     {
         self.excerciseName = excerciseName
@@ -33,48 +33,46 @@ struct RoutineExcersizeCardView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 4) {
-            
-            Text("\(excerciseName)")
-                .setFont(20, .bold)
-                .foregroundColor(Colors.white.color)
-            
-            Text("\(targetMuscles)")
-                .setFont(14, .regular)
-                .foregroundColor(Colors.white.color)
-            
-            HStack {
+        Button {
+            action()
+        } label: {
+            VStack(alignment: .leading, spacing: 4) {
                 
-                Image("timer")
+                Text("\(excerciseName)")
+                    .setFont(20, .bold)
+                    .foregroundColor(Colors.white.color)
                 
-                Text("\(reps)회 / \(sets)세트")
+                Text("\(targetMuscles)")
                     .setFont(14, .regular)
                     .foregroundColor(Colors.white.color)
-            }
-            .padding(.top, 10)
-            
-            HStack {
                 
-                Image("rest")
-                
-                Text("각 세트 후 \(restTime) 휴식")
-                    .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
-            }
-            
-        }
-        .padding(.bottom, 10)
-        .padding(.leading, 20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(height: 140)
-        .background(Colors.darkGray.color)
-        .cornerRadius(10)
-        .gesture(
-            LongPressGesture(minimumDuration: 0)
-                .onEnded { _ in
-                    action()
+                HStack {
+                    
+                    Image("timer")
+                    
+                    Text("\(reps)회 • \(sets)세트")
+                        .setFont(14, .regular)
+                        .foregroundColor(Colors.white.color)
                 }
-        )
+                .padding(.top, 10)
+                
+                HStack {
+                    
+                    Image("rest")
+                    
+                    Text("각 세트 후 \(Text(secondsToMinutesAndSeconds(seconds: restTime)).bold()) 휴식")
+                        .setFont(14, .regular)
+                        .foregroundColor(Colors.white.color)
+                }
+                
+            }
+            .padding(.bottom, 10)
+            .padding(.leading, 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(height: 140)
+            .background(Colors.darkGray.color)
+            .cornerRadius(10)
+        }
     }
 }
 

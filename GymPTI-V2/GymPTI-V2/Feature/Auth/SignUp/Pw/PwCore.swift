@@ -12,6 +12,7 @@ public struct Pw: Reducer {
     public struct State: Equatable {
         
         var id: String = ""
+        
         @BindingState var pw: String = ""
     }
     

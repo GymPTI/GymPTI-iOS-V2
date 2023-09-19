@@ -13,7 +13,7 @@ public struct TabBar: Reducer {
     public struct State: Equatable {
         
         var selected: String = "home"
-        
+
         var isUnconnected: Bool = false
     }
     
