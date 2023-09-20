@@ -14,6 +14,7 @@ struct RoutineExcersizeCardView: View {
     let reps: Int
     let sets: Int
     let restTime: Int
+    let isCompleted: Bool
     let action: () -> Void
     
     @State var isTapCardView: Bool = false
@@ -23,6 +24,7 @@ struct RoutineExcersizeCardView: View {
          reps: Int,
          sets: Int,
          restTime: Int,
+         isCompleted: Bool,
          action: @escaping () -> Void)
     {
         self.excerciseName = excerciseName
@@ -30,57 +32,84 @@ struct RoutineExcersizeCardView: View {
         self.sets = sets
         self.reps = reps
         self.restTime = restTime
+        self.isCompleted = isCompleted
         self.action = action
     }
     
     var body: some View {
         
         Button { } label: {
-            VStack(alignment: .leading, spacing: 5) {
+            
+            VStack(alignment: .leading, spacing: 20) {
                 
-                Text("\(excerciseName)")
-                    .setFont(20, .bold)
-                    .foregroundColor(Colors.white.color)
-                
-                Text("\(targetMuscles)")
-                    .setFont(14, .regular)
-                    .foregroundColor(Colors.white.color)
-                
-                if isTapCardView {
+                HStack {
                     
-                    HStack {
+                    VStack(alignment: .leading, spacing: 5) {
                         
-                        Image("timer")
+                        Text("\(excerciseName)")
+                            .setFont(20, .bold)
+                            .foregroundColor(Colors.white.color)
                         
-                        Text("\(reps)회 • \(sets)세트")
+                        Text("\(targetMuscles)")
                             .setFont(14, .regular)
                             .foregroundColor(Colors.white.color)
                     }
-                    .padding(.top, 10)
                     
-                    HStack {
+                    Spacer()
+                    
+                    Button {
                         
-                        Image("rest")
+                    } label : {
+                        Rectangle()
+                            .frame(width: 22, height: 22)
+                            .foregroundColor(Colors.gray.color)
+                            .cornerRadius(4)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Colors.white.color, lineWidth: 2)
+                            )
+                    }
+                }
+                
+                if isTapCardView {
+                    
+                    VStack(spacing: 5) {
                         
-                        Text("각 세트 후 \(Text(secondsToMinutesAndSeconds(seconds: restTime)).bold()) 휴식")
-                            .setFont(14, .regular)
-                            .foregroundColor(Colors.white.color)
+                        HStack {
+                            Image("timer")
+                            
+                            Text("\(reps)회 • \(sets)세트")
+                                .setFont(14, .regular)
+                                .foregroundColor(Colors.white.color)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        HStack {
+                            Image("rest")
+                            
+                            Text("각 세트 후 \(Text(secondsToMinutesAndSeconds(seconds: restTime)).bold()) 휴식")
+                                .setFont(14, .regular)
+                                .foregroundColor(Colors.white.color)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
             }
             .padding(.vertical, 15)
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .frame(height: isTapCardView ? 139 : 76)
+            .frame(height: isTapCardView ? 140 : 76)
             .background(Colors.darkGray.color)
             .cornerRadius(10)
             .onTapGesture {
-                isTapCardView.toggle()
+                withAnimation(.easeOut(duration: 0.22)) {
+                    isTapCardView.toggle()
+                }
             }
             .onLongPressGesture(minimumDuration: 0.25) {
                 action()
             }
+            .opacity(isCompleted ? 0.5 : 1)
         }
     }
 }
-
