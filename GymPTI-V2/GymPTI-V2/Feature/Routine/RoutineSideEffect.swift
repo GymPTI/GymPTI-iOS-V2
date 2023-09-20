@@ -11,7 +11,7 @@ public protocol RoutineSideEffect {
     
     var onTapAiAddRoutineButton: () -> Void { get }
     var onTapAddRoutineButton: () -> Void { get }
-    var onTapRoutineCard: ( @escaping () -> Void ) -> Void { get }
+    var onTapRoutineCard: ( String, @escaping () -> Void ) -> Void { get }
 }
 
 public struct RoutineSideEffectLive {
@@ -37,11 +37,11 @@ extension RoutineSideEffectLive: RoutineSideEffect {
         }
     }
     
-    public var onTapRoutineCard: ( @escaping () -> Void ) -> Void {
-        { action in
+    public var onTapRoutineCard: ( String, @escaping () -> Void ) -> Void {
+        { exerciseName, action  in
             let alertModel = Alert(
                 title: "삭제",
-                message: "해당 루틴을 삭제할까요?",
+                message: "\"\(exerciseName)\"을(를) 삭제할까요?",
                 buttons: [.init(title: "확인", style: .destructive) {
                     action()
                 },

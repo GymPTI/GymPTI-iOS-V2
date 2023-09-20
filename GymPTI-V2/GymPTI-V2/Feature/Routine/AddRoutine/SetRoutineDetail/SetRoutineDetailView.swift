@@ -92,7 +92,7 @@ extension SetRoutineDetailView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
                     .background(Colors.darkGray.color)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
                     
                     HStack(spacing: 10) {
                         
@@ -147,7 +147,7 @@ extension SetRoutineDetailView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
                     .background(Colors.darkGray.color)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
                     
                     HStack(spacing: 10) {
                         
@@ -198,7 +198,7 @@ extension SetRoutineDetailView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
                     .background(Colors.darkGray.color)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
                 }
             }
             .padding(.horizontal, 20)

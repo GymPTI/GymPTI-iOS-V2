@@ -61,7 +61,7 @@ extension RoutineView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("\(getDate())")
+                    Text("\(getDate())🗓️")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     
@@ -145,7 +145,7 @@ extension RoutineView: View {
                                     sets: data.sets,
                                     restTime: data.restTime
                                 ) {
-                                    viewStore.send(.onTapRoutineCard(id: data.id))
+                                    viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
                                 }
                             }
                         }
@@ -157,7 +157,7 @@ extension RoutineView: View {
         }
         .padding(.top, 20)
         .setBackground()
-        .task {
+        .onAppear {
             viewStore.send(.getRoutineList(day: getToday()))
         }
     }
