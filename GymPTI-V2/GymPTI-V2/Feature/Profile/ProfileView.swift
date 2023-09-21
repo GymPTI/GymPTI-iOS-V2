@@ -36,56 +36,66 @@ extension ProfileView: View {
                 
                 ScrollView {
                     
-                    VStack(spacing: 0) {
+                    if let userData = viewStore.user {
                         
-                        ZStack(alignment: .bottom) {
-                            if viewStore.name == "뉴진스" {
-                                Image("Newjeans")
-                                    .resizable()
-                                    .frame(width: 108, height: 108)
-                                    .clipShape(Circle())
-                                    .overlay(RoundedRectangle(cornerRadius: 108)
-                                        .strokeBorder(Colors.white.color, lineWidth: 2))
-                            } else {
-                                
-                                AsyncImage(url: URL(string: viewStore.profileImage)) { image in
-                                    image
+                        VStack(spacing: 0) {
+                            
+                            ZStack(alignment: .bottom) {
+                                if userData.nickname == "뉴진스" {
+                                    Image("Newjeans")
                                         .resizable()
                                         .frame(width: 108, height: 108)
                                         .clipShape(Circle())
                                         .overlay(RoundedRectangle(cornerRadius: 108)
                                             .strokeBorder(Colors.white.color, lineWidth: 2))
+                                } else {
                                     
-                                } placeholder: {
-                                    Image("user")
-                                        .resizable()
-                                        .frame(width: 108, height: 108)
-                                        .clipShape(Circle())
-                                        .overlay(RoundedRectangle(cornerRadius: 108)
-                                            .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    AsyncImage(url: URL(string: userData.profileImage!)) { image in
+                                        image
+                                            .resizable()
+                                            .frame(width: 108, height: 108)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                                .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    } placeholder: {
+                                        Image("user")
+                                            .resizable()
+                                            .frame(width: 108, height: 108)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                                .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    }
                                 }
                             }
+                            
+                            Text("\(userData.nickname!)")
+                                .setFont(24, .bold)
+                                .foregroundColor(Colors.white.color)
+                                .padding(.top, 10)
+                            
+                            Text("@\(userData.userId!)")
+                                .setFont(10, .light)
+                                .foregroundColor(Colors.white.color)
+                                .padding(.top, 10)
+                            
+                            Text("\(userData.statusMessage!)")
+                                .setFont(14, .medium)
+                                .foregroundColor(Colors.white.color)
+                                .padding(.top, 10)
+                            
+                            Button {
+                                viewStore.send(.onTapEditInfoButton)
+                            } label: {
+                                Text("프로필 정보 수정")
+                                    .setFont(14, .medium)
+                                    .foregroundColor(Colors.white.color)
+                                    .frame(height: 40)
+                                    .frame(maxWidth: .infinity)
+                                    .background(Colors.darkGray.color)
+                                    .cornerRadius(10)
+                            }
+                            .padding([.horizontal, .top], 20)
                         }
-                        
-                        Text("\(viewStore.name)")
-                            .setFont(24, .bold)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                        
-                        Text("@\(viewStore.id)")
-                            .setFont(10, .light)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                        
-                        Text("\(viewStore.message)")
-                            .setFont(14, .medium)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                        
-                        SettingButton("프로필 정보 수정") {
-                            viewStore.send(.onTapEditInfoButton)
-                        }
-                        .padding([.horizontal, .top], 20)
                     }
                 }
             }

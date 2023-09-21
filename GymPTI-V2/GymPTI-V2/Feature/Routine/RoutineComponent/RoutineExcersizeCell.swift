@@ -15,7 +15,8 @@ struct RoutineExcersizeCardView: View {
     let sets: Int
     let restTime: Int
     let isCompleted: Bool
-    let action: () -> Void
+    let longPressGestureAction: () -> Void
+    let completedButtonAction: () -> Void
     
     @State var isTapCardView: Bool = false
     
@@ -25,7 +26,8 @@ struct RoutineExcersizeCardView: View {
          sets: Int,
          restTime: Int,
          isCompleted: Bool,
-         action: @escaping () -> Void)
+         longPressGestureAction: @escaping () -> Void,
+         completedButtonAction: @escaping () -> Void)
     {
         self.excerciseName = excerciseName
         self.targetMuscles = targetMuscles
@@ -33,7 +35,8 @@ struct RoutineExcersizeCardView: View {
         self.reps = reps
         self.restTime = restTime
         self.isCompleted = isCompleted
-        self.action = action
+        self.longPressGestureAction = longPressGestureAction
+        self.completedButtonAction = completedButtonAction
     }
     
     var body: some View {
@@ -58,7 +61,7 @@ struct RoutineExcersizeCardView: View {
                     Spacer()
                     
                     Button {
-                        
+                        completedButtonAction()
                     } label : {
                         Rectangle()
                             .frame(width: 22, height: 22)
@@ -102,12 +105,12 @@ struct RoutineExcersizeCardView: View {
             .background(Colors.darkGray.color)
             .cornerRadius(10)
             .onTapGesture {
-                withAnimation(.easeOut(duration: 0.22)) {
+                withAnimation(.easeInOut(duration: 0.2)) {
                     isTapCardView.toggle()
                 }
             }
             .onLongPressGesture(minimumDuration: 0.25) {
-                action()
+                longPressGestureAction()
             }
             .opacity(isCompleted ? 0.5 : 1)
         }

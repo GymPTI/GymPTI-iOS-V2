@@ -36,35 +36,6 @@ extension EditInfoView: View {
                 viewStore.send(.onTapChangeButton)
             }
             
-            EditInfoScrollView(viewStore: self.viewStore)
-            
-        }
-        .setBackground()
-        .onAppear {
-            print(viewStore.newName, viewStore.profileImage)
-        }
-        .overlay {
-            Group {
-                if viewStore.successEditProfile {
-                    LoadingView()
-                }
-            }
-        }
-    }
-}
-
-extension EditInfoView {
-    
-    struct EditInfoScrollView: View {
-        
-        let viewStore: ViewStoreOf<EditInfo>
-        
-        init(viewStore: ViewStoreOf<EditInfo>) {
-            self.viewStore = viewStore
-        }
-        
-        var body: some View {
-            
             ScrollView {
                 
                 VStack(alignment: .center, spacing: 10) {
@@ -140,6 +111,18 @@ extension EditInfoView {
                     Spacer()
                 }
                 .padding()
+            }
+            
+        }
+        .setBackground()
+        .onAppear {
+            print(viewStore.newName, viewStore.profileImage)
+        }
+        .overlay {
+            Group {
+                if viewStore.successEditProfile {
+                    LoadingView()
+                }
             }
         }
     }

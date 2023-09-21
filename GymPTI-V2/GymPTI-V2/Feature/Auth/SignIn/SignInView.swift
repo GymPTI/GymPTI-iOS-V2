@@ -53,7 +53,7 @@ extension SignInView: View {
                     viewStore.send(.onTapSignInButton)
                 }
                 .padding(.horizontal, 100)
-                .padding(.top, 20)
+                
                 
                 Button {
                     KeyboardManager.dismissKeyboard()

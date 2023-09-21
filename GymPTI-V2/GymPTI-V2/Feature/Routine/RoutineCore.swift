@@ -32,6 +32,7 @@ public struct Routine: Reducer {
         case onTapFriButton
         case onTapSatButton
         case onTapRoutineCard(id: Int, exercise: String)
+        case onTapCompletedButton
         case getRoutineList(day: String)
         case routineListDataReceived(TaskResult<[RoutineList]>)
     }
@@ -87,6 +88,14 @@ public struct Routine: Reducer {
                     }
                 }
                 state.isDeleted = true
+                return .none
+                
+            case .onTapCompletedButton:
+                sideEffect.onTapCompletedButton {
+                    Task {
+                        
+                    }
+                }
                 return .none
                 
             case .getRoutineList(let day):

@@ -10,12 +10,15 @@ import SwiftUI
 struct SettingButton: View {
     
     let title: String
+    let isDangerous: Bool
     let action: () -> Void
     
     init(_ title: String,
+         isDangerous: Bool = false,
          _ action: @escaping () -> Void)
     {
         self.title = title
+        self.isDangerous = isDangerous
         self.action = action
     }
     
@@ -27,7 +30,7 @@ struct SettingButton: View {
             HStack {
                 Text("\(title)")
                     .setFont(14, .medium)
-                    .foregroundColor(Colors.white.color)
+                    .foregroundColor(isDangerous ? Colors.red.color : Colors.white.color)
                     .padding(.leading, 15)
                 
                 Spacer()

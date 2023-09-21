@@ -13,13 +13,7 @@ public struct Profile: Reducer {
     
     public struct State: Equatable {
         
-        var name: String = "Roading..."
-        
-        var id: String = "Roading..."
-        
-        var message: String = "Roading..."
-        
-        var profileImage: String = "user"
+        var user: User? = nil
         
         @BindingState var selectedImageData: Data? = nil
     }
@@ -50,7 +44,9 @@ public struct Profile: Reducer {
                 return .none
                 
             case .onTapEditInfoButton:
-                sideEffect.onTapEditInfoButton(state.name, state.message, state.profileImage)
+                sideEffect.onTapEditInfoButton(state.user?.nickname ?? "",
+                                               state.user?.statusMessage ?? "",
+                                               state.user?.profileImage ?? "profile")
                 return .none
                 
             case .onAppearProfile:
@@ -64,10 +60,7 @@ public struct Profile: Reducer {
                 }
                 
             case let .userDataReceived(.success(response)):
-                state.name = response.nickname ?? ""
-                state.id = response.userId ?? ""
-                state.message = response.statusMessage ?? ""
-                state.profileImage = response.profileImage ?? "user"
+                state.user = response
                 return .none
                 
             case .userDataReceived(.failure):

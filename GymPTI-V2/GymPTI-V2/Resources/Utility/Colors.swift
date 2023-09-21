@@ -27,6 +27,9 @@ enum Colors {
     /// - Note: 진한 회색
     case darkGray
     
+    /// - Note: 빨간색
+    case red
+    
     var color: Color {
         
         switch self {
@@ -43,6 +46,8 @@ enum Colors {
             return Color(hex: 0x3E3D45)
         case .darkGray:
             return Color(hex: 0x2E2D33)
+        case .red:
+            return Color(hex: 0xFF5252)
         }
     }
 }

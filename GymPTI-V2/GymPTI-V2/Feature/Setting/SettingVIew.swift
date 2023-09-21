@@ -52,29 +52,33 @@ extension SettingView {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("정보")
+                    Text("계정 / 정보 관리")
                         .setFont(20, .bold)
-                        .foregroundColor(Colors.main.color)
+                        .foregroundColor(Colors.white.color)
                     
-                    SettingButton("비밀번호 수정") {
+                    SettingButton("비밀번호 변경하기") {
                         viewStore.send(.onTapEditAccountButton)
                     }
                     
-                    SettingButton("상세 정보") {
-                        viewStore.send(.onTapEditAccountButton)
+                    SettingButton("신체 정보 수정하기") {
+                        
                     }
                     
                     Text("기타")
                         .setFont(20, .bold)
-                        .foregroundColor(Colors.main.color)
+                        .foregroundColor(Colors.white.color)
                         .padding(.top, 10)
                     
                     SettingButton("계정 정보 처리 방침") {
-                        viewStore.send(.onTapEditAccountButton)
+                        
                     }
                     
-                    SettingButton("로그아웃") {
+                    SettingButton("로그아웃", isDangerous: true) {
                         viewStore.send(.onTapLogoutButton)
+                    }
+                    
+                    SettingButton("탈퇴하기", isDangerous: true) {
+                        
                     }
                     
                 }
