@@ -65,20 +65,20 @@ extension ProfileView: View {
                             }
                         }
                         
-                        Text("\(userData.nickname!)")
+                        Text("\(userData.nickname ?? "")")
                             .setFont(24, .bold)
                             .foregroundColor(Colors.white.color)
                             .padding(.top, 10)
                         
-                        Text("@\(userData.userId!)")
-                            .setFont(10, .light)
+                        Text("@\(userData.userId ?? "")")
+                            .setFont(10, .regular)
                             .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
+                            .padding(.top, 2)
                         
-                        Text("\(userData.statusMessage!)")
-                            .setFont(14, .medium)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
+//                        Text("\(userData.statusMessage ?? "")")
+//                            .setFont(10, .regular)
+//                            .foregroundColor(Colors.white.color)
+//                            .padding(.top, 2)
                         
                         Button {
                             viewStore.send(.onTapEditInfoButton)

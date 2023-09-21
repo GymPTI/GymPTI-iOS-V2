@@ -24,7 +24,7 @@ extension RoutineView: View {
     public var body: some View {
         
         VStack {
-            
+        
             HStack {
                 
                 Text("루틴")
@@ -55,39 +55,44 @@ extension RoutineView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
+            .frame(height: 44)
+            .padding(.horizontal, 20)
+            
+            Text("\(getDate())")
+                .setFont(20, .bold)
+                .foregroundColor(Colors.white.color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 20)
+            
+            HStack {
+                
+                ForEach([("SUN", "일"), ("MON", "월"),
+                         ("THE", "화"),("WEN", "수"),
+                         ("THU", "목"),("FRI", "금"),
+                         ("SAT", "토")], id: \.0) {
+                    day, label in
+                    
+                    RoutineWeekButton(day, label, selecetDay: viewStore.selectDay) {
+                        
+                        viewStore.send(.onTapDayButton(day: label))
+                        viewStore.send(.getRoutineList(day: viewStore.selectDay))
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 80)
+            .background(Colors.darkGray.color)
+            .cornerRadius(10)
             .padding(.horizontal, 20)
             
             ScrollView(showsIndicators: false) {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("\(getDate())")
-                        .setFont(20, .bold)
-                        .foregroundColor(Colors.white.color)
-                    
-                    HStack {
-                        
-                        ForEach([("SUN", "일"), ("MON", "월"),
-                                 ("THE", "화"),("WEN", "수"),
-                                 ("THU", "목"),("FRI", "금"),
-                                 ("SAT", "토")], id: \.0) {
-                            day, label in
-                            
-                            RoutineWeekButton(day, label, selecetDay: viewStore.selectDay) {
-                                
-                                viewStore.send(.onTapDayButton(day: label))
-                                viewStore.send(.getRoutineList(day: viewStore.selectDay))
-                            }
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 80)
-                    .background(Colors.darkGray.color)
-                    .cornerRadius(10)
-                    
                     Text("\(viewStore.selectDay)요일 루틴")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, 10)
                     
                     if let routineData = viewStore.routineList {

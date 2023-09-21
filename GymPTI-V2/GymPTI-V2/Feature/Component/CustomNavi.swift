@@ -55,6 +55,7 @@ struct CustomNavi: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
+        .frame(height: 44)
         .padding(.horizontal, 20)
     }
 }

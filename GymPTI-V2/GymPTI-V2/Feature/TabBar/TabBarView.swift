@@ -48,36 +48,36 @@ extension TabBarView: View {
                     }
             }
             
-            HStack(spacing: 54) {
+            HStack(spacing: 0) {
                 
                 Spacer()
                  
-                ForEach(["home", "routine", "profile"], id: \.self) { tabName in
+                ForEach([("home", "홈"), ("routine", "루틴"), ("profile", "프로필")], id: \.0) { tab in
                     
+                    let tabName = tab.0
                     Button {
                         viewStore.send(.selectTab(tabName: tabName))
                     } label: {
-                        ZStack {
-                            if viewStore.selected == tabName {
-                                Color.black
-                                    .clipShape(Circle())
-                                    .overlay(Circle()
-                                        .stroke(Color.white, lineWidth: 5))
-                                    .frame(width: 48, height: 48)
-                            }
-                            Image(tabName)
-                                .renderingMode(.template)
-                                .foregroundColor(viewStore.selected == tabName ? Colors.white.color : Colors.black.color)
-                                .frame(width: 48, height: 48)
+                        VStack(spacing: 2) {
+                            Image(viewStore.selected == tabName ? "\(tabName).selected" : tabName)
+                                .resizable()
+                                .opacity(viewStore.selected == tabName ? 1 : 0.5)
+                                .frame(width: 28, height: 28)
+                            
+                            Text("\(tab.1)")
+                                .setFont(12, .medium)
+                                .foregroundColor(Colors.white.color)
+                                .opacity(viewStore.selected == tabName ? 1 : 0.5)
                         }
+                        .frame(width: 124, height: 52)
+                        .foregroundColor(Colors.black.color)
                     }
                 }
                 
                 Spacer()
             }
             .padding(.bottom, 2)
-            .frame(maxHeight: 48)
-            .background(Colors.white.color)
+            .frame(height: 52)
         }
         .setBackground()
         .navigationBarHidden(true)

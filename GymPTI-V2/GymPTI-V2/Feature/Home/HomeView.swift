@@ -35,7 +35,7 @@ extension HomeView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("요즘 핫한 운동 유튜버🔥")
+                    Text("요즘 핫한 운동 유튜버")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     
@@ -46,14 +46,13 @@ extension HomeView: View {
                                        platform: "youtube",
                                        subTitle: "18만 유튜버 이준명 보러가기")
                     
-                    Text("헬스 뉴스📢")
+                    Text("헬스 뉴스")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .padding(.top, 10)
                 }
                 .padding(.horizontal, 20)
             }
-            
             Spacer()
         }
         .setBackground()
