@@ -43,9 +43,7 @@ public struct AppSideEffect: DependencyKey {
     
     let selectGoal: SelectGoalSideEffect
     
-    let selectDay: SelectDaySideEffect
-    
-    let selectTargetMuscle: SelectTargetMuscleSideEffect
+    let setRoutine: SetRoutineSideEffect
     
     let setRoutineDetail: SetRoutineDetailSideEffect
     
@@ -90,9 +88,7 @@ public struct AppSideEffect: DependencyKey {
             
             selectGoal: SelectGoalSideEffectLive(navigator: navigator),
             
-            selectDay: SelectDaySideEffectLive(navigator: navigator),
-            
-            selectTargetMuscle: SelectTargetMuscleSideEffectLive(navigator: navigator),
+            setRoutine: SetRoutineSideEffectLive(navigator: navigator),
             
             setRoutineDetail: SetRoutineDetailSideEffectLive(navigator: navigator),
             

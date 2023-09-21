@@ -9,12 +9,14 @@ import SwiftUI
 
 extension View {
     
-    @ViewBuilder func setFont(_ size: CGFloat, _ weight: Font.Weight = .regular) -> some View {
+    @ViewBuilder 
+    func setFont(_ size: CGFloat, _ weight: Font.Weight = .regular) -> some View {
         self
             .font(.system(size: size, weight: weight))
     }
     
-    @ViewBuilder func setBackground() -> some View {
+    @ViewBuilder 
+    func setBackground() -> some View {
         self
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Colors.black.color)
@@ -23,11 +25,13 @@ extension View {
             }
     }
     
-    @ViewBuilder func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+    @ViewBuilder 
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
     
-    @ViewBuilder func setShadow() -> some View {
+    @ViewBuilder 
+    func setShadow() -> some View {
         self
             .shadow(color: .black, radius: 2, y: 3)
     }

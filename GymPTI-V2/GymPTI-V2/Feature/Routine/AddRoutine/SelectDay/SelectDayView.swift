@@ -9,14 +9,6 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct SelectDayView {
-    
-    private let store: StoreOf<SelectDay>
-    @ObservedObject var viewStore: ViewStoreOf<SelectDay>
-    
-    public init(store: StoreOf<SelectDay>) {
-        self.store = store
-        viewStore = ViewStore(store, observe: { $0 })
-    }
 }
 
 extension SelectDayView: View {

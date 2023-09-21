@@ -16,21 +16,17 @@
 		52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */; };
 		52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C992A8FC02900871C0B /* CustomButton.swift */; };
 		52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D282ABBFF1F0087A85F /* AppInfoManager.swift */; };
+		52269D2C2ABC098B0087A85F /* SetRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D2B2ABC098B0087A85F /* SetRoutineView.swift */; };
+		52269D2E2ABC09C20087A85F /* SetRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D2D2ABC09C20087A85F /* SetRoutineCore.swift */; };
+		52269D302ABC0A870087A85F /* SetRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D2F2ABC0A870087A85F /* SetRoutineSideEffect.swift */; };
+		52269D322ABC0B340087A85F /* SetRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D312ABC0B340087A85F /* SetRoutineRouteBuilder.swift */; };
 		522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */; };
 		522FCAD62AB2B316007DBC1F /* RoutineTargetMuscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */; };
-		523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* SelectDayView.swift */; };
-		523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9232A91CDB300519285 /* SelectDayCore.swift */; };
-		523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */; };
-		523BE9282A91CDD400519285 /* SelectDayRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9272A91CDD400519285 /* SelectDayRouteBuilder.swift */; };
 		523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */; };
 		524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7B2A275BA600B63DDA /* NotificationView.swift */; };
 		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
 		524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */; };
 		524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */; };
-		5258D7A82AA59AB900D77C40 /* SelectTargetMuscleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7A72AA59AB900D77C40 /* SelectTargetMuscleView.swift */; };
-		5258D7AC2AA59BA200D77C40 /* SelectTargetMuscleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */; };
-		5258D7AE2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */; };
-		5258D7B02AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */; };
 		5258D7B22AA59BEF00D77C40 /* SetRoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B12AA59BEF00D77C40 /* SetRoutineDetailView.swift */; };
 		5258D7B52AA7026800D77C40 /* SetRoutineDetailCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B42AA7026800D77C40 /* SetRoutineDetailCore.swift */; };
 		5258D7B72AA7029600D77C40 /* SetRoutineDetailSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258D7B62AA7029600D77C40 /* SetRoutineDetailSideEffect.swift */; };
@@ -138,21 +134,17 @@
 		52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteBuilder.swift; sourceTree = "<group>"; };
 		52256C992A8FC02900871C0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		52269D282ABBFF1F0087A85F /* AppInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
+		52269D2B2ABC098B0087A85F /* SetRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineView.swift; sourceTree = "<group>"; };
+		52269D2D2ABC09C20087A85F /* SetRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineCore.swift; sourceTree = "<group>"; };
+		52269D2F2ABC0A870087A85F /* SetRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineSideEffect.swift; sourceTree = "<group>"; };
+		52269D312ABC0B340087A85F /* SetRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineRouteBuilder.swift; sourceTree = "<group>"; };
 		522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtensions.swift; sourceTree = "<group>"; };
 		522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTargetMuscle.swift; sourceTree = "<group>"; };
-		523BE9212A91CD9800519285 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
-		523BE9232A91CDB300519285 /* SelectDayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayCore.swift; sourceTree = "<group>"; };
-		523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaySideEffect.swift; sourceTree = "<group>"; };
-		523BE9272A91CDD400519285 /* SelectDayRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayRouteBuilder.swift; sourceTree = "<group>"; };
 		523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExcersizeCell.swift; sourceTree = "<group>"; };
 		524CEB7B2A275BA600B63DDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
 		524CEB802A275BCE00B63DDA /* NotificationSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSideEffect.swift; sourceTree = "<group>"; };
 		524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRouteBuilder.swift; sourceTree = "<group>"; };
-		5258D7A72AA59AB900D77C40 /* SelectTargetMuscleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleView.swift; sourceTree = "<group>"; };
-		5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleCore.swift; sourceTree = "<group>"; };
-		5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleEffect.swift; sourceTree = "<group>"; };
-		5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTargetMuscleRouteBuilder.swift; sourceTree = "<group>"; };
 		5258D7B12AA59BEF00D77C40 /* SetRoutineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailView.swift; sourceTree = "<group>"; };
 		5258D7B42AA7026800D77C40 /* SetRoutineDetailCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailCore.swift; sourceTree = "<group>"; };
 		5258D7B62AA7029600D77C40 /* SetRoutineDetailSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineDetailSideEffect.swift; sourceTree = "<group>"; };
@@ -263,23 +255,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		520A079D2AA8208F007BA4E4 /* SelectDay */ = {
-			isa = PBXGroup;
-			children = (
-				523BE9212A91CD9800519285 /* SelectDayView.swift */,
-				523BE9232A91CDB300519285 /* SelectDayCore.swift */,
-				523BE9252A91CDBE00519285 /* SelectDaySideEffect.swift */,
-				523BE9272A91CDD400519285 /* SelectDayRouteBuilder.swift */,
-			);
-			path = SelectDay;
-			sourceTree = "<group>";
-		};
 		520A079E2AA858FE007BA4E4 /* AddRoutine */ = {
 			isa = PBXGroup;
 			children = (
-				52FCBEE62AB2A3F800EB6E17 /* SelectGoal */,
-				520A079D2AA8208F007BA4E4 /* SelectDay */,
-				5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */,
+				52269D2A2ABC07660087A85F /* SetRoutine */,
 				5258D7B32AA59C4700D77C40 /* SetRoutineDetail */,
 			);
 			path = AddRoutine;
@@ -307,6 +286,25 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		52269D2A2ABC07660087A85F /* SetRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				52269D2B2ABC098B0087A85F /* SetRoutineView.swift */,
+				52269D2D2ABC09C20087A85F /* SetRoutineCore.swift */,
+				52269D2F2ABC0A870087A85F /* SetRoutineSideEffect.swift */,
+				52269D312ABC0B340087A85F /* SetRoutineRouteBuilder.swift */,
+			);
+			path = SetRoutine;
+			sourceTree = "<group>";
+		};
+		52269D332ABC0E450087A85F /* AddAIRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				52FCBEE62AB2A3F800EB6E17 /* SelectGoal */,
+			);
+			path = AddAIRoutine;
+			sourceTree = "<group>";
+		};
 		524CEB7D2A275BAB00B63DDA /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,17 +314,6 @@
 				524CEB822A275BD900B63DDA /* NotificationRouteBuilder.swift */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		5258D7A62AA59A8100D77C40 /* SelectTargetMuscle */ = {
-			isa = PBXGroup;
-			children = (
-				5258D7A72AA59AB900D77C40 /* SelectTargetMuscleView.swift */,
-				5258D7AB2AA59BA200D77C40 /* SelectTargetMuscleCore.swift */,
-				5258D7AD2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift */,
-				5258D7AF2AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift */,
-			);
-			path = SelectTargetMuscle;
 			sourceTree = "<group>";
 		};
 		5258D7B32AA59C4700D77C40 /* SetRoutineDetail */ = {
@@ -589,6 +576,7 @@
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
 				520A079E2AA858FE007BA4E4 /* AddRoutine */,
+				52269D332ABC0E450087A85F /* AddAIRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -771,6 +759,7 @@
 				52C804182A0C872900417B08 /* RoutineRouteBuilder.swift in Sources */,
 				52C803C12A0BAE7500417B08 /* LaunchView.swift in Sources */,
 				520A07A32AA8919E007BA4E4 /* Formmatter.swift in Sources */,
+				52269D302ABC0A870087A85F /* SetRoutineSideEffect.swift in Sources */,
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
 				52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
@@ -781,10 +770,11 @@
 				528D4CC32A15CEB9008A0F7A /* SettingButton.swift in Sources */,
 				52C804012A0BE12300417B08 /* NameSideEffect.swift in Sources */,
 				52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */,
+				52269D2E2ABC09C20087A85F /* SetRoutineCore.swift in Sources */,
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
 				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,
+				52269D2C2ABC098B0087A85F /* SetRoutineView.swift in Sources */,
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
-				5258D7B02AA59BBB00D77C40 /* SelectTargetMuscleRouteBuilder.swift in Sources */,
 				524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
 				522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */,
@@ -797,7 +787,6 @@
 				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
 				52256C942A8FAF2200871C0B /* StartCore.swift in Sources */,
 				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
-				5258D7A82AA59AB900D77C40 /* SelectTargetMuscleView.swift in Sources */,
 				524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
@@ -825,8 +814,8 @@
 				526593F02A0E0D6C00D9446B /* FindIdCore.swift in Sources */,
 				52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */,
 				52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */,
-				5258D7AC2AA59BA200D77C40 /* SelectTargetMuscleCore.swift in Sources */,
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
+				52269D322ABC0B340087A85F /* SetRoutineRouteBuilder.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
 				526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */,
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
@@ -837,9 +826,7 @@
 				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
 				520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
-				523BE9282A91CDD400519285 /* SelectDayRouteBuilder.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
-				523BE9262A91CDBE00519285 /* SelectDaySideEffect.swift in Sources */,
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
 				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
@@ -848,14 +835,12 @@
 				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
-				523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
 				52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
 				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
-				5258D7AE2AA59BB100D77C40 /* SelectTargetMuscleEffect.swift in Sources */,
 				52C8041E2A0C877300417B08 /* ProfileCore.swift in Sources */,
 				52C8043A2A0CB2A200417B08 /* EditInfoView.swift in Sources */,
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
@@ -864,7 +849,6 @@
 				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
 				520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
-				523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
 				524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */,
 				52256C922A8FAE0400871C0B /* StartView.swift in Sources */,

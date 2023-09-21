@@ -9,14 +9,6 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct SelectTargetMuscleView {
-    
-    private let store: StoreOf<SelectTargetMuscle>
-    @ObservedObject var viewStore: ViewStoreOf<SelectTargetMuscle>
-    
-    public init(store: StoreOf<SelectTargetMuscle>) {
-        self.store = store
-        viewStore = ViewStore(store, observe: { $0 })
-    }
 }
 
 extension SelectTargetMuscleView: View {

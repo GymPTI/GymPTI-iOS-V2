@@ -36,12 +36,13 @@ struct CustomNavi: View {
                 Button {
                     notificationButtonAction()
                 } label: {
-                    Image("bell")
-                        .resizable()
-                        .frame(width: 28, height: 28)
+//                    Image("bell")
+//                        .resizable()
+//                        .frame(width: 28, height: 28)
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding(.trailing, 40)
+                .disabled(true)
                 
                 Button {
                     settingButtonAction()
@@ -54,5 +55,6 @@ struct CustomNavi: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
+        .padding(.horizontal, 20)
     }
 }

@@ -144,10 +144,10 @@ extension RoutineView: View {
                                     reps: data.reps,
                                     sets: data.sets,
                                     restTime: data.restTime, 
-                                    isCompleted: data.completed
-                                ) { // longPressGestureAction :
-                                    viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
-                                } completedButtonAction: {
+                                    isCompleted: data.completed,
+                                    longPressGestureAction: {
+                                        viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
+                                    }) {
                                     viewStore.send(.onTapCompletedButton)
                                 }
                             }
@@ -155,10 +155,10 @@ extension RoutineView: View {
                     }
                 }
                 .padding(.horizontal, 20)
+                
                 Spacer()
             }
         }
-        .padding(.top, 20)
         .setBackground()
         .onAppear {
             viewStore.send(.getRoutineList(day: getToday()))

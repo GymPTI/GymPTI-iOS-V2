@@ -30,29 +30,6 @@ extension HomeView: View {
             }) {
                 viewStore.send(.onTapSettingButton)
             }
-            .padding(.horizontal, 20)
-            
-            Spacer()
-            
-            HomeScrollView(viewStore: viewStore)
-            
-        }
-        .padding(.top, 20)
-        .setBackground()
-    }
-}
-
-extension HomeView {
-    
-    struct HomeScrollView: View {
-        
-        let viewStore: ViewStoreOf<Home>
-        
-        init(viewStore: ViewStoreOf<Home>) {
-            self.viewStore = viewStore
-        }
-        
-        var body: some View {
             
             ScrollView(showsIndicators: false) {
                 
@@ -63,20 +40,22 @@ extension HomeView {
                         .foregroundColor(Colors.white.color)
                     
                     InfluencerCardView(rinkURL: "https://www.youtube.com/@ZakTa/featured",
-                                   influencerImageURL: "이준명",
-                                   influencerProfileURL: "https://yt3.googleusercontent.com/DniZnn6Tt0tUWsSk1jduqkg_YXXr3srHZjes1k0QkFCaHaCrmtWy6LxKTGxmpM-eE1qFbQ90=s176-c-k-c0x00ffffff-no-rj",
-                                   title: "맨몸운동 한국 1위, 이준명",
-                                   platform: "youtube",
-                                   subTitle: "18만 유튜버 이준명 보러가기")
+                                       influencerImageURL: "이준명",
+                                       influencerProfileURL: "https://yt3.googleusercontent.com/DniZnn6Tt0tUWsSk1jduqkg_YXXr3srHZjes1k0QkFCaHaCrmtWy6LxKTGxmpM-eE1qFbQ90=s176-c-k-c0x00ffffff-no-rj",
+                                       title: "맨몸운동 한국 1위, 이준명",
+                                       platform: "youtube",
+                                       subTitle: "18만 유튜버 이준명 보러가기")
                     
                     Text("헬스 뉴스📢")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .padding(.top, 10)
                 }
-                .padding([.top, .horizontal], 20)
+                .padding(.horizontal, 20)
             }
+            
+            Spacer()
         }
+        .setBackground()
     }
 }
-
