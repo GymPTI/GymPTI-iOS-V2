@@ -31,7 +31,7 @@ struct RoutineWeekButton: View {
             action()
         } label: {
             
-            VStack(spacing: 10) {
+            VStack(alignment: .center, spacing: 10) {
                 
                 Text("\(day)")
                     .setFont(14, .regular)
@@ -47,6 +47,7 @@ struct RoutineWeekButton: View {
                     )
             }
         }
+        .frame(width: 40, height: 60)
         .padding(.bottom, 8)
     }
 }

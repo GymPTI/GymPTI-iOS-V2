@@ -7,8 +7,8 @@
 
 import Foundation
 
-public let API: String = "http://veryhotseo81.duckdns.org:8888/gympti"
-//public let API: String = "http://10.80.162.185:9000"
+//public let API: String = "http://veryhotseo81.duckdns.org:8888/gympti"
+public let API: String = "http://10.80.162.155:9000"
 
 enum TokenType {
     
@@ -16,17 +16,17 @@ enum TokenType {
     case refreshToken
 }
 
-class Token {
+public class Token {
     
-    static func get(_ tokenType: TokenType) -> String? {
+    internal static func get(_ tokenType: TokenType) -> String? {
         return UserDefaults.standard.string(forKey: String(describing: tokenType))
     }
 
-    static func save(_ tokenType: TokenType, _ value: String) {
+    internal static func save(_ tokenType: TokenType, _ value: String) {
         UserDefaults.standard.set(value, forKey: String(describing: tokenType))
     }
 
-    static func remove(_ tokenType: TokenType) {
+    internal static func remove(_ tokenType: TokenType) {
         UserDefaults.standard.removeObject(forKey: String(describing: tokenType))
     }
 }

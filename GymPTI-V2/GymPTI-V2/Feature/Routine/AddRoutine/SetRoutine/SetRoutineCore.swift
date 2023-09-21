@@ -48,7 +48,7 @@ public struct SetRoutine: Reducer{
                 return .none
                 
             case .onTapNextButton:
-                sideEffect.onTapNextButton(state.day, state.exerciseName)
+                sideEffect.onTapNextButton(getEnglishDayFullName(state.day), state.exerciseName)
                 return .none
                 
             case .onSelectDayButton(let day):

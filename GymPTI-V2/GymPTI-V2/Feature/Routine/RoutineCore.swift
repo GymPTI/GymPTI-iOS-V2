@@ -24,13 +24,7 @@ public struct Routine: Reducer {
         
         case onTapAiAddRoutineButton
         case onTapAddRoutineButton
-        case onTapSunButton
-        case onTapMonButton
-        case onTapTheButton
-        case onTapWenButton
-        case onTapThuButton
-        case onTapFriButton
-        case onTapSatButton
+        case onTapDayButton(day: String)
         case onTapRoutineCard(id: Int, exercise: String)
         case onTapCompletedButton
         case getRoutineList(day: String)
@@ -53,32 +47,8 @@ public struct Routine: Reducer {
                 sideEffect.onTapAddRoutineButton()
                 return .none
                 
-            case .onTapSunButton:
-                state.selectDay = "일"
-                return .none
-                
-            case .onTapMonButton:
-                state.selectDay = "월"
-                return .none
-                
-            case .onTapTheButton:
-                state.selectDay = "화"
-                return .none
-                
-            case .onTapWenButton:
-                state.selectDay = "수"
-                return .none
-                
-            case .onTapThuButton:
-                state.selectDay = "목"
-                return .none
-                
-            case .onTapFriButton:
-                state.selectDay = "금"
-                return .none
-                
-            case .onTapSatButton:
-                state.selectDay = "토"
+            case .onTapDayButton(let day):
+                state.selectDay = day
                 return .none
                 
             case .onTapRoutineCard(let id, let exercise):

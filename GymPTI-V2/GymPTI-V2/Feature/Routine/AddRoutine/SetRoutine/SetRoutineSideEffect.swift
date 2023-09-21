@@ -33,6 +33,7 @@ extension SetRoutineSideEffectLive: SetRoutineSideEffect {
     public var onTapNextButton: ( String, String ) -> Void {
         { day, excersizeName in
             navigator.next(paths: ["setroutinedetail"], items: ["setroutinedetail-day": day, "setroutinedetail-exerciseName": excersizeName], isAnimated: true)
+            print(day, excersizeName)
         }
     }
 }

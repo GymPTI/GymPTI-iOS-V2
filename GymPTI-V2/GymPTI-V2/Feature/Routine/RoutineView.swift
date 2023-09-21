@@ -61,7 +61,7 @@ extension RoutineView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("\(getDate())🗓️")
+                    Text("\(getDate())")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     
@@ -73,35 +73,12 @@ extension RoutineView: View {
                                  ("SAT", "토")], id: \.0) {
                             day, label in
                             
-                            Spacer()
-                            
                             RoutineWeekButton(day, label, selecetDay: viewStore.selectDay) {
                                 
-                                switch label {
-                                    
-                                case "일":
-                                    viewStore.send(.onTapSunButton)
-                                case "월":
-                                    viewStore.send(.onTapMonButton)
-                                case "화":
-                                    viewStore.send(.onTapTheButton)
-                                case "수":
-                                    viewStore.send(.onTapWenButton)
-                                case "목":
-                                    viewStore.send(.onTapThuButton)
-                                case "금":
-                                    viewStore.send(.onTapFriButton)
-                                case "토":
-                                    viewStore.send(.onTapSatButton)
-                                    
-                                default:
-                                    viewStore.send(.onTapSunButton)
-                                }
+                                viewStore.send(.onTapDayButton(day: label))
                                 viewStore.send(.getRoutineList(day: viewStore.selectDay))
                             }
                         }
-                        
-                        Spacer()
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 80)

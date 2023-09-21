@@ -42,15 +42,12 @@ extension SetRoutineView: View {
                              ("THE", "화"), ("WEN", "수"),
                              ("THU", "목"), ("FRI", "금"),
                              ("SAT", "토")], id: \.0) { day, label in
-                        Spacer()
                         
                         RoutineWeekButton(day, label, selecetDay: viewStore.selectedDay) {
                             
                             viewStore.send(.onSelectDayButton(day: label))
                         }
                     }
-                    
-                    Spacer()
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 80)
@@ -61,7 +58,7 @@ extension SetRoutineView: View {
             
             if viewStore.isSelectedDay {
                 
-                VStack(spacing: 15) {
+                VStack(spacing: 10) {
                     
                     Text("타겟 근육을 선택해주세요!")
                         .setFont(20, .bold)
@@ -92,49 +89,51 @@ extension SetRoutineView: View {
                     .background(Colors.darkGray.color)
                     .cornerRadius(10)
                 }
-                .padding(.horizontal, 20)
+                .padding([.top, .horizontal], 20)
             }
             
             if viewStore.isSelectedMuscle {
                 
-                Text("운동을 선택해주세요!")
-                    .setFont(20, .bold)
-                    .foregroundColor(Colors.white.color)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding([.top, .horizontal], 20)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
+                VStack(spacing: 10) {
+                  
+                    Text("운동을 선택해주세요!")
+                        .setFont(20, .bold)
+                        .foregroundColor(Colors.white.color)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    HStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
                         
-                        ForEach(exercises(forMuscle: viewStore.selectMuscle), id: \.self) { exercise in
+                        HStack {
                             
-                            Button(action: {
-                                viewStore.send(.onSelectExerciseButton(exercise: exercise))
-                            }) {
-                                Text(exerciseNameToKor(exercise))
-                                    .setFont(16, .bold)
-                                    .foregroundColor(Colors.white.color)
-                                    .padding(15)
-                                    .background(
-                                        Rectangle()
-                                            .fill(viewStore.exerciseName == exercise ? Colors.main.color : Colors.darkGray.color)
-                                            .frame(minWidth: 0, maxWidth: 200)
-                                            .frame(height: 34)
-                                            .cornerRadius(15)
-                                    )
+                            ForEach(exercises(forMuscle: viewStore.selectMuscle), id: \.self) { exercise in
+                                
+                                Button(action: {
+                                    viewStore.send(.onSelectExerciseButton(exercise: exercise))
+                                }) {
+                                    Text(exerciseNameToKor(exercise))
+                                        .setFont(16, .bold)
+                                        .foregroundColor(Colors.white.color)
+                                        .padding(15)
+                                        .background(
+                                            Rectangle()
+                                                .fill(viewStore.exerciseName == exercise ? Colors.main.color : Colors.darkGray.color)
+                                                .frame(minWidth: 0, maxWidth: 200)
+                                                .frame(height: 34)
+                                                .cornerRadius(15)
+                                        )
+                                }
                             }
                         }
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding([.horizontal, .top], 20)
+                
+                CustomButton("다음", disabled: !viewStore.isSelectedExercize) {
+                    viewStore.send(.onTapNextButton)
+                }
+                .padding(.top, 40)
+                .padding(.horizontal, 100)
             }
-            
-            CustomButton("다음", disabled: !viewStore.isSelectedExercize) {
-                viewStore.send(.onTapNextButton)
-            }
-            .padding(.top, 80)
-            .padding(.horizontal, 100)
             
             Spacer()
         }

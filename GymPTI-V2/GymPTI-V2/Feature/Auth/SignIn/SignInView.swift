@@ -34,7 +34,7 @@ extension SignInView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     Text("아이디")
-                        .setFont(24, .bold)
+                        .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     
                     CustomTextField(text: viewStore.$id, isSecurable: false)
@@ -43,7 +43,7 @@ extension SignInView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     Text("비밀번호")
-                        .setFont(24, .bold)
+                        .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     
                     CustomTextField(text: viewStore.$pw, isSecurable: true)
@@ -53,7 +53,7 @@ extension SignInView: View {
                     viewStore.send(.onTapSignInButton)
                 }
                 .padding(.horizontal, 100)
-                
+                .padding(.top, 40)
                 
                 Button {
                     KeyboardManager.dismissKeyboard()
