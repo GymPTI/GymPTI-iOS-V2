@@ -49,7 +49,6 @@ extension SelectTargetMuscleView: View {
                                 id: \.0) { (tag, muscle) in
                             
                             RoutineTargetMuscle(tag, muscle, selectMuscle: viewStore.selectMuscle) {
-                                
                                 viewStore.send(.onSelectMuscleButton(muscle: tag))
                             }
                         }

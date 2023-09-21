@@ -15,6 +15,7 @@
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
 		52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */; };
 		52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C992A8FC02900871C0B /* CustomButton.swift */; };
+		52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D282ABBFF1F0087A85F /* AppInfoManager.swift */; };
 		522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */; };
 		522FCAD62AB2B316007DBC1F /* RoutineTargetMuscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */; };
 		523BE9222A91CD9800519285 /* SelectDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE9212A91CD9800519285 /* SelectDayView.swift */; };
@@ -136,6 +137,7 @@
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
 		52256C972A8FAF4000871C0B /* StartRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteBuilder.swift; sourceTree = "<group>"; };
 		52256C992A8FC02900871C0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		52269D282ABBFF1F0087A85F /* AppInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
 		522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtensions.swift; sourceTree = "<group>"; };
 		522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTargetMuscle.swift; sourceTree = "<group>"; };
 		523BE9212A91CD9800519285 /* SelectDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayView.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				52C803BB2A0BAE1600417B08 /* KeyboardManager.swift */,
 				520A07A22AA8919E007BA4E4 /* Formmatter.swift */,
 				520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */,
+				52269D282ABBFF1F0087A85F /* AppInfoManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -847,6 +850,7 @@
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
 				523BE9242A91CDB300519285 /* SelectDayCore.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
+				52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,

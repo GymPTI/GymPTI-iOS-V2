@@ -73,6 +73,10 @@ extension SettingView {
                         
                     }
                     
+                    SettingButton("현재 버전 : \(AppInfoManager.getAppVersion())") {
+                        
+                    }
+                    
                     SettingButton("로그아웃", isDangerous: true) {
                         viewStore.send(.onTapLogoutButton)
                     }
