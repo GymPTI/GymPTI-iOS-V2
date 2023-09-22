@@ -62,10 +62,10 @@ extension TabBarView: View {
                             Image(viewStore.selected == tabName ? "\(tabName).selected" : tabName)
                                 .resizable()
                                 .opacity(viewStore.selected == tabName ? 1 : 0.5)
-                                .frame(width: 28, height: 28)
+                                .frame(width: 24, height: 24)
                             
                             Text("\(tab.1)")
-                                .setFont(12, .medium)
+                                .setFont(10, .medium)
                                 .foregroundColor(Colors.white.color)
                                 .opacity(viewStore.selected == tabName ? 1 : 0.5)
                         }
@@ -76,11 +76,25 @@ extension TabBarView: View {
                 
                 Spacer()
             }
-            .padding(.bottom, 2)
+            .padding(.top, 4)
             .frame(height: 52)
         }
         .setBackground()
-        .navigationBarHidden(true)
+        .overlay(alignment: .top) {
+            Rectangle()
+                .fill(Colors.black.color)
+                .frame(height: { () -> CGFloat in
+                    let keyWindow = UIApplication.shared.connectedScenes
+                        .filter({$0.activationState == .foregroundActive})
+                        .map({$0 as? UIWindowScene})
+                        .compactMap({$0})
+                        .first?.windows
+                        .filter({$0.isKeyWindow}).first
+                    return (keyWindow?.safeAreaInsets.top) ?? 0
+                    
+                }())
+                .ignoresSafeArea()
+        }
         .onAppear {
             if !isInternetAvailable() {
                 viewStore.send(.isWifiUnconnected)

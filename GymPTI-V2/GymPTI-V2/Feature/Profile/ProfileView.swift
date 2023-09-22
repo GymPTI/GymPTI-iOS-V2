@@ -23,6 +23,8 @@ extension ProfileView: View {
     
     public var body: some View {
         
+        ScrollView(showsIndicators: false) {
+        
         VStack {
             
             CustomNavi("프로필", {
@@ -30,8 +32,6 @@ extension ProfileView: View {
             }) {
                 viewStore.send(.onTapSettingButton)
             }
-            
-            ScrollView(showsIndicators: false) {
                 
                 if let userData = viewStore.user {
                     
@@ -91,11 +91,30 @@ extension ProfileView: View {
                                 .background(Colors.darkGray.color)
                                 .cornerRadius(10)
                         }
-                        .padding([.horizontal, .top], 20)
+                        InfluencerCardView(rinkURL: "https://www.youtube.com/@ZakTa/featured",
+                                           influencerImageURL: "이준명",
+                                           influencerProfileURL: "https://yt3.googleusercontent.com/DniZnn6Tt0tUWsSk1jduqkg_YXXr3srHZjes1k0QkFCaHaCrmtWy6LxKTGxmpM-eE1qFbQ90=s176-c-k-c0x00ffffff-no-rj",
+                                           title: "맨몸운동 한국 1위, 이준명",
+                                           platform: "youtube",
+                                           subTitle: "18만 유튜버 이준명 보러가기")
+                        InfluencerCardView(rinkURL: "https://www.youtube.com/@ZakTa/featured",
+                                           influencerImageURL: "이준명",
+                                           influencerProfileURL: "https://yt3.googleusercontent.com/DniZnn6Tt0tUWsSk1jduqkg_YXXr3srHZjes1k0QkFCaHaCrmtWy6LxKTGxmpM-eE1qFbQ90=s176-c-k-c0x00ffffff-no-rj",
+                                           title: "맨몸운동 한국 1위, 이준명",
+                                           platform: "youtube",
+                                           subTitle: "18만 유튜버 이준명 보러가기")
+                        InfluencerCardView(rinkURL: "https://www.youtube.com/@ZakTa/featured",
+                                           influencerImageURL: "이준명",
+                                           influencerProfileURL: "https://yt3.googleusercontent.com/DniZnn6Tt0tUWsSk1jduqkg_YXXr3srHZjes1k0QkFCaHaCrmtWy6LxKTGxmpM-eE1qFbQ90=s176-c-k-c0x00ffffff-no-rj",
+                                           title: "맨몸운동 한국 1위, 이준명",
+                                           platform: "youtube",
+                                           subTitle: "18만 유튜버 이준명 보러가기")
                     }
+                    .padding([.horizontal, .top], 20)
                 }
             }
             Spacer()
+            
         }
         .setBackground()
         .task {

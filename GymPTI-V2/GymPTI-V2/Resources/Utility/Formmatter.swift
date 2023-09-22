@@ -38,11 +38,11 @@ func getToday() -> String {
 /// - Returns: "yyyy년 M월 d일 (요일)" 형식의 문자열
 func getDate() -> String {
     
-    dateFormatter.dateFormat = "yyyy년 M월 d일"
+    dateFormatter.dateFormat = "M월 d일"
     let dateString = dateFormatter.string(from: Date())
     let today = getToday()
     
-    return "\(dateString) (\(today))"
+    return "\(dateString) \(today)"
 }
 
 /// 한글 요일을 영어로 변환하는 함수

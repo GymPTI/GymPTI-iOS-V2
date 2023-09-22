@@ -9,13 +9,13 @@ import SwiftUI
 
 extension View {
     
-    @ViewBuilder 
+    @ViewBuilder
     func setFont(_ size: CGFloat, _ weight: Font.Weight = .regular) -> some View {
         self
             .font(.system(size: size, weight: weight))
     }
     
-    @ViewBuilder 
+    @ViewBuilder
     func setBackground() -> some View {
         self
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -25,12 +25,12 @@ extension View {
             }
     }
     
-    @ViewBuilder 
+    @ViewBuilder
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
     
-    @ViewBuilder 
+    @ViewBuilder
     func setShadow() -> some View {
         self
             .shadow(color: .black, radius: 2, y: 3)

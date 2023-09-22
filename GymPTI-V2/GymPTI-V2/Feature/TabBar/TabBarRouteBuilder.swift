@@ -21,6 +21,7 @@ struct TabBarRouteBuilder: RouteBuilder {
                     reducer: {
                         TabBar()
                     }))
+                .navigationBarHidden(true)
             }
         }
     }

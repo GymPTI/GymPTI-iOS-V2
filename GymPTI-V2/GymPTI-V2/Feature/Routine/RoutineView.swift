@@ -24,7 +24,7 @@ extension RoutineView: View {
     public var body: some View {
         
         VStack {
-        
+            
             HStack {
                 
                 Text("루틴")
@@ -58,32 +58,30 @@ extension RoutineView: View {
             .frame(height: 44)
             .padding(.horizontal, 20)
             
-            Text("\(getDate())")
-                .setFont(20, .bold)
-                .foregroundColor(Colors.white.color)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20)
-            
-            HStack {
-                
-                ForEach([("SUN", "일"), ("MON", "월"),
-                         ("THE", "화"),("WEN", "수"),
-                         ("THU", "목"),("FRI", "금"),
-                         ("SAT", "토")], id: \.0) {
-                    day, label in
+            VStack {
+    
+                HStack {
                     
-                    RoutineWeekButton(day, label, selecetDay: viewStore.selectDay) {
+                    ForEach([("SUN", "일"), ("MON", "월"),
+                             ("THE", "화"),("WEN", "수"),
+                             ("THU", "목"),("FRI", "금"),
+                             ("SAT", "토")], id: \.0) {
+                        day, label in
                         
-                        viewStore.send(.onTapDayButton(day: label))
-                        viewStore.send(.getRoutineList(day: viewStore.selectDay))
+                        RoutineWeekButton(day, label, selecetDay: viewStore.selectDay) {
+                            
+                            viewStore.send(.onTapDayButton(day: label))
+                            viewStore.send(.getRoutineList(day: viewStore.selectDay))
+                        }
                     }
                 }
+                .frame(maxWidth: .infinity)
+                .frame(height: 80)
+                .background(Colors.darkGray.color)
+                .cornerRadius(10)
+                .padding(.horizontal, 20)
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 80)
-            .background(Colors.darkGray.color)
-            .cornerRadius(10)
-            .padding(.horizontal, 20)
+            
             
             ScrollView(showsIndicators: false) {
                 
@@ -125,21 +123,20 @@ extension RoutineView: View {
                                     targetMuscles: data.targetMuscle.joined(separator: ", "),
                                     reps: data.reps,
                                     sets: data.sets,
-                                    restTime: data.restTime, 
+                                    restTime: data.restTime,
                                     isCompleted: data.completed,
                                     longPressGestureAction: {
                                         viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
                                     }) {
-                                    viewStore.send(.onTapCompletedButton)
-                                }
+                                        viewStore.send(.onTapCompletedButton)
+                                    }
                             }
                         }
                     }
                 }
                 .padding(.horizontal, 20)
-                
-                Spacer()
             }
+            Spacer()
         }
         .setBackground()
         .onAppear {
