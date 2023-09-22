@@ -41,29 +41,29 @@ struct InfluencerCardView: View {
             }
         } label : {
             
-            VStack(spacing: 0) {
+            ZStack(alignment: .bottom) {
                 
                 Image("\(influencerImageURL)")
                     .resizable()
                     .frame(maxWidth: .infinity)
-                    .frame(height: 206)
+                    .frame(height: 240)
                 
-                HStack(spacing: 10) {
+                HStack(alignment: .center, spacing: 15) {
                     
                     AsyncImage(url: URL(string: "\(influencerProfileURL)")) { image in
                         image
                             .resizable()
-                            .frame(width: 60, height: 60)
+                            .frame(width: 50, height: 50)
                             .cornerRadius(10)
                     } placeholder: {
                         Image("user")
                             .resizable()
-                            .frame(width: 60, height: 60)
+                            .frame(width: 50, height: 50)
                             .cornerRadius(10)
                     }
                     .padding(.leading, 15)
                     
-                    VStack(alignment: .leading, spacing: 0) {
+                    VStack(alignment: .leading, spacing: 2) {
                         
                         Text("\(title)")
                             .setFont(20, .bold)
@@ -76,21 +76,21 @@ struct InfluencerCardView: View {
                                 .frame(width: 12, height: 12)
                             
                             Text("\(subTitle)")
-                                .setFont(12, .medium)
+                                .setFont(14, .medium)
                                 .foregroundColor(Colors.white.color)
                         }
-                        .padding(.top, 4)
                     }
                     
                     Spacer()
                 }
-                .padding(.top, 15)
+                .frame(maxWidth: .infinity)
+                .frame(height: 70)
+                .background(Colors.darkGray.color.opacity(0.6))
                 
                 Spacer()
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 296)
-            .background(Colors.darkGray.color)
+            .frame(height: 240)
             .cornerRadius(10)
         }
     }
