@@ -52,7 +52,7 @@ extension SettingView {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("계정 / 정보 관리")
+                    Text("계정 • 정보 관리")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                     

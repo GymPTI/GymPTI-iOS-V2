@@ -34,28 +34,17 @@ extension HomeView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("오늘은 \(getDate())요일 입니다")
-                        .setFont(20, .bold)
-                        .foregroundColor(Colors.white.color)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
+                    /// 더미데이터
                     Button {
                         
                     } label : {
                         
                         ZStack(alignment: .top) {
                             
-                            AsyncImage(url: URL(string: "https://i.namu.wiki/i/11yZErWY-ybAvXSh5Qwujf0KoXvUM1ffmYPsIjIlMDBVeOUPD6qjYW4sF9Z7FtZcEM3P6DhKEnIBQzHUviUKIISpbGwosn5tdnKzsqOV5H7WHU2S98xMUVU-pgYRkz4qlHAvAfNb6y5-aC8Ij7-1KQ.webp")) { image in
-                                image
-                                    .resizable()
-                                    .frame(maxWidth: .infinity)
-                                    .frame(height: 240)
-                            } placeholder: {
-                                Image("user")
-                                    .resizable()
-                                    .frame(height: 240)
-                                    .cornerRadius(10)
-                            }
+                            Image("무량공처")
+                                .resizable()
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 240)
                             
                             VStack(alignment: .leading, spacing: 2) {
                                 
@@ -63,7 +52,7 @@ extension HomeView: View {
                                     .setFont(14, .medium)
                                     .foregroundColor(Colors.white.color)
                                 
-                                Text("무량공처를 더욱 활용하는 방법")
+                                Text("이 앱을 더욱 활용하는 방법")
                                     .setFont(20, .bold)
                                     .foregroundColor(Colors.white.color)
                             }
@@ -90,6 +79,7 @@ extension HomeView: View {
                                        subTitle: "18만 유튜버 이준명 보러가기")
                 }
                 .padding(.horizontal, 20)
+                .padding(.top, 10)
             }
             Spacer()
             

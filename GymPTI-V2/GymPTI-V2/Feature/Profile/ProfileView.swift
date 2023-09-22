@@ -91,10 +91,10 @@ extension ProfileView: View {
                                 .background(Colors.darkGray.color)
                                 .cornerRadius(10)
                         }
-                        
-                        
+                        .padding(.top, 15)
                     }
-                    .padding([.horizontal, .top], 20)
+                    .padding(.top, 10)
+                    .padding(.horizontal, 20)
                 }
             }
             Spacer()

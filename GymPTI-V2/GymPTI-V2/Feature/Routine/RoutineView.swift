@@ -80,6 +80,7 @@ extension RoutineView: View {
                 .background(Colors.darkGray.color)
                 .cornerRadius(10)
                 .padding(.horizontal, 20)
+                .padding(.top, 10)
             }
             
             
