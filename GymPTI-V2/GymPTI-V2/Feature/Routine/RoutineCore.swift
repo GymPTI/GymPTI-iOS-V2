@@ -13,7 +13,7 @@ public struct Routine: Reducer {
         
         var selectDay: String = getToday()
 
-        var routineList: [RoutineList]? = nil
+        var routineList: [RoutineList]?
         
         var isSelected: Bool = false
         
@@ -26,7 +26,7 @@ public struct Routine: Reducer {
         case onTapAddRoutineButton
         case onTapDayButton(day: String)
         case onTapRoutineCard(id: Int, exercise: String)
-        case onTapCompletedButton
+        case onTapCompletedButton(id: Int)
         case getRoutineList(day: String)
         case routineListDataReceived(TaskResult<[RoutineList]>)
     }
@@ -60,10 +60,10 @@ public struct Routine: Reducer {
                 state.isDeleted = true
                 return .none
                 
-            case .onTapCompletedButton:
+            case .onTapCompletedButton(let id):
                 sideEffect.onTapCompletedButton {
                     Task {
-                        
+                        await putCompleteRoutine(id: id)
                     }
                 }
                 return .none
@@ -93,6 +93,15 @@ public struct Routine: Reducer {
         do {
             let response = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
             print(response)
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    func putCompleteRoutine(id: Int) async {
+        
+        do {
+            let response = try await Service.request("/routine/isComplete/\(id)", .put, Bool.self)
         } catch {
             print("\(error.localizedDescription)")
         }

@@ -45,8 +45,7 @@ extension RoutineSideEffectLive: RoutineSideEffect {
                 message: "\"\(exerciseName)\"을(를) 삭제할까요?",
                 buttons: [.init(title: "확인", style: .default) {
                     action()
-                },
-                          .init(title: "취소" ,style: .cancel) ],
+                }, .init(title: "취소" ,style: .cancel) ],
                 flagType: .default)
             navigator.alert(target: .default, model: alertModel)
         }
@@ -55,12 +54,11 @@ extension RoutineSideEffectLive: RoutineSideEffect {
     public var onTapCompletedButton: ( @escaping () -> Void ) -> Void {
         { action in
             let alertModel = Alert(
-                title: "수행 완료",
-                message: "이 운동 루틴을 전부 끝내셨나요?",
+                title: "완료",
+                message: "운동을 다 끝내셨나요? \n(\"네\"를 누르시면 변경하실 수 없습니다.)",
                 buttons: [.init(title: "네", style: .default) {
                     action()
-                },
-                          .init(title: "아니요" ,style: .cancel) ],
+                }, .init(title: "아니요" ,style: .cancel) ],
                 flagType: .default)
             navigator.alert(target: .default, model: alertModel)
         }

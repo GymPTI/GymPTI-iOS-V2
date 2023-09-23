@@ -15,6 +15,7 @@ struct InfluencerCardView: View {
     let title: String
     let platform: String
     let subTitle: String
+    @State var isLong: Bool = false
     
     init(rinkURL: String,
          influencerImageURL: String,
@@ -84,7 +85,7 @@ struct InfluencerCardView: View {
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: 70)
+                .frame(height: 78)
                 .background(Colors.darkGray.color.opacity(0.6))
                 
                 Spacer()
@@ -93,5 +94,6 @@ struct InfluencerCardView: View {
             .frame(height: 240)
             .cornerRadius(10)
         }
+        .buttonStyle(ScaledButtonStyle())
     }
 }

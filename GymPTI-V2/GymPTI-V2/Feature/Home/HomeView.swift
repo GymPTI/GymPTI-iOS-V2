@@ -37,8 +37,7 @@ extension HomeView: View {
                     /// 더미데이터
                     Button {
                         
-                    } label : {
-                        
+                    } label: {
                         ZStack(alignment: .top) {
                             
                             Image("무량공처")
@@ -52,7 +51,7 @@ extension HomeView: View {
                                     .setFont(14, .medium)
                                     .foregroundColor(Colors.white.color)
                                 
-                                Text("이 앱을 더욱 활용하는 방법")
+                                Text("루틴 관리 200% 활용하는 방법")
                                     .setFont(20, .bold)
                                     .foregroundColor(Colors.white.color)
                             }
@@ -65,6 +64,7 @@ extension HomeView: View {
                         }
                         .cornerRadius(10)
                     }
+                    .buttonStyle(ScaledButtonStyle())
                     
                     Text("요즘 핫한 운동 유튜버")
                         .setFont(20, .bold)
@@ -85,5 +85,14 @@ extension HomeView: View {
             
         }
         .setBackground()
+    }
+}
+
+struct ScaledButtonStyle: ButtonStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
+            .animation(.easeInOut(duration: 0.2), value: configuration.isPressed)
     }
 }

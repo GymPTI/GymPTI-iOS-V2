@@ -63,15 +63,25 @@ struct RoutineExcersizeCardView: View {
                     Button {
                         completedButtonAction()
                     } label : {
-                        Rectangle()
-                            .frame(width: 22, height: 22)
-                            .foregroundColor(Colors.gray.color)
-                            .cornerRadius(4)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Colors.white.color, lineWidth: 2)
-                            )
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 22, height: 22)
+                                .foregroundColor(Colors.gray.color)
+                                .cornerRadius(4)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Colors.white.color, lineWidth: 2)
+                                )
+                            if isCompleted {
+                                
+                                Image(systemName: "checkmark")
+                                    .frame(width: 18, height: 18)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Colors.white.color)
+                            }
+                        }
                     }
+                    .disabled(isCompleted ? true : false)
                 }
                 
                 if isTapCardView {

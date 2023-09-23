@@ -66,7 +66,7 @@ class Requests {
                     if let decodedData = try? decoder.decode(ErrorResponse.self, from: data) {
                         
                         DispatchQueue.main.async {
-                            failure(decodedData.message)
+                            failure(decodedData.message ?? "")
                         }
                     }
                 }
@@ -114,7 +114,7 @@ class Requests {
                         if let decodedData = try? decoder.decode(ErrorResponse.self, from: data) {
                             
                             DispatchQueue.main.async {
-                                failure(decodedData.message)
+                                failure(decodedData.message ?? "")
                             }
                         }
                     }

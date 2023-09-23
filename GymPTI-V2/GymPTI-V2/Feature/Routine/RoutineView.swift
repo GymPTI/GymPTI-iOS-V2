@@ -129,7 +129,7 @@ extension RoutineView: View {
                                     longPressGestureAction: {
                                         viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
                                     }) {
-                                        viewStore.send(.onTapCompletedButton)
+                                        viewStore.send(.onTapCompletedButton(id: data.id))
                                     }
                             }
                         }
