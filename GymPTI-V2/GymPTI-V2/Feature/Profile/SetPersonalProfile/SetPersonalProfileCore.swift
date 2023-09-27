@@ -11,11 +11,14 @@ public struct SetPersonalProfile: Reducer {
     
     public struct State: Equatable {
         
+        var sex: String = ""
     }
     
     public enum Action: Equatable {
         
         case onTapBackButton
+        case onTapMaleButton
+        case onTapFemaleButton
     }
     
     @Dependency(\.sideEffect.setPesronalProfile) var sideEffect
@@ -28,6 +31,14 @@ public struct SetPersonalProfile: Reducer {
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
+                return .none
+                
+            case .onTapMaleButton:
+                state.sex = "male"
+                return .none
+                
+            case .onTapFemaleButton:
+                state.sex = "female"
                 return .none
             }
         }

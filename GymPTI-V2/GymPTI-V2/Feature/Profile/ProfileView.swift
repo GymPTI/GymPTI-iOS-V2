@@ -75,23 +75,33 @@ extension ProfileView: View {
                             .foregroundColor(Colors.white.color)
                             .padding(.top, 2)
                         
-//                        Text("\(userData.statusMessage ?? "")")
-//                            .setFont(10, .regular)
-//                            .foregroundColor(Colors.white.color)
-//                            .padding(.top, 2)
-                        
-                        Button {
-                            viewStore.send(.onTapEditInfoButton)
-                        } label: {
-                            Text("프로필 정보 수정")
-                                .setFont(14, .medium)
-                                .foregroundColor(Colors.white.color)
-                                .frame(height: 40)
-                                .frame(maxWidth: .infinity)
-                                .background(Colors.darkGray.color)
-                                .cornerRadius(10)
+                        HStack(spacing: 10) {
+                            
+                            Button {
+                                viewStore.send(.onTapEditInfoButton)
+                            } label: {
+                                Text("프로필 정보 수정")
+                                    .setFont(14, .medium)
+                                    .foregroundColor(Colors.white.color)
+                                    .frame(height: 30)
+                                    .frame(maxWidth: .infinity)
+                                    .background(Colors.darkGray.color)
+                                    .cornerRadius(10)
+                            }
+                            
+                            Button {
+                                viewStore.send(.onTapSetPersonalProfileButton)
+                            } label: {
+                                Text("신체 프로필 수정")
+                                    .setFont(14, .medium)
+                                    .foregroundColor(Colors.white.color)
+                                    .frame(height: 30)
+                                    .frame(maxWidth: .infinity)
+                                    .background(Colors.darkGray.color)
+                                    .cornerRadius(10)
+                            }
                         }
-                        .padding(.top, 15)
+                        .padding([.top, .horizontal], 20)
                     }
                     .padding(.top, 10)
                     .padding(.horizontal, 20)

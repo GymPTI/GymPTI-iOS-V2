@@ -64,7 +64,7 @@ extension HomeView: View {
                         }
                         .cornerRadius(10)
                     }
-                    .buttonStyle(ScaledButtonStyle())
+                    .scaledButtonStyle()
                     
                     Text("트렌드 따라 잡기")
                         .setFont(20, .bold)
@@ -107,7 +107,7 @@ extension HomeView: View {
                         }
                         .cornerRadius(10)
                     }
-                    .buttonStyle(ScaledButtonStyle())
+                    .scaledButtonStyle()
                     .padding(.top, 10)
                     
                     Spacer()
@@ -120,14 +120,5 @@ extension HomeView: View {
             
         }
         .setBackground()
-    }
-}
-
-struct ScaledButtonStyle: ButtonStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.94 : 1)
-            .animation(.easeInOut, value: configuration.isPressed)
     }
 }

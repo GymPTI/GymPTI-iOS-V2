@@ -12,6 +12,7 @@ public protocol ProfileSideEffect {
     var onTapSettingButton: () -> Void { get }
     var onTapNotificationButton: () -> Void { get }
     var onTapEditInfoButton: (String, String, String) -> Void { get }
+    var onTapSetPersonalProfileButton: () -> Void { get }
 }
 
 public struct ProfileSideEffectLive {
@@ -39,11 +40,17 @@ extension ProfileSideEffectLive: ProfileSideEffect {
     
     public var onTapEditInfoButton: (String, String, String) -> Void {
         { name, statusMessage, profileImage in
-            navigator.next(paths: ["editinfo"], items: [
+            navigator.fullSheet(paths: ["editinfo"], items: [
                 "editinfo-newName": name,
                 "editinfo-newStatusMessage": statusMessage,
                 "editinfo-profileImage": profileImage
-            ], isAnimated: true)
+            ], isAnimated: true, prefersLargeTitles: false)
+        }
+    }
+    
+    public var onTapSetPersonalProfileButton: () -> Void {
+        {
+            navigator.fullSheet(paths: ["setpersonalprofile"], items: [:], isAnimated: true, prefersLargeTitles: false)
         }
     }
 }

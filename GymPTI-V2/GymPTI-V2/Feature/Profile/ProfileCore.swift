@@ -23,6 +23,7 @@ public struct Profile: Reducer {
         case onTapNotificationButton
         case onTapSettingButton
         case onTapEditInfoButton
+        case onTapSetPersonalProfileButton
         case onAppearProfile
         case userDataReceived(TaskResult<User>)
     }
@@ -47,6 +48,10 @@ public struct Profile: Reducer {
                 sideEffect.onTapEditInfoButton(state.user?.nickname ?? "",
                                                state.user?.statusMessage ?? "",
                                                state.user?.profileImage ?? "profile")
+                return .none
+                
+            case .onTapSetPersonalProfileButton:
+                sideEffect.onTapSetPersonalProfileButton()
                 return .none
                 
             case .onAppearProfile:

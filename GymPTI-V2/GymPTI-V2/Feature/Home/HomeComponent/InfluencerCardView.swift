@@ -94,6 +94,6 @@ struct InfluencerCardView: View {
             .frame(height: 240)
             .cornerRadius(10)
         }
-        .buttonStyle(ScaledButtonStyle())
+        .scaledButtonStyle()
     }
 }
