@@ -52,6 +52,8 @@ struct AppRouterGroup {
             /// 프로필 화면
             ProfileRouteBuilder(),
             
+            SetPersonalProfileRouteBuilder(),
+            
             EditInfoRouteBuilder(),
             
             /// 설정 화면

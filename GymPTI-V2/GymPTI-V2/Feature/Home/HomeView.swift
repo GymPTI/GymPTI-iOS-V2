@@ -66,10 +66,10 @@ extension HomeView: View {
                     }
                     .buttonStyle(ScaledButtonStyle())
                     
-                    Text("요즘 핫한 운동 유튜버")
+                    Text("트렌드 따라 잡기")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
-                        .padding(.top, 10)
+                        .padding(.top, 20)
                     
                     InfluencerCardView(rinkURL: "https://www.youtube.com/@ZakTa/featured",
                                        influencerImageURL: "이준명",
@@ -77,6 +77,41 @@ extension HomeView: View {
                                        title: "맨몸운동 한국 1위, 이준명",
                                        platform: "youtube",
                                        subTitle: "18만 유튜버 이준명 보러가기")
+                    
+                    Button {
+                        
+                    } label: {
+                        ZStack(alignment: .top) {
+                            
+                            Image("피티")
+                                .resizable()
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 240)
+                            
+                            VStack(alignment: .leading, spacing: 2) {
+                                
+                                Text("MBTI 별 운동 유형")
+                                    .setFont(14, .medium)
+                                    .foregroundColor(Colors.white.color)
+                                
+                                Text("지금 바로 짐BTI 검사하기")
+                                    .setFont(20, .bold)
+                                    .foregroundColor(Colors.white.color)
+                            }
+                            .padding([.leading, .horizontal], 15)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(height: 70)
+                            .background(Colors.darkGray.color.opacity(0.6))
+                            
+                            Spacer()
+                        }
+                        .cornerRadius(10)
+                    }
+                    .buttonStyle(ScaledButtonStyle())
+                    .padding(.top, 10)
+                    
+                    Spacer()
+                        .frame(height: 100)
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
@@ -92,7 +127,7 @@ struct ScaledButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.95 : 1)
-            .animation(.easeInOut(duration: 0.2), value: configuration.isPressed)
+            .scaleEffect(configuration.isPressed ? 0.94 : 1)
+            .animation(.easeInOut, value: configuration.isPressed)
     }
 }

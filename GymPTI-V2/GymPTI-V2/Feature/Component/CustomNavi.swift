@@ -57,5 +57,6 @@ struct CustomNavi: View {
         }
         .frame(height: 44)
         .padding(.horizontal, 20)
+        .padding(.top, 10)
     }
 }

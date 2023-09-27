@@ -22,6 +22,9 @@
 		52269D322ABC0B340087A85F /* SetRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52269D312ABC0B340087A85F /* SetRoutineRouteBuilder.swift */; };
 		522FCAD42AB2AF28007DBC1F /* TypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */; };
 		522FCAD62AB2B316007DBC1F /* RoutineTargetMuscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */; };
+		523A9A262AC4678A00FDE079 /* SetPersonalProfileCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9A252AC4678A00FDE079 /* SetPersonalProfileCore.swift */; };
+		523A9A282AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9A272AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift */; };
+		523A9A2A2AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9A292AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift */; };
 		523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */; };
 		524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7B2A275BA600B63DDA /* NotificationView.swift */; };
 		524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CEB7E2A275BC200B63DDA /* NotificationCore.swift */; };
@@ -113,6 +116,7 @@
 		52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044D2A0CBEF900417B08 /* SettingCore.swift */; };
 		52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */; };
 		52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */; };
+		52E59DD72AC02F5000517FB0 /* SetPersonalProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E59DD62AC02F5000517FB0 /* SetPersonalProfileView.swift */; };
 		52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */; };
 		52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */; };
 		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
@@ -140,6 +144,9 @@
 		52269D312ABC0B340087A85F /* SetRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRoutineRouteBuilder.swift; sourceTree = "<group>"; };
 		522FCAD32AB2AF28007DBC1F /* TypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtensions.swift; sourceTree = "<group>"; };
 		522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTargetMuscle.swift; sourceTree = "<group>"; };
+		523A9A252AC4678A00FDE079 /* SetPersonalProfileCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPersonalProfileCore.swift; sourceTree = "<group>"; };
+		523A9A272AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPersonalProfileSideEffect.swift; sourceTree = "<group>"; };
+		523A9A292AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPersonalProfileRouteBuilder.swift; sourceTree = "<group>"; };
 		523BE92A2A923FEB00519285 /* RoutineExcersizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineExcersizeCell.swift; sourceTree = "<group>"; };
 		524CEB7B2A275BA600B63DDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		524CEB7E2A275BC200B63DDA /* NotificationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCore.swift; sourceTree = "<group>"; };
@@ -229,6 +236,7 @@
 		52C8044D2A0CBEF900417B08 /* SettingCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCore.swift; sourceTree = "<group>"; };
 		52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSideEffect.swift; sourceTree = "<group>"; };
 		52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouteBuilder.swift; sourceTree = "<group>"; };
+		52E59DD62AC02F5000517FB0 /* SetPersonalProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPersonalProfileView.swift; sourceTree = "<group>"; };
 		52FCBE7B2AAC54A400EB6E17 /* TabBarCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCore.swift; sourceTree = "<group>"; };
 		52FCBE7D2AAC54AE00EB6E17 /* TabBarSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSideEffect.swift; sourceTree = "<group>"; };
 		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
@@ -588,6 +596,7 @@
 				52C8041D2A0C877300417B08 /* ProfileCore.swift */,
 				52C8041F2A0C877D00417B08 /* ProfileSideEffect.swift */,
 				52C804212A0C878A00417B08 /* ProfileRouteBuilder.swift */,
+				52E59DD52AC02EFA00517FB0 /* SetPersonalProfile */,
 				52C804382A0CB21100417B08 /* EditInfo */,
 			);
 			path = Profile;
@@ -649,6 +658,17 @@
 				52C804412A0CB9C800417B08 /* EditAccount */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		52E59DD52AC02EFA00517FB0 /* SetPersonalProfile */ = {
+			isa = PBXGroup;
+			children = (
+				52E59DD62AC02F5000517FB0 /* SetPersonalProfileView.swift */,
+				523A9A252AC4678A00FDE079 /* SetPersonalProfileCore.swift */,
+				523A9A272AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift */,
+				523A9A292AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift */,
+			);
+			path = SetPersonalProfile;
 			sourceTree = "<group>";
 		};
 		52FCBE812AACD40200EB6E17 /* HomeComponent */ = {
@@ -816,6 +836,7 @@
 				52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */,
 				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
 				52269D322ABC0B340087A85F /* SetRoutineRouteBuilder.swift in Sources */,
+				523A9A262AC4678A00FDE079 /* SetPersonalProfileCore.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
 				526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */,
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
@@ -837,6 +858,8 @@
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
 				52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */,
+				523A9A282AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift in Sources */,
+				523A9A2A2AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
@@ -859,6 +882,7 @@
 				52C8040F2A0C804300417B08 /* TabBarRouteBuilder.swift in Sources */,
 				52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */,
 				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,
+				52E59DD72AC02F5000517FB0 /* SetPersonalProfileView.swift in Sources */,
 				52A3FC8E2A276BFC002B79A7 /* LoadingView.swift in Sources */,
 				52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */,
 			);

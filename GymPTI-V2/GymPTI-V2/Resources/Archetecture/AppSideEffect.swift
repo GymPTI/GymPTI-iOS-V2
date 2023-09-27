@@ -51,6 +51,8 @@ public struct AppSideEffect: DependencyKey {
     
     let profile: ProfileSideEffect
     
+    let setPesronalProfile: SetPersonalProfileSideEffect
+    
     let editInfo: EditInfoSideEffect
     
     let editAccount: EditAccountSideEffect
@@ -95,6 +97,8 @@ public struct AppSideEffect: DependencyKey {
             friend: FriendSideEffectLive(navigator: navigator),
             
             profile: ProfileSideEffectLive(navigator: navigator),
+            
+            setPesronalProfile: SetPersonalProfileSideEffectLive(navigator: navigator),
             
             editInfo: EditInfoSideEffectLive(navigator: navigator),
             

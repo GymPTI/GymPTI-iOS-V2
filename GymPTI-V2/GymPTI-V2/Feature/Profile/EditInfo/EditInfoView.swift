@@ -26,13 +26,9 @@ extension EditInfoView: View {
         
         VStack(spacing: 0) {
             
-            CustomNavigationBar(
-                title: "프로필 정보 수정",
-                leadingButtonAction: {
-                    viewStore.send(.onTapBackButton)
-                },
-                trailingButtonTitle: "저장"
-            ) {
+            CustomNavigationBar(title: "프로필 정보 수정", leadingButtonAction: {
+                viewStore.send(.onTapBackButton)
+            }, trailingButtonTitle: "저장") {
                 viewStore.send(.onTapChangeButton)
             }
             
