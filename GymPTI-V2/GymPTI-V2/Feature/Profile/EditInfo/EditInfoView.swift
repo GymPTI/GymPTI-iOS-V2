@@ -111,15 +111,5 @@ extension EditInfoView: View {
             
         }
         .setBackground()
-        .onAppear {
-            print(viewStore.newName, viewStore.profileImage)
-        }
-        .overlay {
-            Group {
-                if viewStore.successEditProfile {
-                    LoadingView()
-                }
-            }
-        }
     }
 }

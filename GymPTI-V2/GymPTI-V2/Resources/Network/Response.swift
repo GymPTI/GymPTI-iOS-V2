@@ -14,8 +14,6 @@ class Response<T: Codable>: Codable {
 }
 
 struct ErrorResponse: Codable {
-    let timestamp: String
     let status: Int
-    let code: String
-    let message: String?
+    let message: String
 }

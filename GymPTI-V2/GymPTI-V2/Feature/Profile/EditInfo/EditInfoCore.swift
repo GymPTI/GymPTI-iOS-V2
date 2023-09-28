@@ -21,8 +21,6 @@ public struct EditInfo: Reducer {
         @BindingState var selectedItem: PhotosPickerItem? = nil
         
         var selectedImageData: Data? = nil
-        
-        var successEditProfile: Bool = false
     }
     
     public enum Action: Equatable, BindableAction {
@@ -31,7 +29,6 @@ public struct EditInfo: Reducer {
         case onTapBackButton
         case onTapChangeButton
         case onChangeProfileImage(Data)
-        case onSuccessEditProfile(Bool)
     }
     
     @Dependency(\.sideEffect.editInfo) var sideEffect
@@ -51,42 +48,33 @@ public struct EditInfo: Reducer {
                 return .none
                 
             case .onTapChangeButton:
-                editProfileRequest(state: state)
+                let state = state
+                Task {
+                    await putUserData(state: state)
+                }
                 return .none
                 
             case .onChangeProfileImage(let data):
                 state.selectedImageData = data
                 return .none
-                
-            case .onSuccessEditProfile(let success):
-                state.successEditProfile = success
-                return .none
             }
         }
     }
     
-    private func editProfileRequest(state: State) {
+    func putUserData(state: State) async {
         
-        if let image = state.selectedImageData {
+        do {
+            _ = try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName], ErrorResponse.self)
             
-            Requests.uploadImage("/user/profileImage", image: image) {
-                sideEffect.onTapBackButton()
+            _ = try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage], ErrorResponse.self)
+            
+            await MainActor.run {
+                sideEffect.onSuccessPutUserData()
             }
-        } else {
-            
-            Requests.simple("/user/nickname", .put, params: ["newNickname": state.newName], failure: { _ in
-                sideEffect.onTapBackButton()
-            }) {
-                print("닉네임 변경 성공")
-            }
-            
-            Requests.simple("/user/statusMessage", .put,
-                            params: ["statusMessage": state.newStatusMessage],
-                            failure: { _ in
-                sideEffect.onTapBackButton()
-            }) {
-                print("상태 메시지 변경 성공")
-                sideEffect.onTapBackButton()
+        } catch let error {
+            await MainActor.run {
+                sideEffect.onFailPutUserData()
+                print(error)
             }
         }
     }

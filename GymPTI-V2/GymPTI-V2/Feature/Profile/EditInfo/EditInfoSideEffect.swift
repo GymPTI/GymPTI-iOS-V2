@@ -10,6 +10,8 @@ import LinkNavigator
 public protocol EditInfoSideEffect {
     
     var onTapBackButton: () -> Void { get }
+    var onSuccessPutUserData: () -> Void { get }
+    var onFailPutUserData: () -> Void { get }
 }
 
 public struct EditInfoSideEffectLive {
@@ -26,6 +28,24 @@ extension EditInfoSideEffectLive: EditInfoSideEffect {
     public var onTapBackButton: () -> Void {
         {
             navigator.back(isAnimated: true)
+        }
+    }
+    
+    public var onSuccessPutUserData: () -> Void {
+        {
+            navigator.back(isAnimated: true)
+        }
+    }
+    
+    public var onFailPutUserData: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "실패",
+                message: "프로필 정보 변경에 실패했어요.",
+                buttons: [.init(title: "확인", style: .default)],
+                flagType: .error
+            )
+            navigator.alert(target: .default, model: alertModel)
         }
     }
 }

@@ -57,7 +57,7 @@ extension RoutineSideEffectLive: RoutineSideEffect {
         { action in
             let alertModel = Alert(
                 title: "완료",
-                message: "운동을 다 끝내셨나요? \n(\"네\"를 누르시면 변경하실 수 없습니다.)",
+                message: "루틴을 완수하셨나요? \n(\"네\"를 누르시면 변경하실 수 없습니다.)",
                 buttons: [.init(title: "네", style: .default) {
                     action()
                 }, .init(title: "아니요" ,style: .cancel) ],

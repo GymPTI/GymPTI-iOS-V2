@@ -48,7 +48,6 @@ public struct SetRoutineDetail: Reducer {
             case .onTapAddButton:
                 let state = state
                 sideEffect.onTapAddButton {
-                    
                     Task {
                         await postRoutineCreate(state: state)
                     }
