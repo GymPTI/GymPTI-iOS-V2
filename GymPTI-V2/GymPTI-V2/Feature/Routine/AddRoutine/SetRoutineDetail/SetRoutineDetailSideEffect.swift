@@ -11,8 +11,8 @@ public protocol SetRoutineDetailSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onTapAddButton: ( @escaping () -> Void ) -> Void { get }
-    var onSucessRequest: () -> Void { get }
-    var onFailRequest: () -> Void { get }
+    var onSucessPostRoutineCreate: () -> Void { get }
+    var onFailPostRoutineCreate: () -> Void { get }
 }
 
 public struct SetRoutineDetailSideEffectLive {
@@ -47,13 +47,13 @@ extension SetRoutineDetailSideEffectLive: SetRoutineDetailSideEffect {
         }
     }
     
-    public var onSucessRequest: () -> Void {
+    public var onSucessPostRoutineCreate: () -> Void {
         {
             navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
         }
     }
     
-    public var onFailRequest: () -> Void {
+    public var onFailPostRoutineCreate: () -> Void {
         {
             let alertModel = Alert(
                 title: "실패",

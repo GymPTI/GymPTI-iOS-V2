@@ -50,7 +50,7 @@ public struct SetRoutineDetail: Reducer {
                 sideEffect.onTapAddButton {
                     
                     Task {
-                        await postRoutineCreateRequest(state: state)
+                        await postRoutineCreate(state: state)
                     }
                 }
                 return .none
@@ -82,7 +82,7 @@ public struct SetRoutineDetail: Reducer {
         }
     }
     
-    func postRoutineCreateRequest(state: State) async {
+    func postRoutineCreate(state: State) async {
         
         let params: [String: Any] = [
             "exercise": state.exerciseName,
@@ -95,11 +95,11 @@ public struct SetRoutineDetail: Reducer {
         do {
             _ = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
             await MainActor.run {
-                sideEffect.onSucessRequest()
+                sideEffect.onSucessPostRoutineCreate()
             }
         } catch let error {
             await MainActor.run {
-                sideEffect.onFailRequest()
+                sideEffect.onFailPostRoutineCreate()
                 print(error)
             }
         }

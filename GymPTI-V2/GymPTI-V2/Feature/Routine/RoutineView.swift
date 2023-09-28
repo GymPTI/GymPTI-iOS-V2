@@ -105,7 +105,7 @@ extension RoutineView: View {
                                     .setFont(20, .bold)
                                     .foregroundColor(Colors.white.color)
                                 
-                                Text("휴식은 운동 만큼 중요합니다, 푹 쉬세요!")
+                                Text("휴식은 운동만큼 중요합니다, 푹 쉬세요!")
                                     .setFont(14, .regular)
                                     .foregroundColor(Colors.white.color)
                                 

@@ -91,19 +91,24 @@ public struct Routine: Reducer {
     func deleteRoutineCard(id: Int) async {
         
         do {
-            let response = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
-            print(response)
-        } catch {
-            print("\(error.localizedDescription)")
+            _ = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
+        } catch let error {
+            await MainActor.run {
+                sideEffect.onFailDeleteRoutineCard()
+                print(error)
+            }
         }
     }
     
     func putCompleteRoutine(id: Int) async {
         
         do {
-            let response = try await Service.request("/routine/isComplete/\(id)", .put, Bool.self)
-        } catch {
-            print("\(error.localizedDescription)")
+            _ = try await Service.request("/routine/isComplete/\(id)", .put, Bool.self)
+        } catch let error {
+            await MainActor.run {
+                sideEffect.onFailPutCompleteRoutine()
+                print(error)
+            }
         }
     }
     
@@ -111,9 +116,7 @@ public struct Routine: Reducer {
         
         let params: [String: Any] = ["dayOfWeek": day]
         
-        let response = try await Service.request(
-            "/routine/list", .get,
-            params: params,[RoutineList].self)
+        let response = try await Service.request("/routine/list", .get, params: params,[RoutineList].self)
         
         return response
     }

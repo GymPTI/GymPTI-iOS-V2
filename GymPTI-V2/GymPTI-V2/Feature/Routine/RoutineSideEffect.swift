@@ -13,6 +13,8 @@ public protocol RoutineSideEffect {
     var onTapAddRoutineButton: () -> Void { get }
     var onTapRoutineCard: ( String, @escaping () -> Void ) -> Void { get }
     var onTapCompletedButton: ( @escaping () -> Void ) -> Void { get }
+    var onFailDeleteRoutineCard: () -> Void { get }
+    var onFailPutCompleteRoutine: () -> Void { get }
 }
 
 public struct RoutineSideEffectLive {
@@ -60,6 +62,30 @@ extension RoutineSideEffectLive: RoutineSideEffect {
                     action()
                 }, .init(title: "아니요" ,style: .cancel) ],
                 flagType: .default)
+            navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var onFailDeleteRoutineCard: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "실패",
+                message: "루틴 삭제를 실패했어요.",
+                buttons: [.init(title: "확인", style: .default)],
+                flagType: .error
+            )
+            navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var onFailPutCompleteRoutine: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "실패",
+                message: "루틴 완료를 실패했어요.",
+                buttons: [.init(title: "확인", style: .default)],
+                flagType: .error
+            )
             navigator.alert(target: .default, model: alertModel)
         }
     }
