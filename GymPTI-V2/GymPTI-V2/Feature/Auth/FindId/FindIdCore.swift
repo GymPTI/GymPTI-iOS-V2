@@ -39,20 +39,27 @@ public struct FindId: Reducer {
                 return .none
                 
             case .onTapFindIdButton:
-//                findIdRequest(state: state)
+                let state = state
+                Task {
+                    try await print(findIdRequest(state: state))
+                    
+                }
                 return .none
             }
         }
     }
     
-//    private func findIdRequest(state: State) {
-//
-//        Requests.request("/user/forgotId", .get, params: ["email": state.email], FindId.self, failure: {
-//            print("못 찾았습니다.")
-//        }) { data in
-//
-//        }
-//    }
+    func findIdRequest(state: State) async throws -> IdData {
+        
+        let params = ["email": state.email]
+        
+        do {
+            let response = try await Service.request("/routine/list", .get, params: params, IdData.self)
+            return response
+        } catch {
+            return IdData(userId: "none")
+        }
+    }
 }
 
 public struct IdData: Codable {

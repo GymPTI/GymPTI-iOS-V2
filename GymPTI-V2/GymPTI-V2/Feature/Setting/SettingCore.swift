@@ -16,6 +16,7 @@ public struct Setting: Reducer {
     public enum Action: Equatable {
         
         case onTapEditAccountButton
+        case test
         case onTapLogoutButton
         case onTapBackButton
     }
@@ -34,6 +35,10 @@ public struct Setting: Reducer {
                 
             case .onTapLogoutButton:
                 sideEffect.onTapLogoutButton()
+                return .none
+                
+            case .test:
+                sideEffect.onTapFindIdButton()
                 return .none
                 
             case .onTapBackButton:

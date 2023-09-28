@@ -114,9 +114,9 @@ public struct Routine: Reducer {
     
     func getRoutineList(day: String) async throws -> [RoutineList] {
         
-        let params: [String: Any] = ["dayOfWeek": day]
+        let params = ["dayOfWeek": day]
         
-        let response = try await Service.request("/routine/list", .get, params: params,[RoutineList].self)
+        let response = try await Service.request("/routine/list", .get, params: params, [RoutineList].self)
         
         return response
     }

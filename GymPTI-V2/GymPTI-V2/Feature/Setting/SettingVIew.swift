@@ -60,6 +60,10 @@ extension SettingView {
                         viewStore.send(.onTapEditAccountButton)
                     }
                     
+                    SettingButton("아이디 찾기 (임시)") {
+                        viewStore.send(.test)
+                    }
+                    
                     SettingButton("신체 정보 수정하기") {
                         
                     }
