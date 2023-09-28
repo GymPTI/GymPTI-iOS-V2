@@ -25,7 +25,7 @@ extension SetPersonalProfileView: View {
         
         VStack(spacing: 0) {
             
-            CustomNavigationBar(title: "신체 프로필 정보 수정", leadingButtonAction: {
+            CustomNavigationBar(title: "신체 프로필 설정", leadingButtonAction: {
                 viewStore.send(.onTapBackButton)
             }, trailingButtonTitle: "저장") {
                 

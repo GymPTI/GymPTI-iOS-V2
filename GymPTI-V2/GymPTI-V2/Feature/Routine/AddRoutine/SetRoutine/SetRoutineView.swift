@@ -122,6 +122,7 @@ extension SetRoutineView: View {
                                                 .cornerRadius(15)
                                         )
                                 }
+                                .scaledButtonStyle()
                             }
                         }
                     }

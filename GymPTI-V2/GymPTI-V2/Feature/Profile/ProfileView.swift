@@ -92,7 +92,7 @@ extension ProfileView: View {
                             Button {
                                 viewStore.send(.onTapSetPersonalProfileButton)
                             } label: {
-                                Text("신체 프로필 수정")
+                                Text("신체 프로필 설정")
                                     .setFont(14, .medium)
                                     .foregroundColor(Colors.white.color)
                                     .frame(height: 30)
@@ -101,14 +101,13 @@ extension ProfileView: View {
                                     .cornerRadius(10)
                             }
                         }
-                        .padding([.top, .horizontal], 20)
+                        .padding(.top, 20)
                     }
                     .padding(.top, 10)
                     .padding(.horizontal, 20)
                 }
             }
             Spacer()
-            
         }
         .setBackground()
         .task {
