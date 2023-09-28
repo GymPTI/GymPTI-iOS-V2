@@ -108,10 +108,10 @@
 		52C8043C2A0CB2BF00417B08 /* EditInfoCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */; };
 		52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */; };
 		52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8043F2A0CB2ED00417B08 /* EditInfoRouteBuilder.swift */; };
-		52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804422A0CB9ED00417B08 /* EditAccountView.swift */; };
-		52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804442A0CB9F700417B08 /* EditAccountCore.swift */; };
-		52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804462A0CBA0200417B08 /* EditAccountSideEffect.swift */; };
-		52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804482A0CBA0C00417B08 /* EditAccountRouteBuilder.swift */; };
+		52C804432A0CB9ED00417B08 /* EditPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804422A0CB9ED00417B08 /* EditPasswordView.swift */; };
+		52C804452A0CB9F700417B08 /* EditPasswordCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804442A0CB9F700417B08 /* EditPasswordCore.swift */; };
+		52C804472A0CBA0200417B08 /* EditPasswordSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804462A0CBA0200417B08 /* EditPasswordSideEffect.swift */; };
+		52C804492A0CBA0C00417B08 /* EditPasswordRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C804482A0CBA0C00417B08 /* EditPasswordRouteBuilder.swift */; };
 		52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044B2A0CBEED00417B08 /* SettingVIew.swift */; };
 		52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044D2A0CBEF900417B08 /* SettingCore.swift */; };
 		52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */; };
@@ -228,10 +228,10 @@
 		52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoCore.swift; sourceTree = "<group>"; };
 		52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoSideEffect.swift; sourceTree = "<group>"; };
 		52C8043F2A0CB2ED00417B08 /* EditInfoRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoRouteBuilder.swift; sourceTree = "<group>"; };
-		52C804422A0CB9ED00417B08 /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
-		52C804442A0CB9F700417B08 /* EditAccountCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountCore.swift; sourceTree = "<group>"; };
-		52C804462A0CBA0200417B08 /* EditAccountSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountSideEffect.swift; sourceTree = "<group>"; };
-		52C804482A0CBA0C00417B08 /* EditAccountRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountRouteBuilder.swift; sourceTree = "<group>"; };
+		52C804422A0CB9ED00417B08 /* EditPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordView.swift; sourceTree = "<group>"; };
+		52C804442A0CB9F700417B08 /* EditPasswordCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordCore.swift; sourceTree = "<group>"; };
+		52C804462A0CBA0200417B08 /* EditPasswordSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordSideEffect.swift; sourceTree = "<group>"; };
+		52C804482A0CBA0C00417B08 /* EditPasswordRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordRouteBuilder.swift; sourceTree = "<group>"; };
 		52C8044B2A0CBEED00417B08 /* SettingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVIew.swift; sourceTree = "<group>"; };
 		52C8044D2A0CBEF900417B08 /* SettingCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCore.swift; sourceTree = "<group>"; };
 		52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSideEffect.swift; sourceTree = "<group>"; };
@@ -637,15 +637,15 @@
 			path = EditInfo;
 			sourceTree = "<group>";
 		};
-		52C804412A0CB9C800417B08 /* EditAccount */ = {
+		52C804412A0CB9C800417B08 /* EditPassword */ = {
 			isa = PBXGroup;
 			children = (
-				52C804422A0CB9ED00417B08 /* EditAccountView.swift */,
-				52C804442A0CB9F700417B08 /* EditAccountCore.swift */,
-				52C804462A0CBA0200417B08 /* EditAccountSideEffect.swift */,
-				52C804482A0CBA0C00417B08 /* EditAccountRouteBuilder.swift */,
+				52C804422A0CB9ED00417B08 /* EditPasswordView.swift */,
+				52C804442A0CB9F700417B08 /* EditPasswordCore.swift */,
+				52C804462A0CBA0200417B08 /* EditPasswordSideEffect.swift */,
+				52C804482A0CBA0C00417B08 /* EditPasswordRouteBuilder.swift */,
 			);
-			path = EditAccount;
+			path = EditPassword;
 			sourceTree = "<group>";
 		};
 		52C8044A2A0CBED600417B08 /* Setting */ = {
@@ -655,7 +655,7 @@
 				52C8044D2A0CBEF900417B08 /* SettingCore.swift */,
 				52C8044F2A0CBF0500417B08 /* SettingSideEffect.swift */,
 				52C804512A0CBF1100417B08 /* SettingRouteBuilder.swift */,
-				52C804412A0CB9C800417B08 /* EditAccount */,
+				52C804412A0CB9C800417B08 /* EditPassword */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -834,13 +834,13 @@
 				526593F02A0E0D6C00D9446B /* FindIdCore.swift in Sources */,
 				52C804072A0BE2AD00417B08 /* EmailCore.swift in Sources */,
 				52C804352A0CAE1F00417B08 /* CustomTextField.swift in Sources */,
-				52C804492A0CBA0C00417B08 /* EditAccountRouteBuilder.swift in Sources */,
+				52C804492A0CBA0C00417B08 /* EditPasswordRouteBuilder.swift in Sources */,
 				52269D322ABC0B340087A85F /* SetRoutineRouteBuilder.swift in Sources */,
 				523A9A262AC4678A00FDE079 /* SetPersonalProfileCore.swift in Sources */,
 				52C803B22A0B9ABB00417B08 /* Response.swift in Sources */,
 				526594132A0E84EE00D9446B /* FriendCellView.swift in Sources */,
 				52C803F12A0BD2E700417B08 /* IdSideEffect.swift in Sources */,
-				52C804452A0CB9F700417B08 /* EditAccountCore.swift in Sources */,
+				52C804452A0CB9F700417B08 /* EditPasswordCore.swift in Sources */,
 				52C804092A0BE2CF00417B08 /* EmailSideEffect.swift in Sources */,
 				524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
@@ -853,7 +853,7 @@
 				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
 				52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */,
 				52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */,
-				52C804472A0CBA0200417B08 /* EditAccountSideEffect.swift in Sources */,
+				52C804472A0CBA0200417B08 /* EditPasswordSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
@@ -869,7 +869,7 @@
 				52C803A02A0B96A200417B08 /* AppRouteBuilder.swift in Sources */,
 				526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */,
 				526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */,
-				52C804432A0CB9ED00417B08 /* EditAccountView.swift in Sources */,
+				52C804432A0CB9ED00417B08 /* EditPasswordView.swift in Sources */,
 				520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */,
 				526593DE2A0D11CD00D9446B /* Interceptor.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,

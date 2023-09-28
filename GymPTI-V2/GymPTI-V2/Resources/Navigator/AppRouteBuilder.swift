@@ -59,7 +59,7 @@ struct AppRouterGroup {
             /// 설정 화면
             SettingRouteBuilder(),
             
-            EditAccountRouteBuilder(),
+            EditPasswordRouteBuilder(),
 
             FindIdRouteBuilder(),
             

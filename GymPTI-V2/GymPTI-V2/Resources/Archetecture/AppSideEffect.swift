@@ -55,7 +55,7 @@ public struct AppSideEffect: DependencyKey {
     
     let editInfo: EditInfoSideEffect
     
-    let editAccount: EditAccountSideEffect
+    let editAccount: EditPasswordSideEffect
     
     let setting: SettingSideEffect
     
@@ -102,7 +102,7 @@ public struct AppSideEffect: DependencyKey {
             
             editInfo: EditInfoSideEffectLive(navigator: navigator),
             
-            editAccount: EditAccountSideEffectLive(navigator: navigator),
+            editAccount: EditPasswordSideEffectLive(navigator: navigator),
             
             setting: SettingSideEffectLive(navigator: navigator),
             

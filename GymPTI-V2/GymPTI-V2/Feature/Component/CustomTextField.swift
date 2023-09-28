@@ -54,7 +54,7 @@ public struct CustomTextField: View {
                 } label: {
                     Image(systemName: isPasswordVisible ? "eye.fill" : "eye")
                 }
-                .padding(.trailing, 20)
+                .padding(.trailing, 10)
             }
         }
         .frame(height: 52)

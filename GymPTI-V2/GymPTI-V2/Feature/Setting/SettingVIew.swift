@@ -86,7 +86,7 @@ extension SettingView {
                     }
                     
                 }
-                .padding([.top, .horizontal], 20)
+                .padding()
                 
                 Spacer()
             }

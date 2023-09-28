@@ -1,5 +1,5 @@
 //
-//  EditAccountCore.swift
+//  EditPasswordCore.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/05/11.
@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import CryptoKit
 
-public struct EditAccount: Reducer {
+public struct EditPassword: Reducer {
     
     public struct State: Equatable {
         
@@ -41,23 +41,32 @@ public struct EditAccount: Reducer {
                 return .none
                 
             case .onTapChangeButton:
-                chagePassword(state: state)
+                let state = state
+                Task {
+                    await putUserPassword(state: state)
+                }
                 return .none
             }
         }
     }
     
-    private func chagePassword(state: State) {
+    func putUserPassword(state: State) async {
         
         let params = [
             "oldPassword": state.oldPassword.hashedPassword(),
             "newPassword": state.newPassword.hashedPassword()
         ]
         
-        Requests.simple("/user/password", .put, params: params, failure: { message in
-            print(message)
-        }) {
-            print("비번 변경 성공")
+        do {
+            _ = try await Service.request("/user/password", .put, params: params, ErrorResponse.self)
+            
+            await MainActor.run {
+                sideEffect.onSuccessPutUserPassword()
+            }
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailPutUserPassword()
+            }
         }
     }
 }

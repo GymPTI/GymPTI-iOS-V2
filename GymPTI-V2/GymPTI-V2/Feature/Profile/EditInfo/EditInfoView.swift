@@ -80,7 +80,7 @@ extension EditInfoView: View {
                             .onChange(of: viewStore.selectedItem) { item in
                                 
                                 Task {
-                                    if let data = try? await    item?.loadTransferable(type: Data.self) {
+                                    if let data = try? await item?.loadTransferable(type: Data.self) {
                                         viewStore.send(.onChangeProfileImage(data))
                                     }
                                 }

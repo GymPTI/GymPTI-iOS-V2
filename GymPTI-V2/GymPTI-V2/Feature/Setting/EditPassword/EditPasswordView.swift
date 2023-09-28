@@ -1,5 +1,5 @@
 //
-//  EditAccountView.swift
+//  EditPasswordView.swift
 //  GymPTI-V2
 //
 //  Created by 이민규 on 2023/05/11.
@@ -8,34 +8,28 @@
 import SwiftUI
 import ComposableArchitecture
 
-public struct EditAccountView {
+public struct EditPasswordView {
     
-    private let store: StoreOf<EditAccount>
-    @ObservedObject var viewStore: ViewStoreOf<EditAccount>
+    private let store: StoreOf<EditPassword>
+    @ObservedObject var viewStore: ViewStoreOf<EditPassword>
     
-    public init(store: StoreOf<EditAccount>) {
+    public init(store: StoreOf<EditPassword>) {
         self.store = store
         viewStore = ViewStore(store, observe: { $0 })
     }
 }
 
-extension EditAccountView: View {
+extension EditPasswordView: View {
     
     public var body: some View {
         
         VStack(alignment: .center, spacing: 0) {
             
-            CustomNavigationBar(
-                title: "비밀번호 변경",
-                leadingButtonAction: {
+            CustomNavigationBar(title: "비밀번호 변경", leadingButtonAction: {
                     viewStore.send(.onTapBackButton)
-                },
-                trailingButtonTitle: "저장",
-                trailingButtonAction: {
+                }, trailingButtonTitle: "저장", trailingButtonAction: {
                     viewStore.send(.onTapChangeButton)
-                },
-                trailingButtonDisabled:
-                    !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}"))
+                }, trailingButtonDisabled: !viewStore.newPassword.regex("[a-zA-Z0-9!@#$%^*+=-]{8,20}"))
             
             VStack(alignment: .leading) {
                 

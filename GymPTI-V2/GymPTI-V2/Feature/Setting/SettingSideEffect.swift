@@ -29,7 +29,7 @@ extension SettingSideEffectLive: SettingSideEffect {
     
     public var onTapEditAccountButton: () -> Void {
         {
-            navigator.next(paths: ["editaccount"], items: [:], isAnimated: true)
+            navigator.next(paths: ["editpassword"], items: [:], isAnimated: true)
         }
     }
     
