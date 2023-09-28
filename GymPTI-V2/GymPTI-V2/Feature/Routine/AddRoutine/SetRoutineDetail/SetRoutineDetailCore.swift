@@ -23,7 +23,7 @@ public struct SetRoutineDetail: Reducer {
     }
     
     public enum Action: Equatable {
-    
+        
         case onTapBackButton
         case onTapAddButton
         case onTapPlusRepsButton
@@ -52,7 +52,6 @@ public struct SetRoutineDetail: Reducer {
                     Task {
                         await postRoutineCreateRequest(state: state)
                     }
-                    sideEffect.sucessRequest()
                 }
                 return .none
                 
@@ -84,7 +83,7 @@ public struct SetRoutineDetail: Reducer {
     }
     
     func postRoutineCreateRequest(state: State) async {
-
+        
         let params: [String: Any] = [
             "exercise": state.exerciseName,
             "dayOfWeek": getEnglishDayFullName(state.day),
@@ -93,14 +92,16 @@ public struct SetRoutineDetail: Reducer {
             "restTime": state.restTime
         ]
         
-        print(params)
-        
         do {
-            let response = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
-            sideEffect.sucessRequest()
-            print(response)
-        } catch {
-            print("오류 발생 : \(error.localizedDescription)")
+            _ = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
+            await MainActor.run {
+                sideEffect.onSucessRequest()
+            }
+        } catch let error {
+            await MainActor.run {
+                sideEffect.onFailRequest()
+                print(error)
+            }
         }
     }
 }

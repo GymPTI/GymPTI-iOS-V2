@@ -20,19 +20,30 @@ final class Service {
                        interceptor: interceptor)
     }()
     
-    private init() { }
-    
     static func request<T: Codable>(_ url: String,
                                     _ method: HTTPMethod,
                                     params: [String: Any]? = nil,
                                     _ model: T.Type) async throws -> T {
         
-        return try await session.request("\(API)\(url)",
-                                         method: method,
-                                         parameters: params,
-                                         encoding: method == .get ? URLEncoding.default : JSONEncoding.default)
-        .serializingDecodable()
-        .value
+        let request = session.request("\(API)\(url)",
+                                      method: method,
+                                      parameters: params,
+                                      encoding: method == .get ? URLEncoding.default : JSONEncoding.default)
+        
+        let dataTask = request.serializingDecodable(model)
+        
+        switch await dataTask.result {
+            
+        case .success(let value):
+            
+            guard let response = await dataTask.response.response, (200...299).contains(response.statusCode) else {
+                throw APIError.responseError
+            }
+            return value
+            
+        case .failure:
+            throw APIError.transportError
+        }
     }
 }
 
@@ -155,5 +166,15 @@ class Requests {
                 exit(0)
             }
         }
+    }
+}
+
+enum APIError: Error {
+    case transportError
+    case responseError
+    case dataError
+    
+    var errorDescription: String {
+        return "서버 통신 중 오류가 발생했습니다\n(Error code: \(self))"
     }
 }

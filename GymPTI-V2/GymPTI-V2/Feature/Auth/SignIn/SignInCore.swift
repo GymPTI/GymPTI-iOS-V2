@@ -46,7 +46,6 @@ public struct SignIn: Reducer {
                 Task {
                     await postLoginRequest(state: state)
                 }
-                sideEffect.onSuccessSignIn()
                 return .none
             }
         }
@@ -62,11 +61,17 @@ public struct SignIn: Reducer {
         do {
             let response = try await Service.request("/auth/login", .post, params: params, Response<AccessToken>.self)
             
-            Token.save(.accessToken, response.data.accessToken)
-            Token.save(.refreshToken, response.data.refreshToken)
-        } catch {
-            sideEffect.onFailSignIn(error.localizedDescription)
-            print("오류 발생 : \(error.localizedDescription)")
+            await MainActor.run {
+                Token.save(.accessToken, response.data.accessToken)
+                Token.save(.refreshToken, response.data.refreshToken)
+                sideEffect.onSuccessSignIn()
+            }
+            
+        } catch let error {
+            await MainActor.run {
+                sideEffect.onFailSignIn()
+                print(error)
+            }
         }
     }
 }

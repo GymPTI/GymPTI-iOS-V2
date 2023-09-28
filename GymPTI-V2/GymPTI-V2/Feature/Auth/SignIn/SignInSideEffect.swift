@@ -10,7 +10,7 @@ import LinkNavigator
 public protocol SignInSideEffect {
     
     var onTapBackButton: () -> Void { get }
-    var onFailSignIn: (String) -> Void { get }
+    var onFailSignIn: () -> Void { get }
     var onSuccessSignIn: () -> Void { get }
 }
 
@@ -31,13 +31,14 @@ extension SignInSideEffectLive: SignInSideEffect {
         }
     }
     
-    public var onFailSignIn: (String) -> Void {
-        { message in
+    public var onFailSignIn: () -> Void {
+        {
             let alertModel = Alert(
-                title: "실패",
-                message: "\(message)",
-                buttons: [.init(title: "확인", style: .default) ],
-                flagType: .error)
+                title: "오류",
+                message: "로그인에 실패했어요.",
+                buttons: [.init(title: "확인", style: .default)],
+                flagType: .error
+            )
             navigator.alert(target: .default, model: alertModel)
         }
     }
