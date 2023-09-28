@@ -15,8 +15,6 @@ public struct Notification: Reducer {
     
     public enum Action: Equatable {
         
-        case onTapEditAccountButton
-        case onTapLogoutButton
         case onTapBackButton
     }
     
@@ -27,14 +25,6 @@ public struct Notification: Reducer {
         Reduce { state, action in
             
             switch action {
-                
-            case .onTapEditAccountButton:
-                sideEffect.onTapEditAccountButton()
-                return .none
-                
-            case .onTapLogoutButton:
-                sideEffect.onTapLogoutButton()
-                return .none
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
