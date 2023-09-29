@@ -59,7 +59,7 @@ extension Button {
         
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
-                .scaleEffect(configuration.isPressed ? 0.94 : 1)
+                .scaleEffect(configuration.isPressed ? 0.945 : 1)
                 .animation(.easeInOut, value: configuration.isPressed)
         }
     }

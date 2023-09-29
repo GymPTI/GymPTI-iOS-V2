@@ -47,19 +47,28 @@ public struct Email: Reducer {
                 return .none
                 
             case .onTapSendEmailButton:
-                sendEmailRequest(state: state)
+                let state = state
+                Task {
+                    await sendEmailRequest(state: state)
+                }
                 return .none
             }
         }
     }
     
-    private func sendEmailRequest(state: State) {
+    func sendEmailRequest(state: State) async {
         
-        Requests.simple("/email/sendMailVerification", .post, params: ["email": state.email], failure : { message in
-            
-            print(message)
-        }) {
-            sideEffect.sucessSendEmail(state.id, state.pw, state.name, state.email)
+        let params = ["email": state.email]
+        
+        do {
+            _ = try await Service.request("/email/sendMailVerification", .post,params: params, ErrorResponse.self)
+            await MainActor.run {
+                sideEffect.onSucessSendEmail(state.id, state.pw, state.name, state.email)
+            }
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailSendEmail()
+            }
         }
     }
     

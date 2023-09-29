@@ -66,7 +66,7 @@ extension HomeView: View {
                     }
                     .scaledButtonStyle()
                     
-                    Text("트렌드 따라 잡기")
+                    Text("요즘 트렌드 즐기기")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .padding(.top, 20)
