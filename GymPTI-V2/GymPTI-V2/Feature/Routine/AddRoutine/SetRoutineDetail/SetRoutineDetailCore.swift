@@ -46,10 +46,10 @@ public struct SetRoutineDetail: Reducer {
                 return .none
                 
             case .onTapAddButton:
-                let state = state
+                let newState = state
                 sideEffect.onTapAddButton {
                     Task {
-                        await postRoutineCreate(state: state)
+                        await postRoutineCreate(state: newState)
                     }
                 }
                 return .none
@@ -92,14 +92,13 @@ public struct SetRoutineDetail: Reducer {
         ]
         
         do {
-            _ = try await Service.request("/routine/create", .post, params: params ,ErrorResponse.self)
+            _ = try await Service.request("/routine/create", .post, params: params)
             await MainActor.run {
                 sideEffect.onSucessPostRoutineCreate()
             }
-        } catch let error {
+        } catch {
             await MainActor.run {
                 sideEffect.onFailPostRoutineCreate()
-                print(error)
             }
         }
     }

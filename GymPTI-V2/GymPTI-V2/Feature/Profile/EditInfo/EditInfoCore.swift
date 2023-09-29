@@ -48,9 +48,9 @@ public struct EditInfo: Reducer {
                 return .none
                 
             case .onTapChangeButton:
-                let state = state
+                let newState = state
                 Task {
-                    await putUserData(state: state)
+                    await putUserData(state: newState)
                 }
                 return .none
                 
@@ -71,10 +71,9 @@ public struct EditInfo: Reducer {
             await MainActor.run {
                 sideEffect.onSuccessPutUserData()
             }
-        } catch let error {
+        } catch {
             await MainActor.run {
                 sideEffect.onFailPutUserData()
-                print(error)
             }
         }
     }

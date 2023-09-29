@@ -42,9 +42,10 @@ public struct SignIn: Reducer {
                 return .none
                 
             case .onTapSignInButton:
-                let state = state
+                state.isLoging = true
+                let newState = state
                 Task {
-                    await postLoginRequest(state: state)
+                    await postLoginRequest(state: newState)
                 }
                 return .none
             }
@@ -67,10 +68,9 @@ public struct SignIn: Reducer {
                 sideEffect.onSuccessSignIn()
             }
             
-        } catch let error {
+        } catch {
             await MainActor.run {
                 sideEffect.onFailSignIn()
-                print(error)
             }
         }
     }

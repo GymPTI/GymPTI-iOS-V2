@@ -69,10 +69,8 @@ extension SignInView: View {
         }
         .setBackground()
         .overlay {
-            Group {
-                if viewStore.isLoging {
-                    LoadingView()
-                }
+            if viewStore.isLoging {
+                LoadingView()
             }
         }
     }

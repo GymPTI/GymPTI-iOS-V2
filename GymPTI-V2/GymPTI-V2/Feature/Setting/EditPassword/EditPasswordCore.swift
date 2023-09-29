@@ -41,9 +41,9 @@ public struct EditPassword: Reducer {
                 return .none
                 
             case .onTapChangeButton:
-                let state = state
+                let newState = state
                 Task {
-                    await putUserPassword(state: state)
+                    await putUserPassword(state: newState)
                 }
                 return .none
             }

@@ -23,7 +23,7 @@ final class Service {
     static func request<T: Codable>(_ url: String,
                                     _ method: HTTPMethod,
                                     params: [String: Any]? = nil,
-                                    _ model: T.Type) async throws -> T {
+                                    _ model: T.Type = ErrorResponse.self) async throws -> T {
         
         let request = session.request("\(API)\(url)",
                                       method: method,

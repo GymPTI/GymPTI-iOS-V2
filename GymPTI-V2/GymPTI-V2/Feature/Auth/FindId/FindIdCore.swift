@@ -39,9 +39,9 @@ public struct FindId: Reducer {
                 return .none
                 
             case .onTapFindIdButton:
-                let state = state
+                let newState = state
                 Task {
-                    try await print(findIdRequest(state: state))
+                    try await print(findIdRequest(state: newState))
                     
                 }
                 return .none

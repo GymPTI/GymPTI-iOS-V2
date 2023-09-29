@@ -36,7 +36,9 @@ extension SignInSideEffectLive: SignInSideEffect {
             let alertModel = Alert(
                 title: "오류",
                 message: "로그인에 실패했어요.",
-                buttons: [.init(title: "확인", style: .default)],
+                buttons: [.init(title: "확인", style: .default) {
+                    navigator.rootReloadLast(items: [:], isAnimated: false)
+                }],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)
