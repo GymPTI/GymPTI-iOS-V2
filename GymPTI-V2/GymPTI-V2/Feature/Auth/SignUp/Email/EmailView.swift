@@ -55,5 +55,10 @@ extension EmailView: View {
             
         }
         .setBackground()
+        .overlay {
+            if viewStore.isSendEmail {
+                LoadingView()
+            }
+        }
     }
 }

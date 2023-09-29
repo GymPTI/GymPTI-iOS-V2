@@ -47,9 +47,10 @@ public struct Email: Reducer {
                 return .none
                 
             case .onTapSendEmailButton:
-                let state = state
+                state.isSendEmail = true
+                let newState = state
                 Task {
-                    await sendEmailRequest(state: state)
+                    await sendEmailRequest(state: newState)
                 }
                 return .none
             }

@@ -49,7 +49,9 @@ extension EmailSideEffectLive: EmailSideEffect {
             let alertModel = Alert(
                 title: "실패",
                 message: "이메일 전송에 실패하였습니다.",
-                buttons: [.init(title: "확인", style: .default) ],
+                buttons: [.init(title: "확인", style: .default) {
+                    navigator.rootReloadLast(items: [:], isAnimated: false)
+                } ],
                 flagType: .error)
             navigator.alert(target: .default, model: alertModel)
         }
