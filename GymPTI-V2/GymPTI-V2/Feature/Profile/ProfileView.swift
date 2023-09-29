@@ -47,20 +47,22 @@ extension ProfileView: View {
                                         .strokeBorder(Colors.white.color, lineWidth: 2))
                             } else {
                                 
-                                AsyncImage(url: URL(string: userData.profileImage!)) { image in
-                                    image
-                                        .resizable()
-                                        .frame(width: 108, height: 108)
-                                        .clipShape(Circle())
-                                        .overlay(RoundedRectangle(cornerRadius: 108)
-                                            .strokeBorder(Colors.white.color, lineWidth: 2))
-                                } placeholder: {
-                                    Image("user")
-                                        .resizable()
-                                        .frame(width: 108, height: 108)
-                                        .clipShape(Circle())
-                                        .overlay(RoundedRectangle(cornerRadius: 108)
-                                            .strokeBorder(Colors.white.color, lineWidth: 2))
+                                if let image = userData.profileImage {
+                                    AsyncImage(url: URL(string: image)) { image in
+                                        image
+                                            .resizable()
+                                            .frame(width: 108, height: 108)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                                .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    } placeholder: {
+                                        Image("user")
+                                            .resizable()
+                                            .frame(width: 108, height: 108)
+                                            .clipShape(Circle())
+                                            .overlay(RoundedRectangle(cornerRadius: 108)
+                                                .strokeBorder(Colors.white.color, lineWidth: 2))
+                                    }
                                 }
                             }
                         }

@@ -9,15 +9,45 @@ import SwiftUI
 
 struct LoadingView: View {
     
+    @State var isFirstCircleAnimating = false
+    @State var isSecondCircleAnimating = false
+    @State var isThirdCircleAnimating = false
+    
     var body: some View {
         
         HStack(alignment: .center) {
             
-            ProgressView()
-                .progressViewStyle(.circular)
-                .scaleEffect(2)
+            Circle()
+                .fill(Colors.main.color)
+                .frame(width: 16, height: 16)
+                .scaleEffect(isFirstCircleAnimating ? 1.0 : 0.5)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
+                        self.isFirstCircleAnimating = true
+                    }
+                }
+            
+            Circle()
+                .fill(Colors.main.color)
+                .frame(width: 16, height: 16)
+                .scaleEffect(isSecondCircleAnimating ? 1.0 : 0.5)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true).delay(0.3)) {
+                        self.isSecondCircleAnimating = true
+                    }
+                }
+            
+            Circle()
+                .fill(Colors.main.color)
+                .frame(width: 16, height: 16)
+                .scaleEffect(isThirdCircleAnimating ? 1.0 : 0.5)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true).delay(0.6)) {
+                        self.isThirdCircleAnimating = true
+                    }
+                }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.black.opacity(0.6))
+        .background(Color.black.opacity(0.66))
     }
 }
