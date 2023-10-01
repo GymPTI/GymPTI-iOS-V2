@@ -24,46 +24,44 @@ extension ProfileView: View {
     public var body: some View {
         
         ScrollView(showsIndicators: false) {
-        
-        VStack {
             
-            CustomNavi("프로필", {
-                viewStore.send(.onTapNotificationButton)
-            }) {
-                viewStore.send(.onTapSettingButton)
-            }
+            VStack {
+                
+                CustomNavi("프로필", {
+                    viewStore.send(.onTapNotificationButton)
+                }) {
+                    viewStore.send(.onTapSettingButton)
+                }
                 
                 if let userData = viewStore.user {
                     
                     VStack(spacing: 0) {
                         
                         ZStack(alignment: .bottom) {
-                            if userData.nickname == "뉴진스" {
-                                Image("Newjeans")
+                            
+                            if let image = userData.profileImage {
+                                AsyncImage(url: URL(string: image)) { image in
+                                    image
+                                        .resizable()
+                                        .frame(width: 108, height: 108)
+                                        .clipShape(Circle())
+                                        .overlay(RoundedRectangle(cornerRadius: 108)
+                                            .strokeBorder(Colors.white.color, lineWidth: 2))
+                                } placeholder: {
+                                    Image("user")
+                                        .resizable()
+                                        .frame(width: 108, height: 108)
+                                        .clipShape(Circle())
+                                        .overlay(RoundedRectangle(cornerRadius: 108)
+                                            .strokeBorder(Colors.white.color, lineWidth: 2))
+                                }
+                            } else {
+                                Image(userData.nickname == "뉴진스" ? "Newjeans" : "user")
                                     .resizable()
                                     .frame(width: 108, height: 108)
                                     .clipShape(Circle())
                                     .overlay(RoundedRectangle(cornerRadius: 108)
                                         .strokeBorder(Colors.white.color, lineWidth: 2))
-                            } else {
-                                
-                                if let image = userData.profileImage {
-                                    AsyncImage(url: URL(string: image)) { image in
-                                        image
-                                            .resizable()
-                                            .frame(width: 108, height: 108)
-                                            .clipShape(Circle())
-                                            .overlay(RoundedRectangle(cornerRadius: 108)
-                                                .strokeBorder(Colors.white.color, lineWidth: 2))
-                                    } placeholder: {
-                                        Image("user")
-                                            .resizable()
-                                            .frame(width: 108, height: 108)
-                                            .clipShape(Circle())
-                                            .overlay(RoundedRectangle(cornerRadius: 108)
-                                                .strokeBorder(Colors.white.color, lineWidth: 2))
-                                    }
-                                }
                             }
                         }
                         
