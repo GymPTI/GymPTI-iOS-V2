@@ -85,7 +85,36 @@ extension SetPersonalProfileView: View {
                                 )
                         }
                         .scaledButtonStyle()
+                        
+                        Text("나이")
+                            .setFont(20, .bold)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 10)
+                        
+                        Button{
+                            viewStore.send(.onTapAgeButton)
+                        } label: {
+                            Text("\(viewStore.age)")
+                                .setFont(16, .bold)
+                                .foregroundColor(Colors.white.color)
+                                .padding(15)
+                                .background(
+                                    Rectangle()
+                                        .fill(viewStore.sex == "female" ? Colors.main.color : Colors.darkGray.color)
+                                        .frame(width: 64, height: 34)
+                                        .cornerRadius(15)
+                                )
+                        }
+                        .scaledButtonStyle()
                     }
+                    
+                    Picker(selection: viewStore.$age, label: Text("")) {
+                        
+                        ForEach(1..<100) { i in
+                            Text("\(i)")
+                        }
+                    }
+                    .pickerStyle(.wheel)
                 }
                 .padding()
             }

@@ -102,6 +102,11 @@ extension ProfileView: View {
                             }
                         }
                         .padding(.top, 20)
+                        
+                        Text("추후 업데이트를 통해 기능이 추가될 예정이에요!")
+                            .setFont(14, .medium)
+                            .foregroundColor(Colors.white.color)
+                            .padding(.top, 40)
                     }
                     .padding(.top, 10)
                     .padding(.horizontal, 20)
