@@ -18,6 +18,7 @@ public struct Home: Reducer {
         
         case onTapNotificationButton
         case onTapSettingButton
+        case onTapDummyView
     }
     
     @Dependency(\.sideEffect.home) var sideEffect
@@ -34,6 +35,10 @@ public struct Home: Reducer {
                 
             case .onTapSettingButton:
                 sideEffect.onTapSettingButton()
+                return .none
+                
+            case .onTapDummyView:
+                sideEffect.onTapDummyView()
                 return .none
             }
         }

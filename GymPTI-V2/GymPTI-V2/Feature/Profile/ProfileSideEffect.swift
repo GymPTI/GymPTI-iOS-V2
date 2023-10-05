@@ -40,17 +40,17 @@ extension ProfileSideEffectLive: ProfileSideEffect {
     
     public var onTapEditInfoButton: (String, String, String) -> Void {
         { name, statusMessage, profileImage in
-            navigator.fullSheet(paths: ["editinfo"], items: [
+            navigator.next(paths: ["editinfo"], items: [
                 "editinfo-newName": name,
                 "editinfo-newStatusMessage": statusMessage,
                 "editinfo-profileImage": profileImage
-            ], isAnimated: true, prefersLargeTitles: false)
+            ], isAnimated: true)
         }
     }
     
     public var onTapSetPersonalProfileButton: () -> Void {
         {
-            navigator.fullSheet(paths: ["setpersonalprofile"], items: [:], isAnimated: true, prefersLargeTitles: false)
+            navigator.next(paths: ["setpersonalprofile"], items: [:], isAnimated: true)
         }
     }
 }

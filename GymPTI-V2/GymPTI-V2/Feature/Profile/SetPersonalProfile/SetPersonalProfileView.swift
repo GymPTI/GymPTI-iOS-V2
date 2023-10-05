@@ -41,17 +41,17 @@ extension SetPersonalProfileView: View {
                             .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
                         
-                        Text("* 모든 신체 정보는 더욱 정확한 루틴을 만들기 위해\n필요하며 그 외 어떠한 곳에도 사용되지 않습니다.")
+                        Text("모든 신체 정보는 더욱 정확한 루틴을 만들기 위해\n필요하며 그 외 어떠한 곳에도 사용되지 않습니다.")
                             .setFont(14, .regular)
                             .foregroundColor(Colors.white.color)
                             .padding(.trailing, 28)
                         
-                        Text("성별")
-                            .setFont(20, .bold)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                        
-                        HStack(spacing: 10) {
+                        HStack(alignment: .center, spacing: 8) {
+                            
+                            Text("성별")
+                                .setFont(20, .bold)
+                                .foregroundColor(Colors.white.color)
+                                .frame(width: 80, alignment: .leading)
                             
                             Button{
                                 viewStore.send(.onTapMaleButton)
@@ -87,27 +87,94 @@ extension SetPersonalProfileView: View {
                             .scaledButtonStyle()
                             .frame(width: 64, height: 34)
                         }
+                        .padding(.top, 15)
                         
-                        Text("나이")
-                            .setFont(20, .bold)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 10)
-                        
-                        Button{
-                            viewStore.send(.onTapAgeButton)
-                        } label: {
-                            Text("\(viewStore.age)살")
-                                .setFont(16, .bold)
+                        HStack(alignment: .center, spacing: 8) {
+                            
+                            Text("나이")
+                                .setFont(20, .bold)
                                 .foregroundColor(Colors.white.color)
-                                .background(
-                                    Rectangle()
-                                        .fill(Colors.darkGray.color)
-                                        .frame(width: 74, height: 34)
-                                        .cornerRadius(15)
-                                )
+                                .frame(width: 80, alignment: .leading)
+                            
+                            Button{
+                                viewStore.send(.onTapAgeButton)
+                            } label: {
+                                Text("\(viewStore.age)")
+                                    .setFont(16, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                    .background(
+                                        Rectangle()
+                                            .fill(Colors.darkGray.color)
+                                            .frame(width: 64, height: 34)
+                                            .cornerRadius(15)
+                                    )
+                            }
+                            .scaledButtonStyle()
+                            .frame(width: 64, height: 34)
+                            
+                            Text("살")
+                                .setFont(14, .bold)
+                                .foregroundColor(Colors.white.color)
                         }
-                        .scaledButtonStyle()
-                        .frame(width: 74, height: 34)
+                        .padding(.top, 15)
+                        
+                        HStack(alignment: .center, spacing: 8) {
+                            
+                            Text("키")
+                                .setFont(20, .bold)
+                                .foregroundColor(Colors.white.color)
+                                .frame(width: 80, alignment: .leading)
+                            
+                            Button{
+                                viewStore.send(.onTapHeightButton)
+                            } label: {
+                                Text("\(viewStore.height)")
+                                    .setFont(16, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                    .background(
+                                        Rectangle()
+                                            .fill(Colors.darkGray.color)
+                                            .frame(width: 64, height: 34)
+                                            .cornerRadius(15)
+                                    )
+                            }
+                            .scaledButtonStyle()
+                            .frame(width: 64, height: 34)
+                            
+                            Text("cm")
+                                .setFont(14, .bold)
+                                .foregroundColor(Colors.white.color)
+                        }
+                        .padding(.top, 15)
+                        
+                        HStack(alignment: .center, spacing: 8) {
+                            
+                            Text("몸무게")
+                                .setFont(20, .bold)
+                                .foregroundColor(Colors.white.color)
+                                .frame(width: 80, alignment: .leading)
+                            
+                            Button{
+                                viewStore.send(.onTapWeightButton)
+                            } label: {
+                                Text("\(viewStore.weight)")
+                                    .setFont(16, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                    .background(
+                                        Rectangle()
+                                            .fill(Colors.darkGray.color)
+                                            .frame(width: 64, height: 34)
+                                            .cornerRadius(15)
+                                    )
+                            }
+                            .scaledButtonStyle()
+                            .frame(width: 64, height: 34)
+                            
+                            Text("kg")
+                                .setFont(14, .bold)
+                                .foregroundColor(Colors.white.color)
+                        }
+                        .padding(.top, 15)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 10)
@@ -117,15 +184,15 @@ extension SetPersonalProfileView: View {
             
             if viewStore.isTapAgeButton {
                 CustomWheelPicker("나이", value: viewStore.$age) {
-                    viewStore.send(.onTapAgeButton)
+                    viewStore.send(.onTapBackground)
                 }
             } else if viewStore.isTapHeightButton {
                 CustomWheelPicker("키", value: viewStore.$height) {
-                    viewStore.send(.onTapAgeButton)
+                    viewStore.send(.onTapBackground)
                 }
             } else if viewStore.isTapWeightButton {
                 CustomWheelPicker("몸무게", value: viewStore.$weight) {
-                    viewStore.send(.onTapAgeButton)
+                    viewStore.send(.onTapBackground)
                 }
             }
         }
@@ -165,8 +232,14 @@ fileprivate struct CustomWheelPicker: View {
             }
             Picker(selection: value, label: Text("")) {
                 
-                ForEach(0..<100) { i in
-                    Text("\(i)")
+                if title == "나이" {
+                    ForEach(0..<100) { i in
+                        Text("\(i)")
+                    }
+                } else {
+                    ForEach(0..<200) { i in
+                        Text("\(i)")
+                    }
                 }
             }
             .pickerStyle(.wheel)

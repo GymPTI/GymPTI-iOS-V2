@@ -129,8 +129,10 @@ extension RoutineView: View {
                                     isCompleted: data.completed,
                                     longPressGestureAction: {
                                         viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
+                                        viewStore.send(.getRoutineList(day: viewStore.selectDay))
                                     }) {
                                         viewStore.send(.onTapCompletedButton(id: data.id))
+                                        viewStore.send(.getRoutineList(day: viewStore.selectDay))
                                     }
                             }
                         }

@@ -59,32 +59,32 @@ extension EditInfoView: View {
                                 .clipShape(Circle())
                         }
                         
-                        PhotosPicker(
-                            selection: viewStore.$selectedItem,
-                            matching: .images,
-                            photoLibrary: .shared()) {
-                                
-                                HStack {
-                                    Image("Edit")
-                                        .resizable()
-                                        .frame(width: 16, height: 16)
-                                }
-                                .frame(width: 36, height: 36)
-                                .background(Colors.main.color)
-                                .cornerRadius(28)
-                                .overlay(RoundedRectangle(cornerRadius: 28)
-                                    .strokeBorder(Colors.black.color, lineWidth: 4))
-                                .padding(.bottom, -4)
-                                .padding(.trailing, -4)
-                            }
-                            .onChange(of: viewStore.selectedItem) { item in
-                                
-                                Task {
-                                    if let data = try? await item?.loadTransferable(type: Data.self) {
-                                        viewStore.send(.onChangeProfileImage(data))
-                                    }
-                                }
-                            }
+//                        PhotosPicker(
+//                            selection: viewStore.$selectedItem,
+//                            matching: .images,
+//                            photoLibrary: .shared()) {
+//                                
+//                                HStack {
+//                                    Image("Edit")
+//                                        .resizable()
+//                                        .frame(width: 16, height: 16)
+//                                }
+//                                .frame(width: 36, height: 36)
+//                                .background(Colors.main.color)
+//                                .cornerRadius(28)
+//                                .overlay(RoundedRectangle(cornerRadius: 28)
+//                                    .strokeBorder(Colors.black.color, lineWidth: 4))
+//                                .padding(.bottom, -4)
+//                                .padding(.trailing, -4)
+//                            }
+//                            .onChange(of: viewStore.selectedItem) { item in
+//                                
+//                                Task {
+//                                    if let data = try? await item?.loadTransferable(type: Data.self) {
+//                                        viewStore.send(.onChangeProfileImage(data))
+//                                    }
+//                                }
+//                            }
                     }
                     .padding(.top, 15)
                     .padding(.bottom, 15)

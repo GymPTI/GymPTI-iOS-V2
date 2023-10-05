@@ -64,17 +64,13 @@ extension SettingView {
                         viewStore.send(.test)
                     }
                     
-                    SettingButton("신체 정보 수정하기") {
-                        
-                    }
-                    
                     Text("기타")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .padding(.top, 10)
                     
                     SettingButton("계정 정보 처리 방침") {
-                        
+
                     }
                     
                     SettingButton("현재 버전 : \(AppInfoManager.getAppVersion())") {

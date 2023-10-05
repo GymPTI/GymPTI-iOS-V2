@@ -76,7 +76,6 @@ struct RoutineExcersizeCardView: View {
                                 
                                 Image(systemName: "checkmark")
                                     .frame(width: 18, height: 18)
-                                    .fontWeight(.bold)
                                     .foregroundColor(Colors.white.color)
                             }
                         }

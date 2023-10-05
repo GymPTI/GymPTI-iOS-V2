@@ -16,8 +16,8 @@ public struct SetPersonalProfile: Reducer {
         var isTapHeightButton: Bool = false
         var isTapWeightButton: Bool = false
         @BindingState var age: Int = 20
-        @BindingState var height: Int = 0
-        @BindingState var weight: Int = 0
+        @BindingState var height: Int = 170
+        @BindingState var weight: Int = 60
     }
     
     public enum Action: Equatable, BindableAction {
@@ -29,6 +29,7 @@ public struct SetPersonalProfile: Reducer {
         case onTapAgeButton
         case onTapHeightButton
         case onTapWeightButton
+        case onTapBackground
     }
     
     @Dependency(\.sideEffect.setPesronalProfile) var sideEffect
@@ -65,6 +66,12 @@ public struct SetPersonalProfile: Reducer {
                 
             case .onTapWeightButton:
                 state.isTapWeightButton.toggle()
+                return .none
+                
+            case .onTapBackground:
+                state.isTapAgeButton = false
+                state.isTapHeightButton = false
+                state.isTapWeightButton = false
                 return .none
             }
         }

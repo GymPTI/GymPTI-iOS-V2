@@ -58,13 +58,22 @@ public struct Verification: Reducer {
     func sendValidateMailVerification(state: State) async {
         
         let params = [
-            "userId": state.id,
-            "nickname": state.name,
             "email": state.email,
-            "password": state.pw.hashedPassword()
+            "emailVerificationCode": state.emailVerificationCode
         ]
         
-        let params2 = [
+        do {
+            _ = try await Service.request("/email/validateMailVerification", .post,params: params)
+        } catch {
+            await MainActor.run {
+                sideEffect.failVerification()
+            }
+        }
+    }
+    
+    func sendSignUpRequest(state: State) async {
+        
+        let params = [
             "userId": state.id,
             "nickname": state.name,
             "email": state.email,
@@ -72,39 +81,11 @@ public struct Verification: Reducer {
         ]
         
         do {
-            _ = try await Service.request("/email/validateMailVerification", .post,params: params)
+            _ = try await Service.request("/auth/register", .post, params: params)
         } catch {
             await MainActor.run {
-                
+                sideEffect.failSignUp()
             }
         }
     }
-    
-    func sendSignUpRequest(stata: State) {
-        
-    }
-    
-    //    private func sendSignUpRequest(state: State) {
-    //
-    //        let params = [
-    //            "userId": state.id,
-    //            "nickname": state.name,
-    //            "email": state.email,
-    //            "password": state.pw.hashedPassword()
-    //        ]
-    //
-    //        Requests.simple("/email/validateMailVerification", .post, params: ["email": state.email, "emailVerificationCode": state.emailVerificationCode], failure : { message in
-    //
-    //            sideEffect.failVerification(message)
-    //        }) {
-    //
-    //            Requests.simple("/auth/register", .post, params: params, failure : { message in
-    //
-    //                sideEffect.failSignUp(message)
-    //            }) {
-    //                sideEffect.sucessSignUp()
-    //            }
-    //        }
-    //    }
-    
 }

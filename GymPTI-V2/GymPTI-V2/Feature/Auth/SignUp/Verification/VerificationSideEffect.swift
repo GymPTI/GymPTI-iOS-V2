@@ -11,9 +11,9 @@ public protocol VerificationSideEffect {
     
     var onTapBackButton: () -> Void { get }
     
-    var failVerification: (String) -> Void { get }
+    var failVerification: () -> Void { get }
     
-    var failSignUp: (String) -> Void { get }
+    var failSignUp: () -> Void { get }
     
     var sucessSignUp: () -> Void { get }
 }
@@ -35,22 +35,22 @@ extension VerificationSideEffectLive: VerificationSideEffect {
         }
     }
     
-    public var failVerification: (String) -> Void {
-        { message in
+    public var failVerification: () -> Void {
+        {
             let alertModel = Alert(
                 title: "실패",
-                message: "\(message)",
+                message: "인증에 실패했어요.",
                 buttons: [.init(title: "확인", style: .default) ],
                 flagType: .error)
             navigator.alert(target: .default, model: alertModel)
         }
     }
     
-    public var failSignUp: (String) -> Void {
-        { message in
+    public var failSignUp: () -> Void {
+        {
             let alertModel = Alert(
                 title: "실패",
-                message: "\(message)",
+                message: "회원가입에 실패했어요.",
                 buttons: [.init(title: "확인", style: .default) ],
                 flagType: .error)
             navigator.alert(target: .default, model: alertModel)

@@ -18,7 +18,7 @@ public struct EditInfo: Reducer {
         
         @BindingState var newStatusMessage: String
         
-        @BindingState var selectedItem: PhotosPickerItem? = nil
+//        @BindingState var selectedItem: PhotosPickerItem? = nil
         
         var selectedImageData: Data? = nil
     }
