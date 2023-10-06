@@ -30,7 +30,6 @@ public enum BackMuscleExercise: String, CaseIterable, Identifiable {
 
 public enum LegsMuscleExercise: String, CaseIterable, Identifiable {
     
-    case LEG_RAISE
     case SQUAT
     case LUNGE
     case DEADLIFT
@@ -67,6 +66,7 @@ public enum AbsExercise: String, CaseIterable, Identifiable {
     case RUSSIAN_TWIST
     case SIT_UP
     case CRUNCH
+    case LEG_RAISE
     
     public var id: String { self.rawValue }
 }
@@ -109,8 +109,6 @@ func exerciseNameToKor(_ exercise: String) -> String {
         return "런지"
     case "DEADLIFT":
         return "데드리프트"
-    case "LEG_PRESS":
-        return "레그 프레스"
     
     // ShoulderMuscleExercise
     case "SHOULDER_PRESS":
@@ -145,6 +143,8 @@ func exerciseNameToKor(_ exercise: String) -> String {
         return "싯업"
     case "CRUNCH":
         return "크런치"
+    case "LEG_PRESS":
+        return "레그 프레스"
     
     default:
         return "알 수 없음"

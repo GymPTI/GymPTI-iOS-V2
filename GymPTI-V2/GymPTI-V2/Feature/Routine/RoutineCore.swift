@@ -12,12 +12,10 @@ public struct Routine: Reducer {
     public struct State: Equatable {
         
         var selectDay: String = getToday()
-
+        
         var routineList: [RoutineList]?
         
-        var isSelected: Bool = false
-        
-        var isDeleted: Bool = false
+        var viewChange: Bool = false
     }
     
     public enum Action: Equatable {
@@ -57,7 +55,6 @@ public struct Routine: Reducer {
                         await deleteRoutineCard(id: id)
                     }
                 }
-                state.isDeleted = true
                 return .none
                 
             case .onTapCompletedButton(let id):
@@ -91,11 +88,10 @@ public struct Routine: Reducer {
     func deleteRoutineCard(id: Int) async {
         
         do {
-            _ = try await Service.request("/routine/delete/\(id)", .delete, ErrorResponse.self)
-        } catch let error {
+            _ = try await Service.request("/routine/delete/\(id)", .delete)
+        } catch {
             await MainActor.run {
                 sideEffect.onFailDeleteRoutineCard()
-                print(error)
             }
         }
     }
@@ -103,11 +99,10 @@ public struct Routine: Reducer {
     func putCompleteRoutine(id: Int) async {
         
         do {
-            _ = try await Service.request("/routine/isComplete/\(id)", .put, Bool.self)
-        } catch let error {
+            _ = try await Service.request("/routine/isComplete/\(id)", .put, Response<Bool>.self)
+        } catch {
             await MainActor.run {
                 sideEffect.onFailPutCompleteRoutine()
-                print(error)
             }
         }
     }
@@ -116,14 +111,14 @@ public struct Routine: Reducer {
         
         let params = ["dayOfWeek": day]
         
-        let response = try await Service.request("/routine/list", .get, params: params, [RoutineList].self)
+        let response = try await Service.request("/routine/list", .get, params: params, Response<[RoutineList]>.self)
         
-        return response
+        return response.data
     }
 }
 
 public struct RoutineList: Codable, Equatable, Identifiable, Hashable {
-
+    
     public let id: Int
     let exerciseName: String
     let targetMuscle: [String]

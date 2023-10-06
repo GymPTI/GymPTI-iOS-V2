@@ -20,6 +20,7 @@ struct StartRouteBuilder: RouteBuilder {
                     reducer: {
                         Start()
                     }))
+                .navigationBarHidden(true)
             }
         }
     }

@@ -10,6 +10,9 @@ import ComposableArchitecture
 
 public struct RoutineView {
     
+    /// 나중에 지울 코드
+    @State private var counter = 0
+    
     private let store: StoreOf<Routine>
     @ObservedObject var viewStore: ViewStoreOf<Routine>
     
@@ -60,7 +63,7 @@ extension RoutineView: View {
             .padding(.top, 10)
             
             VStack {
-    
+                
                 HStack {
                     
                     ForEach([("SUN", "일"), ("MON", "월"),
@@ -129,10 +132,8 @@ extension RoutineView: View {
                                     isCompleted: data.completed,
                                     longPressGestureAction: {
                                         viewStore.send(.onTapRoutineCard(id: data.id, exercise: data.exerciseName))
-                                        viewStore.send(.getRoutineList(day: viewStore.selectDay))
                                     }) {
                                         viewStore.send(.onTapCompletedButton(id: data.id))
-                                        viewStore.send(.getRoutineList(day: viewStore.selectDay))
                                     }
                             }
                         }
@@ -145,6 +146,12 @@ extension RoutineView: View {
         .setBackground()
         .onAppear {
             viewStore.send(.getRoutineList(day: getToday()))
+            let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+                self.counter += 1
+                viewStore.send(.getRoutineList(day: getToday()))
+            }
+            
+            RunLoop.main.add(timer, forMode: .common)
         }
     }
 }
