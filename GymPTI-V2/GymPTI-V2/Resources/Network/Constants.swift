@@ -5,29 +5,11 @@
 //  Created by 이민규 on 2023/05/10.
 //
 
-import Foundation
-
+// MARK: - AWS URL
 public let API: String = "http://veryhotseo81.duckdns.org:8888/gympti"
+
+// MARK: - 학교 와이파이 URL
 //public let API: String = "http://10.80.162.84:9000"
+
+// MARK: - ICT 행사장 와이파이 URL
 //public let API: String = "http://172.16.3.3:9000"
-
-enum TokenType {
-    
-    case accessToken
-    case refreshToken
-}
-
-public class Token {
-    
-    internal static func get(_ tokenType: TokenType) -> String? {
-        return UserDefaults.standard.string(forKey: String(describing: tokenType))
-    }
-
-    internal static func save(_ tokenType: TokenType, _ value: String) {
-        UserDefaults.standard.set(value, forKey: String(describing: tokenType))
-    }
-
-    internal static func remove(_ tokenType: TokenType) {
-        UserDefaults.standard.removeObject(forKey: String(describing: tokenType))
-    }
-}
