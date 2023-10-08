@@ -10,9 +10,6 @@ import ComposableArchitecture
 
 public struct RoutineView {
     
-    /// 나중에 지울 코드
-    @State private var counter = 0
-    
     private let store: StoreOf<Routine>
     @ObservedObject var viewStore: ViewStoreOf<Routine>
     
@@ -146,12 +143,6 @@ extension RoutineView: View {
         .setBackground()
         .onAppear {
             viewStore.send(.getRoutineList(day: getToday()))
-            let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-                self.counter += 1
-                viewStore.send(.getRoutineList(day: getToday()))
-            }
-            
-            RunLoop.main.add(timer, forMode: .common)
         }
     }
 }

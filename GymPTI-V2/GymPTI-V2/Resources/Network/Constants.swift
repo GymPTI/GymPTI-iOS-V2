@@ -2,14 +2,11 @@
 //  Constants.swift
 //  GymPTI-V2
 //
-//  Created by 이민규 on 2023/05/10.
+//  Created by 이민규 on 2023/10/08.
 //
 
-// MARK: - AWS URL
-public let API: String = "http://veryhotseo81.duckdns.org:8888/gympti"
+import Foundation
 
-// MARK: - 학교 와이파이 URL
-//public let API: String = "http://10.80.162.84:9000"
+//public let api: String = "http://veryhotseo81.duckdns.org:8888/gympti"
 
-// MARK: - ICT 행사장 와이파이 URL
-//public let API: String = "http://172.16.3.3:9000"
+public let api: String = "http://131.123.123:9000"

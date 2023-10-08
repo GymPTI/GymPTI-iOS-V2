@@ -10,6 +10,7 @@
 		520A07A32AA8919E007BA4E4 /* Formmatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A22AA8919E007BA4E4 /* Formmatter.swift */; };
 		520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */; };
 		520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */; };
+		5214DB632AD290DF00CA6DE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214DB622AD290DF00CA6DE9 /* Constants.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
 		52256C942A8FAF2200871C0B /* StartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C932A8FAF2200871C0B /* StartCore.swift */; };
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
@@ -65,7 +66,6 @@
 		52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A42A0B974E00417B08 /* AppSideEffect.swift */; };
 		52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A62A0B977900417B08 /* HomeSideEffect.swift */; };
 		52C803A92A0B97CD00417B08 /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803A82A0B97CD00417B08 /* HomeCore.swift */; };
-		52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803AF2A0B9AAB00417B08 /* Constants.swift */; };
 		52C803B22A0B9ABB00417B08 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B12A0B9ABB00417B08 /* Response.swift */; };
 		52C803B42A0B9ACC00417B08 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B32A0B9ACC00417B08 /* Service.swift */; };
 		52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */; };
@@ -133,6 +133,7 @@
 		520A07A22AA8919E007BA4E4 /* Formmatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formmatter.swift; sourceTree = "<group>"; };
 		520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineWeekButton.swift; sourceTree = "<group>"; };
 		520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isInternetAvailable.swift; sourceTree = "<group>"; };
+		5214DB622AD290DF00CA6DE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		52256C932A8FAF2200871C0B /* StartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCore.swift; sourceTree = "<group>"; };
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		52C803A42A0B974E00417B08 /* AppSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSideEffect.swift; sourceTree = "<group>"; };
 		52C803A62A0B977900417B08 /* HomeSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSideEffect.swift; sourceTree = "<group>"; };
 		52C803A82A0B97CD00417B08 /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
-		52C803AF2A0B9AAB00417B08 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52C803B12A0B9ABB00417B08 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		52C803B32A0B9ACC00417B08 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
@@ -482,7 +482,7 @@
 		52C803AE2A0B9A9A00417B08 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				52C803AF2A0B9AAB00417B08 /* Constants.swift */,
+				5214DB622AD290DF00CA6DE9 /* Constants.swift */,
 				52C803B12A0B9ABB00417B08 /* Response.swift */,
 				52C803B32A0B9ACC00417B08 /* Service.swift */,
 				526593DD2A0D11CD00D9446B /* Interceptor.swift */,
@@ -849,6 +849,7 @@
 				524CEB7C2A275BA600B63DDA /* NotificationView.swift in Sources */,
 				52C8038A2A0B951900417B08 /* HomeView.swift in Sources */,
 				526594112A0E7AE700D9446B /* FriendRouteBuilder.swift in Sources */,
+				5214DB632AD290DF00CA6DE9 /* Constants.swift in Sources */,
 				520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */,
 				52C803E02A0BC8F700417B08 /* LaunchRouteBuilder.swift in Sources */,
 				52C803FF2A0BE09500417B08 /* NameCore.swift in Sources */,
@@ -888,7 +889,6 @@
 				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,
 				52E59DD72AC02F5000517FB0 /* SetPersonalProfileView.swift in Sources */,
 				52A3FC8E2A276BFC002B79A7 /* LoadingView.swift in Sources */,
-				52C803B02A0B9AAB00417B08 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -68,10 +68,11 @@ public struct SignIn: Reducer {
                 sideEffect.onSuccessSignIn()
             }
             
-        } catch {
+        } catch let error {
             await MainActor.run {
                 sideEffect.onFailSignIn()
             }
+            print(error.localizedDescription)
         }
     }
 }

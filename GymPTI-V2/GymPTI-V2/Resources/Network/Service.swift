@@ -25,7 +25,7 @@ final class Service {
                                     params: [String: Any]? = nil,
                                     _ model: T.Type = ErrorResponse.self) async throws -> T {
         
-        let request = session.request("\(API)\(url)",
+        let request = session.request("\(api)\(url)",
                                       method: method,
                                       parameters: params,
                                       encoding: method == .get ? URLEncoding.default : JSONEncoding.default)
@@ -37,22 +37,29 @@ final class Service {
         case .success(let value):
             
             guard let response = await dataTask.response.response, (200...299).contains(response.statusCode) else {
-                throw APIError.responseError
+                throw await APIError.responseError(dataTask.response.response!.statusCode)
             }
             return value
             
-        case .failure:
-            throw APIError.transportError
+        case .failure(let error):
+            throw APIError.transportError(error)
         }
     }
 }
 
 enum APIError: Error {
-    case transportError
-    case responseError
-    case dataError
-    
-    var errorDescription: String {
-        return "서버 통신 중 오류가 발생했습니다\n(Error code: \(self))"
+    case transportError(Error)
+    case responseError(Int)
+    case unknownError
+
+    var localizedDescription: String {
+        switch self {
+        case .transportError(let error):
+            return "네트워크 전송 오류: \(error.localizedDescription)"
+        case .responseError(let statusCode):
+            return "서버 응답 오류: HTTP 상태 코드 \(statusCode)"
+        case .unknownError:
+            return "알 수 없는 오류가 발생했습니다."
+        }
     }
 }

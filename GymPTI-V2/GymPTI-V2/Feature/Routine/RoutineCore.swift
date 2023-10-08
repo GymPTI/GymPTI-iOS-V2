@@ -100,8 +100,9 @@ public struct Routine: Reducer {
         
         do {
             _ = try await Service.request("/routine/isComplete/\(id)", .put, Response<Bool>.self)
-        } catch {
+        } catch let error {
             await MainActor.run {
+                print(error.localizedDescription)
                 sideEffect.onFailPutCompleteRoutine()
             }
         }
@@ -111,9 +112,14 @@ public struct Routine: Reducer {
         
         let params = ["dayOfWeek": day]
         
-        let response = try await Service.request("/routine/list", .get, params: params, Response<[RoutineList]>.self)
-        
-        return response.data
+        do {
+            let response = try await Service.request("/routine/list", .get, params: params, Response<[RoutineList]>.self)
+            return response.data
+            
+        } catch let error {
+            print(error.localizedDescription)
+            throw error
+        }
     }
 }
 

@@ -66,10 +66,11 @@ public struct Email: Reducer {
             await MainActor.run {
                 sideEffect.onSucessSendEmail(state.id, state.pw, state.name, state.email)
             }
-        } catch {
+        } catch let error {
             await MainActor.run {
                 sideEffect.onFailSendEmail()
             }
+            print(error.localizedDescription)
         }
     }
     
