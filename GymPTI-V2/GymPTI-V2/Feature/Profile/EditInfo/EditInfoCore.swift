@@ -27,7 +27,7 @@ public struct EditInfo: Reducer {
         
         case binding(BindingAction<State>)
         case onTapBackButton
-        case onTapChangeButton
+        case onTapSaveButton
         case onChangeProfileImage(Data)
     }
     
@@ -47,7 +47,7 @@ public struct EditInfo: Reducer {
                 sideEffect.onTapBackButton()
                 return .none
                 
-            case .onTapChangeButton:
+            case .onTapSaveButton:
                 let newState = state
                 Task {
                     await putUserData(state: newState)
@@ -64,9 +64,9 @@ public struct EditInfo: Reducer {
     func putUserData(state: State) async {
         
         do {
-            _ = try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName], ErrorResponse.self)
+            _ = try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName])
             
-            _ = try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage], ErrorResponse.self)
+            _ = try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage])
             
             await MainActor.run {
                 sideEffect.onSuccessPutUserData()

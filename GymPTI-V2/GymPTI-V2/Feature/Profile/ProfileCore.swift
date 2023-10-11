@@ -84,5 +84,6 @@ public struct Profile: Reducer {
 
 public struct User: Codable, Equatable {
     
-    let userId, nickname, email, profileImage, statusMessage: String?
+    let userId, nickname, email, profileImage, statusMessage, gender: String?
+    let height, weight, age: Int
 }

@@ -29,7 +29,7 @@ extension EditInfoView: View {
             CustomNavigationBar(title: "프로필 정보 수정", leadingButtonAction: {
                 viewStore.send(.onTapBackButton)
             }, trailingButtonTitle: "저장") {
-                viewStore.send(.onTapChangeButton)
+                viewStore.send(.onTapSaveButton)
             }
             
             ScrollView {

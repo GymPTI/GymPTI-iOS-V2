@@ -30,7 +30,7 @@ extension SetPersonalProfileView: View {
                 CustomNavigationBar(title: "신체 프로필 설정", leadingButtonAction: {
                     viewStore.send(.onTapBackButton)
                 }, trailingButtonTitle: "저장") {
-                    
+                    viewStore.send(.onTapSaveButton)
                 }
                 
                 ScrollView {

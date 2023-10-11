@@ -30,6 +30,7 @@ public struct SetPersonalProfile: Reducer {
         case onTapHeightButton
         case onTapWeightButton
         case onTapBackground
+        case onTapSaveButton
     }
     
     @Dependency(\.sideEffect.setPesronalProfile) var sideEffect
@@ -73,6 +74,35 @@ public struct SetPersonalProfile: Reducer {
                 state.isTapHeightButton = false
                 state.isTapWeightButton = false
                 return .none
+                
+            case .onTapSaveButton:
+                let newState = state
+                Task {
+                    await putBodyInfoData(state: newState)
+                }
+                return .none
+            }
+        }
+    }
+    
+    func putBodyInfoData(state: State) async {
+        
+        let params: [String : Any] = [
+            "gender": state.gender,
+            "height": state.height,
+            "weight": state.weight,
+            "age": state.age
+        ]
+        
+        do {
+            _ = try await Service.request("/user/bodyInfo", .put, params: params)
+            
+            await MainActor.run {
+                sideEffect.onSuccessPutBodyInfoData()
+            }
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailPutBodyInfoData()
             }
         }
     }
