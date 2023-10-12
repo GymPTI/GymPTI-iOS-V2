@@ -62,7 +62,7 @@ public struct Email: Reducer {
         let params = ["email": state.email]
         
         do {
-            _ = try await Service.request("/email/sendMailVerification", .post,params: params)
+            print(try await Service.request("/email/sendMailVerification", .post,params: params))
             await MainActor.run {
                 sideEffect.onSucessSendEmail(state.id, state.pw, state.name, state.email)
             }

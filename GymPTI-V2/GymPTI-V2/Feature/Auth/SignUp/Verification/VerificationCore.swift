@@ -63,7 +63,7 @@ public struct Verification: Reducer {
         ]
         
         do {
-            _ = try await Service.request("/email/validateMailVerification", .post,params: params)
+            print(try await Service.request("/email/validateMailVerification", .post,params: params))
         } catch let error {
             await MainActor.run {
                 sideEffect.failVerification()
@@ -82,7 +82,7 @@ public struct Verification: Reducer {
         ]
         
         do {
-            _ = try await Service.request("/auth/register", .post, params: params)
+            print(try await Service.request("/auth/register", .post, params: params))
         } catch let error{
             await MainActor.run {
                 sideEffect.failSignUp()

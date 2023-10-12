@@ -79,7 +79,8 @@ public struct Profile: Reducer {
     
     func getUserData() async throws -> User {
         
-        let response = try await Service.request("/user/my", .get, Response<User>.self)
+        let response = try await Service.request("/user/my", .get, DataResponse<User>.self)
+        print(response.data)
         return response.data
     }
 }

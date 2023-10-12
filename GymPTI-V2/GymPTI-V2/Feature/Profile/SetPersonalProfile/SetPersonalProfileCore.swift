@@ -95,8 +95,7 @@ public struct SetPersonalProfile: Reducer {
         ]
         
         do {
-            let response = try await Service.request("/user/bodyInfo", .put, params: params)
-            pirnt(response)
+            print(try await Service.request("/user/bodyInfo", .put, params: params))
             await MainActor.run {
                 sideEffect.onSuccessPutBodyInfoData()
             }

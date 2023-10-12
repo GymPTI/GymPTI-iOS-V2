@@ -64,9 +64,9 @@ public struct EditInfo: Reducer {
     func putUserData(state: State) async {
         
         do {
-            _ = try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName])
+            print(try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName]))
             
-            _ = try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage])
+            print(try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage]))
             
             await MainActor.run {
                 sideEffect.onSuccessPutUserData()

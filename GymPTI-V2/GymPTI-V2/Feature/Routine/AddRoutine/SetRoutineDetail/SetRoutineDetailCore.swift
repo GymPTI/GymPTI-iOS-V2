@@ -92,7 +92,7 @@ public struct SetRoutineDetail: Reducer {
         ]
         
         do {
-            _ = try await Service.request("/routine/create", .post, params: params)
+            print(try await Service.request("/routine/create", .post, params: params))
             await MainActor.run {
                 sideEffect.onSucessPostRoutineCreate()
             }

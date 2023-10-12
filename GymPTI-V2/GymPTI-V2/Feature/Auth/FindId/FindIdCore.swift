@@ -55,6 +55,7 @@ public struct FindId: Reducer {
         
         do {
             let response = try await Service.request("/routine/list", .get, params: params, IdData.self)
+            print(response)
             return response
         } catch {
             return IdData(userId: "none")
@@ -63,6 +64,5 @@ public struct FindId: Reducer {
 }
 
 public struct IdData: Codable {
-    
     let userId: String?
 }
