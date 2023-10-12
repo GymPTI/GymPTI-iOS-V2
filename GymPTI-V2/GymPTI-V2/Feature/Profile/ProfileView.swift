@@ -107,6 +107,12 @@ extension ProfileView: View {
                             .setFont(14, .medium)
                             .foregroundColor(Colors.white.color)
                             .padding(.top, 40)
+                        
+                        Button {
+                            print(viewStore.user!)
+                        } label: {
+                            Text("test")
+                        }
                     }
                     .padding(.top, 10)
                     .padding(.horizontal, 20)

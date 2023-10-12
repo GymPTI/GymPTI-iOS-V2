@@ -51,7 +51,10 @@ public struct Profile: Reducer {
                 return .none
                 
             case .onTapSetPersonalProfileButton:
-                sideEffect.onTapSetPersonalProfileButton()
+                sideEffect.onTapSetPersonalProfileButton(state.user?.gender ?? "MALE",
+                                                         String(state.user?.age ?? 0),
+                                                         String(state.user?.weight ?? 0),
+                                                         String(state.user?.height ?? 0))
                 return .none
                 
             case .onAppearProfile:
@@ -77,7 +80,6 @@ public struct Profile: Reducer {
     func getUserData() async throws -> User {
         
         let response = try await Service.request("/user/my", .get, Response<User>.self)
-        
         return response.data
     }
 }

@@ -12,7 +12,7 @@ public protocol ProfileSideEffect {
     var onTapSettingButton: () -> Void { get }
     var onTapNotificationButton: () -> Void { get }
     var onTapEditInfoButton: (String, String, String) -> Void { get }
-    var onTapSetPersonalProfileButton: () -> Void { get }
+    var onTapSetPersonalProfileButton: (String, String, String, String) -> Void { get }
 }
 
 public struct ProfileSideEffectLive {
@@ -48,9 +48,14 @@ extension ProfileSideEffectLive: ProfileSideEffect {
         }
     }
     
-    public var onTapSetPersonalProfileButton: () -> Void {
-        {
-            navigator.next(paths: ["setpersonalprofile"], items: [:], isAnimated: true)
+    public var onTapSetPersonalProfileButton: (String, String, String, String) -> Void {
+        { gender, age, height, weight in
+            navigator.next(paths: ["setpersonalprofile"], items: [
+                "setpersonalprofile-gender": gender,
+                "setpersonalprofile-age": age,
+                "setpersonalprofile-height": height,
+                "setpersonalprofile-weight": weight
+            ], isAnimated: true)
         }
     }
 }

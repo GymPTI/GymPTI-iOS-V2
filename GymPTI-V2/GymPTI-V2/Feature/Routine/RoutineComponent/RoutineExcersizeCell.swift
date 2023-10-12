@@ -41,7 +41,9 @@ struct RoutineExcersizeCardView: View {
     
     var body: some View {
         
-        Button { } label: {
+        Button {
+            
+        } label: {
             
             VStack(alignment: .leading, spacing: 20) {
                 
@@ -118,10 +120,11 @@ struct RoutineExcersizeCardView: View {
                     isTapCardView.toggle()
                 }
             }
-            .onLongPressGesture(minimumDuration: 0.25) {
+            .onLongPressGesture(minimumDuration: 0.1) {
                 longPressGestureAction()
             }
             .opacity(isCompleted ? 0.5 : 1)
         }
+        .scaledButtonStyle()
     }
 }
