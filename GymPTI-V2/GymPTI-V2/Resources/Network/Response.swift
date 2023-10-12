@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Response<T: Codable>: Codable {
+struct Response: Codable {
+    let status: Int
+    let message: String
+}
+
+class DataResponse<T: Codable>: Codable {
     var status: Int
     var message: String
     var data: T
-}
-
-struct ErrorResponse: Codable {
-    let status: Int
-    let message: String
 }
