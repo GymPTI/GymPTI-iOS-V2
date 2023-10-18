@@ -123,10 +123,6 @@
 		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
 		52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */; };
 		52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */; };
-		52FCBEE82AB2A41100EB6E17 /* SelectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEE72AB2A41100EB6E17 /* SelectGoalView.swift */; };
-		52FCBEEA2AB2A43500EB6E17 /* SelectGoalCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEE92AB2A43500EB6E17 /* SelectGoalCore.swift */; };
-		52FCBEEC2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEEB2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift */; };
-		52FCBEEE2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBEED2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,10 +240,6 @@
 		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
 		52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCardView.swift; sourceTree = "<group>"; };
 		52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		52FCBEE72AB2A41100EB6E17 /* SelectGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalView.swift; sourceTree = "<group>"; };
-		52FCBEE92AB2A43500EB6E17 /* SelectGoalCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalCore.swift; sourceTree = "<group>"; };
-		52FCBEEB2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalSideEffect.swift; sourceTree = "<group>"; };
-		52FCBEED2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalRouteBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,14 +297,6 @@
 				52269D312ABC0B340087A85F /* SetRoutineRouteBuilder.swift */,
 			);
 			path = SetRoutine;
-			sourceTree = "<group>";
-		};
-		52269D332ABC0E450087A85F /* AddAIRoutine */ = {
-			isa = PBXGroup;
-			children = (
-				52FCBEE62AB2A3F800EB6E17 /* SelectGoal */,
-			);
-			path = AddAIRoutine;
 			sourceTree = "<group>";
 		};
 		524CEB7D2A275BAB00B63DDA /* Notification */ = {
@@ -587,7 +571,6 @@
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
 				520A079E2AA858FE007BA4E4 /* AddRoutine */,
-				52269D332ABC0E450087A85F /* AddAIRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -682,17 +665,6 @@
 			path = HomeComponent;
 			sourceTree = "<group>";
 		};
-		52FCBEE62AB2A3F800EB6E17 /* SelectGoal */ = {
-			isa = PBXGroup;
-			children = (
-				52FCBEE72AB2A41100EB6E17 /* SelectGoalView.swift */,
-				52FCBEE92AB2A43500EB6E17 /* SelectGoalCore.swift */,
-				52FCBEEB2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift */,
-				52FCBEED2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift */,
-			);
-			path = SelectGoal;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -774,7 +746,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FCBEEE2AB2A44A00EB6E17 /* SelectGoalRouteBuilder.swift in Sources */,
 				52C803DA2A0BB74200417B08 /* SignInRouteBuilder.swift in Sources */,
 				5258D7B22AA59BEF00D77C40 /* SetRoutineDetailView.swift in Sources */,
 				5265940F2A0E7ADA00D9446B /* FriendSideEffect.swift in Sources */,
@@ -814,12 +785,10 @@
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Service.swift in Sources */,
-				52FCBEEC2AB2A43F00EB6E17 /* SelectGoalSideEffect.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
-				52FCBEE82AB2A41100EB6E17 /* SelectGoalView.swift in Sources */,
 				52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */,
 				526594032A0E595900D9446B /* VerificationSideEffect.swift in Sources */,
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
@@ -882,7 +851,6 @@
 				52256C922A8FAE0400871C0B /* StartView.swift in Sources */,
 				52C804502A0CBF0500417B08 /* SettingSideEffect.swift in Sources */,
 				526593F42A0E0D8100D9446B /* FindIdRouteBuilder.swift in Sources */,
-				52FCBEEA2AB2A43500EB6E17 /* SelectGoalCore.swift in Sources */,
 				52C8043E2A0CB2E000417B08 /* EditInfoSideEffect.swift in Sources */,
 				52C8040F2A0C804300417B08 /* TabBarRouteBuilder.swift in Sources */,
 				52256C9A2A8FC02900871C0B /* CustomButton.swift in Sources */,

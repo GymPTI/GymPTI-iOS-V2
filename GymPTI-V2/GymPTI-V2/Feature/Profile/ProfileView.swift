@@ -66,14 +66,16 @@ extension ProfileView: View {
                         }
                         
                         Text("\(userData.nickname ?? "")")
-                            .setFont(24, .bold)
+                            .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
                             .padding(.top, 10)
                         
-                        Text("@\(userData.userId ?? "")")
-                            .setFont(10, .regular)
-                            .foregroundColor(Colors.white.color)
-                            .padding(.top, 2)
+                        if userData.statusMessage != "" {
+                            Text("\(userData.statusMessage ?? "")")
+                                .setFont(14, .regular)
+                                .foregroundColor(Colors.rightGray.color)
+                                .padding(.top, 2)
+                        }
                         
                         HStack(spacing: 10) {
                             

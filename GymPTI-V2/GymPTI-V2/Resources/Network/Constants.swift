@@ -7,6 +7,6 @@
 
 import Foundation
 
-//public let api: String = "http://veryhotseo81.duckdns.org:8888/gympti"
+public let api: String = "http://veryhotseo81.duckdns.org:8888/gympti"
 
-public let api: String = "http://10.80.162.244:9000"
+//public let api: String = "http://10.80.162.244:9000"

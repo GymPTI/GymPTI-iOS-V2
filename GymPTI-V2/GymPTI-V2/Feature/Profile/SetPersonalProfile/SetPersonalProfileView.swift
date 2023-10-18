@@ -43,7 +43,7 @@ extension SetPersonalProfileView: View {
                         
                         Text("모든 신체 정보는 더욱 정확한 루틴을 만들기 위해\n필요하며 그 외 어떠한 곳에도 사용되지 않습니다.")
                             .setFont(14, .regular)
-                            .foregroundColor(Colors.white.color)
+                            .foregroundColor(Colors.rightGray.color)
                             .padding(.trailing, 28)
                         
                         HStack(alignment: .center, spacing: 8) {

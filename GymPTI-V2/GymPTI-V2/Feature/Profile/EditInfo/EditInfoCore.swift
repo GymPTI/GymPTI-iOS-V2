@@ -50,7 +50,8 @@ public struct EditInfo: Reducer {
             case .onTapSaveButton:
                 let newState = state
                 Task {
-                    await putUserData(state: newState)
+                    await putUserNickname(state: newState)
+                    await putUserNickStatusMessage(state: newState)
                 }
                 return .none
                 
@@ -61,13 +62,24 @@ public struct EditInfo: Reducer {
         }
     }
     
-    func putUserData(state: State) async {
+    func putUserNickname(state: State) async {
         
         do {
             print(try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName]))
-            
+            await MainActor.run {
+                sideEffect.onSuccessPutUserData()
+            }
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailPutUserData()
+            }
+        }
+    }
+    
+    func putUserNickStatusMessage(state: State) async {
+        
+        do {
             print(try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage]))
-            
             await MainActor.run {
                 sideEffect.onSuccessPutUserData()
             }
