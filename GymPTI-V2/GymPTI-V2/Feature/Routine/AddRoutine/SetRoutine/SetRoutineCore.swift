@@ -17,13 +17,19 @@ public struct SetRoutine: Reducer{
         
         var selectMuscle: String = ""
         
-        var exerciseName: String = "PUSH_UP"
+        var exerciseName: String = ""
         
-        var isSelectedDay: Bool = false
+        var isSelectedDay: Bool {
+            return selectedDay != ""
+        }
+
+        var isSelectedMuscle: Bool {
+            return selectMuscle != ""
+        }
         
-        var isSelectedMuscle: Bool = false
-        
-        var isSelectedExercize: Bool = false
+        var isSelectedExercize: Bool {
+            return exerciseName != ""
+        }
     }
     
     public enum Action: Equatable {
@@ -54,17 +60,14 @@ public struct SetRoutine: Reducer{
             case .onSelectDayButton(let day):
                 state.day = day
                 state.selectedDay = day
-                state.isSelectedDay = true
                 return .none
                 
             case .onSelectMuscleButton(let muscle):
                 state.selectMuscle = muscle
-                state.isSelectedMuscle = true
                 return .none
                 
             case .onSelectExerciseButton(let exercise):
                 state.exerciseName = exercise
-                state.isSelectedExercize = true
                 return .none
             }
         }
