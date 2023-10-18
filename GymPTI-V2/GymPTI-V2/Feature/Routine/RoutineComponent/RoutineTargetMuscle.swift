@@ -30,7 +30,6 @@ struct RoutineTargetMuscle: View {
         Button {
             action()
         } label: {
-            
             Text("\(muscleName)")
                 .setFont(16, .bold)
                 .foregroundColor(Colors.white.color)

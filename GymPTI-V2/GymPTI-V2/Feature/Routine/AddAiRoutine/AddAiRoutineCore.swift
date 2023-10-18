@@ -11,14 +11,19 @@ public struct AddAiRoutine: Reducer{
     
     public struct State: Equatable {
         
-        var selectMuscle: String = ""
+        var selectMuscle: [String] = []
         
-        var exerciseName: String = "PUSH_UP"
+        var exerciseName: String = ""
+        
+        var isSelectMuscle: Bool {
+            return selectMuscle != []
+        }
     }
     
     public enum Action: Equatable {
         
         case onTapBackButton
+        case onSelectMuscleButton(String)
     }
     
     @Dependency(\.sideEffect.addAiRoutine) var sideEffect
@@ -31,6 +36,10 @@ public struct AddAiRoutine: Reducer{
                 
             case .onTapBackButton:
                 sideEffect.onTapBackButton()
+                return .none
+                
+            case .onSelectMuscleButton(let muscle):
+                state.selectMuscle.append(muscle)
                 return .none
             }
         }

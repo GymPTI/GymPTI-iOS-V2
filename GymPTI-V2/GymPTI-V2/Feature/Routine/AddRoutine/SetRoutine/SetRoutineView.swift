@@ -33,7 +33,7 @@ extension SetRoutineView: View {
                 
                 VStack(spacing: 10) {
                     
-                    Text("요일을 선택해주세요!")
+                    Text("요일을 선택해주세요")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -62,7 +62,7 @@ extension SetRoutineView: View {
                     
                     VStack(spacing: 10) {
                         
-                        Text("타겟 근육을 선택해주세요!")
+                        Text("타겟 근육을 선택해주세요")
                             .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -98,7 +98,7 @@ extension SetRoutineView: View {
                     
                     VStack(spacing: 10) {
                         
-                        Text("운동을 선택해주세요!")
+                        Text("운동을 선택해주세요")
                             .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
                             .frame(maxWidth: .infinity, alignment: .leading)

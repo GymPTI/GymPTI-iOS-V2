@@ -33,7 +33,7 @@ extension SetRoutineDetailView: View {
                 
                 VStack {
                     
-                    Text("운동의 상세한 설정을 해주세요!")
+                    Text("운동의 상세한 설정을 해주세요")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
                         .frame(maxWidth: .infinity, alignment: .leading)
