@@ -30,7 +30,7 @@ extension RoutineSideEffectLive: RoutineSideEffect {
     
     public var onTapAiAddRoutineButton: () -> Void {
         {
-            navigator.next(paths: ["selectgoal"], items: [:], isAnimated: true)
+            navigator.next(paths: ["addairoutine"], items: [:], isAnimated: true)
         }
     }
     

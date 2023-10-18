@@ -40,7 +40,7 @@ struct AppRouterGroup {
             /// 루틴 화면
             RoutineRouteBuilder(),
             
-            SelectGoalRouteBuilder(),
+            AddAiRoutineRouteBuilder(),
             
             SetRoutineRouteBuilder(),
             

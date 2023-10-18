@@ -10,6 +10,10 @@
 		520A07A32AA8919E007BA4E4 /* Formmatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A22AA8919E007BA4E4 /* Formmatter.swift */; };
 		520A07A52AA892B2007BA4E4 /* RoutineWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */; };
 		520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */; };
+		520DD9962ADFEF5A00780F8E /* AddAiRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9952ADFEF5A00780F8E /* AddAiRoutineView.swift */; };
+		520DD9982ADFEFA500780F8E /* AddAiRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */; };
+		520DD99A2ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */; };
+		520DD99C2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */; };
 		5214DB632AD290DF00CA6DE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214DB622AD290DF00CA6DE9 /* Constants.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
 		52256C942A8FAF2200871C0B /* StartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C932A8FAF2200871C0B /* StartCore.swift */; };
@@ -129,6 +133,10 @@
 		520A07A22AA8919E007BA4E4 /* Formmatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formmatter.swift; sourceTree = "<group>"; };
 		520A07A42AA892B2007BA4E4 /* RoutineWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineWeekButton.swift; sourceTree = "<group>"; };
 		520A07A72AA9B020007BA4E4 /* isInternetAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isInternetAvailable.swift; sourceTree = "<group>"; };
+		520DD9952ADFEF5A00780F8E /* AddAiRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineView.swift; sourceTree = "<group>"; };
+		520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineCore.swift; sourceTree = "<group>"; };
+		520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineSideEffect.swift; sourceTree = "<group>"; };
+		520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineRouteBuilder.swift; sourceTree = "<group>"; };
 		5214DB622AD290DF00CA6DE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		52256C932A8FAF2200871C0B /* StartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCore.swift; sourceTree = "<group>"; };
@@ -275,6 +283,17 @@
 				522FCAD52AB2B316007DBC1F /* RoutineTargetMuscle.swift */,
 			);
 			path = RoutineComponent;
+			sourceTree = "<group>";
+		};
+		520DD9942ADFEF2E00780F8E /* AddAiRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				520DD9952ADFEF5A00780F8E /* AddAiRoutineView.swift */,
+				520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */,
+				520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */,
+				520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */,
+			);
+			path = AddAiRoutine;
 			sourceTree = "<group>";
 		};
 		52256C902A8FAC0600871C0B /* Start */ = {
@@ -571,6 +590,7 @@
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
 				520A079E2AA858FE007BA4E4 /* AddRoutine */,
+				520DD9942ADFEF2E00780F8E /* AddAiRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -786,6 +806,7 @@
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
 				52C803B42A0B9ACC00417B08 /* Service.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
+				520DD9962ADFEF5A00780F8E /* AddAiRoutineView.swift in Sources */,
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
@@ -794,6 +815,7 @@
 				52C8041C2A0C876300417B08 /* ProfileView.swift in Sources */,
 				52C8044E2A0CBEF900417B08 /* SettingCore.swift in Sources */,
 				52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */,
+				520DD99C2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift in Sources */,
 				52C000502ACF964100F8F798 /* Token.swift in Sources */,
 				52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */,
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
@@ -801,6 +823,7 @@
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
 				5258D7B52AA7026800D77C40 /* SetRoutineDetailCore.swift in Sources */,
 				526593F62A0E42F300D9446B /* ColorExt.swift in Sources */,
+				520DD99A2ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift in Sources */,
 				52C803F72A0BDB4700417B08 /* PwCore.swift in Sources */,
 				52C803DC2A0BB8E200417B08 /* SignInSideEffect.swift in Sources */,
 				52C803A72A0B977900417B08 /* HomeSideEffect.swift in Sources */,
@@ -836,6 +859,7 @@
 				523A9A2A2AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
+				520DD9982ADFEFA500780F8E /* AddAiRoutineCore.swift in Sources */,
 				526593FF2A0E594300D9446B /* VerificationView.swift in Sources */,
 				52C803F52A0BDB3F00417B08 /* PwView.swift in Sources */,
 				52C8041E2A0C877300417B08 /* ProfileCore.swift in Sources */,

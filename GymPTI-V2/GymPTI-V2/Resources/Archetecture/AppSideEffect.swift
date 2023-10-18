@@ -41,7 +41,7 @@ public struct AppSideEffect: DependencyKey {
     
     let routine: RoutineSideEffect
     
-    let selectGoal: SelectGoalSideEffect
+    let addAiRoutine: AddAiRoutineSideEffect
     
     let setRoutine: SetRoutineSideEffect
     
@@ -86,9 +86,9 @@ public struct AppSideEffect: DependencyKey {
             
             home: HomeSideEffectLive(navigator: navigator),
             
-            routine: RoutineSideEffectLive(navigator: navigator),
+            routine: RoutineSideEffectLive(navigator: navigator), 
             
-            selectGoal: SelectGoalSideEffectLive(navigator: navigator),
+            addAiRoutine: AddAiRoutineSideEffectLive(navigator: navigator),
             
             setRoutine: SetRoutineSideEffectLive(navigator: navigator),
             
