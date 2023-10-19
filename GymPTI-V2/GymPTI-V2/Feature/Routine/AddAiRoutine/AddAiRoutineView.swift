@@ -60,6 +60,7 @@ extension AddAiRoutineView: View {
                                         .padding(15)
                                         .background(
                                             Rectangle()
+                                                .fill()
                                                 .frame(minWidth: 0, maxWidth: 200)
                                                 .frame(height: 34)
                                                 .cornerRadius(15)
@@ -76,10 +77,52 @@ extension AddAiRoutineView: View {
                     
                     if viewStore.isSelectMuscle {
                         
-                        Text("이런 운동은 어때요?")
-                            .setFont(20, .bold)
-                            .foregroundColor(Colors.white.color)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        VStack(spacing: 10) {
+                            
+                            Text("이런 운동은 어때요?")
+                                .setFont(20, .bold)
+                                .foregroundColor(Colors.white.color)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Text("반드시 고를 필요는 없어요, 하지만 루틴 생성에 도움이 돼요!")
+                                .setFont(12, .regular)
+                                .foregroundColor(Colors.white.color)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.top, 2)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                
+                                HStack {
+                                    
+//                                    ForEach(exercises(forMuscle: viewStore.selectMuscle), id: \.self) { exercise in
+//                                        
+//                                        Button(action: {
+//                                            viewStore.send(.onSelectExerciseButton(exercise))
+//                                        }) {
+//                                            Text(exerciseNameToKor(exercise))
+//                                                .setFont(16, .bold)
+//                                                .foregroundColor(Colors.white.color)
+//                                                .padding(15)
+//                                                .background(
+//                                                    Rectangle()
+//                                                        .fill(viewStore.exerciseName == exercise ? Colors.main.color : Colors.darkGray.color)
+//                                                        .frame(minWidth: 0, maxWidth: 200)
+//                                                        .frame(height: 34)
+//                                                        .cornerRadius(15)
+//                                                )
+//                                        }
+//                                        .scaledButtonStyle()
+//                                    }
+                                }
+                            }
+                        }
+                        .padding([.horizontal, .top], 20)
+                        
+                        CustomButton("다음", disabled: !viewStore.isSelectExercise) {
+                            viewStore.send(.onTapBackButton)
+                        }
+                        .padding(.top, 40)
+                        .padding(.horizontal, 100)
                     }
                 }
                 .padding(.horizontal, 20)

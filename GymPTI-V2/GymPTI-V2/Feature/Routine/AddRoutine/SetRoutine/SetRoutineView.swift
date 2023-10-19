@@ -131,7 +131,7 @@ extension SetRoutineView: View {
                     }
                     .padding([.horizontal, .top], 20)
                     
-                    CustomButton("다음", disabled: !viewStore.isSelectedExercize) {
+                    CustomButton("다음", disabled: !viewStore.isSelectedExercise) {
                         viewStore.send(.onTapNextButton)
                     }
                     .padding(.top, 40)

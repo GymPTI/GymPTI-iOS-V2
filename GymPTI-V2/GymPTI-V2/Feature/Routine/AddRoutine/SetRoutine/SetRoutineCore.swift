@@ -27,7 +27,7 @@ public struct SetRoutine: Reducer{
             return selectMuscle != ""
         }
         
-        var isSelectedExercize: Bool {
+        var isSelectedExercise: Bool {
             return exerciseName != ""
         }
     }

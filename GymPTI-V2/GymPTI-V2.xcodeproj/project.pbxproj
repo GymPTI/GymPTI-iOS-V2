@@ -14,6 +14,7 @@
 		520DD9982ADFEFA500780F8E /* AddAiRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */; };
 		520DD99A2ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */; };
 		520DD99C2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */; };
+		520DD99E2AE0F01600780F8E /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD99D2AE0F01600780F8E /* ImagePickerView.swift */; };
 		5214DB632AD290DF00CA6DE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214DB622AD290DF00CA6DE9 /* Constants.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
 		52256C942A8FAF2200871C0B /* StartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C932A8FAF2200871C0B /* StartCore.swift */; };
@@ -137,6 +138,7 @@
 		520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineCore.swift; sourceTree = "<group>"; };
 		520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineSideEffect.swift; sourceTree = "<group>"; };
 		520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineRouteBuilder.swift; sourceTree = "<group>"; };
+		520DD99D2AE0F01600780F8E /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		5214DB622AD290DF00CA6DE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		52256C932A8FAF2200871C0B /* StartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCore.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				52C8043B2A0CB2BF00417B08 /* EditInfoCore.swift */,
 				52C8043D2A0CB2E000417B08 /* EditInfoSideEffect.swift */,
 				52C8043F2A0CB2ED00417B08 /* EditInfoRouteBuilder.swift */,
+				520DD99D2AE0F01600780F8E /* ImagePickerView.swift */,
 			);
 			path = EditInfo;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				520DD99C2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift in Sources */,
 				52C000502ACF964100F8F798 /* Token.swift in Sources */,
 				52FCBE7E2AAC54AE00EB6E17 /* TabBarSideEffect.swift in Sources */,
+				520DD99E2AE0F01600780F8E /* ImagePickerView.swift in Sources */,
 				52C804052A0BE2A400417B08 /* EmailView.swift in Sources */,
 				52C803F32A0BD2F100417B08 /* IdRouteBuilder.swift in Sources */,
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,

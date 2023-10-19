@@ -6,21 +6,21 @@
 //
 
 import ComposableArchitecture
-import _PhotosUI_SwiftUI
+import SwiftUI
 
 public struct EditInfo: Reducer {
     
     public struct State: Equatable {
         
-        var profileImage: String = ""
+        @BindingState var profileImage: String = ""
         
         @BindingState var newName: String
         
         @BindingState var newStatusMessage: String
         
-//        @BindingState var selectedItem: PhotosPickerItem? = nil
+        @BindingState var isShowPhotoLibrary: Bool = false
         
-        var selectedImageData: Data? = nil
+        @BindingState var selectImage = UIImage()
     }
     
     public enum Action: Equatable, BindableAction {
@@ -28,7 +28,7 @@ public struct EditInfo: Reducer {
         case binding(BindingAction<State>)
         case onTapBackButton
         case onTapSaveButton
-        case onChangeProfileImage(Data)
+        case onTapChangeProfileButton
     }
     
     @Dependency(\.sideEffect.editInfo) var sideEffect
@@ -55,8 +55,8 @@ public struct EditInfo: Reducer {
                 }
                 return .none
                 
-            case .onChangeProfileImage(let data):
-                state.selectedImageData = data
+            case .onTapChangeProfileButton:
+                state.isShowPhotoLibrary = true
                 return .none
             }
         }
