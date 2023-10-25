@@ -128,6 +128,7 @@
 		52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */; };
 		52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */; };
 		52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */; };
+		52FFFC3F2AE8B43100477F4D /* ButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +251,7 @@
 		52FCBE7F2AAC662300EB6E17 /* ExerciseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTag.swift; sourceTree = "<group>"; };
 		52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCardView.swift; sourceTree = "<group>"; };
 		52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonExt.swift; path = ../../../../../ButtonExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 				52C803B82A0BAD3900417B08 /* ViewExt.swift */,
 				52C803B62A0BAD1800417B08 /* UINavigationControllerExt.swift */,
 				522FCAD32AB2AF28007DBC1F /* TypeExt.swift */,
+				52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				526593F22A0E0D7600D9446B /* FindIdSideEffect.swift in Sources */,
 				52256C942A8FAF2200871C0B /* StartCore.swift in Sources */,
 				52C804522A0CBF1100417B08 /* SettingRouteBuilder.swift in Sources */,
+				52FFFC3F2AE8B43100477F4D /* ButtonExt.swift in Sources */,
 				524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,

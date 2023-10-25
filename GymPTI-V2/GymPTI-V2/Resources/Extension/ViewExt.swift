@@ -48,19 +48,3 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
-extension Button {
-    
-    func scaledButtonStyle() -> some View {
-        self.buttonStyle(ScaledButtonStyle())
-    }
-    
-    struct ScaledButtonStyle: ButtonStyle {
-        
-        func makeBody(configuration: Configuration) -> some View {
-            configuration.label
-                .scaleEffect(configuration.isPressed ? 0.945 : 1)
-                .animation(.easeInOut, value: configuration.isPressed)
-        }
-    }
-}
