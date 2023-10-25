@@ -42,6 +42,8 @@ struct AppRouterGroup {
             
             AddAiRoutineRouteBuilder(),
             
+            DecideAiRoutineRouteBuilder(),
+            
             SetRoutineRouteBuilder(),
             
             SetRoutineDetailRouteBuilder(),

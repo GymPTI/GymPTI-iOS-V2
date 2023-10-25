@@ -14,7 +14,7 @@ struct RoutineExcersizeCardView: View {
     let reps: Int
     let sets: Int
     let restTime: Int
-    let isCompleted: Bool
+    let isCompleted: Bool?
     let longPressGestureAction: () -> Void
     let completedButtonAction: () -> Void
     
@@ -25,9 +25,9 @@ struct RoutineExcersizeCardView: View {
          reps: Int,
          sets: Int,
          restTime: Int,
-         isCompleted: Bool,
-         longPressGestureAction: @escaping () -> Void,
-         completedButtonAction: @escaping () -> Void)
+         isCompleted: Bool?,
+         longPressGestureAction: @escaping () -> Void = { },
+         completedButtonAction: @escaping () -> Void = { })
     {
         self.excerciseName = excerciseName
         self.targetMuscles = targetMuscles
@@ -62,27 +62,28 @@ struct RoutineExcersizeCardView: View {
                     
                     Spacer()
                     
-                    Button {
-                        completedButtonAction()
-                    } label : {
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 22, height: 22)
-                                .foregroundColor(Colors.gray.color)
-                                .cornerRadius(4)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(Colors.white.color, lineWidth: 2)
-                                )
-                            if isCompleted {
-                                
-                                Image(systemName: "checkmark")
-                                    .frame(width: 18, height: 18)
-                                    .foregroundColor(Colors.white.color)
+                    if let isCompleted = isCompleted {
+                        Button {
+                            completedButtonAction()
+                        } label : {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 22, height: 22)
+                                    .foregroundColor(Colors.gray.color)
+                                    .cornerRadius(4)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .stroke(Colors.white.color, lineWidth: 2)
+                                    )
+                                if isCompleted {
+                                    Image(systemName: "checkmark")
+                                        .frame(width: 18, height: 18)
+                                        .foregroundColor(Colors.white.color)
+                                }
                             }
                         }
+                        .disabled(isCompleted ? true : false)
                     }
-                    .disabled(isCompleted ? true : false)
                 }
                 
                 if isTapCardView {
@@ -123,7 +124,7 @@ struct RoutineExcersizeCardView: View {
             .onLongPressGesture(minimumDuration: 0.1) {
                 longPressGestureAction()
             }
-            .opacity(isCompleted ? 0.5 : 1)
+            .opacity(isCompleted ?? false ? 0.5 : 1)
         }
         .scaledButtonStyle()
     }

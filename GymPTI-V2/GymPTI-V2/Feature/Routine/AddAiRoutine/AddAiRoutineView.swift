@@ -27,7 +27,7 @@ extension AddAiRoutineView: View {
             
             CustomNavigationBar(title: "ai 루틴 추가하기") {
                 viewStore.send(.onTapBackButton)
-            }
+            } 
             
             ScrollView {
                 
@@ -67,9 +67,8 @@ extension AddAiRoutineView: View {
                         }
                     }
                     
-                    CustomButton("다음", disabled: !viewStore.isSelectMuscle) {
-//                        viewStore.send(.onTapBackButton)
-                        print(viewStore.selectMuscle)
+                    CustomButton("추가", disabled: !viewStore.isSelectMuscle) {
+                        viewStore.send(.onTapNextButton)
                     }
                     .padding(.top, 40)
                     .padding(.horizontal, 100)

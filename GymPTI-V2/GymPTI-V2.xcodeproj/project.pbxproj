@@ -129,6 +129,10 @@
 		52FFFC582AE8B59100477F4D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC532AE8B59100477F4D /* Response.swift */; };
 		52FFFC592AE8B59100477F4D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC542AE8B59100477F4D /* Token.swift */; };
 		52FFFC5B2AE8B5D700477F4D /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */; };
+		52FFFC5F2AE9308200477F4D /* DecideAiRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC5E2AE9308200477F4D /* DecideAiRoutineView.swift */; };
+		52FFFC612AE930B500477F4D /* DecideAiRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC602AE930B500477F4D /* DecideAiRoutineCore.swift */; };
+		52FFFC632AE930BF00477F4D /* DecideAiRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC622AE930BF00477F4D /* DecideAiRoutineSideEffect.swift */; };
+		52FFFC652AE930CC00477F4D /* DecideAiRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC642AE930CC00477F4D /* DecideAiRoutineRouteBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,6 +256,10 @@
 		52FFFC532AE8B59100477F4D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		52FFFC542AE8B59100477F4D /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		52FFFC5E2AE9308200477F4D /* DecideAiRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideAiRoutineView.swift; sourceTree = "<group>"; };
+		52FFFC602AE930B500477F4D /* DecideAiRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideAiRoutineCore.swift; sourceTree = "<group>"; };
+		52FFFC622AE930BF00477F4D /* DecideAiRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideAiRoutineSideEffect.swift; sourceTree = "<group>"; };
+		52FFFC642AE930CC00477F4D /* DecideAiRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideAiRoutineRouteBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,9 +457,9 @@
 				52C8041A2A0C874900417B08 /* TabBar */,
 				52C803A32A0B970300417B08 /* Home */,
 				52C804102A0C86CF00417B08 /* Routine */,
+				52C8044A2A0CBED600417B08 /* Setting */,
 				526594082A0E7A8000D9446B /* Friend */,
 				52C804192A0C873100417B08 /* Profile */,
-				52C8044A2A0CBED600417B08 /* Setting */,
 				524CEB7D2A275BAB00B63DDA /* Notification */,
 			);
 			path = Feature;
@@ -584,6 +592,7 @@
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
 				520A079E2AA858FE007BA4E4 /* AddRoutine */,
 				520DD9942ADFEF2E00780F8E /* AddAiRoutine */,
+				52FFFC5D2AE9302500477F4D /* DecideAiRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -691,6 +700,17 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		52FFFC5D2AE9302500477F4D /* DecideAiRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				52FFFC5E2AE9308200477F4D /* DecideAiRoutineView.swift */,
+				52FFFC602AE930B500477F4D /* DecideAiRoutineCore.swift */,
+				52FFFC622AE930BF00477F4D /* DecideAiRoutineSideEffect.swift */,
+				52FFFC642AE930CC00477F4D /* DecideAiRoutineRouteBuilder.swift */,
+			);
+			path = DecideAiRoutine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -781,6 +801,7 @@
 				520A07A32AA8919E007BA4E4 /* Formmatter.swift in Sources */,
 				52269D302ABC0A870087A85F /* SetRoutineSideEffect.swift in Sources */,
 				52C803FD2A0BE04200417B08 /* NameView.swift in Sources */,
+				52FFFC5F2AE9308200477F4D /* DecideAiRoutineView.swift in Sources */,
 				52FCBE802AAC662300EB6E17 /* ExerciseTag.swift in Sources */,
 				52C803EF2A0BD2DC00417B08 /* IdCore.swift in Sources */,
 				52C804162A0C871D00417B08 /* RoutineSideEffect.swift in Sources */,
@@ -855,11 +876,13 @@
 				52C8044C2A0CBEED00417B08 /* SettingVIew.swift in Sources */,
 				52C803FB2A0BDB7400417B08 /* PwRouteBuilder.swift in Sources */,
 				526594192A0E8B2500D9446B /* CustomNavi.swift in Sources */,
+				52FFFC652AE930CC00477F4D /* DecideAiRoutineRouteBuilder.swift in Sources */,
 				52256C982A8FAF4000871C0B /* StartRouteBuilder.swift in Sources */,
 				52FCBE7C2AAC54A400EB6E17 /* TabBarCore.swift in Sources */,
 				52C804472A0CBA0200417B08 /* EditPasswordSideEffect.swift in Sources */,
 				52C803D72A0BB73300417B08 /* SignInCore.swift in Sources */,
 				52C803882A0B951900417B08 /* AppMain.swift in Sources */,
+				52FFFC612AE930B500477F4D /* DecideAiRoutineCore.swift in Sources */,
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
 				52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */,
 				523A9A282AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift in Sources */,
@@ -876,6 +899,7 @@
 				526593EE2A0E0D1E00D9446B /* FindIdView.swift in Sources */,
 				526594052A0E596200D9446B /* VerificationRouteBuilder.swift in Sources */,
 				52C804432A0CB9ED00417B08 /* EditPasswordView.swift in Sources */,
+				52FFFC632AE930BF00477F4D /* DecideAiRoutineSideEffect.swift in Sources */,
 				520A07A82AA9B020007BA4E4 /* isInternetAvailable.swift in Sources */,
 				52C803C72A0BB5A900417B08 /* SignInView.swift in Sources */,
 				524CEB812A275BCE00B63DDA /* NotificationSideEffect.swift in Sources */,

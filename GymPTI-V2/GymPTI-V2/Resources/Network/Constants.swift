@@ -31,6 +31,7 @@ class API {
     /// routine
     static let routine_isComplete = "\(url)/routine/isComplete"
     static let routine_create = "\(url)/routine/create"
+    static let routine_aicreate = "\(url)/routine/ai-create"
     static let routine_list = "\(url)/routine/list"
     static let routine_delete = "\(url)/routine/delete"
 }

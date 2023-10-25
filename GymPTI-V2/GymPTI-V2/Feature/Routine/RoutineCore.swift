@@ -130,5 +130,5 @@ public struct RoutineList: Codable, Equatable, Identifiable, Hashable {
     let exerciseName: String
     let targetMuscle: [String]
     let reps, sets, restTime: Int
-    let completed: Bool
+    let completed: Bool?
 }

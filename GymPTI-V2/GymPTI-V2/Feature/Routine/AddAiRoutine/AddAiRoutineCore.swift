@@ -39,6 +39,7 @@ public struct AddAiRoutine: Reducer{
         case onSelectLegsMuscle
         case onSelectShoulderMuscle
         case onSelectAbsMuscle
+        case onTapNextButton
     }
     
     @Dependency(\.sideEffect.addAiRoutine) var sideEffect
@@ -95,11 +96,15 @@ public struct AddAiRoutine: Reducer{
                     state.isSelectAbsMuscle.toggle()
                 }
                 return .none
+                
+            case .onTapNextButton:
+                sideEffect.onTapNextButton(state.selectMuscle)
+                return .none
             }
         }
     }
 
-    func addMuscle(_ muscle: String, to: [String]) -> [String] {
+    private func addMuscle(_ muscle: String, to: [String]) -> [String] {
         var newArray = to
         let countOfMuscle = newArray.filter { $0 == muscle }.count
         
