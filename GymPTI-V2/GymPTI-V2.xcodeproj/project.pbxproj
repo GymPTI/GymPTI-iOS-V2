@@ -123,12 +123,12 @@
 		52FCBE832AACD42500EB6E17 /* InfluencerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */; };
 		52FCBE872AADAD7F00EB6E17 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */; };
 		52FFFC3F2AE8B43100477F4D /* ButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */; };
-		52FFFC412AE8B4D000477F4D /* Network in Resources */ = {isa = PBXBuildFile; fileRef = 52FFFC402AE8B4D000477F4D /* Network */; };
-		52FFFC4A2AE8B4F800477F4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC452AE8B4F800477F4D /* Constants.swift */; };
-		52FFFC4B2AE8B4F800477F4D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC462AE8B4F800477F4D /* Service.swift */; };
-		52FFFC4C2AE8B4F800477F4D /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC472AE8B4F800477F4D /* Interceptor.swift */; };
-		52FFFC4D2AE8B4F800477F4D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC482AE8B4F800477F4D /* Response.swift */; };
-		52FFFC4E2AE8B4F800477F4D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC492AE8B4F800477F4D /* Token.swift */; };
+		52FFFC552AE8B59100477F4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC502AE8B59100477F4D /* Constants.swift */; };
+		52FFFC562AE8B59100477F4D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC512AE8B59100477F4D /* Service.swift */; };
+		52FFFC572AE8B59100477F4D /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC522AE8B59100477F4D /* Interceptor.swift */; };
+		52FFFC582AE8B59100477F4D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC532AE8B59100477F4D /* Response.swift */; };
+		52FFFC592AE8B59100477F4D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC542AE8B59100477F4D /* Token.swift */; };
+		52FFFC5B2AE8B5D700477F4D /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,12 +246,12 @@
 		52FCBE822AACD42500EB6E17 /* InfluencerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCardView.swift; sourceTree = "<group>"; };
 		52FCBE862AADAD7F00EB6E17 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonExt.swift; path = ../../../../../ButtonExt.swift; sourceTree = "<group>"; };
-		52FFFC402AE8B4D000477F4D /* Network */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Network; path = "../../../../../../GymPTI-V2/Resources/Network"; sourceTree = "<group>"; };
-		52FFFC452AE8B4F800477F4D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		52FFFC462AE8B4F800477F4D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		52FFFC472AE8B4F800477F4D /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
-		52FFFC482AE8B4F800477F4D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		52FFFC492AE8B4F800477F4D /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		52FFFC502AE8B59100477F4D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52FFFC512AE8B59100477F4D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		52FFFC522AE8B59100477F4D /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		52FFFC532AE8B59100477F4D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		52FFFC542AE8B59100477F4D /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,9 +461,9 @@
 			isa = PBXGroup;
 			children = (
 				52C8038B2A0B951A00417B08 /* Assets.xcassets */,
-				52FFFC442AE8B4F800477F4D /* Network */,
 				52C803AD2A0B9A7F00417B08 /* Navigator */,
 				52C803AC2A0B9A6500417B08 /* Archetecture */,
+				52FFFC4F2AE8B59100477F4D /* Network */,
 				526593FA2A0E549F00D9446B /* Extension */,
 				526593F92A0E53A400D9446B /* Utility */,
 			);
@@ -481,7 +481,6 @@
 		52C803AD2A0B9A7F00417B08 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				52FFFC402AE8B4D000477F4D /* Network */,
 				52C803872A0B951900417B08 /* AppMain.swift */,
 				52C8039F2A0B96A200417B08 /* AppRouteBuilder.swift */,
 			);
@@ -622,6 +621,7 @@
 				528D4CC22A15CEB8008A0F7A /* SettingButton.swift */,
 				52A3FC8D2A276BFC002B79A7 /* LoadingView.swift */,
 				52256C992A8FC02900871C0B /* CustomButton.swift */,
+				52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -679,17 +679,16 @@
 			path = HomeComponent;
 			sourceTree = "<group>";
 		};
-		52FFFC442AE8B4F800477F4D /* Network */ = {
+		52FFFC4F2AE8B59100477F4D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				52FFFC452AE8B4F800477F4D /* Constants.swift */,
-				52FFFC462AE8B4F800477F4D /* Service.swift */,
-				52FFFC472AE8B4F800477F4D /* Interceptor.swift */,
-				52FFFC482AE8B4F800477F4D /* Response.swift */,
-				52FFFC492AE8B4F800477F4D /* Token.swift */,
+				52FFFC502AE8B59100477F4D /* Constants.swift */,
+				52FFFC512AE8B59100477F4D /* Service.swift */,
+				52FFFC522AE8B59100477F4D /* Interceptor.swift */,
+				52FFFC532AE8B59100477F4D /* Response.swift */,
+				52FFFC542AE8B59100477F4D /* Token.swift */,
 			);
-			name = Network;
-			path = "../../../../../GymPTI-V2/Resources/Network";
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -763,7 +762,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C8038C2A0B951A00417B08 /* Assets.xcassets in Resources */,
-				52FFFC412AE8B4D000477F4D /* Network in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,10 +794,11 @@
 				52C804402A0CB2ED00417B08 /* EditInfoRouteBuilder.swift in Sources */,
 				5265940D2A0E7ACC00D9446B /* FriendCore.swift in Sources */,
 				52269D2C2ABC098B0087A85F /* SetRoutineView.swift in Sources */,
+				52FFFC5B2AE8B5D700477F4D /* ImagePickerView.swift in Sources */,
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
 				524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
-				52FFFC4C2AE8B4F800477F4D /* Interceptor.swift in Sources */,
+				52FFFC572AE8B59100477F4D /* Interceptor.swift in Sources */,
 				522FCAD42AB2AF28007DBC1F /* TypeExt.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
 				52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */,
@@ -814,10 +813,10 @@
 				524CEB832A275BD900B63DDA /* NotificationRouteBuilder.swift in Sources */,
 				52C804202A0C877D00417B08 /* ProfileSideEffect.swift in Sources */,
 				526594012A0E594900D9446B /* VerificationCore.swift in Sources */,
-				52FFFC4A2AE8B4F800477F4D /* Constants.swift in Sources */,
+				52FFFC552AE8B59100477F4D /* Constants.swift in Sources */,
 				52C803BC2A0BAE1600417B08 /* KeyboardManager.swift in Sources */,
 				520DD9962ADFEF5A00780F8E /* AddAiRoutineView.swift in Sources */,
-				52FFFC4E2AE8B4F800477F4D /* Token.swift in Sources */,
+				52FFFC592AE8B59100477F4D /* Token.swift in Sources */,
 				52C804122A0C86EB00417B08 /* RoutineView.swift in Sources */,
 				52C8040D2A0C771900417B08 /* TabBarView.swift in Sources */,
 				526594072A0E62AE00D9446B /* Colors.swift in Sources */,
@@ -864,7 +863,7 @@
 				523BE92B2A923FEB00519285 /* RoutineExcersizeCell.swift in Sources */,
 				52269D292ABBFF1F0087A85F /* AppInfoManager.swift in Sources */,
 				523A9A282AC46DD300FDE079 /* SetPersonalProfileSideEffect.swift in Sources */,
-				52FFFC4D2AE8B4F800477F4D /* Response.swift in Sources */,
+				52FFFC582AE8B59100477F4D /* Response.swift in Sources */,
 				523A9A2A2AC46E4500FDE079 /* SetPersonalProfileRouteBuilder.swift in Sources */,
 				5265940B2A0E7AC200D9446B /* FriendView.swift in Sources */,
 				5258D7B92AA702AE00D77C40 /* SetRoutineDetailRouteBuilder.swift in Sources */,
@@ -889,7 +888,7 @@
 				52C803ED2A0BD25A00417B08 /* IdView.swift in Sources */,
 				52E59DD72AC02F5000517FB0 /* SetPersonalProfileView.swift in Sources */,
 				52A3FC8E2A276BFC002B79A7 /* LoadingView.swift in Sources */,
-				52FFFC4B2AE8B4F800477F4D /* Service.swift in Sources */,
+				52FFFC562AE8B59100477F4D /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
