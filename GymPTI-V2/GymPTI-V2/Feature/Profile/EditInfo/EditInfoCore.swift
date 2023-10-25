@@ -66,7 +66,7 @@ public struct EditInfo: Reducer {
     func putUserNickname(state: State) async {
         
         do {
-            print(try await Service.request("/user/nickname", .put, params: ["newNickname": state.newName]))
+            print(try await Service.request(API.user_nickname, .put, params: ["newNickname": state.newName]))
             await MainActor.run {
                 sideEffect.onSuccessPutUserData()
             }
@@ -80,7 +80,7 @@ public struct EditInfo: Reducer {
     func putUserNickStatusMessage(state: State) async {
         
         do {
-            print(try await Service.request("/user/statusMessage", .put, params: ["statusMessage": state.newStatusMessage]))
+            print(try await Service.request(API.user_statusMessage, .put, params: ["statusMessage": state.newStatusMessage]))
             await MainActor.run {
                 sideEffect.onSuccessPutUserData()
             }
@@ -94,7 +94,7 @@ public struct EditInfo: Reducer {
     func putUserProfileImage(state: State) async {
         
         do {
-            print(try await Service.uploadImage("/user/profileImage", .put, image: state.selectImage))
+            print(try await Service.uploadImage(API.user_profileImage, .put, image: state.selectImage))
         } catch {
             await MainActor.run {
                 sideEffect.onFailPutUserData("프로필 사진")

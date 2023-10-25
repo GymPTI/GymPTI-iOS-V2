@@ -58,7 +58,7 @@ public struct EditPassword: Reducer {
         ]
         
         do {
-            print(try await Service.request("/user/password", .put, params: params))
+            print(try await Service.request(API.user_password, .put, params: params))
             
             await MainActor.run {
                 sideEffect.onSuccessPutUserPassword()
