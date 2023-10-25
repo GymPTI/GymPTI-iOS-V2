@@ -60,8 +60,7 @@ public struct SignIn: Reducer {
         ]
         
         do {
-            let response = try await Service.request("/auth/login", .post, params: params, DataResponse<AccessToken>.self)
-            print(response)
+            let response = try await Service.request(API.auth_login, .post, params: params, DataResponse<AccessToken>.self)
             await MainActor.run {
                 Token.save(.accessToken, response.data.accessToken)
                 Token.save(.refreshToken, response.data.refreshToken)

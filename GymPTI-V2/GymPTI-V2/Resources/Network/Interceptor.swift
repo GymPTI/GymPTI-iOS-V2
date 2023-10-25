@@ -17,7 +17,7 @@ final class Interceptor: RequestInterceptor {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         
-        guard urlRequest.url?.absoluteString.hasPrefix(api) == true,
+        guard urlRequest.url?.absoluteString.hasPrefix(API.url) == true,
               let accessToken = Token.get(.accessToken) else {
             
             completion(.success(urlRequest))
@@ -46,7 +46,7 @@ final class Interceptor: RequestInterceptor {
         
         if let refreshToken = Token.get(.refreshToken) {
             
-            AF.request("\(api)/token/refresh",
+            AF.request("\(API.url)/token/refresh",
                        method: .post,
                        parameters: ["refreshToken": "Bearer \(refreshToken)"],
                        encoding: JSONEncoding.default,

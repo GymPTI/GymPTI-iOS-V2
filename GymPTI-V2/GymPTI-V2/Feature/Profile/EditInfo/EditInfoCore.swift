@@ -52,6 +52,7 @@ public struct EditInfo: Reducer {
                 Task {
                     await putUserNickname(state: newState)
                     await putUserNickStatusMessage(state: newState)
+                    await putUserProfileImage(state: newState)
                 }
                 return .none
                 
@@ -71,7 +72,7 @@ public struct EditInfo: Reducer {
             }
         } catch {
             await MainActor.run {
-                sideEffect.onFailPutUserData()
+                sideEffect.onFailPutUserData("닉네임")
             }
         }
     }
@@ -85,7 +86,18 @@ public struct EditInfo: Reducer {
             }
         } catch {
             await MainActor.run {
-                sideEffect.onFailPutUserData()
+                sideEffect.onFailPutUserData("상태 메시지")
+            }
+        }
+    }
+    
+    func putUserProfileImage(state: State) async {
+        
+        do {
+            print(try await Service.uploadImage("/user/profileImage", .put, image: state.selectImage))
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailPutUserData("프로필 사진")
             }
         }
     }

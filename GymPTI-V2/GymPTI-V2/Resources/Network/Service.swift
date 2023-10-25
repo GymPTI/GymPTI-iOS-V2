@@ -25,10 +25,44 @@ final class Service {
                                     params: [String: Any]? = nil,
                                     _ model: T.Type = Response.self) async throws -> T {
         
-        let request = session.request("\(api)\(url)",
+        let request = session.request(url,
                                       method: method,
                                       parameters: params,
                                       encoding: method == .get ? URLEncoding.default : JSONEncoding.default)
+        
+        let dataTask = request.serializingDecodable(model)
+        
+        switch await dataTask.result {
+            
+        case .success(let value):
+            
+            guard let response = await dataTask.response.response, (200...299).contains(response.statusCode) else {
+                throw await APIError.responseError(dataTask.response.response!.statusCode)
+            }
+            return value
+            
+        case .failure(let error):
+            throw APIError.transportError(error)
+        }
+    }
+    
+    static func uploadImage<T: Codable>(_ url: String,
+                                        _ method: HTTPMethod,
+                                        image: UIImage,
+                                        _ model: T.Type = Response.self) async throws -> T {
+        
+        let accessToken = Token.get(.accessToken)!.replacingOccurrences(of: "(", with: "_")
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(accessToken)",
+            "Content-Type": "multipart/form-data"
+        ]
+        
+        let request = session.upload(multipartFormData: { multipartFormData in
+            
+            if let imageData = image.pngData() {
+                multipartFormData.append(imageData, withName: "profileImage", fileName: "profileImage.png", mimeType: "image/png")
+            }
+        }, to: url, method: method, headers: headers)
         
         let dataTask = request.serializingDecodable(model)
         
@@ -51,7 +85,7 @@ enum APIError: Error {
     case transportError(Error)
     case responseError(Int)
     case unknownError
-
+    
     var localizedDescription: String {
         switch self {
         case .transportError(let error):

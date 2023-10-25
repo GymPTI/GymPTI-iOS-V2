@@ -11,7 +11,7 @@ public protocol EditInfoSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onSuccessPutUserData: () -> Void { get }
-    var onFailPutUserData: () -> Void { get }
+    var onFailPutUserData: (String) -> Void { get }
 }
 
 public struct EditInfoSideEffectLive {
@@ -37,11 +37,11 @@ extension EditInfoSideEffectLive: EditInfoSideEffect {
         }
     }
     
-    public var onFailPutUserData: () -> Void {
-        {
+    public var onFailPutUserData: (String) -> Void {
+        { message in
             let alertModel = Alert(
                 title: "실패",
-                message: "프로필 정보 변경에 실패했어요.",
+                message: "\(message) 변경에 실패했어요.",
                 buttons: [.init(title: "확인", style: .default)],
                 flagType: .error
             )

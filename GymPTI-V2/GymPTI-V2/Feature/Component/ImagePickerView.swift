@@ -36,6 +36,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
 
 final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     let parent: ImagePickerView
     
     init(_ parent: ImagePickerView) {
@@ -43,8 +44,11 @@ final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigation
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        if let selectedImage = info[.originalImage] as? UIImage {
-            parent.selectedImage = selectedImage
+        
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            parent.selectedImage = possibleImage
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            parent.selectedImage = possibleImage
         }
         parent.presentationMode.wrappedValue.dismiss()
     }

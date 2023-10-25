@@ -54,8 +54,7 @@ public struct FindId: Reducer {
         let params = ["email": state.email]
         
         do {
-            let response = try await Service.request("/routine/list", .get, params: params, IdData.self)
-            print(response)
+            let response = try await Service.request(API.url, .get, params: params, IdData.self)
             return response
         } catch {
             return IdData(userId: "none")

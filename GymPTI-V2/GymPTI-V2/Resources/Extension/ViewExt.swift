@@ -29,12 +29,6 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
-    
-    @ViewBuilder
-    func setShadow() -> some View {
-        self
-            .shadow(color: .black, radius: 2, y: 3)
-    }
 }
 
 struct RoundedCorner: Shape {
@@ -46,5 +40,21 @@ struct RoundedCorner: Shape {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         
         return Path(path.cgPath)
+    }
+}
+
+extension Button {
+    
+    func scaledButtonStyle() -> some View {
+        self.buttonStyle(ScaledButtonStyle())
+    }
+    
+    struct ScaledButtonStyle: ButtonStyle {
+        
+        func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .scaleEffect(configuration.isPressed ? 0.945 : 1)
+                .animation(.easeInOut, value: configuration.isPressed)
+        }
     }
 }

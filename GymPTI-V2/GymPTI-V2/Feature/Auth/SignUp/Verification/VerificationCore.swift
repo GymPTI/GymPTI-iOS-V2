@@ -63,31 +63,22 @@ public struct Verification: Reducer {
         ]
         
         do {
-            print(try await Service.request("/email/validateMailVerification", .post,params: params))
-        } catch let error {
+            let result = try await Service.request(API.email_validateMailVerification, .post,params: params)
+            if (200..<299).contains(result.status) {
+                
+                let params = [
+                    "userId": state.id,
+                    "nickname": state.name,
+                    "email": state.email,
+                    "password": state.pw.hashedPassword()
+                ]
+                
+                print(try await Service.request(API.auth_register, .post, params: params))
+            }
+        } catch {
             await MainActor.run {
                 sideEffect.failVerification()
             }
-            print(error.localizedDescription)
-        }
-    }
-    
-    func sendSignUpRequest(state: State) async {
-        
-        let params = [
-            "userId": state.id,
-            "nickname": state.name,
-            "email": state.email,
-            "password": state.pw.hashedPassword()
-        ]
-        
-        do {
-            print(try await Service.request("/auth/register", .post, params: params))
-        } catch let error{
-            await MainActor.run {
-                sideEffect.failSignUp()
-            }
-            print(error.localizedDescription)
         }
     }
 }
