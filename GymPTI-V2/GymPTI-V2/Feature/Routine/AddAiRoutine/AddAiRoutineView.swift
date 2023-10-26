@@ -33,9 +33,15 @@ extension AddAiRoutineView: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     
-                    Text("운동할 부위를 최대 3개까지 선택해주세요")
-                        .setFont(20, .bold)
-                        .foregroundColor(Colors.white.color)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("운동할 부위를 선택해주세요")
+                            .setFont(20, .bold)
+                            .foregroundColor(Colors.white.color)
+                        
+                        Text("최대 3개까지 선택이 가능합니다")
+                            .setFont(14, .regular)
+                            .foregroundColor(Colors.white.color)
+                    }
                     
                     HStack(spacing: 15) {
                         MucsleCardView("가슴", isSelect: viewStore.isSelectChestMuscle) {
@@ -130,10 +136,10 @@ struct MucsleCardView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 100)
                 
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: 2) {
                     
                     Text("\(muscle) 근육")
-                        .setFont(14, .bold)
+                        .setFont(18, .bold)
                         .foregroundColor(Colors.white.color)
                     
                     Text("\(getTargetMuscle(muscle))")
@@ -142,13 +148,13 @@ struct MucsleCardView: View {
                 }
                 .padding(.leading, 10)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 42)
+                .frame(height: 50)
                 .background(Colors.darkGray.color.opacity(0.6))
                 
                 Rectangle()
                     .frame(maxWidth: .infinity)
                     .frame(height: 100)
-                    .foregroundColor(isSelect ? .clear : .black.opacity(0.8))
+                    .foregroundColor(isSelect ? .clear : .black.opacity(0.65))
             }
             .frame(maxWidth: .infinity)
             .frame(height: 100)

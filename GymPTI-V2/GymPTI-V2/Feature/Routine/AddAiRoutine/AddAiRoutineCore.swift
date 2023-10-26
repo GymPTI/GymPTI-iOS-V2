@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-public struct AddAiRoutine: Reducer{
+public struct AddAiRoutine: Reducer {
     
     public struct State: Equatable {
         

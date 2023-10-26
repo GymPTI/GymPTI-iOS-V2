@@ -34,16 +34,16 @@ extension DecideAiRoutineView: View {
                     
                     if let routineData = viewStore.routineList {
                         
-                        ForEach(routineData) { data in
-                            
-                            RoutineExcersizeCardView(
-                                data.exercisename,
-                                targetMuscles: "",
-                                reps: Int(data.reps)!,
-                                sets: Int(data.sets)!,
-                                restTime: Int(data.resttime)!,
-                                isCompleted: nil)
-                        }
+//                        ForEach(routineData, id: \.self) { data in
+//                            
+//                            RoutineExcersizeCardView(
+//                                data.exercisename,
+//                                targetMuscles: "",
+//                                reps: Int(data.reps)!,
+//                                sets: Int(data.sets)!,
+//                                restTime: Int(data.resttime)!,
+//                                isCompleted: nil)
+//                        }
                     } else {
                         Text("운동 루틴을 생성하고 있습니다...")
                             .setFont(20, .bold)

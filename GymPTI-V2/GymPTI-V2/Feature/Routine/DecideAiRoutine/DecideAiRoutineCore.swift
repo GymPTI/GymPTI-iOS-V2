@@ -11,7 +11,7 @@ public struct DecideAiRoutine: Reducer{
     
     public struct State: Equatable {
         
-        var routineList: [RoutineResult]? = [RoutineResult(id: 1, exercisename: "푸쉬업", resttime: "1", reps: "1", sets: "1")]
+        var routineList: ExerciseResult?
     }
     
     public enum Action: Equatable {
@@ -19,7 +19,7 @@ public struct DecideAiRoutine: Reducer{
         case onTapBackButton
         case onTapDecideButton
         case getAiRoutineList
-        case routineListDataReceived(TaskResult<[RoutineResult]>)
+        case routineListDataReceived(TaskResult<ExerciseResult>)
     }
     
     @Dependency(\.sideEffect.decideAiRoutine) var sideEffect
@@ -58,14 +58,16 @@ public struct DecideAiRoutine: Reducer{
         }
     }
     
-    func getAiRoutineList() async throws -> [RoutineResult] {
+    func getAiRoutineList() async throws -> ExerciseResult {
         
-        let params: [String : Any] = ["targetExercise": ["CHEST", "BACK"], "wantExercise": ""]
+        let params: [String : [String]] = ["targetExercise": ["CHEST", "BACK"]]
         
         do {
-            let response = try await Service.request(API.routine_aicreate, .post, params: params, DataResponse<[RoutineResult]>.self)
+            let response = try await Service.request(API.routine_aicreate, .post, params: params, DataResponse<ExerciseResult>.self)
+            print(response.data)
             return response.data
         } catch let error {
+            print(error)
             await MainActor.run {
                 sideEffect.onFailGetAiRoutineList()
             }
@@ -74,8 +76,13 @@ public struct DecideAiRoutine: Reducer{
     }
 }
 
-public struct RoutineResult: Codable, Equatable, Identifiable, Hashable {
-    
-    public let id: Int
-    let exercisename, resttime, reps, sets: String
+public struct ExerciseResult: Codable, Equatable {
+    let result: [Exercise]
+}
+
+public struct Exercise: Codable, Equatable {
+    let sets: String
+    let restTime: String
+    let reps: String
+    let exerciseName: String
 }
