@@ -37,10 +37,9 @@ extension SetRoutineDetailSideEffectLive: SetRoutineDetailSideEffect {
             let alertModel = Alert(
                 title: "추가",
                 message: "해당 루틴을 추가하시겠습니까?",
-                buttons: [ActionButton(title: "확인", style: .default, action: {
-                    
+                buttons: [ActionButton(title: "확인", style: .default) {
                     action()
-                }), ActionButton(title: "취소", style: .cancel)],
+                }, ActionButton(title: "취소", style: .cancel)],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)

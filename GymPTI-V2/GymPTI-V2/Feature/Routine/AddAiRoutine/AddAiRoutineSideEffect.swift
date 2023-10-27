@@ -37,9 +37,9 @@ extension AddAiRoutineSideEffectLive: AddAiRoutineSideEffect {
             let alertModel = Alert(
                 title: "생성",
                 message: "\(selectMuscle) 운동 루틴을\n생성하시겠습니까?",
-                buttons: [ActionButton(title: "확인", style: .default, action: {
+                buttons: [ActionButton(title: "확인", style: .default) {
                     navigator.next(paths: ["decideairoutine"], items: items, isAnimated: true)
-                }), ActionButton(title: "취소", style: .cancel)],
+                }, ActionButton(title: "취소", style: .cancel)],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)

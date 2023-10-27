@@ -32,31 +32,36 @@ extension DecideAiRoutineView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 15) {
                     
-                    if let routineData = viewStore.routineList {
+                    if let routineData = viewStore.routineList?.result {
                         
-//                        ForEach(routineData, id: \.self) { data in
-//                            
-//                            RoutineExcersizeCardView(
-//                                data.exercisename,
-//                                targetMuscles: "",
-//                                reps: Int(data.reps)!,
-//                                sets: Int(data.sets)!,
-//                                restTime: Int(data.resttime)!,
-//                                isCompleted: nil)
-//                        }
-                    } else {
-                        Text("운동 루틴을 생성하고 있습니다...")
+                        Text("루틴이 마음에 드시나요?")
                             .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
                         
-                        Text("\(viewStore.selectMuscle) 근육")
+                        ForEach(routineData, id: \.self) { data in
+                            
+                            RoutineExcersizeCardView(
+                                data.exerciseName, 
+                                targetMuscles: "",
+                                reps: Int(data.reps) ?? 0,
+                                sets: Int(data.sets) ?? 0,
+                                restTime: Int(data.restTime) ?? 0,
+                                isCompleted: nil)
+                        }
+                        
+                        HStack(spacing: 15) {
+                            CustomButton("결정", disabled: false) {
+                                viewStore.send(.onTapDecideButton)
+                            }
+                            
+                            CustomButton("재생성", disabled: false) {
+                                viewStore.send(.onTapDecideButton)
+                            }
+                            .opacity(0.3)
+                        }
+                        .padding(.top, 40)
+                        .padding(.horizontal, 60)
                     }
-                    
-                    CustomButton("결정", disabled: false) {
-                        viewStore.send(.onTapDecideButton)
-                    }
-                    .padding(.top, 40)
-                    .padding(.horizontal, 100)
                 }
                 .padding(.horizontal, 20)
                 .frame(maxWidth: .infinity)
@@ -66,6 +71,11 @@ extension DecideAiRoutineView: View {
         .setBackground()
         .onAppear {
             viewStore.send(.getAiRoutineList)
+        }
+        .overlay {
+            if viewStore.isCreateAiRoutine {
+                LoadingView(loadingType: .createAiRotine)
+            }
         }
     }
 }

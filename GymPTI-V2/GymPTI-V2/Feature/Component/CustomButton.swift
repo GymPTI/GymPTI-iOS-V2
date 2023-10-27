@@ -35,6 +35,7 @@ struct CustomButton: View {
                 .background(disabled ? Colors.main.color.opacity(0.3) : Colors.main.color)
                 .cornerRadius(50)
         }
+        .scaledButtonStyle()
         .disabled(disabled)
     }
 }

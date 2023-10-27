@@ -21,9 +21,11 @@ struct LoadingView: View {
     
     var body: some View {
         
-        VStack(spacing: 4) {
+        VStack(spacing: 10) {
             
             Text(loadingType == .sendEmail ? "이메일을 보내는 중..." : "루틴을 생성하는 중...")
+                .foregroundStyle(Colors.white.color)
+                .setFont(14, .medium)
            
             HStack(alignment: .center) {
                 

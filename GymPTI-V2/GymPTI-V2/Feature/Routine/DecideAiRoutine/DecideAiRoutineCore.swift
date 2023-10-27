@@ -12,7 +12,18 @@ public struct DecideAiRoutine: Reducer{
     public struct State: Equatable {
         
         var selectMuscle: String
-        var routineList: ExerciseResult?
+        
+        var isCreateAiRoutine: Bool {
+            if routineList == nil {
+                return true
+            }
+            return false
+        }
+//        var routineList: ExerciseResult?
+        var routineList: ExerciseResult? = ExerciseResult(result: [
+            Exercise.init(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
+            Exercise.init(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
+            Exercise.init(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업")])
     }
     
     public enum Action: Equatable {
@@ -66,6 +77,9 @@ public struct DecideAiRoutine: Reducer{
         let params: [String : [String]] = ["targetExercise": muscleArraytoEng]
         do {
             let response = try await Service.request(API.routine_aicreate, .post, params: params, DataResponse<ExerciseResult>.self)
+            await MainActor.run {
+                sideEffect.onSuccessGetAiRoutineList()
+            }
             return response.data
         } catch let error {
             await MainActor.run {
@@ -81,11 +95,11 @@ public struct DecideAiRoutine: Reducer{
     }
 }
 
-public struct ExerciseResult: Codable, Equatable {
+public struct ExerciseResult: Codable, Equatable, Hashable {
     let result: [Exercise]
 }
 
-public struct Exercise: Codable, Equatable {
+public struct Exercise: Codable, Hashable {
     let sets: String
     let restTime: String
     let reps: String
