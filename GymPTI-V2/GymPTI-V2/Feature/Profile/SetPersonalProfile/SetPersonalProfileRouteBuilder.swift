@@ -15,21 +15,18 @@ struct SetPersonalProfileRouteBuilder: RouteBuilder {
     var build: (LinkNavigatorType, [String : String], DependencyType) -> MatchingViewController? {
         { _, items, _ in
             WrappingController(matchPath: matchPath) {
-                if let age = Int(items["setpersonalprofile-age"] ?? ""),
-                   let height = Int(items["setpersonalprofile-height"] ?? ""),
-                   let weight = Int(items["setpersonalprofile-weight"] ?? "") {
-                    SetPersonalProfileView(store: .init(
-                        initialState: SetPersonalProfile.State(
-                            gender: items["setpersonalprofile-gender"] ?? "",
-                            age: age,
-                            height: height,
-                            weight: weight),
-                        reducer: {
-                            SetPersonalProfile()
-                        }))
-                    .navigationBarHidden(true)
-                }
+                SetPersonalProfileView(store: .init(
+                    initialState: SetPersonalProfile.State(
+                        gender: items["setpersonalprofile-gender"] ?? "",
+                        age: Int(items["setpersonalprofile-age"] ?? "") ?? 0,
+                        height: Int(items["setpersonalprofile-height"] ?? "") ?? 0,
+                        weight: Int(items["setpersonalprofile-weight"] ?? "") ?? 0),
+                    reducer: {
+                        SetPersonalProfile()
+                    }))
+                .navigationBarHidden(true)
             }
         }
     }
 }
+

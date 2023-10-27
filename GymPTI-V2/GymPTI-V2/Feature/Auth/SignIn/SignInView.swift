@@ -70,7 +70,7 @@ extension SignInView: View {
         .setBackground()
         .overlay {
             if viewStore.isLoging {
-                LoadingView()
+                LoadingView(loadingType: .createAiRotine)
             }
         }
     }

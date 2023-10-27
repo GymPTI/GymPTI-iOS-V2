@@ -41,8 +41,10 @@ extension DecideAiRoutineSideEffectLive: DecideAiRoutineSideEffect {
         {
             let alertModel = Alert(
                 title: "실패",
-                message: "ai 루틴 생성에 실패했어요.",
-                buttons: [.init(title: "확인", style: .default)],
+                message: "ai 루틴 생성에 실패했어요...",
+                buttons: [.init(title: "확인", style: .default) {
+                    navigator.back(isAnimated: true)
+                }],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)

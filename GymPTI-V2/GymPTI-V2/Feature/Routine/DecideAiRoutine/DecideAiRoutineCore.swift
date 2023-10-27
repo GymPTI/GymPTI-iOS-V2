@@ -40,11 +40,11 @@ public struct DecideAiRoutine: Reducer{
                 return .none
                 
             case .getAiRoutineList:
+                let newState = state
                 return .run { send in
-                    
                     await send(.routineListDataReceived(
                         TaskResult { try await
-                            getAiRoutineList()
+                            getAiRoutineList(state: newState)
                         })
                     )
                 }
@@ -59,21 +59,25 @@ public struct DecideAiRoutine: Reducer{
         }
     }
     
-    func getAiRoutineList() async throws -> ExerciseResult {
+    private func getAiRoutineList(state: State) async throws -> ExerciseResult {
         
-        let params: [String : [String]] = ["targetExercise": ["CHEST", "BACK"]]
-        
+        let muscleArray = state.selectMuscle.components(separatedBy: ", ")
+        let muscleArraytoEng = muscleArray.map { muscleToEng($0) }
+        let params: [String : [String]] = ["targetExercise": muscleArraytoEng]
         do {
             let response = try await Service.request(API.routine_aicreate, .post, params: params, DataResponse<ExerciseResult>.self)
-            print(response.data)
             return response.data
         } catch let error {
-            print(error)
             await MainActor.run {
                 sideEffect.onFailGetAiRoutineList()
             }
             throw error
         }
+    }
+    
+    private func muscleToEng(_ muscle: String) -> String {
+        let muscleMap: [String: String] = ["가슴": "CHEST", "등": "BACK", "팔": "ARM", "하체": "LEGS", "어꺠": "SHOULDER", "복근": "ABS"]
+        return muscleMap[muscle] ?? ""
     }
 }
 
