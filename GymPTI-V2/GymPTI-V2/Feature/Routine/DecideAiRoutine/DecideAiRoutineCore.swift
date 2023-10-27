@@ -11,6 +11,7 @@ public struct DecideAiRoutine: Reducer{
     
     public struct State: Equatable {
         
+        var selectMuscle: String
         var routineList: ExerciseResult?
     }
     

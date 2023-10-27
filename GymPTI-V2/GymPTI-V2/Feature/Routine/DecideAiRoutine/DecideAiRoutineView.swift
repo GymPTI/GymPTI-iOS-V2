@@ -48,6 +48,8 @@ extension DecideAiRoutineView: View {
                         Text("운동 루틴을 생성하고 있습니다...")
                             .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
+                        
+                        Text("\(viewStore.selectMuscle) 근육")
                     }
                     
                     CustomButton("결정", disabled: false) {

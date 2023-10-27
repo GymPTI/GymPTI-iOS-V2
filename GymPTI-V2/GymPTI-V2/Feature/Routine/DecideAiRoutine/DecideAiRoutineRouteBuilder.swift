@@ -15,7 +15,9 @@ struct DecideAiRoutineRouteBuilder: RouteBuilder {
         { _, items, _ in
             WrappingController(matchPath: matchPath) {
                 DecideAiRoutineView(store: .init(
-                    initialState: DecideAiRoutine.State(),
+                    initialState: DecideAiRoutine.State(
+                        selectMuscle: items.getValue(key: "decideairoutine-selectMuscle") ?? ""
+                    ),
                     reducer: {
                         DecideAiRoutine()
                     }))

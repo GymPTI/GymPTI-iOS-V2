@@ -57,48 +57,48 @@ public struct AddAiRoutine: Reducer {
                 
             case .onSelectChestMuscle:
                 if !isMuscleLimitExceeded || state.isSelectChestMuscle {
-                    state.selectMuscle = addMuscle("CHEST", to: state.selectMuscle)
+                    state.selectMuscle = addMuscle("가슴", to: state.selectMuscle)
                     state.isSelectChestMuscle.toggle()
                 }
                 return .none
                 
             case .onSelectBackMuscle:
                 if !isMuscleLimitExceeded || state.isSelectBackMuscle {
-                    state.selectMuscle = addMuscle("BACK", to: state.selectMuscle)
+                    state.selectMuscle = addMuscle("등", to: state.selectMuscle)
                     state.isSelectBackMuscle.toggle()
                 }
                 return .none
                 
             case .onSelectArmMuscle:
                 if !isMuscleLimitExceeded || state.isSelectArmMuscle {
-                    state.selectMuscle = addMuscle("ARM", to: state.selectMuscle)
+                    state.selectMuscle = addMuscle("팔", to: state.selectMuscle)
                     state.isSelectArmMuscle.toggle()
                 }
                 return .none
                 
             case .onSelectLegsMuscle:
                 if !isMuscleLimitExceeded || state.isSelectLegsMuscle {
-                    state.selectMuscle = addMuscle("LEGS", to: state.selectMuscle)
+                    state.selectMuscle = addMuscle("하체", to: state.selectMuscle)
                     state.isSelectLegsMuscle.toggle()
                 }
                 return .none
                 
             case .onSelectShoulderMuscle:
                 if !isMuscleLimitExceeded || state.isSelectShoulderMuscle {
-                    state.selectMuscle = addMuscle("SHOULDER", to: state.selectMuscle)
+                    state.selectMuscle = addMuscle("어깨", to: state.selectMuscle)
                     state.isSelectShoulderMuscle.toggle()
                 }
                 return .none
                 
             case .onSelectAbsMuscle:
                 if !isMuscleLimitExceeded || state.isSelectAbsMuscle {
-                    state.selectMuscle = addMuscle("ABS", to: state.selectMuscle)
+                    state.selectMuscle = addMuscle("복근", to: state.selectMuscle)
                     state.isSelectAbsMuscle.toggle()
                 }
                 return .none
                 
             case .onTapNextButton:
-                sideEffect.onTapNextButton(state.selectMuscle)
+                sideEffect.onTapNextButton(state.selectMuscle.joined(separator: ", "))
                 return .none
             }
         }

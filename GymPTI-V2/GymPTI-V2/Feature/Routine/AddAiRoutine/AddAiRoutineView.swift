@@ -73,7 +73,7 @@ extension AddAiRoutineView: View {
                         }
                     }
                     
-                    CustomButton("추가", disabled: !viewStore.isSelectMuscle) {
+                    CustomButton("생성", disabled: !viewStore.isSelectMuscle) {
                         viewStore.send(.onTapNextButton)
                     }
                     .padding(.top, 40)
