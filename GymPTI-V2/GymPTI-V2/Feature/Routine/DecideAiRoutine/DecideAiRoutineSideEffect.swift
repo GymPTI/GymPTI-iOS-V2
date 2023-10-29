@@ -11,6 +11,7 @@ public protocol DecideAiRoutineSideEffect {
     
     var onTapBackButton: () -> Void { get }
     var onTapDecideButton: () -> Void { get }
+    var onTapRecreateButton: () -> Void { get }
     var onSuccessGetAiRoutineList: () -> Void { get }
     var onFailGetAiRoutineList: () -> Void { get}
 }
@@ -58,6 +59,20 @@ extension DecideAiRoutineSideEffectLive: DecideAiRoutineSideEffect {
                 buttons: [.init(title: "확인", style: .default) {
                     navigator.back(isAnimated: true)
                 }],
+                flagType: .error
+            )
+            navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var onTapRecreateButton: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "재생성",
+                message: "마음에 안드시나요?\n다시 만들어볼게요!",
+                buttons: [.init(title: "확인", style: .default) {
+                    
+                }, .init(title: "취소", style: .cancel)],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)

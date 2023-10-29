@@ -19,17 +19,18 @@ public struct DecideAiRoutine: Reducer{
             }
             return false
         }
-//        var routineList: ExerciseResult?
-        var routineList: ExerciseResult? = ExerciseResult(result: [
-            Exercise.init(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
-            Exercise.init(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
-            Exercise.init(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업")])
+        var routineList: ExerciseResult?
+//        var routineList: ExerciseResult? = ExerciseResult(result: [
+//            Exercise(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
+//            Exercise(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
+//            Exercise(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업")])
     }
     
     public enum Action: Equatable {
         
         case onTapBackButton
         case onTapDecideButton
+        case onTapRecreateButton
         case getAiRoutineList
         case routineListDataReceived(TaskResult<ExerciseResult>)
     }
@@ -48,6 +49,10 @@ public struct DecideAiRoutine: Reducer{
                 
             case .onTapDecideButton:
                 sideEffect.onTapDecideButton()
+                return .none
+                
+            case .onTapRecreateButton:
+                sideEffect.onTapRecreateButton()
                 return .none
                 
             case .getAiRoutineList:
@@ -99,7 +104,7 @@ public struct ExerciseResult: Codable, Equatable, Hashable {
     let result: [Exercise]
 }
 
-public struct Exercise: Codable, Hashable {
+public struct Exercise: Codable, Equatable, Hashable {
     let sets: String
     let restTime: String
     let reps: String

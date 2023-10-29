@@ -23,7 +23,7 @@ extension StartView: View {
     
     public var body: some View {
         
-        VStack(spacing: 20) {
+        VStack(spacing: 15) {
             
             Image("logo")
                 .padding([.horizontal, .bottom], 60)

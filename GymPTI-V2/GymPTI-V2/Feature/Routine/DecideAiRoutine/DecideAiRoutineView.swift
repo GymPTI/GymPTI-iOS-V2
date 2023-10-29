@@ -40,27 +40,56 @@ extension DecideAiRoutineView: View {
                         
                         ForEach(routineData, id: \.self) { data in
                             
-                            RoutineExcersizeCardView(
-                                data.exerciseName, 
-                                targetMuscles: "",
-                                reps: Int(data.reps) ?? 0,
-                                sets: Int(data.sets) ?? 0,
-                                restTime: Int(data.restTime) ?? 0,
-                                isCompleted: nil)
+                            VStack(alignment: .leading, spacing: 6) {
+                                
+                                Text("\(data.exerciseName)")
+                                    .setFont(20, .bold)
+                                    .foregroundColor(Colors.white.color)
+                                
+                                HStack {
+                                    Image("timer")
+                                    
+                                    Text("\(data.reps)회 • \(data.sets)세트")
+                                        .setFont(14, .regular)
+                                        .foregroundColor(Colors.white.color)
+                                    
+                                    Image("rest")
+                                        .padding(.leading, 4)
+                                    
+                                    Text("각 세트 후 \(Text(data.restTime).bold()) 휴식")
+                                        .setFont(14, .regular)
+                                        .foregroundColor(Colors.white.color)
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .padding(.vertical, 15)
+                            .padding(.horizontal, 20)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(height: 74)
+                            .background(Colors.darkGray.color)
+                            .cornerRadius(10)
                         }
                         
-                        HStack(spacing: 15) {
-                            CustomButton("결정", disabled: false) {
-                                viewStore.send(.onTapDecideButton)
-                            }
-                            
-                            CustomButton("재생성", disabled: false) {
-                                viewStore.send(.onTapDecideButton)
-                            }
-                            .opacity(0.3)
+                        CustomButton("결정", disabled: false) {
+                            viewStore.send(.onTapDecideButton)
                         }
                         .padding(.top, 40)
-                        .padding(.horizontal, 60)
+                        .padding(.horizontal, 100)
+                        
+                        HStack(spacing: 2) {
+                            Text("루틴이 마음에 드시지 않으신가요?")
+                                .setFont(14, .regular)
+                                .foregroundColor(Colors.white.color)
+                            
+                            Button {
+                                viewStore.send(.onTapRecreateButton)
+                            } label: {
+                                Text("루틴 재생성 하기")
+                                    .setFont(14, .bold)
+                                    .foregroundColor(Colors.main.color)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
                     }
                 }
                 .padding(.horizontal, 20)
