@@ -11,6 +11,17 @@ struct LoadingView: View {
     
     let loadingType: LoadingType
     
+    var message: String {
+        switch loadingType {
+        case .sendEmail:
+            "이메일을 보내는 중..."
+        case .createAiRotine:
+            "루틴을 생성하는 중..."
+        case .login:
+            "로그인 중..."
+        }
+    }
+
     @State var isFirstCircleAnimating = false
     @State var isSecondCircleAnimating = false
     @State var isThirdCircleAnimating = false
@@ -23,9 +34,9 @@ struct LoadingView: View {
         
         VStack(spacing: 10) {
             
-            Text(loadingType == .sendEmail ? "이메일을 보내는 중..." : "루틴을 생성하는 중...")
-                .foregroundStyle(Colors.white.color)
-                .setFont(14, .medium)
+            Text(message)
+            .foregroundStyle(Colors.white.color)
+            .setFont(14, .medium)
            
             HStack(alignment: .center) {
                 
@@ -63,9 +74,10 @@ struct LoadingView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black.opacity(0.66))
     }
-    
-    enum LoadingType {
-        case sendEmail
-        case createAiRotine
-    }
+}
+
+enum LoadingType {
+    case sendEmail
+    case createAiRotine
+    case login
 }

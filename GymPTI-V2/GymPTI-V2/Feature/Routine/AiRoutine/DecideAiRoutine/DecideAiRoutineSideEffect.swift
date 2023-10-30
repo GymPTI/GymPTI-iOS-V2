@@ -13,7 +13,9 @@ public protocol DecideAiRoutineSideEffect {
     var onTapDecideButton: () -> Void { get }
     var onTapRecreateButton: () -> Void { get }
     var onSuccessGetAiRoutineList: () -> Void { get }
-    var onFailGetAiRoutineList: () -> Void { get}
+    var onFailGetAiRoutineList: () -> Void { get }
+    var onSucessPostAiRoutineList: () -> Void { get }
+    var onFailPostAiRoutineList: () -> Void { get }
 }
 
 public struct DecideAiRoutineSideEffectLive {
@@ -73,6 +75,26 @@ extension DecideAiRoutineSideEffectLive: DecideAiRoutineSideEffect {
                 buttons: [.init(title: "확인", style: .default) {
                     
                 }, .init(title: "취소", style: .cancel)],
+                flagType: .error
+            )
+            navigator.alert(target: .default, model: alertModel)
+        }
+    }
+    
+    public var onSucessPostAiRoutineList: () -> Void {
+        {
+            navigator.replace(paths: ["tabbar"], items: ["tabbar-selected": "routine"], isAnimated: true)
+        }
+    }
+    
+    public var onFailPostAiRoutineList: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "실패",
+                message: "루틴을 추가하는 도중 오류가 발생했어요.",
+                buttons: [.init(title: "확인", style: .default) {
+                    navigator.back(isAnimated: true)
+                }],
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)

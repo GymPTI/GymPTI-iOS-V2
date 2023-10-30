@@ -15,9 +15,7 @@ final class Service {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10
         configuration.timeoutIntervalForResource = 10
-        let interceptor = Interceptor()
-        return Session(configuration: configuration,
-                       interceptor: interceptor)
+        return Session(configuration: configuration)
     }()
     
     static func request<T: Codable>(_ url: String,
@@ -28,7 +26,8 @@ final class Service {
         let request = session.request(url,
                                       method: method,
                                       parameters: params,
-                                      encoding: method == .get ? URLEncoding.default : JSONEncoding.default)
+                                      encoding: method == .get ? URLEncoding.default : JSONEncoding.default,
+                                      interceptor: Interceptor())
         
         let dataTask = request.serializingDecodable(model)
         

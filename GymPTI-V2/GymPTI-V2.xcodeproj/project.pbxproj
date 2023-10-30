@@ -14,6 +14,7 @@
 		520DD9982ADFEFA500780F8E /* AddAiRoutineCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */; };
 		520DD99A2ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */; };
 		520DD99C2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */; };
+		52126C942AEF9BD6008B82E9 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52126C932AEF9BD6008B82E9 /* Interceptor.swift */; };
 		52256C922A8FAE0400871C0B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C912A8FAE0400871C0B /* StartView.swift */; };
 		52256C942A8FAF2200871C0B /* StartCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C932A8FAF2200871C0B /* StartCore.swift */; };
 		52256C962A8FAF3400871C0B /* StartSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52256C952A8FAF3400871C0B /* StartSideEffect.swift */; };
@@ -125,7 +126,6 @@
 		52FFFC3F2AE8B43100477F4D /* ButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */; };
 		52FFFC552AE8B59100477F4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC502AE8B59100477F4D /* Constants.swift */; };
 		52FFFC562AE8B59100477F4D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC512AE8B59100477F4D /* Service.swift */; };
-		52FFFC572AE8B59100477F4D /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC522AE8B59100477F4D /* Interceptor.swift */; };
 		52FFFC582AE8B59100477F4D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC532AE8B59100477F4D /* Response.swift */; };
 		52FFFC592AE8B59100477F4D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC542AE8B59100477F4D /* Token.swift */; };
 		52FFFC5B2AE8B5D700477F4D /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */; };
@@ -143,6 +143,7 @@
 		520DD9972ADFEFA500780F8E /* AddAiRoutineCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineCore.swift; sourceTree = "<group>"; };
 		520DD9992ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineSideEffect.swift; sourceTree = "<group>"; };
 		520DD99B2ADFEFCD00780F8E /* AddAiRoutineRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAiRoutineRouteBuilder.swift; sourceTree = "<group>"; };
+		52126C932AEF9BD6008B82E9 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		52256C912A8FAE0400871C0B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		52256C932A8FAF2200871C0B /* StartCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCore.swift; sourceTree = "<group>"; };
 		52256C952A8FAF3400871C0B /* StartSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSideEffect.swift; sourceTree = "<group>"; };
@@ -252,7 +253,6 @@
 		52FFFC3E2AE8B43100477F4D /* ButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonExt.swift; path = ../../../../../ButtonExt.swift; sourceTree = "<group>"; };
 		52FFFC502AE8B59100477F4D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52FFFC512AE8B59100477F4D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		52FFFC522AE8B59100477F4D /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		52FFFC532AE8B59100477F4D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		52FFFC542AE8B59100477F4D /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		52FFFC5A2AE8B5D700477F4D /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -590,9 +590,8 @@
 				52C804132A0C870700417B08 /* RoutineCore.swift */,
 				52C804152A0C871D00417B08 /* RoutineSideEffect.swift */,
 				52C804172A0C872900417B08 /* RoutineRouteBuilder.swift */,
+				52FFFC662AEE19AF00477F4D /* AiRoutine */,
 				520A079E2AA858FE007BA4E4 /* AddRoutine */,
-				520DD9942ADFEF2E00780F8E /* AddAiRoutine */,
-				52FFFC5D2AE9302500477F4D /* DecideAiRoutine */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -693,9 +692,9 @@
 			children = (
 				52FFFC502AE8B59100477F4D /* Constants.swift */,
 				52FFFC512AE8B59100477F4D /* Service.swift */,
-				52FFFC522AE8B59100477F4D /* Interceptor.swift */,
 				52FFFC532AE8B59100477F4D /* Response.swift */,
 				52FFFC542AE8B59100477F4D /* Token.swift */,
+				52126C932AEF9BD6008B82E9 /* Interceptor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -709,6 +708,15 @@
 				52FFFC642AE930CC00477F4D /* DecideAiRoutineRouteBuilder.swift */,
 			);
 			path = DecideAiRoutine;
+			sourceTree = "<group>";
+		};
+		52FFFC662AEE19AF00477F4D /* AiRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				520DD9942ADFEF2E00780F8E /* AddAiRoutine */,
+				52FFFC5D2AE9302500477F4D /* DecideAiRoutine */,
+			);
+			path = AiRoutine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -819,7 +827,6 @@
 				52C803B72A0BAD1800417B08 /* UINavigationControllerExt.swift in Sources */,
 				524CEB7F2A275BC200B63DDA /* NotificationCore.swift in Sources */,
 				52C804032A0BE1D600417B08 /* NameRouteBuilder.swift in Sources */,
-				52FFFC572AE8B59100477F4D /* Interceptor.swift in Sources */,
 				522FCAD42AB2AF28007DBC1F /* TypeExt.swift in Sources */,
 				52C803A52A0B974E00417B08 /* AppSideEffect.swift in Sources */,
 				52C803B92A0BAD3900417B08 /* ViewExt.swift in Sources */,
@@ -853,6 +860,7 @@
 				52C8040B2A0BE2DD00417B08 /* EmailRouteBuilder.swift in Sources */,
 				5258D7B52AA7026800D77C40 /* SetRoutineDetailCore.swift in Sources */,
 				526593F62A0E42F300D9446B /* ColorExt.swift in Sources */,
+				52126C942AEF9BD6008B82E9 /* Interceptor.swift in Sources */,
 				520DD99A2ADFEFBC00780F8E /* AddAiRoutineSideEffect.swift in Sources */,
 				52C803F72A0BDB4700417B08 /* PwCore.swift in Sources */,
 				52C803DC2A0BB8E200417B08 /* SignInSideEffect.swift in Sources */,

@@ -13,6 +13,8 @@ public struct DecideAiRoutine: Reducer{
         
         var selectMuscle: String
         
+        var dayOfWeek: String = ""
+        
         var isCreateAiRoutine: Bool {
             if routineList == nil {
                 return true
@@ -31,6 +33,7 @@ public struct DecideAiRoutine: Reducer{
         case onTapBackButton
         case onTapDecideButton
         case onTapRecreateButton
+        case onSelectDayButton(day: String)
         case getAiRoutineList
         case routineListDataReceived(TaskResult<ExerciseResult>)
     }
@@ -48,11 +51,19 @@ public struct DecideAiRoutine: Reducer{
                 return .none
                 
             case .onTapDecideButton:
+                let newState = state
+                Task {
+                    await PostAiRoutineList(state: newState)
+                }
                 sideEffect.onTapDecideButton()
                 return .none
                 
             case .onTapRecreateButton:
                 sideEffect.onTapRecreateButton()
+                return .none
+                
+            case .onSelectDayButton(let day):
+                state.selectMuscle = getEnglishDayFullName(day)
                 return .none
                 
             case .getAiRoutineList:
@@ -91,6 +102,26 @@ public struct DecideAiRoutine: Reducer{
                 sideEffect.onFailGetAiRoutineList()
             }
             throw error
+        }
+    }
+    
+    private func PostAiRoutineList(state: State) async {
+        
+        let params: [String: Any] = [:]
+//            "exercise": state.exerciseName,
+//            "dayOfWeek": getEnglishDayFullName(state.day),
+//            "reps": state.reps,
+//            "sets": state.sets,
+//            "restTime": state.restTime
+        do {
+            print(try await Service.request(API.routine_create, .post, params: params))
+            await MainActor.run {
+                sideEffect.onSucessPostAiRoutineList()
+            }
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailPostAiRoutineList()
+            }
         }
     }
     
