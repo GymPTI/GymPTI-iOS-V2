@@ -9,7 +9,7 @@ import Foundation
 
 class API {
     
-    static let url: String = "http://10.80.162.250:9000"
+    static let url: String = "http://10.80.162.103:9000"
     
     /// auth
     static let auth_register = "\(url)/auth/register"

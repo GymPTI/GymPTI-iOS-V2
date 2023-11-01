@@ -13,7 +13,9 @@ public struct DecideAiRoutine: Reducer{
         
         var selectMuscle: String
         
-        var dayOfWeek: String = ""
+        var day: String = ""
+        
+        var selectedDay: String = ""
         
         var isCreateAiRoutine: Bool {
             if routineList == nil {
@@ -63,7 +65,8 @@ public struct DecideAiRoutine: Reducer{
                 return .none
                 
             case .onSelectDayButton(let day):
-                state.selectMuscle = getEnglishDayFullName(day)
+                state.day = day
+                state.selectedDay = day
                 return .none
                 
             case .getAiRoutineList:
@@ -107,26 +110,31 @@ public struct DecideAiRoutine: Reducer{
     
     private func PostAiRoutineList(state: State) async {
         
-        let params: [String: Any] = [:]
-//            "exercise": state.exerciseName,
-//            "dayOfWeek": getEnglishDayFullName(state.day),
-//            "reps": state.reps,
-//            "sets": state.sets,
-//            "restTime": state.restTime
-        do {
-            print(try await Service.request(API.routine_create, .post, params: params))
-            await MainActor.run {
-                sideEffect.onSucessPostAiRoutineList()
-            }
-        } catch {
-            await MainActor.run {
-                sideEffect.onFailPostAiRoutineList()
+        for i in 0 ..< ((state.routineList?.result.count)!) {
+            
+            let params: [String: Any] = [
+                "exercise": state.routineList?.result[i].exerciseName ?? "",
+                "dayOfWeek": getEnglishDayFullName(state.day),
+                "reps": state.routineList?.result[i].reps ?? "",
+                "sets": state.routineList?.result[i].sets ?? "",
+                "restTime": state.routineList?.result[i].restTime ?? ""
+            ]
+            print(params)
+            do {
+                print(try await Service.request(API.routine_create, .post, params: params))
+                await MainActor.run {
+                    sideEffect.onSucessPostAiRoutineList()
+                }
+            } catch {
+                await MainActor.run {
+                    sideEffect.onFailPostAiRoutineList()
+                }
             }
         }
     }
     
     private func muscleToEng(_ muscle: String) -> String {
-        let muscleMap: [String: String] = ["가슴": "CHEST", "등": "BACK", "팔": "ARM", "하체": "LEGS", "어꺠": "SHOULDER", "복근": "ABS"]
+        let muscleMap: [String: String] = ["가슴": "CHEST", "등": "BACK", "팔": "ARM", "하체": "LEGS", "어깨": "SHOULDER", "복근": "ABS"]
         return muscleMap[muscle] ?? ""
     }
 }
@@ -136,8 +144,6 @@ public struct ExerciseResult: Codable, Equatable, Hashable {
 }
 
 public struct Exercise: Codable, Equatable, Hashable {
-    let sets: String
-    let restTime: String
-    let reps: String
+    let sets, reps, restTime: Int
     let exerciseName: String
 }
