@@ -35,6 +35,16 @@ extension RoutineView: View {
                 ZStack {
                     
                     Button {
+                        viewStore.send(.onTapDeleteButton)
+                    } label: {
+                        Image("trash")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 88)
+                    
+                    Button {
                         viewStore.send(.onTapAiAddRoutineButton)
                     } label: {
                         Image("ai")

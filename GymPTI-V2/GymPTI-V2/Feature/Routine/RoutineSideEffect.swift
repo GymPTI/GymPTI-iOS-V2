@@ -11,6 +11,7 @@ public protocol RoutineSideEffect {
     
     var onTapAiAddRoutineButton: () -> Void { get }
     var onTapAddRoutineButton: () -> Void { get }
+    var onTapDeleteButton: ( @escaping () -> Void ) -> Void { get }
     var onTapRoutineCard: ( String, @escaping () -> Void ) -> Void { get }
     var onTapCompletedButton: ( @escaping () -> Void ) -> Void { get }
     var onFailDeleteRoutineCard: () -> Void { get }
@@ -37,6 +38,19 @@ extension RoutineSideEffectLive: RoutineSideEffect {
     public var onTapAddRoutineButton: () -> Void {
         {
             navigator.next(paths: ["setroutine"], items: [:], isAnimated: true)
+        }
+    }
+    
+    public var onTapDeleteButton: ( @escaping () -> Void ) -> Void {
+        { action  in
+            let alertModel = Alert(
+                title: "삭제",
+                message: "루틴을 전체 삭제할까요?",
+                buttons: [.init(title: "확인", style: .default) {
+                    action()
+                }, .init(title: "취소" ,style: .cancel) ],
+                flagType: .default)
+            navigator.alert(target: .default, model: alertModel)
         }
     }
     

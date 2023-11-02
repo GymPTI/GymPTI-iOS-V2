@@ -22,6 +22,7 @@ public struct Routine: Reducer {
         
         case onTapAiAddRoutineButton
         case onTapAddRoutineButton
+        case onTapDeleteButton
         case onTapDayButton(day: String)
         case onTapRoutineCard(id: Int, exercise: String)
         case onTapCompletedButton(id: Int)
@@ -43,6 +44,15 @@ public struct Routine: Reducer {
                 
             case .onTapAddRoutineButton:
                 sideEffect.onTapAddRoutineButton()
+                return .none
+                
+            case .onTapDeleteButton:
+                let day = state.selectDay
+                sideEffect.onTapDeleteButton {
+                    Task {
+                        await deleteAllRoutineCard(day: getEnglishDayFullName(day))
+                    }
+                }
                 return .none
                 
             case .onTapDayButton(let day):
@@ -96,13 +106,23 @@ public struct Routine: Reducer {
         }
     }
     
+    func deleteAllRoutineCard(day: String) async {
+        
+        do {
+            print(try await Service.request("\(API.routine_delete)?dayOfWeek=\(day)" ,.delete))
+        } catch {
+            await MainActor.run {
+                sideEffect.onFailDeleteRoutineCard()
+            }
+        }
+    }
+    
     func putCompleteRoutine(id: Int) async {
         
         do {
             print(try await Service.request("\(API.routine_isComplete)/\(id)", .put, DataResponse<Bool>.self).data)
-        } catch let error {
+        } catch {
             await MainActor.run {
-                print(error.localizedDescription)
                 sideEffect.onFailPutCompleteRoutine()
             }
         }
@@ -111,14 +131,12 @@ public struct Routine: Reducer {
     func getRoutineList(day: String) async throws -> [RoutineList] {
         
         let params = ["dayOfWeek": day]
-        
         do {
             let response = try await Service.request(API.routine_list, .get, params: params, DataResponse<[RoutineList]>.self)
             print(response.data)
             return response.data
             
-        } catch let error {
-            print(error.localizedDescription)
+        } catch {
             throw error
         }
     }

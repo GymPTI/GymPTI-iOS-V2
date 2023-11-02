@@ -24,10 +24,6 @@ public struct DecideAiRoutine: Reducer{
             return false
         }
         var routineList: ExerciseResult?
-//        var routineList: ExerciseResult? = ExerciseResult(result: [
-//            Exercise(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
-//            Exercise(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업"),
-//            Exercise(sets: "4", restTime: "4", reps: "4", exerciseName: "푸쉬업")])
     }
     
     public enum Action: Equatable {
@@ -96,6 +92,7 @@ public struct DecideAiRoutine: Reducer{
         let params: [String : [String]] = ["targetExercise": muscleArraytoEng]
         do {
             let response = try await Service.request(API.routine_aicreate, .post, params: params, DataResponse<ExerciseResult>.self)
+            print("루틴 데이터 :\n\(response)")
             await MainActor.run {
                 sideEffect.onSuccessGetAiRoutineList()
             }
@@ -122,9 +119,6 @@ public struct DecideAiRoutine: Reducer{
             print(params)
             do {
                 print(try await Service.request(API.routine_create, .post, params: params))
-                await MainActor.run {
-                    sideEffect.onSucessPostAiRoutineList()
-                }
             } catch {
                 await MainActor.run {
                     sideEffect.onFailPostAiRoutineList()
