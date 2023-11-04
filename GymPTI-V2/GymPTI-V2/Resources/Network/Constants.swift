@@ -9,7 +9,15 @@ import Foundation
 
 class API {
     
-    static let url: String = "http://10.80.162.169:9000"
+//    static let url: String = "http://veryhotseo81.duckdns.org:8888"
+    
+    static var url: String {
+        get {
+            let plist = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Info", ofType: "plist")!)
+            let value = plist?.object(forKey: "Domain") as? String
+            return value!
+        }
+    }
     
     /// auth
     static let auth_register = "\(url)/auth/register"

@@ -122,6 +122,7 @@ public struct Routine: Reducer {
         do {
             print(try await Service.request("\(API.routine_isComplete)/\(id)", .put, DataResponse<Bool>.self).data)
         } catch {
+            print(error.localizedDescription)
             await MainActor.run {
                 sideEffect.onFailPutCompleteRoutine()
             }
@@ -133,10 +134,9 @@ public struct Routine: Reducer {
         let params = ["dayOfWeek": day]
         do {
             let response = try await Service.request(API.routine_list, .get, params: params, DataResponse<[RoutineList]>.self)
-            print(response.data)
             return response.data
-            
-        } catch {
+        } catch (let error) {
+            print(error.localizedDescription)
             throw error
         }
     }
