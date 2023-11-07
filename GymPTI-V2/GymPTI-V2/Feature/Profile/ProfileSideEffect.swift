@@ -49,7 +49,7 @@ extension ProfileSideEffectLive: ProfileSideEffect {
     }
     
     public var onTapSetPersonalProfileButton: (String, String, String, String) -> Void {
-        { gender, age, height, weight in
+        { gender, age, weight, height in
             navigator.next(paths: ["setpersonalprofile"], items: [
                 "setpersonalprofile-gender": gender,
                 "setpersonalprofile-age": age,

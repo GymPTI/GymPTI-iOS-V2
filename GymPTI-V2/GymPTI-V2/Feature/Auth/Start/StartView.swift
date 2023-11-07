@@ -24,22 +24,32 @@ extension StartView: View {
     public var body: some View {
         
         VStack(spacing: 15) {
+            Spacer()
             
             Image("logo")
-                .padding([.horizontal, .bottom], 60)
+//                .padding(.horizontal, 60)
             
-            CustomButton("회원가입 하기", disabled: false) {
-                viewStore.send(.onTapSignUpButton)
+            Spacer()
+            
+            CustomButton("로그인 하기", disabled: false) {
+                viewStore.send(.onTapSignInButton)
             }
             .padding(.horizontal, 50)
             
-            Button {
-                viewStore.send(.onTapSignInButton)
-            } label: {
-                Text("로그인 하기")
-                    .setFont(18, .semibold)
+            HStack(spacing: 2) {
+                Text("계정이 없으신가요?")
+                    .setFont(14, .regular)
                     .foregroundColor(Colors.white.color)
+                
+                Button {
+                    viewStore.send(.onTapSignUpButton)
+                } label: {
+                    Text("회원가입 하기")
+                        .setFont(14, .bold)
+                        .foregroundColor(Colors.white.color)
+                }
             }
+            .padding(.bottom, 20)
         }
         .setBackground()
     }

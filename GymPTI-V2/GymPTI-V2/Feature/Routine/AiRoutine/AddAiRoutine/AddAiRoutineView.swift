@@ -38,7 +38,7 @@ extension AddAiRoutineView: View {
                             .setFont(20, .bold)
                             .foregroundColor(Colors.white.color)
                         
-                        Text("최대 3개까지 선택이 가능합니다")
+                        Text("최대 \(Text("3개").bold())까지 선택이 가능합니다")
                             .setFont(14, .regular)
                             .foregroundColor(Colors.white.color)
                     }

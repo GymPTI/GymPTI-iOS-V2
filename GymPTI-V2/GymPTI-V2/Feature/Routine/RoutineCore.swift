@@ -14,12 +14,10 @@ public struct Routine: Reducer {
         var selectDay: String = getToday()
         
         var routineList: [RoutineList]?
-        
-        var viewChange: Bool = false
     }
     
     public enum Action: Equatable {
-        
+    
         case onTapAiAddRoutineButton
         case onTapAddRoutineButton
         case onTapDeleteButton
@@ -48,7 +46,7 @@ public struct Routine: Reducer {
                 
             case .onTapDeleteButton:
                 let day = state.selectDay
-                sideEffect.onTapDeleteButton {
+                sideEffect.onTapDeleteButton(day) {
                     Task {
                         await deleteAllRoutineCard(day: getEnglishDayFullName(day))
                     }

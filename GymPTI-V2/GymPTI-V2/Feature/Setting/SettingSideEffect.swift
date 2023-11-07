@@ -14,6 +14,7 @@ public protocol SettingSideEffect {
     var onTapBackButton: () -> Void { get }
     var onTapLogoutButton: () -> Void { get }
     var onTapFindIdButton: () -> Void { get }
+    var onTapTestButton: () -> Void { get }
 }
 
 public struct SettingSideEffectLive {
@@ -52,8 +53,6 @@ extension SettingSideEffectLive: SettingSideEffect {
                 flagType: .error
             )
             navigator.alert(target: .default, model: alertModel)
-            
-            
         }
     }
     
@@ -62,4 +61,17 @@ extension SettingSideEffectLive: SettingSideEffect {
             navigator.next(paths: ["findid"], items: [:], isAnimated: true)
         }
     }
+    
+    public var onTapTestButton: () -> Void {
+        {
+            let alertModel = Alert(
+                title: "개발용 로그",
+                message: "ip : \(API.url)",
+                buttons: [ActionButton(title: "확인", style: .default)],
+                flagType: .error
+            )
+            navigator.alert(target: .default, model: alertModel)
+        }
+    }
 }
+

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Domain</key>
-	<string>http://veryhotseo81.duckdns.org:8888</string>
+	<string>http://15.164.234.207:9000</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

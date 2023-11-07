@@ -9,8 +9,6 @@ import Foundation
 
 class API {
     
-//    static let url: String = "http://veryhotseo81.duckdns.org:8888"
-    
     static var url: String {
         get {
             let plist = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Info", ofType: "plist")!)

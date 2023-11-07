@@ -1,4 +1,4 @@
-//
+//ㅐ
 //  SettingVIew.swift
 //  GymPTI-V2
 //
@@ -60,10 +60,6 @@ extension SettingView {
                         viewStore.send(.onTapEditAccountButton)
                     }
                     
-                    SettingButton("아이디 찾기 (임시)") {
-                        viewStore.send(.test)
-                    }
-                    
                     Text("기타")
                         .setFont(20, .bold)
                         .foregroundColor(Colors.white.color)
@@ -83,6 +79,10 @@ extension SettingView {
                     
                     SettingButton("탈퇴하기", isDangerous: true) {
                         
+                    }
+                    
+                    SettingButton("ip 확인 (개발용)") {
+                        viewStore.send(.onTapTestButton)
                     }
                     
                 }
